@@ -1,0 +1,15 @@
+{
+  "name": "stratoks-server",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Authoritative persistent Stratoks world simulation service (Phase 1). Zero runtime dependencies.",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node src/main.js",
+    "demo": "node src/main.js --demo",
+    "test": "node --test ../tests/*.test.js",
+    "backup": "node bin/backup.js",
+    "restore": "node bin/restore.js"
+  }
+}

@@ -1,0 +1,29 @@
+# Review profile for a 1 GB x86_64 VPS. It does not reference production volumes.
+# docker compose -f deploy/correction-vps-compose.yml up --build
+name: stratoks-correction-review
+services:
+  world:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    platform: linux/amd64
+    environment:
+      DATA_DIR: /data
+      HOST: 0.0.0.0
+      PORT: '8787'
+      BRAIN_MODE: ${STRATOKS_REVIEW_BRAIN_MODE:-legacy}
+      ALLOWED_ORIGINS: ${STRATOKS_CLIENT_ORIGIN:-}
+    ports: ['127.0.0.1:18787:8787']
+    volumes: [review-data:/data]
+    mem_limit: 512m
+    memswap_limit: 512m
+    cpus: 0.75
+    pids_limit: 64
+    read_only: true
+    tmpfs: ['/tmp:size=16m']
+    cap_drop: [ALL]
+    security_opt: ['no-new-privileges:true']
+    stop_grace_period: 30s
+    logging: {driver: json-file, options: {max-size: '5m', max-file: '2'}}
+volumes:
+  review-data:

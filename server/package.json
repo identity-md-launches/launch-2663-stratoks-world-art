@@ -1,0 +1,21 @@
+{
+  "name": "stratoks-server",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Authoritative persistent Stratoks world with optional reduced mushroom-body-inspired circuit. Zero runtime dependencies.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/main.js",
+    "demo": "node src/main.js --demo",
+    "test": "node --test --test-concurrency=2 ../tests/*.test.js",
+    "backup": "node bin/backup.js",
+    "restore": "node bin/restore.js",
+    "test:brain": "node --test --test-concurrency=2 ../tests/mushroom.test.js ../tests/brain-compatibility.test.js ../tests/inspector.test.js",
+    "experiment:brain": "node ../tests/experiments/mushroom-learning.mjs 10",
+    "experiment:ecology": "node ../tests/experiments/mushroom-ecology.mjs 5000 10",
+    "demo:brain": "node bin/phase2a-demo.js"
+  }
+}

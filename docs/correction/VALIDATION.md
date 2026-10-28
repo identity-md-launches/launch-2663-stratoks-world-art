@@ -1,0 +1,71 @@
+# Phase 2A correction validation
+
+**Historical report for the previous correction, `ca7a177`.** The reopened review reproduced two remaining defects. Final behavior, test counts, experiment results, the qualified legacy comparison, release identity and six-domain recheck are in [REVIEW.md](REVIEW.md). Its findings and current `RESULTS.md` / `RELEASE.json` supersede the older results and claims below.
+
+Local author checks, 2026-10-28. Accepted parent: `99e50b1c275b9422c14f279498b3e192b151992b`. No production data/service, owner's VPS, contract, token or account configuration was accessed. Existing application, reduced circuit, recovered archive, world migration and original learning/ecology evidence remain. No art redesign or payment work is included.
+
+## Issue-to-fix table
+
+| Issue | Original behavior / reproduction | Corrected implementation | Final evidence |
+|---|---|---|---|
+| Starvation insertion order | Hunger 85, full food at distances 1 and 11; reversed insertion makes all three circuit modes choose distance 11 | `server/src/actions.js:32` and `:111`: nearest remembered food with amount ≥0.5, walkable tile and real path; Euclidean-distance ties use numeric food id. If none is reachable, search via a rule. No learned score participates in the reflex | Both insertion orders in all four modes, ties, depleted/blocked/enclosed food, actual food consumption, `source=reflex`; separate non-emergency learned-target regression |
+| Ablated mode learns secretly | `rewardAction` originally excluded only frozen mode; ablation hid output while updating matrices | `server/src/controller.js:48`: plasticity permitted only for captured/current `mb-v1`; ablated/frozen preserve both matrices and neural update count. Ablated predictions/output are zero | Weight/counter equality through 40 rewarded ablated completions, persisted restart/backup/restore/reactivation and in-flight transitions |
+| Wrong plasticity flags | Inspector reported true in ablation/catch-up | `controller.js:54`, `view.js`: one plasticity predicate supplies both JSON projections; ablated/frozen/catch-up/LEARNING=0 disable it. New reward outcomes include captured mode and `learned=false` when no update happened | All-mode backend assertions and all-mode real-browser checks in both clients |
+| Candidate-count bias | Flat softmax gives 10 equal EAT entries ten times the mass of one REST entry | `server/src/mushroom.js:65`: action softmax uses each action's **maximum** target utility; conditional softmax selects its target. No summed action multiplicity. One persisted random draw. `legacy` still uses the original picker | 12,000 paired choices per circuit mode match action-for-action with 1 vs 10 equal targets; unequal utilities strongly favor the better action; real learned spatial target preference remains causal |
+| Learning-history labels | “Legacy learning archive” contains decisions/rewards spanning policies | `web/src/Panels.tsx:403`: **Learning history**, **Linear-policy updates**, scope of aggregate mean reward and recent decisions. “Utility” replaces “preference” for mixed-policy history | Both contexts in Chromium and WebKit open disclosure in all four modes; exact labels and scope text asserted |
+| Inspector mixes policy generations | Active mode could differ from captured decision; ablated control text did not mention disabled updates | `web/src/BrainBehavior.tsx:24`: current policy plasticity, captured decision mode, separately labeled historical rewards, explicit non-learned reflex, mode-specific candidate explanation, independent wallet policy | All-mode browser/service agreement, candidate scores, stale/error/retry fixtures, recorded JSON. Previous records remain factual rather than being rewritten as unlearned |
+| Capacity claim lacks real limits | Earlier process policing is not Docker/cgroup qualification | New isolated Docker runner verifies memory/swap/CPU with Docker plus cgroup v2; all 16 local diagnostic rows retain actual timing/RSS/CPU/network data | Docker executable unavailable, exit 2. **Real 512 MiB / 0.75 CPU verification unperformed**. Runnable fallback delivered. Supported VPS capacity not established |
+| ENS TLS / release identity | Requester's prior gateway fails TLS | Rebuilt relative static client, deterministic CAR, per-file source/export manifests and strict HTTPS verifier | All 19 CAR files traverse/hash correctly offline. ENS curl exit 35; tested CID gateways HTTP 429. **No certified working public URL**. Publishing/DNS/TLS/final submission commit remain platform boundaries |
+
+## Reproducing old failures independently
+
+`node tests/experiments/reproduce-correction.mjs` reads the accepted commit's server source via `git show` into `test/scratch/correction-original`, copies the final correction tests, then runs them. It never patches the working server or writes Git metadata. The baseline reports **11 pass / 22 fail**; the same 33 tests pass against the final code. Raw expected-failure TAP: `artifacts/phase2a-client/correction/original-regressions.tap`. Reproduction requires the accepted commit in the checkout; the standalone runtime package intentionally has no Git metadata.
+
+## Commands and actual results
+
+| Command | Result / evidence |
+|---|---|
+| `node --test --test-reporter=tap --test-concurrency=2 tests/*.test.js` | **101 pass / 0 fail**; original 68 retained plus 33 new. `artifacts/phase2a-client/correction/server-tests.tap` |
+| `node --test --test-reporter=tap tests/brain-correction.test.js` | **33 pass / 0 fail**, `correction/regressions.tap` |
+| `node tests/experiments/reproduce-correction.mjs` | Wrapper succeeds because old source fails as expected; **22 reproduced failures**, not a passing baseline |
+| `node web/scripts/task.mjs typecheck` | Exit 0, `correction/typecheck.txt` |
+| `node web/scripts/task.mjs test` | **17 pass / 0 fail**, `correction/web-tests.tap` |
+| `node web/scripts/task.mjs build` | Exit 0; production `dist/` copied from Vite's temporary build tree. `correction/build.txt` |
+| `node tests/experiments/mushroom-learning.mjs 10 tests/results/correction/learning.json` | 120 original mode/task/seed combinations; all held-out weights frozen, all 120 restart comparisons identical, frozen/ablated training has zero neural updates |
+| `node tests/experiments/mushroom-ecology.mjs 5000 10 tests/results/correction/ecology.json` | All 40 original mode/seed combinations, unchanged resources; honest regressions and confounds in `RESULTS.md` |
+| `node tests/load/correction-docker.mjs --out=tests/results/correction/docker` | Exit 2: “Docker executable is unavailable. No Docker/cgroup tests ran.” |
+| `node tests/load/correction-docker.mjs --local --ticks=1200 --realtime-ticks=180 --out=tests/results/correction/capacity` | 16 completed diagnostic rows, all unenforced. Actual per-run runtimes/RSS/tick p95/p99 and source hashes in `RESULTS.md` and raw JSON |
+| `node web/scripts/check-phase2a.mjs chromium …` | **16 interaction checks**, zero uncaught errors, missing export assets or automated axe violations in its three audited states |
+| `node web/scripts/check-phase2a.mjs webkit …` | **16 interaction checks**, same audit results. Native-device behavior is not inferred from desktop WebKit |
+| `node .imd/reads/skills/design-critic/scripts/taste.mjs --out test/scratch/taste` | **16/16 pass** at 320, 390, 1440; external Playwright module/browser path supplied. `correction/taste.json` retains full probe measurements |
+| `node web/scripts/release-correction.mjs /tmp/stratoks-release-tools` | 19/19 offline CAR file traversals/byte comparisons and all block hashes pass. Not a public-pin check |
+| `node web/scripts/check-correction-https.mjs` | Nonzero: ENS TLS error and two HTTP 429 responses; exact requests/response hashes in `HTTPS.json` |
+| `python3 tests/experiments/package-correction.py` | Deterministic gzip/tar; every archived file re-read and checked against package inventory. See `PACKAGE.json` |
+| `node tests/experiments/check-correction.mjs` | Final inventory, immutable-input/config, source-hash, export-byte and 8 MiB checks recorded in `INTEGRITY.json` |
+
+The migration/restart/durability suite includes schema-2→3 state preservation, deterministic continuation, checksummed backup/restore, copied-world rollback, the actual recovered older binary, crash recovery, torn writes, event boundaries and the 4,000-tick baseline-equivalence run with births/construction. The ten legacy ecology rows are also exactly unchanged. Fresh test stores and injectable clocks are used; production was never reset or loaded. Wallet tests confirm frozen/ablated **circuit** learning stays off while existing `LEARNING` still governs wallet memory.
+
+Source/export identities are in `RELEASE.json`. Historical `docs/phase2a/`, `tests/results/phase2a/` and original client evidence are untouched. The older source bundle/archive still identifies its original release; the corrected VPS archive has a separate name/inventory.
+
+## Better Interface review: six domains
+
+Applied the pinned workflow/core principles during the correction. Scope: existing entry, resident inspector, Learning history, shared connection settings and isolated lab. Existing illustration, palette, type scale, settlement layout and wallet/transaction behavior are preserved. Site idea: an observer looks into a small illustrated world and inspects an actual creature's decisions. This correction changes the accuracy of the inspector, not the art.
+
+| Domain | Coverage | Findings / corrections and limits |
+|---|---|---|
+| Accessibility | **Checked**: native buttons/details, persistent labels, focus-visible styles, dialog Escape/focus return, keyboard entry into demo, axe in entry/inspector/lab; reduced-motion state | Existing native semantics reused. Numeric signed rewards, “Chosen”, source/mode and disabled-learning text supplement color. No automatic-audit violations in measured states. Screen-reader, switch-control, physical-device and full manual WCAG review **not verified** |
+| Layout | **Checked**: source/DOM order and rendered 320/390/800/1440, 667×375 landscape; inspector/lab no horizontal overflow | Disclosure scope text wraps in the existing scrolling panel. Main action is visible at 390×844 (approximately y=410 to456) with the product canvas behind it. The compact panel/dock layout is retained. Native 200% zoom and RTL layout **not verified** |
+| Writing | **Checked**: all four modes, unavailable/loading/stale/429/retry, scientific scope and history terms | **Medium**, `Panels.tsx:403`: archive misattributes current-policy decisions. Fixed to “Learning history”, separate linear-policy count and explicit reward/decision scopes; both browser contexts rechecked. **High**, `BrainBehavior.tsx:24`: a clean control needs truthful status. Fixed predicate/text and explicit disabled ablation; no reflex is called learned |
+| Typography | **Checked**: retained Manrope Variable, 400/600/800, source six-size scale, measured entry size counts, signed/tabular numeric columns and wrapping | No new size/family/weight or tracking introduced. Screenshots confirm candidate/history text fits the panel. Long multilingual names and arbitrary browser text scaling **not verified** |
+| Colors | **Checked**: existing token roles and automated solid-background text contrast checks/axe | Probe's measured solid-background text meets 4.5:1 (3:1 large). Its 45 text boxes over imagery/canvas/gradients were explicitly not measured; full canvas/overlay/focus-against-every-background contrast **not verified**. No unmeasured contrast ratio is claimed |
+| UI | **Checked**: selected candidates, disabled/busy lab controls, native disclosures/dialogs, error/retry, pause/resume and reduced motion | Existing surfaces/icons/motion reused. No new nested cards, border+shadow surfaces, transition-all or perpetual reduced-motion animation reported by probe. Physical touch/hover behavior **not verified** |
+
+Applicable writing/meaning findings were fixed, then build/typecheck/browser/probe checks reran on the corrected export. No measured first-screen/repeated probe failure remains. The 390 screenshot was viewed in the assigned browser tool; the actual private worker, resident selection and Learning panel were also exercised there. Automated runners additionally exercised both engines and multiple real contexts under `/preview/`, with console/resource error collection. A page held open across a rebuild briefly referenced removed old worker hashes; reloading the final export cleared that stale-document condition. Final clean-load runs have no missing resources.
+
+Screenshot evidence is retained under `artifacts/phase2a-client/correction/{chromium,webkit}/`: first screen, visible keyboard focus, 390px brain, lab, reversal, landscape. Unmodified 1440px brain captures were moved to `docs/correction/screens/{chromium,webkit}-brain-1440.jpg`. Downloaded raw result JSON is preserved losslessly as `downloaded-experiment.json.gz` in each browser directory. This packaging preserves evidence within the existing 3 MiB evidence-path budget; raw scientific/benchmark JSON remains in `tests/results/correction/`. Browser reruns may use an external output directory to avoid duplicating screenshots/downloads in the submission.
+
+`DESIGN.md` documents actual tokens, typography, components, disclosures, breakpoints, motion and reuse rules from final source. Better Interface (MIT) and Impeccable documentation guidance (Apache-2.0) notices remain in `docs/licenses/design-guidance.txt`.
+
+## Completion and remaining boundaries
+
+Local correction, regression reproduction, build/export, browser/design review, paired experiments and a runnable VPS/benchmark handoff are delivered. **Actual Docker/cgroup qualification and public HTTPS publication remain unverified**; neither is reported as a pass. Capacity fallback is explicitly allowed by this correction brief. No working public gateway or final network-assigned commit can be certified from this worker. Pinning, gateway DNS/TLS repair and recording the final submission commit are the named platform handoff. Owner validation, independent review and production activation have not occurred. This is useful completed local work, not a claim that those external acceptance steps are complete.

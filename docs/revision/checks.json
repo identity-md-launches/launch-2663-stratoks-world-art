@@ -1,0 +1,3795 @@
+{
+  "date": "2026-10-26T12:43:51.492Z",
+  "checks": [
+    {
+      "name": "viewport, primary action, demo and five toolbar actions at 667×375",
+      "passed": true
+    },
+    {
+      "name": "viewport, primary action, demo and five toolbar actions at 844×390",
+      "passed": true
+    },
+    {
+      "name": "viewport, primary action, demo and five toolbar actions at 568×320",
+      "passed": true
+    },
+    {
+      "name": "viewport, primary action, demo and five toolbar actions at 390×844",
+      "passed": true
+    },
+    {
+      "name": "viewport, primary action, demo and five toolbar actions at 320×700",
+      "passed": true
+    },
+    {
+      "name": "viewport, primary action, demo and five toolbar actions at 360×540",
+      "passed": true
+    },
+    {
+      "name": "viewport, primary action, demo and five toolbar actions at 768×1024",
+      "passed": true
+    },
+    {
+      "name": "viewport, primary action, demo and five toolbar actions at 1440×1000",
+      "passed": true
+    },
+    {
+      "name": "initial failure copy and unobstructed title/action at 390×844",
+      "passed": true
+    },
+    {
+      "name": "initial failure copy and unobstructed title/action at 320×700",
+      "passed": true
+    },
+    {
+      "name": "initial failure copy and unobstructed title/action at 667×375",
+      "passed": true
+    },
+    {
+      "name": "initial failure copy and unobstructed title/action at 568×320",
+      "passed": true
+    },
+    {
+      "name": "initial failure copy and unobstructed title/action at 360×540",
+      "passed": true
+    },
+    {
+      "name": "learning uses the actual enabled snapshot before and after delayed creature details",
+      "passed": true
+    },
+    {
+      "name": "actual 64-visitor HTTP 200 rejection shows capacity error with visitor actions disabled",
+      "passed": true
+    },
+    {
+      "name": "an action's rejected presence check never dispatches /api/visitor/action",
+      "passed": true
+    },
+    {
+      "name": "30-second presence refresh handles actual capacity rejection (virtual browser clock)",
+      "passed": true
+    },
+    {
+      "name": "explicit retry after capacity frees restores placement and a real food gift",
+      "passed": true
+    },
+    {
+      "name": "frozen-view wording is retained only after a real snapshot, with heading and metrics below notice",
+      "passed": true
+    },
+    {
+      "name": "automatic reconnect clears the notice and its reserved space",
+      "passed": true
+    },
+    {
+      "name": "a genuinely disabled world still reports learning disabled while details load",
+      "passed": true
+    },
+    {
+      "name": "no uncaught application errors across the revision flows",
+      "passed": true
+    }
+  ],
+  "layouts": [
+    {
+      "state": "fresh preview",
+      "width": 667,
+      "height": 375,
+      "scrollY": 0,
+      "scrollHeight": 375,
+      "scrollWidth": 667,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 667,
+        "height": 375,
+        "top": 0,
+        "right": 667,
+        "bottom": 375,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 667,
+        "height": 56,
+        "top": 0,
+        "right": 667,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 295,
+        "width": 667,
+        "height": 80,
+        "top": 295,
+        "right": 667,
+        "bottom": 375,
+        "left": 0
+      },
+      "action": {
+        "x": 69.359375,
+        "y": 140,
+        "width": 298,
+        "height": 46,
+        "top": 140,
+        "right": 367.359375,
+        "bottom": 186,
+        "left": 69.359375
+      },
+      "welcome": {
+        "x": 53.359375,
+        "y": 108,
+        "width": 330,
+        "height": 123,
+        "top": 108,
+        "right": 383.359375,
+        "bottom": 231,
+        "left": 53.359375
+      },
+      "notice": null,
+      "heading": {
+        "x": 20,
+        "y": 64,
+        "width": 150,
+        "height": 36,
+        "top": 64,
+        "right": 170,
+        "bottom": 100,
+        "left": 20
+      },
+      "metrics": null,
+      "panel": null
+    },
+    {
+      "state": "local demo",
+      "width": 667,
+      "height": 375,
+      "scrollY": 0,
+      "scrollHeight": 375,
+      "scrollWidth": 667,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 667,
+        "height": 375,
+        "top": 0,
+        "right": 667,
+        "bottom": 375,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 667,
+        "height": 56,
+        "top": 0,
+        "right": 667,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 295,
+        "width": 667,
+        "height": 80,
+        "top": 295,
+        "right": 667,
+        "bottom": 375,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 20,
+        "y": 64,
+        "width": 150,
+        "height": 36,
+        "top": 64,
+        "right": 170,
+        "bottom": 100,
+        "left": 20
+      },
+      "metrics": {
+        "x": 20,
+        "y": 112,
+        "width": 284,
+        "height": 64.59375,
+        "top": 112,
+        "right": 304,
+        "bottom": 176.59375,
+        "left": 20
+      },
+      "panel": null
+    },
+    {
+      "state": "Residents",
+      "width": 667,
+      "height": 375,
+      "scrollY": 0,
+      "scrollHeight": 375,
+      "scrollWidth": 667,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 667,
+        "height": 375,
+        "top": 0,
+        "right": 667,
+        "bottom": 375,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 667,
+        "height": 56,
+        "top": 0,
+        "right": 667,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 295,
+        "width": 667,
+        "height": 80,
+        "top": 295,
+        "right": 667,
+        "bottom": 375,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": null,
+      "metrics": null,
+      "panel": {
+        "x": 303,
+        "y": 64,
+        "width": 340,
+        "height": 223,
+        "top": 64,
+        "right": 643,
+        "bottom": 287,
+        "left": 303
+      }
+    },
+    {
+      "state": "History",
+      "width": 667,
+      "height": 375,
+      "scrollY": 0,
+      "scrollHeight": 375,
+      "scrollWidth": 667,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 667,
+        "height": 375,
+        "top": 0,
+        "right": 667,
+        "bottom": 375,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 667,
+        "height": 56,
+        "top": 0,
+        "right": 667,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 295,
+        "width": 667,
+        "height": 80,
+        "top": 295,
+        "right": 667,
+        "bottom": 375,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": null,
+      "metrics": null,
+      "panel": {
+        "x": 303,
+        "y": 64,
+        "width": 340,
+        "height": 223,
+        "top": 64,
+        "right": 643,
+        "bottom": 287,
+        "left": 303
+      }
+    },
+    {
+      "state": "Visit",
+      "width": 667,
+      "height": 375,
+      "scrollY": 0,
+      "scrollHeight": 375,
+      "scrollWidth": 667,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 667,
+        "height": 375,
+        "top": 0,
+        "right": 667,
+        "bottom": 375,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 667,
+        "height": 56,
+        "top": 0,
+        "right": 667,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 295,
+        "width": 667,
+        "height": 80,
+        "top": 295,
+        "right": 667,
+        "bottom": 375,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": null,
+      "metrics": null,
+      "panel": {
+        "x": 303,
+        "y": 64,
+        "width": 340,
+        "height": 223,
+        "top": 64,
+        "right": 643,
+        "bottom": 287,
+        "left": 303
+      }
+    },
+    {
+      "state": "Tools",
+      "width": 667,
+      "height": 375,
+      "scrollY": 0,
+      "scrollHeight": 375,
+      "scrollWidth": 667,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 667,
+        "height": 375,
+        "top": 0,
+        "right": 667,
+        "bottom": 375,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 667,
+        "height": 56,
+        "top": 0,
+        "right": 667,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 295,
+        "width": 667,
+        "height": 80,
+        "top": 295,
+        "right": 667,
+        "bottom": 375,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": null,
+      "metrics": null,
+      "panel": {
+        "x": 303,
+        "y": 64,
+        "width": 340,
+        "height": 223,
+        "top": 64,
+        "right": 643,
+        "bottom": 287,
+        "left": 303
+      }
+    },
+    {
+      "state": "landscape panel scrolled internally",
+      "width": 667,
+      "height": 375,
+      "scrollY": 0,
+      "scrollHeight": 375,
+      "scrollWidth": 667,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 667,
+        "height": 375,
+        "top": 0,
+        "right": 667,
+        "bottom": 375,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 667,
+        "height": 56,
+        "top": 0,
+        "right": 667,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 295,
+        "width": 667,
+        "height": 80,
+        "top": 295,
+        "right": 667,
+        "bottom": 375,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": null,
+      "metrics": null,
+      "panel": {
+        "x": 303,
+        "y": 64,
+        "width": 340,
+        "height": 223,
+        "top": 64,
+        "right": 643,
+        "bottom": 287,
+        "left": 303
+      }
+    },
+    {
+      "state": "landscape inspector",
+      "width": 667,
+      "height": 375,
+      "scrollY": 0,
+      "scrollHeight": 375,
+      "scrollWidth": 667,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 667,
+        "height": 375,
+        "top": 0,
+        "right": 667,
+        "bottom": 375,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 667,
+        "height": 56,
+        "top": 0,
+        "right": 667,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 295,
+        "width": 667,
+        "height": 80,
+        "top": 295,
+        "right": 667,
+        "bottom": 375,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": null,
+      "metrics": null,
+      "panel": {
+        "x": 303,
+        "y": 64,
+        "width": 340,
+        "height": 223,
+        "top": 64,
+        "right": 643,
+        "bottom": 287,
+        "left": 303
+      }
+    },
+    {
+      "state": "fresh preview",
+      "width": 844,
+      "height": 390,
+      "scrollY": 0,
+      "scrollHeight": 390,
+      "scrollWidth": 844,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 390,
+        "top": 0,
+        "right": 844,
+        "bottom": 390,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 56,
+        "top": 0,
+        "right": 844,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 310,
+        "width": 844,
+        "height": 80,
+        "top": 310,
+        "right": 844,
+        "bottom": 390,
+        "left": 0
+      },
+      "action": {
+        "x": 75.078125,
+        "y": 140,
+        "width": 298,
+        "height": 46,
+        "top": 140,
+        "right": 373.078125,
+        "bottom": 186,
+        "left": 75.078125
+      },
+      "welcome": {
+        "x": 59.078125,
+        "y": 108,
+        "width": 330,
+        "height": 123,
+        "top": 108,
+        "right": 389.078125,
+        "bottom": 231,
+        "left": 59.078125
+      },
+      "notice": null,
+      "heading": {
+        "x": 32,
+        "y": 64,
+        "width": 178,
+        "height": 42,
+        "top": 64,
+        "right": 210,
+        "bottom": 106,
+        "left": 32
+      },
+      "metrics": null,
+      "panel": null
+    },
+    {
+      "state": "local demo",
+      "width": 844,
+      "height": 390,
+      "scrollY": 0,
+      "scrollHeight": 390,
+      "scrollWidth": 844,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 390,
+        "top": 0,
+        "right": 844,
+        "bottom": 390,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 56,
+        "top": 0,
+        "right": 844,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 310,
+        "width": 844,
+        "height": 80,
+        "top": 310,
+        "right": 844,
+        "bottom": 390,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 32,
+        "y": 64,
+        "width": 178,
+        "height": 42,
+        "top": 64,
+        "right": 210,
+        "bottom": 106,
+        "left": 32
+      },
+      "metrics": {
+        "x": 32,
+        "y": 112,
+        "width": 284,
+        "height": 64.59375,
+        "top": 112,
+        "right": 316,
+        "bottom": 176.59375,
+        "left": 32
+      },
+      "panel": null
+    },
+    {
+      "state": "Residents",
+      "width": 844,
+      "height": 390,
+      "scrollY": 0,
+      "scrollHeight": 390,
+      "scrollWidth": 844,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 390,
+        "top": 0,
+        "right": 844,
+        "bottom": 390,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 56,
+        "top": 0,
+        "right": 844,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 310,
+        "width": 844,
+        "height": 80,
+        "top": 310,
+        "right": 844,
+        "bottom": 390,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": null,
+      "metrics": null,
+      "panel": {
+        "x": 480,
+        "y": 64,
+        "width": 340,
+        "height": 238,
+        "top": 64,
+        "right": 820,
+        "bottom": 302,
+        "left": 480
+      }
+    },
+    {
+      "state": "History",
+      "width": 844,
+      "height": 390,
+      "scrollY": 0,
+      "scrollHeight": 390,
+      "scrollWidth": 844,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 390,
+        "top": 0,
+        "right": 844,
+        "bottom": 390,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 56,
+        "top": 0,
+        "right": 844,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 310,
+        "width": 844,
+        "height": 80,
+        "top": 310,
+        "right": 844,
+        "bottom": 390,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": null,
+      "metrics": null,
+      "panel": {
+        "x": 480,
+        "y": 64,
+        "width": 340,
+        "height": 238,
+        "top": 64,
+        "right": 820,
+        "bottom": 302,
+        "left": 480
+      }
+    },
+    {
+      "state": "Visit",
+      "width": 844,
+      "height": 390,
+      "scrollY": 0,
+      "scrollHeight": 390,
+      "scrollWidth": 844,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 390,
+        "top": 0,
+        "right": 844,
+        "bottom": 390,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 56,
+        "top": 0,
+        "right": 844,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 310,
+        "width": 844,
+        "height": 80,
+        "top": 310,
+        "right": 844,
+        "bottom": 390,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": null,
+      "metrics": null,
+      "panel": {
+        "x": 480,
+        "y": 64,
+        "width": 340,
+        "height": 238,
+        "top": 64,
+        "right": 820,
+        "bottom": 302,
+        "left": 480
+      }
+    },
+    {
+      "state": "Tools",
+      "width": 844,
+      "height": 390,
+      "scrollY": 0,
+      "scrollHeight": 390,
+      "scrollWidth": 844,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 390,
+        "top": 0,
+        "right": 844,
+        "bottom": 390,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 56,
+        "top": 0,
+        "right": 844,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 310,
+        "width": 844,
+        "height": 80,
+        "top": 310,
+        "right": 844,
+        "bottom": 390,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": null,
+      "metrics": null,
+      "panel": {
+        "x": 480,
+        "y": 64,
+        "width": 340,
+        "height": 238,
+        "top": 64,
+        "right": 820,
+        "bottom": 302,
+        "left": 480
+      }
+    },
+    {
+      "state": "fresh preview",
+      "width": 568,
+      "height": 320,
+      "scrollY": 0,
+      "scrollHeight": 320,
+      "scrollWidth": 568,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 568,
+        "height": 320,
+        "top": 0,
+        "right": 568,
+        "bottom": 320,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 568,
+        "height": 56,
+        "top": 0,
+        "right": 568,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 240,
+        "width": 568,
+        "height": 80,
+        "top": 240,
+        "right": 568,
+        "bottom": 320,
+        "left": 0
+      },
+      "action": {
+        "x": 34,
+        "y": 140,
+        "width": 318,
+        "height": 46,
+        "top": 140,
+        "right": 352,
+        "bottom": 186,
+        "left": 34
+      },
+      "welcome": {
+        "x": 18,
+        "y": 108,
+        "width": 350,
+        "height": 123,
+        "top": 108,
+        "right": 368,
+        "bottom": 231,
+        "left": 18
+      },
+      "notice": null,
+      "heading": {
+        "x": 16,
+        "y": 64,
+        "width": 147,
+        "height": 36,
+        "top": 64,
+        "right": 163,
+        "bottom": 100,
+        "left": 16
+      },
+      "metrics": null,
+      "panel": null
+    },
+    {
+      "state": "local demo",
+      "width": 568,
+      "height": 320,
+      "scrollY": 0,
+      "scrollHeight": 320,
+      "scrollWidth": 568,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 568,
+        "height": 320,
+        "top": 0,
+        "right": 568,
+        "bottom": 320,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 568,
+        "height": 56,
+        "top": 0,
+        "right": 568,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 240,
+        "width": 568,
+        "height": 80,
+        "top": 240,
+        "right": 568,
+        "bottom": 320,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 16,
+        "y": 64,
+        "width": 147,
+        "height": 36,
+        "top": 64,
+        "right": 163,
+        "bottom": 100,
+        "left": 16
+      },
+      "metrics": {
+        "x": 16,
+        "y": 112,
+        "width": 536,
+        "height": 60,
+        "top": 112,
+        "right": 552,
+        "bottom": 172,
+        "left": 16
+      },
+      "panel": null
+    },
+    {
+      "state": "Residents",
+      "width": 568,
+      "height": 320,
+      "scrollY": 0,
+      "scrollHeight": 320,
+      "scrollWidth": 568,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 568,
+        "height": 320,
+        "top": 0,
+        "right": 568,
+        "bottom": 320,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 568,
+        "height": 56,
+        "top": 0,
+        "right": 568,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 240,
+        "width": 568,
+        "height": 80,
+        "top": 240,
+        "right": 568,
+        "bottom": 320,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": null,
+      "metrics": null,
+      "panel": {
+        "x": 12,
+        "y": 64,
+        "width": 544,
+        "height": 168,
+        "top": 64,
+        "right": 556,
+        "bottom": 232,
+        "left": 12
+      }
+    },
+    {
+      "state": "History",
+      "width": 568,
+      "height": 320,
+      "scrollY": 0,
+      "scrollHeight": 320,
+      "scrollWidth": 568,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 568,
+        "height": 320,
+        "top": 0,
+        "right": 568,
+        "bottom": 320,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 568,
+        "height": 56,
+        "top": 0,
+        "right": 568,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 240,
+        "width": 568,
+        "height": 80,
+        "top": 240,
+        "right": 568,
+        "bottom": 320,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": null,
+      "metrics": null,
+      "panel": {
+        "x": 12,
+        "y": 64,
+        "width": 544,
+        "height": 168,
+        "top": 64,
+        "right": 556,
+        "bottom": 232,
+        "left": 12
+      }
+    },
+    {
+      "state": "Visit",
+      "width": 568,
+      "height": 320,
+      "scrollY": 0,
+      "scrollHeight": 320,
+      "scrollWidth": 568,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 568,
+        "height": 320,
+        "top": 0,
+        "right": 568,
+        "bottom": 320,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 568,
+        "height": 56,
+        "top": 0,
+        "right": 568,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 240,
+        "width": 568,
+        "height": 80,
+        "top": 240,
+        "right": 568,
+        "bottom": 320,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": null,
+      "metrics": null,
+      "panel": {
+        "x": 12,
+        "y": 64,
+        "width": 544,
+        "height": 168,
+        "top": 64,
+        "right": 556,
+        "bottom": 232,
+        "left": 12
+      }
+    },
+    {
+      "state": "Tools",
+      "width": 568,
+      "height": 320,
+      "scrollY": 0,
+      "scrollHeight": 320,
+      "scrollWidth": 568,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 568,
+        "height": 320,
+        "top": 0,
+        "right": 568,
+        "bottom": 320,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 568,
+        "height": 56,
+        "top": 0,
+        "right": 568,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 240,
+        "width": 568,
+        "height": 80,
+        "top": 240,
+        "right": 568,
+        "bottom": 320,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": null,
+      "metrics": null,
+      "panel": {
+        "x": 12,
+        "y": 64,
+        "width": 544,
+        "height": 168,
+        "top": 64,
+        "right": 556,
+        "bottom": 232,
+        "left": 12
+      }
+    },
+    {
+      "state": "fresh preview",
+      "width": 390,
+      "height": 844,
+      "scrollY": 0,
+      "scrollHeight": 844,
+      "scrollWidth": 390,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 76,
+        "top": 0,
+        "right": 390,
+        "bottom": 76,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 750,
+        "width": 390,
+        "height": 94,
+        "top": 750,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "action": {
+        "x": 40,
+        "y": 409.78125,
+        "width": 270,
+        "height": 46,
+        "top": 409.78125,
+        "right": 310,
+        "bottom": 455.78125,
+        "left": 40
+      },
+      "welcome": {
+        "x": 18,
+        "y": 162,
+        "width": 314,
+        "height": 391.96875,
+        "top": 162,
+        "right": 332,
+        "bottom": 553.96875,
+        "left": 18
+      },
+      "notice": null,
+      "heading": {
+        "x": 16,
+        "y": 82,
+        "width": 303,
+        "height": 62,
+        "top": 82,
+        "right": 319,
+        "bottom": 144,
+        "left": 16
+      },
+      "metrics": null,
+      "panel": null
+    },
+    {
+      "state": "local demo",
+      "width": 390,
+      "height": 844,
+      "scrollY": 0,
+      "scrollHeight": 844,
+      "scrollWidth": 390,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 76,
+        "top": 0,
+        "right": 390,
+        "bottom": 76,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 750,
+        "width": 390,
+        "height": 94,
+        "top": 750,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 16,
+        "y": 82,
+        "width": 263,
+        "height": 62,
+        "top": 82,
+        "right": 279,
+        "bottom": 144,
+        "left": 16
+      },
+      "metrics": {
+        "x": 16,
+        "y": 156,
+        "width": 358,
+        "height": 68,
+        "top": 156,
+        "right": 374,
+        "bottom": 224,
+        "left": 16
+      },
+      "panel": null
+    },
+    {
+      "state": "Residents",
+      "width": 390,
+      "height": 844,
+      "scrollY": 0,
+      "scrollHeight": 844,
+      "scrollWidth": 390,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 76,
+        "top": 0,
+        "right": 390,
+        "bottom": 76,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 750,
+        "width": 390,
+        "height": 94,
+        "top": 750,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 16,
+        "y": 82,
+        "width": 263,
+        "height": 62,
+        "top": 82,
+        "right": 279,
+        "bottom": 144,
+        "left": 16
+      },
+      "metrics": {
+        "x": 16,
+        "y": 156,
+        "width": 358,
+        "height": 68,
+        "top": 156,
+        "right": 374,
+        "bottom": 224,
+        "left": 16
+      },
+      "panel": {
+        "x": 12,
+        "y": 244,
+        "width": 366,
+        "height": 504,
+        "top": 244,
+        "right": 378,
+        "bottom": 748,
+        "left": 12
+      }
+    },
+    {
+      "state": "History",
+      "width": 390,
+      "height": 844,
+      "scrollY": 0,
+      "scrollHeight": 844,
+      "scrollWidth": 390,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 76,
+        "top": 0,
+        "right": 390,
+        "bottom": 76,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 750,
+        "width": 390,
+        "height": 94,
+        "top": 750,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 16,
+        "y": 82,
+        "width": 263,
+        "height": 62,
+        "top": 82,
+        "right": 279,
+        "bottom": 144,
+        "left": 16
+      },
+      "metrics": {
+        "x": 16,
+        "y": 156,
+        "width": 358,
+        "height": 68,
+        "top": 156,
+        "right": 374,
+        "bottom": 224,
+        "left": 16
+      },
+      "panel": {
+        "x": 12,
+        "y": 244,
+        "width": 366,
+        "height": 504,
+        "top": 244,
+        "right": 378,
+        "bottom": 748,
+        "left": 12
+      }
+    },
+    {
+      "state": "Visit",
+      "width": 390,
+      "height": 844,
+      "scrollY": 0,
+      "scrollHeight": 844,
+      "scrollWidth": 390,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 76,
+        "top": 0,
+        "right": 390,
+        "bottom": 76,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 750,
+        "width": 390,
+        "height": 94,
+        "top": 750,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 16,
+        "y": 82,
+        "width": 263,
+        "height": 62,
+        "top": 82,
+        "right": 279,
+        "bottom": 144,
+        "left": 16
+      },
+      "metrics": {
+        "x": 16,
+        "y": 156,
+        "width": 358,
+        "height": 68,
+        "top": 156,
+        "right": 374,
+        "bottom": 224,
+        "left": 16
+      },
+      "panel": {
+        "x": 12,
+        "y": 244,
+        "width": 366,
+        "height": 504,
+        "top": 244,
+        "right": 378,
+        "bottom": 748,
+        "left": 12
+      }
+    },
+    {
+      "state": "Tools",
+      "width": 390,
+      "height": 844,
+      "scrollY": 0,
+      "scrollHeight": 844,
+      "scrollWidth": 390,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 76,
+        "top": 0,
+        "right": 390,
+        "bottom": 76,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 750,
+        "width": 390,
+        "height": 94,
+        "top": 750,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 16,
+        "y": 82,
+        "width": 263,
+        "height": 62,
+        "top": 82,
+        "right": 279,
+        "bottom": 144,
+        "left": 16
+      },
+      "metrics": {
+        "x": 16,
+        "y": 156,
+        "width": 358,
+        "height": 68,
+        "top": 156,
+        "right": 374,
+        "bottom": 224,
+        "left": 16
+      },
+      "panel": {
+        "x": 12,
+        "y": 244,
+        "width": 366,
+        "height": 504,
+        "top": 244,
+        "right": 378,
+        "bottom": 748,
+        "left": 12
+      }
+    },
+    {
+      "state": "fresh preview",
+      "width": 320,
+      "height": 700,
+      "scrollY": 0,
+      "scrollHeight": 700,
+      "scrollWidth": 320,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 700,
+        "top": 0,
+        "right": 320,
+        "bottom": 700,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 76,
+        "top": 0,
+        "right": 320,
+        "bottom": 76,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 606,
+        "width": 320,
+        "height": 94,
+        "top": 606,
+        "right": 320,
+        "bottom": 700,
+        "left": 0
+      },
+      "action": {
+        "x": 30,
+        "y": 337.78125,
+        "width": 224,
+        "height": 46,
+        "top": 337.78125,
+        "right": 254,
+        "bottom": 383.78125,
+        "left": 30
+      },
+      "welcome": {
+        "x": 14,
+        "y": 158,
+        "width": 256,
+        "height": 345.15625,
+        "top": 158,
+        "right": 270,
+        "bottom": 503.15625,
+        "left": 14
+      },
+      "notice": null,
+      "heading": {
+        "x": 16,
+        "y": 82,
+        "width": 288,
+        "height": 80,
+        "top": 82,
+        "right": 304,
+        "bottom": 162,
+        "left": 16
+      },
+      "metrics": null,
+      "panel": null
+    },
+    {
+      "state": "local demo",
+      "width": 320,
+      "height": 700,
+      "scrollY": 0,
+      "scrollHeight": 700,
+      "scrollWidth": 320,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 700,
+        "top": 0,
+        "right": 320,
+        "bottom": 700,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 76,
+        "top": 0,
+        "right": 320,
+        "bottom": 76,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 606,
+        "width": 320,
+        "height": 94,
+        "top": 606,
+        "right": 320,
+        "bottom": 700,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 16,
+        "y": 82,
+        "width": 263,
+        "height": 62,
+        "top": 82,
+        "right": 279,
+        "bottom": 144,
+        "left": 16
+      },
+      "metrics": {
+        "x": 16,
+        "y": 156,
+        "width": 288,
+        "height": 68,
+        "top": 156,
+        "right": 304,
+        "bottom": 224,
+        "left": 16
+      },
+      "panel": null
+    },
+    {
+      "state": "Residents",
+      "width": 320,
+      "height": 700,
+      "scrollY": 0,
+      "scrollHeight": 700,
+      "scrollWidth": 320,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 700,
+        "top": 0,
+        "right": 320,
+        "bottom": 700,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 76,
+        "top": 0,
+        "right": 320,
+        "bottom": 76,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 606,
+        "width": 320,
+        "height": 94,
+        "top": 606,
+        "right": 320,
+        "bottom": 700,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 16,
+        "y": 82,
+        "width": 263,
+        "height": 62,
+        "top": 82,
+        "right": 279,
+        "bottom": 144,
+        "left": 16
+      },
+      "metrics": {
+        "x": 16,
+        "y": 156,
+        "width": 288,
+        "height": 68,
+        "top": 156,
+        "right": 304,
+        "bottom": 224,
+        "left": 16
+      },
+      "panel": {
+        "x": 12,
+        "y": 244,
+        "width": 296,
+        "height": 360,
+        "top": 244,
+        "right": 308,
+        "bottom": 604,
+        "left": 12
+      }
+    },
+    {
+      "state": "History",
+      "width": 320,
+      "height": 700,
+      "scrollY": 0,
+      "scrollHeight": 700,
+      "scrollWidth": 320,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 700,
+        "top": 0,
+        "right": 320,
+        "bottom": 700,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 76,
+        "top": 0,
+        "right": 320,
+        "bottom": 76,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 606,
+        "width": 320,
+        "height": 94,
+        "top": 606,
+        "right": 320,
+        "bottom": 700,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 16,
+        "y": 82,
+        "width": 263,
+        "height": 62,
+        "top": 82,
+        "right": 279,
+        "bottom": 144,
+        "left": 16
+      },
+      "metrics": {
+        "x": 16,
+        "y": 156,
+        "width": 288,
+        "height": 68,
+        "top": 156,
+        "right": 304,
+        "bottom": 224,
+        "left": 16
+      },
+      "panel": {
+        "x": 12,
+        "y": 244,
+        "width": 296,
+        "height": 360,
+        "top": 244,
+        "right": 308,
+        "bottom": 604,
+        "left": 12
+      }
+    },
+    {
+      "state": "Visit",
+      "width": 320,
+      "height": 700,
+      "scrollY": 0,
+      "scrollHeight": 700,
+      "scrollWidth": 320,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 700,
+        "top": 0,
+        "right": 320,
+        "bottom": 700,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 76,
+        "top": 0,
+        "right": 320,
+        "bottom": 76,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 606,
+        "width": 320,
+        "height": 94,
+        "top": 606,
+        "right": 320,
+        "bottom": 700,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 16,
+        "y": 82,
+        "width": 263,
+        "height": 62,
+        "top": 82,
+        "right": 279,
+        "bottom": 144,
+        "left": 16
+      },
+      "metrics": {
+        "x": 16,
+        "y": 156,
+        "width": 288,
+        "height": 68,
+        "top": 156,
+        "right": 304,
+        "bottom": 224,
+        "left": 16
+      },
+      "panel": {
+        "x": 12,
+        "y": 244,
+        "width": 296,
+        "height": 360,
+        "top": 244,
+        "right": 308,
+        "bottom": 604,
+        "left": 12
+      }
+    },
+    {
+      "state": "Tools",
+      "width": 320,
+      "height": 700,
+      "scrollY": 0,
+      "scrollHeight": 700,
+      "scrollWidth": 320,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 700,
+        "top": 0,
+        "right": 320,
+        "bottom": 700,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 76,
+        "top": 0,
+        "right": 320,
+        "bottom": 76,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 606,
+        "width": 320,
+        "height": 94,
+        "top": 606,
+        "right": 320,
+        "bottom": 700,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 16,
+        "y": 82,
+        "width": 263,
+        "height": 62,
+        "top": 82,
+        "right": 279,
+        "bottom": 144,
+        "left": 16
+      },
+      "metrics": {
+        "x": 16,
+        "y": 156,
+        "width": 288,
+        "height": 68,
+        "top": 156,
+        "right": 304,
+        "bottom": 224,
+        "left": 16
+      },
+      "panel": {
+        "x": 12,
+        "y": 244,
+        "width": 296,
+        "height": 360,
+        "top": 244,
+        "right": 308,
+        "bottom": 604,
+        "left": 12
+      }
+    },
+    {
+      "state": "fresh preview",
+      "width": 360,
+      "height": 540,
+      "scrollY": 0,
+      "scrollHeight": 540,
+      "scrollWidth": 360,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 540,
+        "top": 0,
+        "right": 360,
+        "bottom": 540,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 56,
+        "top": 0,
+        "right": 360,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 460,
+        "width": 360,
+        "height": 80,
+        "top": 460,
+        "right": 360,
+        "bottom": 540,
+        "left": 0
+      },
+      "action": {
+        "x": 30,
+        "y": 140,
+        "width": 264,
+        "height": 46,
+        "top": 140,
+        "right": 294,
+        "bottom": 186,
+        "left": 30
+      },
+      "welcome": {
+        "x": 14,
+        "y": 108,
+        "width": 296,
+        "height": 123,
+        "top": 108,
+        "right": 310,
+        "bottom": 231,
+        "left": 14
+      },
+      "notice": null,
+      "heading": {
+        "x": 16,
+        "y": 64,
+        "width": 147,
+        "height": 36,
+        "top": 64,
+        "right": 163,
+        "bottom": 100,
+        "left": 16
+      },
+      "metrics": null,
+      "panel": null
+    },
+    {
+      "state": "local demo",
+      "width": 360,
+      "height": 540,
+      "scrollY": 0,
+      "scrollHeight": 540,
+      "scrollWidth": 360,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 540,
+        "top": 0,
+        "right": 360,
+        "bottom": 540,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 56,
+        "top": 0,
+        "right": 360,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 460,
+        "width": 360,
+        "height": 80,
+        "top": 460,
+        "right": 360,
+        "bottom": 540,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 16,
+        "y": 64,
+        "width": 147,
+        "height": 36,
+        "top": 64,
+        "right": 163,
+        "bottom": 100,
+        "left": 16
+      },
+      "metrics": {
+        "x": 16,
+        "y": 112,
+        "width": 328,
+        "height": 60,
+        "top": 112,
+        "right": 344,
+        "bottom": 172,
+        "left": 16
+      },
+      "panel": null
+    },
+    {
+      "state": "Residents",
+      "width": 360,
+      "height": 540,
+      "scrollY": 0,
+      "scrollHeight": 540,
+      "scrollWidth": 360,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 540,
+        "top": 0,
+        "right": 360,
+        "bottom": 540,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 56,
+        "top": 0,
+        "right": 360,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 460,
+        "width": 360,
+        "height": 80,
+        "top": 460,
+        "right": 360,
+        "bottom": 540,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": null,
+      "metrics": null,
+      "panel": {
+        "x": 12,
+        "y": 64,
+        "width": 336,
+        "height": 388,
+        "top": 64,
+        "right": 348,
+        "bottom": 452,
+        "left": 12
+      }
+    },
+    {
+      "state": "History",
+      "width": 360,
+      "height": 540,
+      "scrollY": 0,
+      "scrollHeight": 540,
+      "scrollWidth": 360,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 540,
+        "top": 0,
+        "right": 360,
+        "bottom": 540,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 56,
+        "top": 0,
+        "right": 360,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 460,
+        "width": 360,
+        "height": 80,
+        "top": 460,
+        "right": 360,
+        "bottom": 540,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": null,
+      "metrics": null,
+      "panel": {
+        "x": 12,
+        "y": 64,
+        "width": 336,
+        "height": 388,
+        "top": 64,
+        "right": 348,
+        "bottom": 452,
+        "left": 12
+      }
+    },
+    {
+      "state": "Visit",
+      "width": 360,
+      "height": 540,
+      "scrollY": 0,
+      "scrollHeight": 540,
+      "scrollWidth": 360,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 540,
+        "top": 0,
+        "right": 360,
+        "bottom": 540,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 56,
+        "top": 0,
+        "right": 360,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 460,
+        "width": 360,
+        "height": 80,
+        "top": 460,
+        "right": 360,
+        "bottom": 540,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": null,
+      "metrics": null,
+      "panel": {
+        "x": 12,
+        "y": 64,
+        "width": 336,
+        "height": 388,
+        "top": 64,
+        "right": 348,
+        "bottom": 452,
+        "left": 12
+      }
+    },
+    {
+      "state": "Tools",
+      "width": 360,
+      "height": 540,
+      "scrollY": 0,
+      "scrollHeight": 540,
+      "scrollWidth": 360,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 540,
+        "top": 0,
+        "right": 360,
+        "bottom": 540,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 56,
+        "top": 0,
+        "right": 360,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 460,
+        "width": 360,
+        "height": 80,
+        "top": 460,
+        "right": 360,
+        "bottom": 540,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": null,
+      "metrics": null,
+      "panel": {
+        "x": 12,
+        "y": 64,
+        "width": 336,
+        "height": 388,
+        "top": 64,
+        "right": 348,
+        "bottom": 452,
+        "left": 12
+      }
+    },
+    {
+      "state": "fresh preview",
+      "width": 768,
+      "height": 1024,
+      "scrollY": 0,
+      "scrollHeight": 1024,
+      "scrollWidth": 768,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 1024,
+        "top": 0,
+        "right": 768,
+        "bottom": 1024,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 82,
+        "top": 0,
+        "right": 768,
+        "bottom": 82,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 924,
+        "width": 768,
+        "height": 100,
+        "top": 924,
+        "right": 768,
+        "bottom": 1024,
+        "left": 0
+      },
+      "action": {
+        "x": 89.4375,
+        "y": 518.8125,
+        "width": 294,
+        "height": 46,
+        "top": 518.8125,
+        "right": 383.4375,
+        "bottom": 564.8125,
+        "left": 89.4375
+      },
+      "welcome": {
+        "x": 61.4375,
+        "y": 215.03125,
+        "width": 350,
+        "height": 451.96875,
+        "top": 215.03125,
+        "right": 411.4375,
+        "bottom": 667,
+        "left": 61.4375
+      },
+      "notice": null,
+      "heading": {
+        "x": 20,
+        "y": 90,
+        "width": 303,
+        "height": 62,
+        "top": 90,
+        "right": 323,
+        "bottom": 152,
+        "left": 20
+      },
+      "metrics": null,
+      "panel": null
+    },
+    {
+      "state": "local demo",
+      "width": 768,
+      "height": 1024,
+      "scrollY": 0,
+      "scrollHeight": 1024,
+      "scrollWidth": 768,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 1024,
+        "top": 0,
+        "right": 768,
+        "bottom": 1024,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 82,
+        "top": 0,
+        "right": 768,
+        "bottom": 82,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 924,
+        "width": 768,
+        "height": 100,
+        "top": 924,
+        "right": 768,
+        "bottom": 1024,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 20,
+        "y": 90,
+        "width": 265,
+        "height": 62,
+        "top": 90,
+        "right": 285,
+        "bottom": 152,
+        "left": 20
+      },
+      "metrics": {
+        "x": 20,
+        "y": 166,
+        "width": 284,
+        "height": 72.59375,
+        "top": 166,
+        "right": 304,
+        "bottom": 238.59375,
+        "left": 20
+      },
+      "panel": null
+    },
+    {
+      "state": "Residents",
+      "width": 768,
+      "height": 1024,
+      "scrollY": 0,
+      "scrollHeight": 1024,
+      "scrollWidth": 768,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 1024,
+        "top": 0,
+        "right": 768,
+        "bottom": 1024,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 82,
+        "top": 0,
+        "right": 768,
+        "bottom": 82,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 924,
+        "width": 768,
+        "height": 100,
+        "top": 924,
+        "right": 768,
+        "bottom": 1024,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 20,
+        "y": 90,
+        "width": 265,
+        "height": 62,
+        "top": 90,
+        "right": 285,
+        "bottom": 152,
+        "left": 20
+      },
+      "metrics": {
+        "x": 20,
+        "y": 166,
+        "width": 284,
+        "height": 72.59375,
+        "top": 166,
+        "right": 304,
+        "bottom": 238.59375,
+        "left": 20
+      },
+      "panel": {
+        "x": 404,
+        "y": 94,
+        "width": 340,
+        "height": 766,
+        "top": 94,
+        "right": 744,
+        "bottom": 860,
+        "left": 404
+      }
+    },
+    {
+      "state": "History",
+      "width": 768,
+      "height": 1024,
+      "scrollY": 0,
+      "scrollHeight": 1024,
+      "scrollWidth": 768,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 1024,
+        "top": 0,
+        "right": 768,
+        "bottom": 1024,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 82,
+        "top": 0,
+        "right": 768,
+        "bottom": 82,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 924,
+        "width": 768,
+        "height": 100,
+        "top": 924,
+        "right": 768,
+        "bottom": 1024,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 20,
+        "y": 90,
+        "width": 265,
+        "height": 62,
+        "top": 90,
+        "right": 285,
+        "bottom": 152,
+        "left": 20
+      },
+      "metrics": {
+        "x": 20,
+        "y": 166,
+        "width": 284,
+        "height": 72.59375,
+        "top": 166,
+        "right": 304,
+        "bottom": 238.59375,
+        "left": 20
+      },
+      "panel": {
+        "x": 404,
+        "y": 94,
+        "width": 340,
+        "height": 766,
+        "top": 94,
+        "right": 744,
+        "bottom": 860,
+        "left": 404
+      }
+    },
+    {
+      "state": "Visit",
+      "width": 768,
+      "height": 1024,
+      "scrollY": 0,
+      "scrollHeight": 1024,
+      "scrollWidth": 768,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 1024,
+        "top": 0,
+        "right": 768,
+        "bottom": 1024,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 82,
+        "top": 0,
+        "right": 768,
+        "bottom": 82,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 924,
+        "width": 768,
+        "height": 100,
+        "top": 924,
+        "right": 768,
+        "bottom": 1024,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 20,
+        "y": 90,
+        "width": 265,
+        "height": 62,
+        "top": 90,
+        "right": 285,
+        "bottom": 152,
+        "left": 20
+      },
+      "metrics": {
+        "x": 20,
+        "y": 166,
+        "width": 284,
+        "height": 72.59375,
+        "top": 166,
+        "right": 304,
+        "bottom": 238.59375,
+        "left": 20
+      },
+      "panel": {
+        "x": 404,
+        "y": 94,
+        "width": 340,
+        "height": 766,
+        "top": 94,
+        "right": 744,
+        "bottom": 860,
+        "left": 404
+      }
+    },
+    {
+      "state": "Tools",
+      "width": 768,
+      "height": 1024,
+      "scrollY": 0,
+      "scrollHeight": 1024,
+      "scrollWidth": 768,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 1024,
+        "top": 0,
+        "right": 768,
+        "bottom": 1024,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 82,
+        "top": 0,
+        "right": 768,
+        "bottom": 82,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 924,
+        "width": 768,
+        "height": 100,
+        "top": 924,
+        "right": 768,
+        "bottom": 1024,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 20,
+        "y": 90,
+        "width": 265,
+        "height": 62,
+        "top": 90,
+        "right": 285,
+        "bottom": 152,
+        "left": 20
+      },
+      "metrics": {
+        "x": 20,
+        "y": 166,
+        "width": 284,
+        "height": 72.59375,
+        "top": 166,
+        "right": 304,
+        "bottom": 238.59375,
+        "left": 20
+      },
+      "panel": {
+        "x": 404,
+        "y": 94,
+        "width": 340,
+        "height": 766,
+        "top": 94,
+        "right": 744,
+        "bottom": 860,
+        "left": 404
+      }
+    },
+    {
+      "state": "fresh preview",
+      "width": 1440,
+      "height": 1000,
+      "scrollY": 0,
+      "scrollHeight": 1000,
+      "scrollWidth": 1440,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 1000,
+        "top": 0,
+        "right": 1440,
+        "bottom": 1000,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 94,
+        "top": 0,
+        "right": 1440,
+        "bottom": 94,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 898,
+        "width": 1440,
+        "height": 102,
+        "top": 898,
+        "right": 1440,
+        "bottom": 1000,
+        "left": 0
+      },
+      "action": {
+        "x": 157.59375,
+        "y": 533.78125,
+        "width": 294,
+        "height": 46,
+        "top": 533.78125,
+        "right": 451.59375,
+        "bottom": 579.78125,
+        "left": 157.59375
+      },
+      "welcome": {
+        "x": 129.59375,
+        "y": 230,
+        "width": 350,
+        "height": 451.96875,
+        "top": 230,
+        "right": 479.59375,
+        "bottom": 681.96875,
+        "left": 129.59375
+      },
+      "notice": null,
+      "heading": {
+        "x": 32,
+        "y": 102,
+        "width": 307,
+        "height": 72,
+        "top": 102,
+        "right": 339,
+        "bottom": 174,
+        "left": 32
+      },
+      "metrics": null,
+      "panel": null
+    },
+    {
+      "state": "local demo",
+      "width": 1440,
+      "height": 1000,
+      "scrollY": 0,
+      "scrollHeight": 1000,
+      "scrollWidth": 1440,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 1000,
+        "top": 0,
+        "right": 1440,
+        "bottom": 1000,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 94,
+        "top": 0,
+        "right": 1440,
+        "bottom": 94,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 898,
+        "width": 1440,
+        "height": 102,
+        "top": 898,
+        "right": 1440,
+        "bottom": 1000,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 32,
+        "y": 102,
+        "width": 230,
+        "height": 72,
+        "top": 102,
+        "right": 262,
+        "bottom": 174,
+        "left": 32
+      },
+      "metrics": {
+        "x": 32,
+        "y": 182,
+        "width": 432,
+        "height": 76.59375,
+        "top": 182,
+        "right": 464,
+        "bottom": 258.59375,
+        "left": 32
+      },
+      "panel": null
+    },
+    {
+      "state": "Residents",
+      "width": 1440,
+      "height": 1000,
+      "scrollY": 0,
+      "scrollHeight": 1000,
+      "scrollWidth": 1440,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 1000,
+        "top": 0,
+        "right": 1440,
+        "bottom": 1000,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 94,
+        "top": 0,
+        "right": 1440,
+        "bottom": 94,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 898,
+        "width": 1440,
+        "height": 102,
+        "top": 898,
+        "right": 1440,
+        "bottom": 1000,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 32,
+        "y": 102,
+        "width": 230,
+        "height": 72,
+        "top": 102,
+        "right": 262,
+        "bottom": 174,
+        "left": 32
+      },
+      "metrics": {
+        "x": 32,
+        "y": 182,
+        "width": 432,
+        "height": 76.59375,
+        "top": 182,
+        "right": 464,
+        "bottom": 258.59375,
+        "left": 32
+      },
+      "panel": {
+        "x": 1068,
+        "y": 112,
+        "width": 340,
+        "height": 772,
+        "top": 112,
+        "right": 1408,
+        "bottom": 884,
+        "left": 1068
+      }
+    },
+    {
+      "state": "History",
+      "width": 1440,
+      "height": 1000,
+      "scrollY": 0,
+      "scrollHeight": 1000,
+      "scrollWidth": 1440,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 1000,
+        "top": 0,
+        "right": 1440,
+        "bottom": 1000,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 94,
+        "top": 0,
+        "right": 1440,
+        "bottom": 94,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 898,
+        "width": 1440,
+        "height": 102,
+        "top": 898,
+        "right": 1440,
+        "bottom": 1000,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 32,
+        "y": 102,
+        "width": 230,
+        "height": 72,
+        "top": 102,
+        "right": 262,
+        "bottom": 174,
+        "left": 32
+      },
+      "metrics": {
+        "x": 32,
+        "y": 182,
+        "width": 432,
+        "height": 76.59375,
+        "top": 182,
+        "right": 464,
+        "bottom": 258.59375,
+        "left": 32
+      },
+      "panel": {
+        "x": 1068,
+        "y": 112,
+        "width": 340,
+        "height": 772,
+        "top": 112,
+        "right": 1408,
+        "bottom": 884,
+        "left": 1068
+      }
+    },
+    {
+      "state": "Visit",
+      "width": 1440,
+      "height": 1000,
+      "scrollY": 0,
+      "scrollHeight": 1000,
+      "scrollWidth": 1440,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 1000,
+        "top": 0,
+        "right": 1440,
+        "bottom": 1000,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 94,
+        "top": 0,
+        "right": 1440,
+        "bottom": 94,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 898,
+        "width": 1440,
+        "height": 102,
+        "top": 898,
+        "right": 1440,
+        "bottom": 1000,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 32,
+        "y": 102,
+        "width": 230,
+        "height": 72,
+        "top": 102,
+        "right": 262,
+        "bottom": 174,
+        "left": 32
+      },
+      "metrics": {
+        "x": 32,
+        "y": 182,
+        "width": 432,
+        "height": 76.59375,
+        "top": 182,
+        "right": 464,
+        "bottom": 258.59375,
+        "left": 32
+      },
+      "panel": {
+        "x": 1068,
+        "y": 112,
+        "width": 340,
+        "height": 772,
+        "top": 112,
+        "right": 1408,
+        "bottom": 884,
+        "left": 1068
+      }
+    },
+    {
+      "state": "Tools",
+      "width": 1440,
+      "height": 1000,
+      "scrollY": 0,
+      "scrollHeight": 1000,
+      "scrollWidth": 1440,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 1000,
+        "top": 0,
+        "right": 1440,
+        "bottom": 1000,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 94,
+        "top": 0,
+        "right": 1440,
+        "bottom": 94,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 898,
+        "width": 1440,
+        "height": 102,
+        "top": 898,
+        "right": 1440,
+        "bottom": 1000,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 32,
+        "y": 102,
+        "width": 230,
+        "height": 72,
+        "top": 102,
+        "right": 262,
+        "bottom": 174,
+        "left": 32
+      },
+      "metrics": {
+        "x": 32,
+        "y": 182,
+        "width": 432,
+        "height": 76.59375,
+        "top": 182,
+        "right": 464,
+        "bottom": 258.59375,
+        "left": 32
+      },
+      "panel": {
+        "x": 1068,
+        "y": 112,
+        "width": 340,
+        "height": 772,
+        "top": 112,
+        "right": 1408,
+        "bottom": 884,
+        "left": 1068
+      }
+    },
+    {
+      "state": "initial connection failure",
+      "width": 390,
+      "height": 844,
+      "scrollY": 0,
+      "scrollHeight": 844,
+      "scrollWidth": 390,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 76,
+        "top": 0,
+        "right": 390,
+        "bottom": 76,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 750,
+        "width": 390,
+        "height": 94,
+        "top": 750,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "action": {
+        "x": 40,
+        "y": 475.78125,
+        "width": 270,
+        "height": 46,
+        "top": 475.78125,
+        "right": 310,
+        "bottom": 521.78125,
+        "left": 40
+      },
+      "welcome": {
+        "x": 18,
+        "y": 228,
+        "width": 314,
+        "height": 391.96875,
+        "top": 228,
+        "right": 332,
+        "bottom": 619.96875,
+        "left": 18
+      },
+      "notice": {
+        "x": 16,
+        "y": 76,
+        "width": 358,
+        "height": 54,
+        "top": 76,
+        "right": 374,
+        "bottom": 130,
+        "left": 16
+      },
+      "heading": {
+        "x": 16,
+        "y": 148,
+        "width": 303,
+        "height": 62,
+        "top": 148,
+        "right": 319,
+        "bottom": 210,
+        "left": 16
+      },
+      "metrics": null,
+      "panel": null
+    },
+    {
+      "state": "initial connection failure",
+      "width": 320,
+      "height": 700,
+      "scrollY": 0,
+      "scrollHeight": 700,
+      "scrollWidth": 320,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 700,
+        "top": 0,
+        "right": 320,
+        "bottom": 700,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 76,
+        "top": 0,
+        "right": 320,
+        "bottom": 76,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 606,
+        "width": 320,
+        "height": 94,
+        "top": 606,
+        "right": 320,
+        "bottom": 700,
+        "left": 0
+      },
+      "action": {
+        "x": 30,
+        "y": 403.78125,
+        "width": 224,
+        "height": 46,
+        "top": 403.78125,
+        "right": 254,
+        "bottom": 449.78125,
+        "left": 30
+      },
+      "welcome": {
+        "x": 14,
+        "y": 224,
+        "width": 256,
+        "height": 345.15625,
+        "top": 224,
+        "right": 270,
+        "bottom": 569.15625,
+        "left": 14
+      },
+      "notice": {
+        "x": 16,
+        "y": 76,
+        "width": 288,
+        "height": 54,
+        "top": 76,
+        "right": 304,
+        "bottom": 130,
+        "left": 16
+      },
+      "heading": {
+        "x": 16,
+        "y": 148,
+        "width": 288,
+        "height": 80,
+        "top": 148,
+        "right": 304,
+        "bottom": 228,
+        "left": 16
+      },
+      "metrics": null,
+      "panel": null
+    },
+    {
+      "state": "initial connection failure",
+      "width": 667,
+      "height": 375,
+      "scrollY": 0,
+      "scrollHeight": 375,
+      "scrollWidth": 667,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 667,
+        "height": 375,
+        "top": 0,
+        "right": 667,
+        "bottom": 375,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 667,
+        "height": 56,
+        "top": 0,
+        "right": 667,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 295,
+        "width": 667,
+        "height": 80,
+        "top": 295,
+        "right": 667,
+        "bottom": 375,
+        "left": 0
+      },
+      "action": {
+        "x": 69.359375,
+        "y": 178,
+        "width": 298,
+        "height": 46,
+        "top": 178,
+        "right": 367.359375,
+        "bottom": 224,
+        "left": 69.359375
+      },
+      "welcome": {
+        "x": 53.359375,
+        "y": 170,
+        "width": 330,
+        "height": 62,
+        "top": 170,
+        "right": 383.359375,
+        "bottom": 232,
+        "left": 53.359375
+      },
+      "notice": {
+        "x": 63.5,
+        "y": 56,
+        "width": 540,
+        "height": 50,
+        "top": 56,
+        "right": 603.5,
+        "bottom": 106,
+        "left": 63.5
+      },
+      "heading": {
+        "x": 20,
+        "y": 126,
+        "width": 150,
+        "height": 36,
+        "top": 126,
+        "right": 170,
+        "bottom": 162,
+        "left": 20
+      },
+      "metrics": null,
+      "panel": null
+    },
+    {
+      "state": "initial connection failure",
+      "width": 568,
+      "height": 320,
+      "scrollY": 0,
+      "scrollHeight": 320,
+      "scrollWidth": 568,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 568,
+        "height": 320,
+        "top": 0,
+        "right": 568,
+        "bottom": 320,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 568,
+        "height": 56,
+        "top": 0,
+        "right": 568,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 240,
+        "width": 568,
+        "height": 80,
+        "top": 240,
+        "right": 568,
+        "bottom": 320,
+        "left": 0
+      },
+      "action": {
+        "x": 34,
+        "y": 178,
+        "width": 318,
+        "height": 46,
+        "top": 178,
+        "right": 352,
+        "bottom": 224,
+        "left": 34
+      },
+      "welcome": {
+        "x": 18,
+        "y": 170,
+        "width": 350,
+        "height": 62,
+        "top": 170,
+        "right": 368,
+        "bottom": 232,
+        "left": 18
+      },
+      "notice": {
+        "x": 16,
+        "y": 56,
+        "width": 536,
+        "height": 50,
+        "top": 56,
+        "right": 552,
+        "bottom": 106,
+        "left": 16
+      },
+      "heading": {
+        "x": 16,
+        "y": 126,
+        "width": 147,
+        "height": 36,
+        "top": 126,
+        "right": 163,
+        "bottom": 162,
+        "left": 16
+      },
+      "metrics": null,
+      "panel": null
+    },
+    {
+      "state": "initial connection failure",
+      "width": 360,
+      "height": 540,
+      "scrollY": 0,
+      "scrollHeight": 540,
+      "scrollWidth": 360,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 540,
+        "top": 0,
+        "right": 360,
+        "bottom": 540,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 56,
+        "top": 0,
+        "right": 360,
+        "bottom": 56,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 460,
+        "width": 360,
+        "height": 80,
+        "top": 460,
+        "right": 360,
+        "bottom": 540,
+        "left": 0
+      },
+      "action": {
+        "x": 30,
+        "y": 182,
+        "width": 264,
+        "height": 46,
+        "top": 182,
+        "right": 294,
+        "bottom": 228,
+        "left": 30
+      },
+      "welcome": {
+        "x": 14,
+        "y": 174,
+        "width": 296,
+        "height": 62,
+        "top": 174,
+        "right": 310,
+        "bottom": 236,
+        "left": 14
+      },
+      "notice": {
+        "x": 16,
+        "y": 56,
+        "width": 328,
+        "height": 54,
+        "top": 56,
+        "right": 344,
+        "bottom": 110,
+        "left": 16
+      },
+      "heading": {
+        "x": 16,
+        "y": 130,
+        "width": 147,
+        "height": 36,
+        "top": 130,
+        "right": 163,
+        "bottom": 166,
+        "left": 16
+      },
+      "metrics": null,
+      "panel": null
+    },
+    {
+      "state": "existing snapshot connection failure",
+      "width": 390,
+      "height": 844,
+      "scrollY": 0,
+      "scrollHeight": 844,
+      "scrollWidth": 390,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 76,
+        "top": 0,
+        "right": 390,
+        "bottom": 76,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 750,
+        "width": 390,
+        "height": 94,
+        "top": 750,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": {
+        "x": 16,
+        "y": 76,
+        "width": 358,
+        "height": 54,
+        "top": 76,
+        "right": 374,
+        "bottom": 130,
+        "left": 16
+      },
+      "heading": {
+        "x": 16,
+        "y": 148,
+        "width": 298,
+        "height": 62,
+        "top": 148,
+        "right": 314,
+        "bottom": 210,
+        "left": 16
+      },
+      "metrics": {
+        "x": 16,
+        "y": 222,
+        "width": 358,
+        "height": 68,
+        "top": 222,
+        "right": 374,
+        "bottom": 290,
+        "left": 16
+      },
+      "panel": null
+    },
+    {
+      "state": "reconnected, notice space removed",
+      "width": 390,
+      "height": 844,
+      "scrollY": 0,
+      "scrollHeight": 844,
+      "scrollWidth": 390,
+      "app": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 76,
+        "top": 0,
+        "right": 390,
+        "bottom": 76,
+        "left": 0
+      },
+      "footer": {
+        "x": 0,
+        "y": 750,
+        "width": 390,
+        "height": 94,
+        "top": 750,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "action": null,
+      "welcome": null,
+      "notice": null,
+      "heading": {
+        "x": 16,
+        "y": 82,
+        "width": 282,
+        "height": 62,
+        "top": 82,
+        "right": 298,
+        "bottom": 144,
+        "left": 16
+      },
+      "metrics": {
+        "x": 16,
+        "y": 156,
+        "width": 358,
+        "height": 68,
+        "top": 156,
+        "right": 374,
+        "bottom": 224,
+        "left": 16
+      },
+      "panel": null
+    }
+  ],
+  "screenshots": [
+    "landscape-preview-667.png",
+    "landscape-residents-667.png",
+    "preview-390.png",
+    "connection-failure-390.png",
+    "learning-loading-390.png",
+    "visitor-capacity-390.png"
+  ],
+  "errors": [],
+  "chromium": "156.0.8078.4",
+  "webkit": {
+    "notRun": "browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     libgstreamer-1.0.so.0                            ║\n║     libgtk-4.so.1                                    ║\n║     libpangocairo-1.0.so.0                           ║\n║     libgdk_pixbuf-2.0.so.0                           ║\n║     libcairo-gobject.so.2                            ║\n║     libgraphene-1.0.so.0                             ║\n║     libatomic.so.1                                   ║\n║     libxslt.so.1                                     ║\n║     liblcms2.so.2                                    ║\n║     libevent-2.1.so.7                                ║\n║     libopus.so.0                                     ║\n║     libgstallocators-1.0.so.0                        ║\n║     libgstapp-1.0.so.0                               ║\n║     libgstbase-1.0.so.0                              ║\n║     libgstpbutils-1.0.so.0                           ║\n║     libgstaudio-1.0.so.0                             ║\n║     libgsttag-1.0.so.0                               ║\n║     libgstvideo-1.0.so.0                             ║\n║     libgstgl-1.0.so.0                                ║\n║     libgstcodecparsers-1.0.so.0                      ║\n║     libgstfft-1.0.so.0                               ║\n║     libflite.so.1                                    ║\n║     libflite_usenglish.so.1                          ║\n║     libflite_cmu_grapheme_lang.so.1                  ║\n║     libflite_cmu_grapheme_lex.so.1                   ║\n║     libflite_cmu_indic_lang.so.1                     ║\n║     libflite_cmu_indic_lex.so.1                      ║\n║     libflite_cmulex.so.1                             ║\n║     libflite_cmu_time_awb.so.1                       ║\n║     libflite_cmu_us_awb.so.1                         ║\n║     libflite_cmu_us_kal16.so.1                       ║\n║     libflite_cmu_us_kal.so.1           "
+  }
+}

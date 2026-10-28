@@ -1,0 +1,66 @@
+{
+  "product": "Stratoks Phase 1.1",
+  "status": "locally recovered, rebuilt and tested; new VPS deployment and public publication pending",
+  "staticExport": "dist/index.html",
+  "staticAssetBase": "./",
+  "clientSource": "web/",
+  "clientLockfile": "web/package-lock.json",
+  "serverSource": "server/",
+  "installationPackage": null,
+  "documentation": [
+    "README.md",
+    "DESIGN.md",
+    "docs/CLIENT.md",
+    "deploy/INSTALL.md",
+    "server/docs/DURABILITY.md",
+    "docs/recovery/VALIDATION.md"
+  ],
+  "evidence": "docs/recovery/",
+  "integrityManifest": null,
+  "publication": {
+    "publicClientUrl": null,
+    "cid": null,
+    "commit": null,
+    "evidence": "artifacts/phase-1.1/publication.json",
+    "status": "blocked; no new public release verified"
+  },
+  "backendDeployment": {
+    "performed": false,
+    "operatorSetup": "Install on owner VPS, preserving the existing volume; configure actual allowed origins, DNS/TLS and optional developer wallets."
+  },
+  "limitations": [
+    "Native ARM64, production Compose, public HTTPS/WSS and sustained VPS capacity unverified.",
+    "Current host architecture was not inspected or asserted.",
+    "WebKit executable absent in task temporary browser installation.",
+    "Physical devices, real wallet apps/passkeys, screen readers, native zoom and RTL/localization unperformed.",
+    "EIP-1271/EIP-6492 smart-account sign-in remains unsupported; existing UI explains it.",
+    "No independent reviewer executed here; worker checks are not certification.",
+    "Previous public ENS endpoint has SSL protocol error; historical CID gateways returned HTTP 403 challenges. No corrected-release URL/CID/commit verified."
+  ],
+  "historicalWorkerChecks": {
+    "productionBuild": "passed",
+    "typescript": "passed",
+    "serverTests": 46,
+    "clientTests": 14,
+    "priorUiChecks": 22,
+    "phase11BrowserChecks": 10,
+    "broaderBrowserChecks": 20,
+    "renderedInterfaceChecks": 9,
+    "tasteChecks": 16,
+    "processChecks": 7,
+    "freshSignatureCases": 60
+  },
+  "checks": {
+    "recoveryReport": "docs/recovery/VALIDATION.md",
+    "browserIntegration": {
+      "passed": 10,
+      "failed": 0,
+      "evidence": "docs/recovery/browser-final/client-checks.json"
+    },
+    "dockerSmoke": {
+      "platform": "linux/amd64",
+      "status": "passed",
+      "evidence": "docs/recovery/container-smoke.txt"
+    }
+  }
+}

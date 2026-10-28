@@ -1,0 +1,14 @@
+start1 health: {"ok":true,"tick":2,"status":"alive","overloaded":false}
+CORS allowed: Access-Control-Allow-Origin: https://client.test
+CORS other origin header lines: 0
+events bad limit: {"error":"bad_limit","min":1,"max":500}
+SIGTERM exit=0
+tick before stop=33 after restart=43 (same world, no reseed)
+SIGKILL done
+after SIGKILL + LEARNING=0: {"tick":68,"learning":false,"action":"disabled"}
+warn recovery: moved 1 uncommitted record(s) after seq 2 from events.jsonl to recovery/events.jsonl.after-2.orphaned
+warn LEARNING disabled for existing world world-20260101-0 by env configuration (weights and memories preserved)
+LEARNING=maybe is invalid: use LEARNING=1 (enable) or LEARNING=0 (disable), or leave it unset to keep the world's stored setting
+invalid LEARNING exit=1
+backup written to /tmp/tmp.Pf0N4FVUCF/backups/2026-10-27T07-30-36-628Z
+{"irrecoverable":0,"lost":[0,0,0]}

@@ -1,0 +1,121 @@
+{
+  "checks": [
+    {
+      "name": "local share image, favicon and variable font resolve under a subpath",
+      "passed": true
+    },
+    {
+      "name": "eight actual rendered text/background pairs exceed 4.5:1",
+      "passed": true
+    },
+    {
+      "name": "native modal retains keyboard focus through repeated Tab navigation",
+      "passed": true
+    },
+    {
+      "name": "wallet connection failure gives inline recovery, with generic injected label hidden",
+      "passed": true
+    },
+    {
+      "name": "help is reachable from mobile settings",
+      "passed": true
+    },
+    {
+      "name": "mobile destructive checkbox stays in place on focus and accepts taps",
+      "passed": true
+    },
+    {
+      "name": "phone sheet lists four wallet-app links, bundled marks and Coinbase Smart Wallet; 48px rows",
+      "passed": true
+    },
+    {
+      "name": "emulated two-finger pinch zoom changes camera scale on a phone viewport",
+      "passed": true
+    },
+    {
+      "name": "seven axe WCAG A/AA states contain zero violations",
+      "passed": true
+    }
+  ],
+  "contrast": [
+    {
+      "selector": ".welcome h2",
+      "foreground": "rgb(38, 63, 49)",
+      "background": "rgb(250, 250, 241)",
+      "ratio": 10.89
+    },
+    {
+      "selector": ".welcome>p",
+      "foreground": "rgb(92, 108, 88)",
+      "background": "rgb(250, 250, 241)",
+      "ratio": 5.35
+    },
+    {
+      "selector": ".welcome .fineprint",
+      "foreground": "rgb(92, 108, 88)",
+      "background": "rgb(250, 250, 241)",
+      "ratio": 5.35
+    },
+    {
+      "selector": ".primary",
+      "foreground": "rgb(250, 250, 241)",
+      "background": "rgb(49, 93, 64)",
+      "ratio": 7.22
+    },
+    {
+      "selector": ".world-name",
+      "foreground": "rgb(38, 63, 49)",
+      "background": "rgb(250, 250, 241)",
+      "ratio": 10.89
+    },
+    {
+      "selector": ".world-subtitle",
+      "foreground": "rgb(92, 108, 88)",
+      "background": "rgb(250, 250, 241)",
+      "ratio": 5.35
+    },
+    {
+      "selector": ".world-update .muted",
+      "foreground": "rgb(92, 108, 88)",
+      "background": "rgb(250, 250, 241)",
+      "ratio": 5.35
+    },
+    {
+      "selector": ".wallet-button",
+      "foreground": "rgb(38, 63, 49)",
+      "background": "rgb(250, 250, 241)",
+      "ratio": 10.89
+    }
+  ],
+  "axe": [
+    {
+      "state": "unconfigured mobile",
+      "violations": []
+    },
+    {
+      "state": "desktop-wallet modal at 390",
+      "violations": []
+    },
+    {
+      "state": "settings modal",
+      "violations": []
+    },
+    {
+      "state": "demo overview",
+      "violations": []
+    },
+    {
+      "state": "destructive tools form",
+      "violations": []
+    },
+    {
+      "state": "filtered history",
+      "violations": []
+    },
+    {
+      "state": "phone wallet sheet",
+      "violations": []
+    }
+  ],
+  "errors": []
+}

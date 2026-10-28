@@ -1,0 +1,27 @@
+# Isolated validation only; no production volume, public ports, wallets or hostname.
+# docker compose -f deploy/phase2a-compose.yml up --build
+name: stratoks-phase2a-validation
+services:
+  world:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    platform: linux/amd64
+    environment:
+      DATA_DIR: /data
+      HOST: 0.0.0.0
+      PORT: '8787'
+      BRAIN_MODE: mb-v1
+    ports: ['127.0.0.1:8787:8787']
+    volumes: [phase2a-world:/data]
+    mem_limit: 512m
+    cpus: 0.75
+    pids_limit: 64
+    read_only: true
+    tmpfs: ['/tmp:size=16m']
+    cap_drop: [ALL]
+    security_opt: ['no-new-privileges:true']
+    stop_grace_period: 30s
+    logging: {driver: json-file, options: {max-size: '5m', max-file: '2'}}
+volumes:
+  phase2a-world:

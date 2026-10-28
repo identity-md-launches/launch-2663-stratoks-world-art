@@ -1,0 +1,40 @@
+# Stratoks world server + Caddy (automatic HTTPS / WSS). Run from this directory:
+#   cp env.example stratoks.env && edit it, then: docker compose up -d --build
+name: stratoks
+services:
+  world:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+      platforms: ["linux/arm64"]        # remove this line to build for the host architecture
+    platform: linux/arm64               # target: Ubuntu ARM64 VPS (also works on amd64 if this line is removed)
+    restart: unless-stopped
+    env_file: [stratoks.env]
+    volumes:
+      - world-data:/data               # world, learning state, backups: the ONLY state. Back this up.
+    expose: ["8787"]
+    stop_grace_period: 30s              # lets the server write its final snapshot
+    read_only: true
+    tmpfs: ["/tmp"]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 1536m                    # of 4 GB; leaves room for Caddy, OS, backups
+    cpus: 1.0                           # of 2 shared vCPUs
+    logging: { driver: json-file, options: { max-size: "10m", max-file: "3" } }   # bounded container logs
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    depends_on: [world]
+    ports: ["80:80", "443:443"]
+    environment:
+      - SERVER_HOSTNAME=${SERVER_HOSTNAME:?set SERVER_HOSTNAME in the shell or an .env file next to this compose file}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    mem_limit: 256m
+    logging: { driver: json-file, options: { max-size: "10m", max-file: "3" } }
+volumes:
+  world-data:
+  caddy-data:
+  caddy-config:

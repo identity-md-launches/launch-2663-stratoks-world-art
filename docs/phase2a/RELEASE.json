@@ -1,0 +1,53 @@
+{
+  "component": "STRATOKS Phase 2A reduced circuit, migration, experiments and capacity evidence",
+  "sourceCommit": "8059fbc2b76a233387cb905e7cc7982ddbd9ebcc",
+  "sourceBundle": "deploy/phase2a-source.bundle",
+  "sourceBundleSha256": "e17b50ad11e2d2bf17ad6f287f6fec2649d935ed2fd155445b5d1ab278feb49a",
+  "bundleExclusions": [
+    "deploy/phase2a-source.bundle",
+    "deploy/recovered/stratoks-09af84d.zip",
+    "tests/results",
+    "deploy/phase2a-demo/world",
+    "docs",
+    "docs/phase2a/RELEASE.json",
+    "docs/phase2a/PACKAGING.md",
+    "**/*.png"
+  ],
+  "bundleAuthor": "automated component build identity; not a human review signature",
+  "baselineCommit": "09af84d67722e30c0cb0c096ab8a8189a3b03166",
+  "baselineSha256": "8816bfda36545436f85d4ca0b13bd439be14fb3a6be285f25bd39f3edf8abd9e",
+  "productionDefault": "legacy",
+  "tests": {
+    "command": "node --test --test-concurrency=2 tests/*.test.js",
+    "passed": 68,
+    "failed": 0
+  },
+  "experiments": {
+    "fixedSeeds": 10,
+    "tasks": [
+      "location",
+      "cue",
+      "threat"
+    ],
+    "modes": [
+      "legacy",
+      "mb-v1",
+      "mb-v1-frozen",
+      "mb-v1-ablated"
+    ],
+    "restartRuns": 120,
+    "ecologyTicksPerModeSeed": 5000,
+    "capacityRuns": 14
+  },
+  "notClaimed": [
+    "production access/deployment",
+    "exact Docker/cgroup/whole-host qualification",
+    "real-browser screenshots",
+    "public IMD client URL",
+    "independent external sign-off",
+    "improved overall ecological fitness",
+    "a standalone redistribution license for the recovered backend"
+  ],
+  "sourceBundleBytes": 159349,
+  "bundleScope": "Source-only supplemental commit. Excluded evidence, baseline ZIP and PNGs remain in enclosing submission; see SOURCE.md."
+}

@@ -1,0 +1,31 @@
+✔ intervention IDs remain idempotent beyond the former 20,000-record window (361.81392ms)
+✔ a failed snapshot is never acknowledged as a durable intervention or backup (192.310449ms)
+✔ two clients share identical state; reconnect resyncs without duplicate events (366.872055ms)
+✔ unauthorized access to developer endpoints is rejected; visitor token is not enough (146.574092ms)
+✔ duplicate intervention ids apply once, survive restart; id reuse with different body is rejected (149.487154ms)
+✔ restart recovery: same world, learned state retained, no reseed, no duplicate world_created (1490.947246ms)
+✔ corrupt snapshots never trigger a silent new world; fallback to previous snapshot works (75.748575ms)
+✔ downtime: capped, non-lethal catch-up; no mass death after a long outage (184.618085ms)
+✔ backup and restore bring back an earlier state; tampered backup is refused (385.128456ms)
+✔ schema migration from legacy v0 snapshot; newer schemas refused (0.377681ms)
+✔ developer reset: requires auth + confirmation; archives; extinct world stays extinct until then (271.258722ms)
+✔ visitor endpoints over HTTP: gift and startle with wallet sessions (123.505007ms)
+✔ deterministic: same seed gives identical state; different seed differs (409.193953ms)
+✔ initial seed of 24 is a seed, not a cap; autonomous feeding, gathering and building with real costs (363.043479ms)
+✔ reproduction needs adulthood, shelter and food; offspring grow before fertility; recovery period (5175.841331ms)
+✔ scarcity suppresses reproduction, harms health, kills by starvation; extinction preserves history and stops births (110.721766ms)
+✔ disasters damage creatures and shelters; heal and food interventions help; bounds enforced (307.894365ms)
+✔ creatures react to fire (flee) and recover afterwards (222.959063ms)
+✔ visitor wallets: helpful vs harmful opinions change approach/avoid; disabled learning does not (824.219991ms)
+✔ learning changes weights; disabled keeps priors; speech is labelled template (211.632481ms)
+✔ keccak256 and address derivation known vectors (3.711985ms)
+✔ signature roundtrip and tamper detection (212.262854ms)
+✔ sign-in: nonce single-use, origin bound, expiry, roles (479.147828ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 12568.544244

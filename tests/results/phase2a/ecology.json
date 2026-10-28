@@ -1,0 +1,1546 @@
+{
+  "protocol": {
+    "ticks": 5000,
+    "seeds": 10,
+    "initialPopulation": 24,
+    "worldConfig": {
+      "seed": 20260101,
+      "initialSeedCount": 24,
+      "width": 56,
+      "height": 56,
+      "tickMs": 1000,
+      "brainMode": "legacy",
+      "brainModeSource": "default",
+      "learning": true,
+      "learningSource": "default",
+      "adultAge": 1500,
+      "elderAge": 14000,
+      "lifespanBase": 20000,
+      "hungerRate": 0.05,
+      "juvenileHungerFactor": 0.6,
+      "starveDamage": 0.08,
+      "severeHungerDamage": 0.02,
+      "mateHungerMax": 50,
+      "foodPerCapitaMin": 4,
+      "gestation": 80,
+      "reproCooldown": 500,
+      "shelterCapacity": 4,
+      "shelterCost": {
+        "stone": 2,
+        "wood": 6
+      },
+      "shelterWork": 90,
+      "bush": {
+        "capacity": 5,
+        "regrow": 0.004,
+        "floor": 0.25,
+        "spread": 0.0004,
+        "maxCount": 90,
+        "deadAfter": 4000,
+        "lakeBonus": 1.5,
+        "initial": 40
+      },
+      "tree": {
+        "wood": 8,
+        "regrowEvery": 800,
+        "count": 70
+      },
+      "stone": {
+        "units": 12,
+        "regrowEvery": 1500,
+        "count": 12
+      },
+      "perceptionRadius": 12,
+      "memorySize": 40,
+      "decisionLog": 12,
+      "learningRate": 0.05,
+      "temperature": 0.35,
+      "inheritBlend": 0.5,
+      "mutation": 0.05,
+      "visitor": {
+        "ttl": 300,
+        "giftCooldown": 120,
+        "harmCooldown": 240,
+        "harmDamage": 3,
+        "harmMaxPerWallet": 20,
+        "radius": 8
+      },
+      "catchup": {
+        "maxTicks": 600,
+        "lethal": false
+      },
+      "historyEvery": 30,
+      "historyMax": 2000,
+      "eventRing": 3000,
+      "graveyardMax": 5000
+    },
+    "interventions": "none",
+    "learningTrials": "none; entirely autonomous ecology"
+  },
+  "summary": [
+    {
+      "mode": "legacy",
+      "metric": "population",
+      "mean": 42.5,
+      "sd": 3.2015621187164243,
+      "min": 36,
+      "max": 48
+    },
+    {
+      "mode": "legacy",
+      "metric": "births",
+      "mean": 18.7,
+      "sd": 3.132091952673165,
+      "min": 12,
+      "max": 24
+    },
+    {
+      "mode": "legacy",
+      "metric": "deaths",
+      "mean": 0.2,
+      "sd": 0.4000000000000001,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "mode": "legacy",
+      "metric": "food",
+      "mean": 247.37999999999997,
+      "sd": 50.770794754464895,
+      "min": 137.4,
+      "max": 303.6
+    },
+    {
+      "mode": "legacy",
+      "metric": "sheltersComplete",
+      "mean": 12.2,
+      "sd": 0.7483314773547883,
+      "min": 11,
+      "max": 14
+    },
+    {
+      "mode": "legacy",
+      "metric": "hungryFraction",
+      "mean": 0.0384014526992089,
+      "sd": 0.021599984421928474,
+      "min": 0.009315188965261867,
+      "max": 0.07338620347529443
+    },
+    {
+      "mode": "mb-v1",
+      "metric": "population",
+      "mean": 37.3,
+      "sd": 2.794637722496424,
+      "min": 33,
+      "max": 42
+    },
+    {
+      "mode": "mb-v1",
+      "metric": "births",
+      "mean": 13.6,
+      "sd": 2.8354893757515653,
+      "min": 9,
+      "max": 18
+    },
+    {
+      "mode": "mb-v1",
+      "metric": "deaths",
+      "mean": 0.3,
+      "sd": 0.45825756949558394,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "mode": "mb-v1",
+      "metric": "food",
+      "mean": 178.76999999999998,
+      "sd": 45.73672594316301,
+      "min": 128.5,
+      "max": 283.5
+    },
+    {
+      "mode": "mb-v1",
+      "metric": "sheltersComplete",
+      "mean": 11.2,
+      "sd": 0.7483314773547883,
+      "min": 10,
+      "max": 12
+    },
+    {
+      "mode": "mb-v1",
+      "metric": "hungryFraction",
+      "mean": 0.061808827277270016,
+      "sd": 0.03076179437120941,
+      "min": 0.016140060084947686,
+      "max": 0.11947480348874771
+    },
+    {
+      "mode": "mb-v1-frozen",
+      "metric": "population",
+      "mean": 38.4,
+      "sd": 3.3226495451672293,
+      "min": 32,
+      "max": 43
+    },
+    {
+      "mode": "mb-v1-frozen",
+      "metric": "births",
+      "mean": 15.1,
+      "sd": 3.1764760348537187,
+      "min": 8,
+      "max": 19
+    },
+    {
+      "mode": "mb-v1-frozen",
+      "metric": "deaths",
+      "mean": 0.7,
+      "sd": 0.7810249675906655,
+      "min": 0,
+      "max": 2
+    },
+    {
+      "mode": "mb-v1-frozen",
+      "metric": "food",
+      "mean": 201.81,
+      "sd": 51.97600311682305,
+      "min": 129.5,
+      "max": 278.7
+    },
+    {
+      "mode": "mb-v1-frozen",
+      "metric": "sheltersComplete",
+      "mean": 11.1,
+      "sd": 0.5385164807134504,
+      "min": 10,
+      "max": 12
+    },
+    {
+      "mode": "mb-v1-frozen",
+      "metric": "hungryFraction",
+      "mean": 0.07527512064910107,
+      "sd": 0.02812180715851291,
+      "min": 0.036967046175419856,
+      "max": 0.1264682953899819
+    },
+    {
+      "mode": "mb-v1-ablated",
+      "metric": "population",
+      "mean": 38.4,
+      "sd": 3.3226495451672293,
+      "min": 32,
+      "max": 43
+    },
+    {
+      "mode": "mb-v1-ablated",
+      "metric": "births",
+      "mean": 15.1,
+      "sd": 3.1764760348537187,
+      "min": 8,
+      "max": 19
+    },
+    {
+      "mode": "mb-v1-ablated",
+      "metric": "deaths",
+      "mean": 0.7,
+      "sd": 0.7810249675906655,
+      "min": 0,
+      "max": 2
+    },
+    {
+      "mode": "mb-v1-ablated",
+      "metric": "food",
+      "mean": 201.81,
+      "sd": 51.97600311682305,
+      "min": 129.5,
+      "max": 278.7
+    },
+    {
+      "mode": "mb-v1-ablated",
+      "metric": "sheltersComplete",
+      "mean": 11.1,
+      "sd": 0.5385164807134504,
+      "min": 10,
+      "max": 12
+    },
+    {
+      "mode": "mb-v1-ablated",
+      "metric": "hungryFraction",
+      "mean": 0.07527512064910107,
+      "sd": 0.02812180715851291,
+      "min": 0.036967046175419856,
+      "max": 0.1264682953899819
+    }
+  ],
+  "rows": [
+    {
+      "seed": 1,
+      "mode": "legacy",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "81f7ca1d364a656c9c3f3ab8dd1accc9487d68930b19d30f521eceebd6a04604",
+      "tick": 5000,
+      "status": "alive",
+      "population": 36,
+      "stages": {
+        "infant": 4,
+        "juvenile": 0,
+        "adult": 30,
+        "elder": 2
+      },
+      "food": 137.4,
+      "bushes": 61,
+      "shelters": 11,
+      "sheltersComplete": 11,
+      "births": 12,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 12,
+      "hungryFraction": 0.07338620347529443,
+      "decisionSources": {
+        "model": 3686,
+        "reflex": 30,
+        "rule": 198
+      },
+      "neuralUpdates": 0,
+      "legacyUpdates": 3866
+    },
+    {
+      "seed": 1,
+      "mode": "mb-v1",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "81f7ca1d364a656c9c3f3ab8dd1accc9487d68930b19d30f521eceebd6a04604",
+      "tick": 5000,
+      "status": "alive",
+      "population": 33,
+      "stages": {
+        "infant": 0,
+        "juvenile": 5,
+        "adult": 26,
+        "elder": 2
+      },
+      "food": 128.5,
+      "bushes": 59,
+      "shelters": 10,
+      "sheltersComplete": 10,
+      "births": 9,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 12,
+      "hungryFraction": 0.046303026778704966,
+      "decisionSources": {
+        "model": 3231,
+        "reflex": 19,
+        "rule": 181
+      },
+      "neuralUpdates": 3389,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 1,
+      "mode": "mb-v1-frozen",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "81f7ca1d364a656c9c3f3ab8dd1accc9487d68930b19d30f521eceebd6a04604",
+      "tick": 5000,
+      "status": "alive",
+      "population": 32,
+      "stages": {
+        "infant": 2,
+        "juvenile": 1,
+        "adult": 27,
+        "elder": 2
+      },
+      "food": 129.5,
+      "bushes": 56,
+      "shelters": 10,
+      "sheltersComplete": 10,
+      "births": 8,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 13,
+      "hungryFraction": 0.08004900959771288,
+      "decisionSources": {
+        "model": 2873,
+        "reflex": 40,
+        "rule": 286
+      },
+      "neuralUpdates": 0,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 1,
+      "mode": "mb-v1-ablated",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "81f7ca1d364a656c9c3f3ab8dd1accc9487d68930b19d30f521eceebd6a04604",
+      "tick": 5000,
+      "status": "alive",
+      "population": 32,
+      "stages": {
+        "infant": 2,
+        "juvenile": 1,
+        "adult": 27,
+        "elder": 2
+      },
+      "food": 129.5,
+      "bushes": 56,
+      "shelters": 10,
+      "sheltersComplete": 10,
+      "births": 8,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 13,
+      "hungryFraction": 0.08004900959771288,
+      "decisionSources": {
+        "model": 2873,
+        "reflex": 40,
+        "rule": 286
+      },
+      "neuralUpdates": 3158,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 2,
+      "mode": "legacy",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "9142038661ea283e7a53894b958ecb2f3acf2af4d67c251291f71a09b4c7dc72",
+      "tick": 5000,
+      "status": "alive",
+      "population": 42,
+      "stages": {
+        "infant": 2,
+        "juvenile": 5,
+        "adult": 35,
+        "elder": 0
+      },
+      "food": 303.6,
+      "bushes": 90,
+      "shelters": 12,
+      "sheltersComplete": 12,
+      "births": 18,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 13,
+      "hungryFraction": 0.05347201511084601,
+      "decisionSources": {
+        "model": 3378,
+        "reflex": 22,
+        "rule": 189
+      },
+      "neuralUpdates": 0,
+      "legacyUpdates": 3529
+    },
+    {
+      "seed": 2,
+      "mode": "mb-v1",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "9142038661ea283e7a53894b958ecb2f3acf2af4d67c251291f71a09b4c7dc72",
+      "tick": 5000,
+      "status": "alive",
+      "population": 39,
+      "stages": {
+        "infant": 1,
+        "juvenile": 2,
+        "adult": 36,
+        "elder": 0
+      },
+      "food": 283.5,
+      "bushes": 90,
+      "shelters": 12,
+      "sheltersComplete": 11,
+      "births": 16,
+      "deaths": 1,
+      "deathsByCause": {
+        "starvation": 1
+      },
+      "pairs": 12,
+      "hungryFraction": 0.08279226002406677,
+      "decisionSources": {
+        "model": 3041,
+        "reflex": 31,
+        "rule": 295
+      },
+      "neuralUpdates": 3223,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 2,
+      "mode": "mb-v1-frozen",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "9142038661ea283e7a53894b958ecb2f3acf2af4d67c251291f71a09b4c7dc72",
+      "tick": 5000,
+      "status": "alive",
+      "population": 37,
+      "stages": {
+        "infant": 1,
+        "juvenile": 3,
+        "adult": 33,
+        "elder": 0
+      },
+      "food": 242.5,
+      "bushes": 88,
+      "shelters": 11,
+      "sheltersComplete": 11,
+      "births": 15,
+      "deaths": 2,
+      "deathsByCause": {
+        "exhaustion": 2
+      },
+      "pairs": 11,
+      "hungryFraction": 0.1264682953899819,
+      "decisionSources": {
+        "model": 2931,
+        "reflex": 74,
+        "rule": 385
+      },
+      "neuralUpdates": 0,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 2,
+      "mode": "mb-v1-ablated",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "9142038661ea283e7a53894b958ecb2f3acf2af4d67c251291f71a09b4c7dc72",
+      "tick": 5000,
+      "status": "alive",
+      "population": 37,
+      "stages": {
+        "infant": 1,
+        "juvenile": 3,
+        "adult": 33,
+        "elder": 0
+      },
+      "food": 242.5,
+      "bushes": 88,
+      "shelters": 11,
+      "sheltersComplete": 11,
+      "births": 15,
+      "deaths": 2,
+      "deathsByCause": {
+        "exhaustion": 2
+      },
+      "pairs": 11,
+      "hungryFraction": 0.1264682953899819,
+      "decisionSources": {
+        "model": 2931,
+        "reflex": 74,
+        "rule": 385
+      },
+      "neuralUpdates": 3165,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 3,
+      "mode": "legacy",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "cbc390d82151a101c32aadf3a1d5dcb922740b056a4dac663121459eb647bad1",
+      "tick": 5000,
+      "status": "alive",
+      "population": 40,
+      "stages": {
+        "infant": 2,
+        "juvenile": 2,
+        "adult": 32,
+        "elder": 4
+      },
+      "food": 203.8,
+      "bushes": 78,
+      "shelters": 12,
+      "sheltersComplete": 12,
+      "births": 17,
+      "deaths": 1,
+      "deathsByCause": {
+        "starvation": 1
+      },
+      "pairs": 11,
+      "hungryFraction": 0.03391642069286935,
+      "decisionSources": {
+        "model": 3516,
+        "reflex": 16,
+        "rule": 117
+      },
+      "neuralUpdates": 0,
+      "legacyUpdates": 3490
+    },
+    {
+      "seed": 3,
+      "mode": "mb-v1",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "cbc390d82151a101c32aadf3a1d5dcb922740b056a4dac663121459eb647bad1",
+      "tick": 5000,
+      "status": "alive",
+      "population": 34,
+      "stages": {
+        "infant": 1,
+        "juvenile": 2,
+        "adult": 27,
+        "elder": 4
+      },
+      "food": 140,
+      "bushes": 65,
+      "shelters": 11,
+      "sheltersComplete": 11,
+      "births": 10,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 13,
+      "hungryFraction": 0.047473334499038296,
+      "decisionSources": {
+        "model": 3162,
+        "reflex": 24,
+        "rule": 170
+      },
+      "neuralUpdates": 3312,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 3,
+      "mode": "mb-v1-frozen",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "cbc390d82151a101c32aadf3a1d5dcb922740b056a4dac663121459eb647bad1",
+      "tick": 5000,
+      "status": "alive",
+      "population": 35,
+      "stages": {
+        "infant": 2,
+        "juvenile": 2,
+        "adult": 28,
+        "elder": 3
+      },
+      "food": 141.1,
+      "bushes": 67,
+      "shelters": 11,
+      "sheltersComplete": 11,
+      "births": 12,
+      "deaths": 1,
+      "deathsByCause": {
+        "old_age": 1
+      },
+      "pairs": 12,
+      "hungryFraction": 0.0635080714793913,
+      "decisionSources": {
+        "model": 3035,
+        "reflex": 24,
+        "rule": 212
+      },
+      "neuralUpdates": 0,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 3,
+      "mode": "mb-v1-ablated",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "cbc390d82151a101c32aadf3a1d5dcb922740b056a4dac663121459eb647bad1",
+      "tick": 5000,
+      "status": "alive",
+      "population": 35,
+      "stages": {
+        "infant": 2,
+        "juvenile": 2,
+        "adult": 28,
+        "elder": 3
+      },
+      "food": 141.1,
+      "bushes": 67,
+      "shelters": 11,
+      "sheltersComplete": 11,
+      "births": 12,
+      "deaths": 1,
+      "deathsByCause": {
+        "old_age": 1
+      },
+      "pairs": 12,
+      "hungryFraction": 0.0635080714793913,
+      "decisionSources": {
+        "model": 3035,
+        "reflex": 24,
+        "rule": 212
+      },
+      "neuralUpdates": 3126,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 4,
+      "mode": "legacy",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "8659c0a9b0f4a75c233271c47342d14a8d28993db32e68ae2d010c3b70370e02",
+      "tick": 5000,
+      "status": "alive",
+      "population": 42,
+      "stages": {
+        "infant": 2,
+        "juvenile": 4,
+        "adult": 35,
+        "elder": 1
+      },
+      "food": 233.8,
+      "bushes": 84,
+      "shelters": 12,
+      "sheltersComplete": 12,
+      "births": 19,
+      "deaths": 1,
+      "deathsByCause": {
+        "old_age": 1
+      },
+      "pairs": 13,
+      "hungryFraction": 0.016709400655802373,
+      "decisionSources": {
+        "model": 3701,
+        "reflex": 9,
+        "rule": 86
+      },
+      "neuralUpdates": 0,
+      "legacyUpdates": 3615
+    },
+    {
+      "seed": 4,
+      "mode": "mb-v1",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "8659c0a9b0f4a75c233271c47342d14a8d28993db32e68ae2d010c3b70370e02",
+      "tick": 5000,
+      "status": "alive",
+      "population": 37,
+      "stages": {
+        "infant": 3,
+        "juvenile": 3,
+        "adult": 29,
+        "elder": 2
+      },
+      "food": 163.3,
+      "bushes": 72,
+      "shelters": 11,
+      "sheltersComplete": 11,
+      "births": 13,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 12,
+      "hungryFraction": 0.016140060084947686,
+      "decisionSources": {
+        "model": 3857,
+        "reflex": 4,
+        "rule": 103
+      },
+      "neuralUpdates": 3914,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 4,
+      "mode": "mb-v1-frozen",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "8659c0a9b0f4a75c233271c47342d14a8d28993db32e68ae2d010c3b70370e02",
+      "tick": 5000,
+      "status": "alive",
+      "population": 39,
+      "stages": {
+        "infant": 3,
+        "juvenile": 3,
+        "adult": 31,
+        "elder": 2
+      },
+      "food": 172.3,
+      "bushes": 75,
+      "shelters": 11,
+      "sheltersComplete": 11,
+      "births": 15,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 14,
+      "hungryFraction": 0.036967046175419856,
+      "decisionSources": {
+        "model": 3164,
+        "reflex": 14,
+        "rule": 173
+      },
+      "neuralUpdates": 0,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 4,
+      "mode": "mb-v1-ablated",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "8659c0a9b0f4a75c233271c47342d14a8d28993db32e68ae2d010c3b70370e02",
+      "tick": 5000,
+      "status": "alive",
+      "population": 39,
+      "stages": {
+        "infant": 3,
+        "juvenile": 3,
+        "adult": 31,
+        "elder": 2
+      },
+      "food": 172.3,
+      "bushes": 75,
+      "shelters": 11,
+      "sheltersComplete": 11,
+      "births": 15,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 14,
+      "hungryFraction": 0.036967046175419856,
+      "decisionSources": {
+        "model": 3164,
+        "reflex": 14,
+        "rule": 173
+      },
+      "neuralUpdates": 3297,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 5,
+      "mode": "legacy",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "b6cc3d3fd2841ca067c5f64234fe3eef1b7249dfbf759a622094c3a438259fab",
+      "tick": 5000,
+      "status": "alive",
+      "population": 40,
+      "stages": {
+        "infant": 1,
+        "juvenile": 3,
+        "adult": 34,
+        "elder": 2
+      },
+      "food": 206.7,
+      "bushes": 75,
+      "shelters": 12,
+      "sheltersComplete": 12,
+      "births": 16,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 14,
+      "hungryFraction": 0.07000205359893213,
+      "decisionSources": {
+        "model": 3076,
+        "reflex": 30,
+        "rule": 244
+      },
+      "neuralUpdates": 0,
+      "legacyUpdates": 3294
+    },
+    {
+      "seed": 5,
+      "mode": "mb-v1",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "b6cc3d3fd2841ca067c5f64234fe3eef1b7249dfbf759a622094c3a438259fab",
+      "tick": 5000,
+      "status": "alive",
+      "population": 36,
+      "stages": {
+        "infant": 2,
+        "juvenile": 3,
+        "adult": 29,
+        "elder": 2
+      },
+      "food": 147.6,
+      "bushes": 63,
+      "shelters": 11,
+      "sheltersComplete": 11,
+      "births": 13,
+      "deaths": 1,
+      "deathsByCause": {
+        "starvation": 1
+      },
+      "pairs": 12,
+      "hungryFraction": 0.11947480348874771,
+      "decisionSources": {
+        "model": 3184,
+        "reflex": 69,
+        "rule": 338
+      },
+      "neuralUpdates": 3430,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 5,
+      "mode": "mb-v1-frozen",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "b6cc3d3fd2841ca067c5f64234fe3eef1b7249dfbf759a622094c3a438259fab",
+      "tick": 5000,
+      "status": "alive",
+      "population": 36,
+      "stages": {
+        "infant": 1,
+        "juvenile": 2,
+        "adult": 31,
+        "elder": 2
+      },
+      "food": 170.2,
+      "bushes": 66,
+      "shelters": 11,
+      "sheltersComplete": 11,
+      "births": 14,
+      "deaths": 2,
+      "deathsByCause": {
+        "starvation": 2
+      },
+      "pairs": 12,
+      "hungryFraction": 0.11241478762454117,
+      "decisionSources": {
+        "model": 2891,
+        "reflex": 50,
+        "rule": 369
+      },
+      "neuralUpdates": 0,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 5,
+      "mode": "mb-v1-ablated",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "b6cc3d3fd2841ca067c5f64234fe3eef1b7249dfbf759a622094c3a438259fab",
+      "tick": 5000,
+      "status": "alive",
+      "population": 36,
+      "stages": {
+        "infant": 1,
+        "juvenile": 2,
+        "adult": 31,
+        "elder": 2
+      },
+      "food": 170.2,
+      "bushes": 66,
+      "shelters": 11,
+      "sheltersComplete": 11,
+      "births": 14,
+      "deaths": 2,
+      "deathsByCause": {
+        "starvation": 2
+      },
+      "pairs": 12,
+      "hungryFraction": 0.11241478762454117,
+      "decisionSources": {
+        "model": 2891,
+        "reflex": 50,
+        "rule": 369
+      },
+      "neuralUpdates": 3071,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 6,
+      "mode": "legacy",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "76708356c252687dbf850392baa6b866052c4cbb3ca1f17c937d831ba3853680",
+      "tick": 5000,
+      "status": "alive",
+      "population": 46,
+      "stages": {
+        "infant": 2,
+        "juvenile": 2,
+        "adult": 41,
+        "elder": 1
+      },
+      "food": 256.2,
+      "bushes": 90,
+      "shelters": 14,
+      "sheltersComplete": 13,
+      "births": 22,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 12,
+      "hungryFraction": 0.009315188965261867,
+      "decisionSources": {
+        "model": 3516,
+        "reflex": 4,
+        "rule": 74
+      },
+      "neuralUpdates": 0,
+      "legacyUpdates": 3526
+    },
+    {
+      "seed": 6,
+      "mode": "mb-v1",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "76708356c252687dbf850392baa6b866052c4cbb3ca1f17c937d831ba3853680",
+      "tick": 5000,
+      "status": "alive",
+      "population": 39,
+      "stages": {
+        "infant": 2,
+        "juvenile": 2,
+        "adult": 34,
+        "elder": 1
+      },
+      "food": 157.6,
+      "bushes": 72,
+      "shelters": 12,
+      "sheltersComplete": 12,
+      "births": 15,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 12,
+      "hungryFraction": 0.04955416925237613,
+      "decisionSources": {
+        "model": 3351,
+        "reflex": 17,
+        "rule": 256
+      },
+      "neuralUpdates": 3569,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 6,
+      "mode": "mb-v1-frozen",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "76708356c252687dbf850392baa6b866052c4cbb3ca1f17c937d831ba3853680",
+      "tick": 5000,
+      "status": "alive",
+      "population": 42,
+      "stages": {
+        "infant": 0,
+        "juvenile": 8,
+        "adult": 33,
+        "elder": 1
+      },
+      "food": 210.7,
+      "bushes": 80,
+      "shelters": 12,
+      "sheltersComplete": 11,
+      "births": 18,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 12,
+      "hungryFraction": 0.0511027063582512,
+      "decisionSources": {
+        "model": 3198,
+        "reflex": 28,
+        "rule": 238
+      },
+      "neuralUpdates": 0,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 6,
+      "mode": "mb-v1-ablated",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "76708356c252687dbf850392baa6b866052c4cbb3ca1f17c937d831ba3853680",
+      "tick": 5000,
+      "status": "alive",
+      "population": 42,
+      "stages": {
+        "infant": 0,
+        "juvenile": 8,
+        "adult": 33,
+        "elder": 1
+      },
+      "food": 210.7,
+      "bushes": 80,
+      "shelters": 12,
+      "sheltersComplete": 11,
+      "births": 18,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 12,
+      "hungryFraction": 0.0511027063582512,
+      "decisionSources": {
+        "model": 3198,
+        "reflex": 28,
+        "rule": 238
+      },
+      "neuralUpdates": 3401,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 7,
+      "mode": "legacy",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "8c19ce35687c8d138d02371e865aa85dcbd68f6a5475860d3fcdb4af549e3a9d",
+      "tick": 5000,
+      "status": "alive",
+      "population": 48,
+      "stages": {
+        "infant": 4,
+        "juvenile": 3,
+        "adult": 41,
+        "elder": 0
+      },
+      "food": 291.5,
+      "bushes": 90,
+      "shelters": 14,
+      "sheltersComplete": 14,
+      "births": 24,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 13,
+      "hungryFraction": 0.04573701359841589,
+      "decisionSources": {
+        "model": 3966,
+        "reflex": 23,
+        "rule": 215
+      },
+      "neuralUpdates": 0,
+      "legacyUpdates": 4132
+    },
+    {
+      "seed": 7,
+      "mode": "mb-v1",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "8c19ce35687c8d138d02371e865aa85dcbd68f6a5475860d3fcdb4af549e3a9d",
+      "tick": 5000,
+      "status": "alive",
+      "population": 37,
+      "stages": {
+        "infant": 0,
+        "juvenile": 4,
+        "adult": 33,
+        "elder": 0
+      },
+      "food": 211.8,
+      "bushes": 86,
+      "shelters": 12,
+      "sheltersComplete": 12,
+      "births": 14,
+      "deaths": 1,
+      "deathsByCause": {
+        "starvation": 1
+      },
+      "pairs": 12,
+      "hungryFraction": 0.07623277912801305,
+      "decisionSources": {
+        "model": 3465,
+        "reflex": 43,
+        "rule": 253
+      },
+      "neuralUpdates": 3609,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 7,
+      "mode": "mb-v1-frozen",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "8c19ce35687c8d138d02371e865aa85dcbd68f6a5475860d3fcdb4af549e3a9d",
+      "tick": 5000,
+      "status": "alive",
+      "population": 43,
+      "stages": {
+        "infant": 1,
+        "juvenile": 5,
+        "adult": 37,
+        "elder": 0
+      },
+      "food": 278.7,
+      "bushes": 90,
+      "shelters": 13,
+      "sheltersComplete": 12,
+      "births": 19,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 14,
+      "hungryFraction": 0.06913981073253518,
+      "decisionSources": {
+        "model": 3429,
+        "reflex": 37,
+        "rule": 276
+      },
+      "neuralUpdates": 0,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 7,
+      "mode": "mb-v1-ablated",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "8c19ce35687c8d138d02371e865aa85dcbd68f6a5475860d3fcdb4af549e3a9d",
+      "tick": 5000,
+      "status": "alive",
+      "population": 43,
+      "stages": {
+        "infant": 1,
+        "juvenile": 5,
+        "adult": 37,
+        "elder": 0
+      },
+      "food": 278.7,
+      "bushes": 90,
+      "shelters": 13,
+      "sheltersComplete": 12,
+      "births": 19,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 14,
+      "hungryFraction": 0.06913981073253518,
+      "decisionSources": {
+        "model": 3429,
+        "reflex": 37,
+        "rule": 276
+      },
+      "neuralUpdates": 3680,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 8,
+      "mode": "legacy",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "35173cfa7c3c5fe9788574d564991e39578df5b6f786e477681bff17ce0b2e03",
+      "tick": 5000,
+      "status": "alive",
+      "population": 44,
+      "stages": {
+        "infant": 2,
+        "juvenile": 4,
+        "adult": 35,
+        "elder": 3
+      },
+      "food": 294,
+      "bushes": 90,
+      "shelters": 13,
+      "sheltersComplete": 12,
+      "births": 20,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 14,
+      "hungryFraction": 0.04166461371698857,
+      "decisionSources": {
+        "model": 3391,
+        "reflex": 21,
+        "rule": 135
+      },
+      "neuralUpdates": 0,
+      "legacyUpdates": 3483
+    },
+    {
+      "seed": 8,
+      "mode": "mb-v1",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "35173cfa7c3c5fe9788574d564991e39578df5b6f786e477681bff17ce0b2e03",
+      "tick": 5000,
+      "status": "alive",
+      "population": 41,
+      "stages": {
+        "infant": 1,
+        "juvenile": 5,
+        "adult": 32,
+        "elder": 3
+      },
+      "food": 223.1,
+      "bushes": 88,
+      "shelters": 12,
+      "sheltersComplete": 12,
+      "births": 17,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 13,
+      "hungryFraction": 0.05368173721908515,
+      "decisionSources": {
+        "model": 3479,
+        "reflex": 20,
+        "rule": 251
+      },
+      "neuralUpdates": 3692,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 8,
+      "mode": "mb-v1-frozen",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "35173cfa7c3c5fe9788574d564991e39578df5b6f786e477681bff17ce0b2e03",
+      "tick": 5000,
+      "status": "alive",
+      "population": 40,
+      "stages": {
+        "infant": 0,
+        "juvenile": 6,
+        "adult": 31,
+        "elder": 3
+      },
+      "food": 238.1,
+      "bushes": 90,
+      "shelters": 11,
+      "sheltersComplete": 11,
+      "births": 16,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 13,
+      "hungryFraction": 0.054480852743782074,
+      "decisionSources": {
+        "model": 3098,
+        "reflex": 25,
+        "rule": 215
+      },
+      "neuralUpdates": 0,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 8,
+      "mode": "mb-v1-ablated",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "35173cfa7c3c5fe9788574d564991e39578df5b6f786e477681bff17ce0b2e03",
+      "tick": 5000,
+      "status": "alive",
+      "population": 40,
+      "stages": {
+        "infant": 0,
+        "juvenile": 6,
+        "adult": 31,
+        "elder": 3
+      },
+      "food": 238.1,
+      "bushes": 90,
+      "shelters": 11,
+      "sheltersComplete": 11,
+      "births": 16,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 13,
+      "hungryFraction": 0.054480852743782074,
+      "decisionSources": {
+        "model": 3098,
+        "reflex": 25,
+        "rule": 215
+      },
+      "neuralUpdates": 3282,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 9,
+      "mode": "legacy",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "8bd8dadd0496617dc9171988d24e87a20aa2868e5bd291fd6194ecddd913b47e",
+      "tick": 5000,
+      "status": "alive",
+      "population": 44,
+      "stages": {
+        "infant": 3,
+        "juvenile": 3,
+        "adult": 37,
+        "elder": 1
+      },
+      "food": 248.6,
+      "bushes": 88,
+      "shelters": 13,
+      "sheltersComplete": 12,
+      "births": 20,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 13,
+      "hungryFraction": 0.02798766812680329,
+      "decisionSources": {
+        "model": 3449,
+        "reflex": 13,
+        "rule": 102
+      },
+      "neuralUpdates": 0,
+      "legacyUpdates": 3500
+    },
+    {
+      "seed": 9,
+      "mode": "mb-v1",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "8bd8dadd0496617dc9171988d24e87a20aa2868e5bd291fd6194ecddd913b47e",
+      "tick": 5000,
+      "status": "alive",
+      "population": 35,
+      "stages": {
+        "infant": 1,
+        "juvenile": 2,
+        "adult": 31,
+        "elder": 1
+      },
+      "food": 145.1,
+      "bushes": 74,
+      "shelters": 11,
+      "sheltersComplete": 10,
+      "births": 11,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 13,
+      "hungryFraction": 0.026222174885504313,
+      "decisionSources": {
+        "model": 3539,
+        "reflex": 7,
+        "rule": 119
+      },
+      "neuralUpdates": 3618,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 9,
+      "mode": "mb-v1-frozen",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "8bd8dadd0496617dc9171988d24e87a20aa2868e5bd291fd6194ecddd913b47e",
+      "tick": 5000,
+      "status": "alive",
+      "population": 38,
+      "stages": {
+        "infant": 4,
+        "juvenile": 3,
+        "adult": 30,
+        "elder": 1
+      },
+      "food": 159.3,
+      "bushes": 72,
+      "shelters": 11,
+      "sheltersComplete": 11,
+      "births": 15,
+      "deaths": 1,
+      "deathsByCause": {
+        "starvation": 1
+      },
+      "pairs": 12,
+      "hungryFraction": 0.054891185775062724,
+      "decisionSources": {
+        "model": 2944,
+        "reflex": 18,
+        "rule": 219
+      },
+      "neuralUpdates": 0,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 9,
+      "mode": "mb-v1-ablated",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "8bd8dadd0496617dc9171988d24e87a20aa2868e5bd291fd6194ecddd913b47e",
+      "tick": 5000,
+      "status": "alive",
+      "population": 38,
+      "stages": {
+        "infant": 4,
+        "juvenile": 3,
+        "adult": 30,
+        "elder": 1
+      },
+      "food": 159.3,
+      "bushes": 72,
+      "shelters": 11,
+      "sheltersComplete": 11,
+      "births": 15,
+      "deaths": 1,
+      "deathsByCause": {
+        "starvation": 1
+      },
+      "pairs": 12,
+      "hungryFraction": 0.054891185775062724,
+      "decisionSources": {
+        "model": 2944,
+        "reflex": 18,
+        "rule": 219
+      },
+      "neuralUpdates": 3050,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 10,
+      "mode": "legacy",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "808e7fa19fd37ef86dd100bdeb3ef43a0aa3312668c0117215756ef116140b0a",
+      "tick": 5000,
+      "status": "alive",
+      "population": 43,
+      "stages": {
+        "infant": 3,
+        "juvenile": 3,
+        "adult": 34,
+        "elder": 3
+      },
+      "food": 298.2,
+      "bushes": 90,
+      "shelters": 13,
+      "sheltersComplete": 12,
+      "births": 19,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 13,
+      "hungryFraction": 0.011823949050875072,
+      "decisionSources": {
+        "model": 3463,
+        "reflex": 4,
+        "rule": 65
+      },
+      "neuralUpdates": 0,
+      "legacyUpdates": 3468
+    },
+    {
+      "seed": 10,
+      "mode": "mb-v1",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "808e7fa19fd37ef86dd100bdeb3ef43a0aa3312668c0117215756ef116140b0a",
+      "tick": 5000,
+      "status": "alive",
+      "population": 42,
+      "stages": {
+        "infant": 4,
+        "juvenile": 1,
+        "adult": 34,
+        "elder": 3
+      },
+      "food": 187.2,
+      "bushes": 87,
+      "shelters": 13,
+      "sheltersComplete": 12,
+      "births": 18,
+      "deaths": 0,
+      "deathsByCause": {},
+      "pairs": 14,
+      "hungryFraction": 0.10021392741221599,
+      "decisionSources": {
+        "model": 3246,
+        "reflex": 53,
+        "rule": 369
+      },
+      "neuralUpdates": 3608,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 10,
+      "mode": "mb-v1-frozen",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "808e7fa19fd37ef86dd100bdeb3ef43a0aa3312668c0117215756ef116140b0a",
+      "tick": 5000,
+      "status": "alive",
+      "population": 42,
+      "stages": {
+        "infant": 1,
+        "juvenile": 5,
+        "adult": 33,
+        "elder": 3
+      },
+      "food": 275.7,
+      "bushes": 90,
+      "shelters": 12,
+      "sheltersComplete": 12,
+      "births": 19,
+      "deaths": 1,
+      "deathsByCause": {
+        "starvation": 1
+      },
+      "pairs": 12,
+      "hungryFraction": 0.1037294406143324,
+      "decisionSources": {
+        "model": 3085,
+        "reflex": 49,
+        "rule": 404
+      },
+      "neuralUpdates": 0,
+      "legacyUpdates": 0
+    },
+    {
+      "seed": 10,
+      "mode": "mb-v1-ablated",
+      "ticks": 5000,
+      "initialLegacyWeightsHash": "808e7fa19fd37ef86dd100bdeb3ef43a0aa3312668c0117215756ef116140b0a",
+      "tick": 5000,
+      "status": "alive",
+      "population": 42,
+      "stages": {
+        "infant": 1,
+        "juvenile": 5,
+        "adult": 33,
+        "elder": 3
+      },
+      "food": 275.7,
+      "bushes": 90,
+      "shelters": 12,
+      "sheltersComplete": 12,
+      "births": 19,
+      "deaths": 1,
+      "deathsByCause": {
+        "starvation": 1
+      },
+      "pairs": 12,
+      "hungryFraction": 0.1037294406143324,
+      "decisionSources": {
+        "model": 3085,
+        "reflex": 49,
+        "rule": 404
+      },
+      "neuralUpdates": 3375,
+      "legacyUpdates": 0
+    }
+  ]
+}

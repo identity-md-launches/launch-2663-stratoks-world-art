@@ -1,0 +1,13 @@
+import fs from 'node:fs'; import os from 'node:os'; import path from 'node:path'; import { spawnSync } from 'node:child_process';
+import { Service } from './base/server/src/service.js'; import { crashConfig } from './crash-config-base.mjs';
+const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'bc-'));
+const r = spawnSync(process.execPath, [new URL('./crash-child-base.mjs', import.meta.url).pathname, dir, 'lifecycle', '1000'], { encoding: 'utf8' });
+const s = new Service(crashConfig(dir), { log: () => {} }); s.start(); clearTimeout(s.timer); s.running = false;
+const life = () => fs.readFileSync(path.join(dir, 'lifecycle.jsonl'), 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l));
+const alive = new Set(s.world.creatures.map((c) => c.id));
+const deadButAlive = life().filter((x) => x.kind === 'death' && alive.has(x.id)).map((x) => x.id);
+for (let i = 0; i < 1500; i++) s.tickOnce(); s.snapshot();
+const deaths = life().filter((x) => x.kind === 'death'), births = life().filter((x) => x.kind === 'birth');
+const dupD = deaths.length - new Set(deaths.map((x) => x.id)).size, dupB = births.length - new Set(births.map((x) => x.id)).size;
+console.error(dir); console.log(JSON.stringify({ baseline: 'b57000a', child: r.signal, childOut: r.stdout.trim().split('\n'), recordedDeadButAliveAfterRestart: deadButAlive, duplicateDeathRecordsAfterContinuing: dupD, duplicateBirthRecords: dupB, deathRecords: deaths.length, worldDeathTotal: s.world.totals.deaths }, null, 1));
+s.stop();

@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-27T10:04:35.836Z",
+  "baseline": false,
+  "checks": [],
+  "errors": [
+    "locator.evaluate: Target page, context or browser has been closed\n    at tools (/root/stratoks-recovery/project/web/scripts/diagnose-tools.mjs:62:63)\n    at async file:///root/stratoks-recovery/project/web/scripts/diagnose-tools.mjs:87:68"
+  ],
+  "observations": {},
+  "chromium": "145.0.7632.6"
+}

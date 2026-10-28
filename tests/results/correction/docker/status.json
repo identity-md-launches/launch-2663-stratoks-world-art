@@ -1,0 +1,16 @@
+{
+  "local": false,
+  "target": {
+    "memoryBytes": 536870912,
+    "cpuQuota": 75000,
+    "cpuPeriod": 100000,
+    "platform": "linux/amd64"
+  },
+  "dockerAvailable": false,
+  "enforced": false,
+  "verified": false,
+  "rows": [],
+  "limitations": [
+    "Docker executable is unavailable. No Docker/cgroup tests ran."
+  ]
+}

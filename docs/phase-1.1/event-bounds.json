@@ -1,0 +1,13 @@
+{
+  "historyBytes": 15000000,
+  "events": 64709,
+  "requests": 40,
+  "concurrency": 4,
+  "bytesReadPerRequest": 65536,
+  "linesParsedTotal": 40,
+  "elapsedMs": 303,
+  "tickP50Ms": 1.19,
+  "tickP99Ms": 9.86,
+  "eventLoopDelayMaxMs": 31.97,
+  "heapDeltaMB": -25.4
+}

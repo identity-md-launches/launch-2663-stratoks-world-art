@@ -1,0 +1,116 @@
+Requested image target: linux/amd64. Native vs emulated execution must be established separately by the operator.
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  4.973MB
+Step 1/13 : FROM node:22-bookworm-slim
+22-bookworm-slim: Pulling from library/node
+9d58805976c1: Pulling fs layer
+11422d7ca1a4: Pulling fs layer
+b43ad0aedb87: Pulling fs layer
+ba8be34911c2: Pulling fs layer
+696628b66b50: Pulling fs layer
+696628b66b50: Download complete
+9d58805976c1: Download complete
+b43ad0aedb87: Download complete
+f3b2c8b342da: Download complete
+621597660e99: Download complete
+11422d7ca1a4: Download complete
+ba8be34911c2: Download complete
+b43ad0aedb87: Pull complete
+11422d7ca1a4: Pull complete
+ba8be34911c2: Pull complete
+696628b66b50: Pull complete
+9d58805976c1: Pull complete
+Digest: sha256:de170b39439eb0e5a3444ad7d60b015614a381e10fecae2e30ec9e735122f38d
+Status: Downloaded newer image for node:22-bookworm-slim
+ ---> de170b39439e
+Step 2/13 : ENV NODE_ENV=production DATA_DIR=/data PORT=8787 HOST=0.0.0.0
+ ---> Running in bdc510222d1d
+ ---> Removed intermediate container bdc510222d1d
+ ---> cbb07e8a18ab
+Step 3/13 : WORKDIR /app
+ ---> Running in b940362436b5
+ ---> Removed intermediate container b940362436b5
+ ---> b1bcbaeccada
+Step 4/13 : COPY server/package.json ./package.json
+ ---> 1d05a5b2f61d
+Step 5/13 : COPY server/src ./src
+ ---> ac3160442782
+Step 6/13 : COPY server/bin ./bin
+ ---> ce84d3e10fba
+Step 7/13 : RUN mkdir /data && chown node:node /data
+ ---> Running in 7b67ba6c3890
+ ---> Removed intermediate container 7b67ba6c3890
+ ---> 4fc5ed7d6e88
+Step 8/13 : USER node
+ ---> Running in e4cdfd8d8081
+ ---> Removed intermediate container e4cdfd8d8081
+ ---> d41c54d2f950
+Step 9/13 : VOLUME ["/data"]
+ ---> Running in a422fdb483b8
+ ---> Removed intermediate container a422fdb483b8
+ ---> eb1974c5534d
+Step 10/13 : EXPOSE 8787
+ ---> Running in c355824a4e5d
+ ---> Removed intermediate container c355824a4e5d
+ ---> e7a5a0f18c71
+Step 11/13 : HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3   CMD node -e "fetch('http://127.0.0.1:'+process.env.PORT+'/health').then(r=>r.json()).then(j=>process.exit(j.ok?0:1)).catch(()=>process.exit(1))"
+ ---> Running in ae860d866843
+ ---> Removed intermediate container ae860d866843
+ ---> 155d2f47fdd7
+Step 12/13 : STOPSIGNAL SIGTERM
+ ---> Running in 30e3e9affe26
+ ---> Removed intermediate container 30e3e9affe26
+ ---> b6ed09afef87
+Step 13/13 : CMD ["node", "src/main.js"]
+ ---> Running in e67769265f0c
+ ---> Removed intermediate container e67769265f0c
+ ---> 06a8ead363be
+Successfully built 06a8ead363be
+Successfully tagged stratoks-check-1531662:check
+health: {"ok":true,"tick":4,"status":"alive","overloaded":false}
+allowed origin: 1 header(s); foreign origin: 0
+graceful restart: tick 34 -> 49 (must be >= 34)
+backup written to /data/backups/2026-10-27T10-13-58-850Z
+after SIGKILL: tick 74; recovery log:
+  (nothing to recover)
+backup written to /data/backups/2026-10-27T10-14-01-567Z
+{
+  "restoredFrom": "/data/backups/2026-10-27T10-14-01-567Z",
+  "previousMovedTo": "/data/archive/pre-restore-1793096042692"
+}
+restored from 2026-10-27T10-14-01-567Z, tick 105
+{
+  "dataDir": "/data",
+  "snapshot": {
+    "worldId": "world-20260101-0",
+    "tick": 102,
+    "seq": 6
+  },
+  "logs": {
+    "events": {
+      "files": [
+        "events.jsonl"
+      ],
+      "lines": 7,
+      "lostBranchLines": 0,
+      "tornLines": 0,
+      "aheadOfSnapshot": 1
+    },
+    "lifecycle": {
+      "files": [
+        "lifecycle.jsonl"
+      ],
+      "lines": 0,
+      "lostBranchLines": 0,
+      "tornLines": 0,
+      "aheadOfSnapshot": 0
+    },
+    "interventions": {
+      "files": [
+        "interventions.jsonl"
+      ],
+HTTP liveness after backup/restore: {"ok":true,"tick":107,"status":"alive","overloaded":false}
+OK. Remove the test volume with: docker volume rm stratoks-check-1531662-data

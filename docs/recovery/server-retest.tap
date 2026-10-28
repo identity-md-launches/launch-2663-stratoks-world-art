@@ -1,0 +1,172 @@
+TAP version 13
+# Subtest: separate backup CLI refuses a live writer, exports a stopped backup, and restores exact committed state
+ok 1 - separate backup CLI refuses a live writer, exports a stopped backup, and restores exact committed state
+  ---
+  duration_ms: 370.931177
+  type: 'test'
+  ...
+# Subtest: SIGKILL after lifecycle records but before the snapshot: recovered world never resurrects-and-re-kills
+ok 2 - SIGKILL after lifecycle records but before the snapshot: recovered world never resurrects-and-re-kills
+  ---
+  duration_ms: 3069.628001
+  type: 'test'
+  ...
+# Subtest: SIGKILL at write boundary lifecycle-appended:3, then repeated recovery and continued simulation stay consistent
+ok 3 - SIGKILL at write boundary lifecycle-appended:3, then repeated recovery and continued simulation stay consistent
+  ---
+  duration_ms: 2802.685277
+  type: 'test'
+  ...
+# Subtest: SIGKILL at write boundary events-appended:20, then repeated recovery and continued simulation stay consistent
+ok 4 - SIGKILL at write boundary events-appended:20, then repeated recovery and continued simulation stay consistent
+  ---
+  duration_ms: 3279.338375
+  type: 'test'
+  ...
+# Subtest: SIGKILL at write boundary snapshot-tmp-written:2, then repeated recovery and continued simulation stay consistent
+ok 5 - SIGKILL at write boundary snapshot-tmp-written:2, then repeated recovery and continued simulation stay consistent
+  ---
+  duration_ms: 2221.24596
+  type: 'test'
+  ...
+# Subtest: SIGKILL at write boundary snapshot-committed:3, then repeated recovery and continued simulation stay consistent
+ok 6 - SIGKILL at write boundary snapshot-committed:3, then repeated recovery and continued simulation stay consistent
+  ---
+  duration_ms: 2643.383286
+  type: 'test'
+  ...
+# Subtest: SIGKILL during recovery itself (after the orphan file, before truncation) recovers identically
+ok 7 - SIGKILL during recovery itself (after the orphan file, before truncation) recovers identically
+  ---
+  duration_ms: 2458.495089
+  type: 'test'
+  ...
+# Subtest: interventions: crash before commit is not acknowledged and applies once on retry; crash after commit is a duplicate
+ok 8 - interventions: crash before commit is not acknowledged and applies once on retry; crash after commit is a duplicate
+  ---
+  duration_ms: 1062.80801
+  type: 'test'
+  ...
+# Subtest: intervention save failure: 503-style failure, world keeps one application, a later commit makes it durable once
+ok 9 - intervention save failure: 503-style failure, world keeps one application, a later commit makes it durable once
+  ---
+  duration_ms: 41.320845
+  type: 'test'
+  ...
+# Subtest: failed and short event/intervention appends remain pending and a same-ID retry repairs every durable record
+ok 10 - failed and short event/intervention appends remain pending and a same-ID retry repairs every durable record
+  ---
+  duration_ms: 82.169292
+  type: 'test'
+  ...
+# Subtest: recovery refuses an ambiguous Phase-1 lost branch without moving its surviving records
+ok 11 - recovery refuses an ambiguous Phase-1 lost branch without moving its surviving records
+  ---
+  duration_ms: 28.407696
+  type: 'test'
+  ...
+# Subtest: a second recovery at the same snapshot sequence appends evidence instead of overwriting the first orphan
+ok 12 - a second recovery at the same snapshot sequence appends evidence instead of overwriting the first orphan
+  ---
+  duration_ms: 18.521736
+  type: 'test'
+  ...
+# Subtest: event pages preserve UTF-8 characters split across 64 KiB reads
+ok 13 - event pages preserve UTF-8 characters split across 64 KiB reads
+  ---
+  duration_ms: 26.485412
+  type: 'test'
+  ...
+# Subtest: a pending page pins its retained segment while rotation renames it
+ok 14 - a pending page pins its retained segment while rotation renames it
+  ---
+  duration_ms: 10.764148
+  type: 'test'
+  ...
+# Subtest: rotation syncs the outgoing log before closing its descriptor
+ok 15 - rotation syncs the outgoing log before closing its descriptor
+  ---
+  duration_ms: 6.017259
+  type: 'test'
+  ...
+# Subtest: GET /api/events: three 5 MB logs, after=0 limit=1, concurrent requests are bounded and do not stall ticks
+ok 16 - GET /api/events: three 5 MB logs, after=0 limit=1, concurrent requests are bounded and do not stall ticks
+  ---
+  duration_ms: 2305.148223
+  type: 'test'
+  ...
+# Subtest: event reads beyond the concurrency cap get an honest 503, not unbounded queued disk work
+ok 17 - event reads beyond the concurrency cap get an honest 503, not unbounded queued disk work
+  ---
+  duration_ms: 576.67829
+  type: 'test'
+  ...
+# Subtest: rate limits: creature detail and list share the public limiter, 429 has Retry-After, recovery after window
+ok 18 - rate limits: creature detail and list share the public limiter, 429 has Retry-After, recovery after window
+  ---
+  duration_ms: 60.516075
+  type: 'test'
+  ...
+# Subtest: spoofed X-Forwarded-For cannot bypass limits (Caddy deployment: TRUST_PROXY=1, proxy on private network)
+ok 19 - spoofed X-Forwarded-For cannot bypass limits (Caddy deployment: TRUST_PROXY=1, proxy on private network)
+  ---
+  duration_ms: 48.993931
+  type: 'test'
+  ...
+# Subtest: WebSocket upgrade and resync share the public-read budget and close on resync abuse
+ok 20 - WebSocket upgrade and resync share the public-read budget and close on resync abuse
+  ---
+  duration_ms: 47.655124
+  type: 'test'
+  ...
+# Subtest: event API and WebSocket snapshots expose only committed cursors across a crash/restart
+ok 21 - event API and WebSocket snapshots expose only committed cursors across a crash/restart
+  ---
+  duration_ms: 77.117241
+  type: 'test'
+  ...
+# Subtest: HTTP intervention retry returns 503 until failed event or ledger append is repaired
+ok 22 - HTTP intervention retry returns 503 until failed event or ledger append is repaired
+  ---
+  duration_ms: 274.768225
+  type: 'test'
+  ...
+# Subtest: a stale numeric PID-1 lock is not considered live by an offline one-shot container/tool
+ok 23 - a stale numeric PID-1 lock is not considered live by an offline one-shot container/tool
+  ---
+  duration_ms: 0.981386
+  type: 'test'
+  ...
+# Subtest: LEARNING: explicit change applies on restart without erasing weights/memory; unset keeps stored; invalid fails startup
+ok 24 - LEARNING: explicit change applies on restart without erasing weights/memory; unset keeps stored; invalid fails startup
+  ---
+  duration_ms: 7921.428778
+  type: 'test'
+  ...
+# Subtest: GET /api/status reports the learning policy
+ok 25 - GET /api/status reports the learning policy
+  ---
+  duration_ms: 36.445924
+  type: 'test'
+  ...
+# Subtest: intervention idempotency is scoped to world + authenticated actor + id, persisted across restart
+ok 26 - intervention idempotency is scoped to world + authenticated actor + id, persisted across restart
+  ---
+  duration_ms: 738.80758
+  type: 'test'
+  ...
+# Subtest: schema v1 -> v2 migration re-keys existing intervention IDs to their original actor
+ok 27 - schema v1 -> v2 migration re-keys existing intervention IDs to their original actor
+  ---
+  duration_ms: 1.067741
+  type: 'test'
+  ...
+1..27
+# tests 27
+# suites 0
+# pass 27
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 31306.468621

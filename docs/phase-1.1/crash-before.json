@@ -1,0 +1,15 @@
+{
+ "baseline": "b57000a",
+ "child": "SIGKILL",
+ "childOut": [
+  "{\"snapshotTick\":1000,\"snapshotSeq\":42}",
+  "{\"killedAtTick\":1517,\"births\":1,\"deaths\":1}"
+ ],
+ "recordedDeadButAliveAfterRestart": [
+  12
+ ],
+ "duplicateDeathRecordsAfterContinuing": 1,
+ "duplicateBirthRecords": 1,
+ "deathRecords": 10,
+ "worldDeathTotal": 9
+}

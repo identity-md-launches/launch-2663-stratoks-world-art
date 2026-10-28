@@ -1,0 +1,345 @@
+TAP version 13
+# Subtest: separate backup CLI refuses a live writer, exports a stopped backup, and restores exact committed state
+not ok 1 - separate backup CLI refuses a live writer, exports a stopped backup, and restores exact committed state
+  ---
+  duration_ms: 192.04337
+  type: 'test'
+  location: '/work/tests/backup-cli.test.js:9:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    0 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 0
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///work/tests/backup-cli.test.js:14:31)
+    process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    async Test.run (node:internal/test_runner/test:1409:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: intervention IDs remain idempotent beyond the former 20,000-record window
+ok 2 - intervention IDs remain idempotent beyond the former 20,000-record window
+  ---
+  duration_ms: 549.211668
+  type: 'test'
+  ...
+# Subtest: a failed snapshot is never acknowledged as a durable intervention or backup
+ok 3 - a failed snapshot is never acknowledged as a durable intervention or backup
+  ---
+  duration_ms: 451.128702
+  type: 'test'
+  ...
+# Subtest: SIGKILL after lifecycle records but before the snapshot: recovered world never resurrects-and-re-kills
+ok 4 - SIGKILL after lifecycle records but before the snapshot: recovered world never resurrects-and-re-kills
+  ---
+  duration_ms: 3226.770669
+  type: 'test'
+  ...
+# Subtest: SIGKILL at write boundary lifecycle-appended:3, then repeated recovery and continued simulation stay consistent
+ok 5 - SIGKILL at write boundary lifecycle-appended:3, then repeated recovery and continued simulation stay consistent
+  ---
+  duration_ms: 2912.407602
+  type: 'test'
+  ...
+# Subtest: SIGKILL at write boundary events-appended:20, then repeated recovery and continued simulation stay consistent
+ok 6 - SIGKILL at write boundary events-appended:20, then repeated recovery and continued simulation stay consistent
+  ---
+  duration_ms: 3313.431591
+  type: 'test'
+  ...
+# Subtest: SIGKILL at write boundary snapshot-tmp-written:2, then repeated recovery and continued simulation stay consistent
+ok 7 - SIGKILL at write boundary snapshot-tmp-written:2, then repeated recovery and continued simulation stay consistent
+  ---
+  duration_ms: 2425.905606
+  type: 'test'
+  ...
+# Subtest: SIGKILL at write boundary snapshot-committed:3, then repeated recovery and continued simulation stay consistent
+ok 8 - SIGKILL at write boundary snapshot-committed:3, then repeated recovery and continued simulation stay consistent
+  ---
+  duration_ms: 2684.206176
+  type: 'test'
+  ...
+# Subtest: SIGKILL during recovery itself (after the orphan file, before truncation) recovers identically
+ok 9 - SIGKILL during recovery itself (after the orphan file, before truncation) recovers identically
+  ---
+  duration_ms: 2904.343802
+  type: 'test'
+  ...
+# Subtest: interventions: crash before commit is not acknowledged and applies once on retry; crash after commit is a duplicate
+ok 10 - interventions: crash before commit is not acknowledged and applies once on retry; crash after commit is a duplicate
+  ---
+  duration_ms: 1075.315128
+  type: 'test'
+  ...
+# Subtest: intervention save failure: 503-style failure, world keeps one application, a later commit makes it durable once
+ok 11 - intervention save failure: 503-style failure, world keeps one application, a later commit makes it durable once
+  ---
+  duration_ms: 52.385599
+  type: 'test'
+  ...
+# Subtest: failed and short event/intervention appends remain pending and a same-ID retry repairs every durable record
+ok 12 - failed and short event/intervention appends remain pending and a same-ID retry repairs every durable record
+  ---
+  duration_ms: 53.716427
+  type: 'test'
+  ...
+# Subtest: recovery refuses an ambiguous Phase-1 lost branch without moving its surviving records
+ok 13 - recovery refuses an ambiguous Phase-1 lost branch without moving its surviving records
+  ---
+  duration_ms: 20.009105
+  type: 'test'
+  ...
+# Subtest: a second recovery at the same snapshot sequence appends evidence instead of overwriting the first orphan
+ok 14 - a second recovery at the same snapshot sequence appends evidence instead of overwriting the first orphan
+  ---
+  duration_ms: 34.467498
+  type: 'test'
+  ...
+# Subtest: event pages preserve UTF-8 characters split across 64 KiB reads
+ok 15 - event pages preserve UTF-8 characters split across 64 KiB reads
+  ---
+  duration_ms: 26.792193
+  type: 'test'
+  ...
+# Subtest: a pending page pins its retained segment while rotation renames it
+ok 16 - a pending page pins its retained segment while rotation renames it
+  ---
+  duration_ms: 16.857909
+  type: 'test'
+  ...
+# Subtest: rotation syncs the outgoing log before closing its descriptor
+ok 17 - rotation syncs the outgoing log before closing its descriptor
+  ---
+  duration_ms: 11.280908
+  type: 'test'
+  ...
+# Subtest: GET /api/events: three 5 MB logs, after=0 limit=1, concurrent requests are bounded and do not stall ticks
+ok 18 - GET /api/events: three 5 MB logs, after=0 limit=1, concurrent requests are bounded and do not stall ticks
+  ---
+  duration_ms: 2273.091648
+  type: 'test'
+  ...
+# Subtest: event reads beyond the concurrency cap get an honest 503, not unbounded queued disk work
+ok 19 - event reads beyond the concurrency cap get an honest 503, not unbounded queued disk work
+  ---
+  duration_ms: 538.602456
+  type: 'test'
+  ...
+# Subtest: rate limits: creature detail and list share the public limiter, 429 has Retry-After, recovery after window
+ok 20 - rate limits: creature detail and list share the public limiter, 429 has Retry-After, recovery after window
+  ---
+  duration_ms: 52.463155
+  type: 'test'
+  ...
+# Subtest: spoofed X-Forwarded-For cannot bypass limits (Caddy deployment: TRUST_PROXY=1, proxy on private network)
+ok 21 - spoofed X-Forwarded-For cannot bypass limits (Caddy deployment: TRUST_PROXY=1, proxy on private network)
+  ---
+  duration_ms: 53.676961
+  type: 'test'
+  ...
+# Subtest: WebSocket upgrade and resync share the public-read budget and close on resync abuse
+ok 22 - WebSocket upgrade and resync share the public-read budget and close on resync abuse
+  ---
+  duration_ms: 55.348117
+  type: 'test'
+  ...
+# Subtest: event API and WebSocket snapshots expose only committed cursors across a crash/restart
+ok 23 - event API and WebSocket snapshots expose only committed cursors across a crash/restart
+  ---
+  duration_ms: 98.566646
+  type: 'test'
+  ...
+# Subtest: HTTP intervention retry returns 503 until failed event or ledger append is repaired
+ok 24 - HTTP intervention retry returns 503 until failed event or ledger append is repaired
+  ---
+  duration_ms: 307.036973
+  type: 'test'
+  ...
+# Subtest: a stale numeric PID-1 lock is not considered live by an offline one-shot container/tool
+ok 25 - a stale numeric PID-1 lock is not considered live by an offline one-shot container/tool
+  ---
+  duration_ms: 0.88267
+  type: 'test'
+  ...
+# Subtest: LEARNING: explicit change applies on restart without erasing weights/memory; unset keeps stored; invalid fails startup
+ok 26 - LEARNING: explicit change applies on restart without erasing weights/memory; unset keeps stored; invalid fails startup
+  ---
+  duration_ms: 8241.263835
+  type: 'test'
+  ...
+# Subtest: GET /api/status reports the learning policy
+ok 27 - GET /api/status reports the learning policy
+  ---
+  duration_ms: 45.910949
+  type: 'test'
+  ...
+# Subtest: intervention idempotency is scoped to world + authenticated actor + id, persisted across restart
+ok 28 - intervention idempotency is scoped to world + authenticated actor + id, persisted across restart
+  ---
+  duration_ms: 656.105143
+  type: 'test'
+  ...
+# Subtest: schema v1 -> v2 migration re-keys existing intervention IDs to their original actor
+ok 29 - schema v1 -> v2 migration re-keys existing intervention IDs to their original actor
+  ---
+  duration_ms: 0.740647
+  type: 'test'
+  ...
+# Subtest: two clients share identical state; reconnect resyncs without duplicate events
+ok 30 - two clients share identical state; reconnect resyncs without duplicate events
+  ---
+  duration_ms: 455.826305
+  type: 'test'
+  ...
+# Subtest: unauthorized access to developer endpoints is rejected; visitor token is not enough
+ok 31 - unauthorized access to developer endpoints is rejected; visitor token is not enough
+  ---
+  duration_ms: 358.276683
+  type: 'test'
+  ...
+# Subtest: duplicate intervention ids apply once, survive restart; id reuse with different body is rejected
+ok 32 - duplicate intervention ids apply once, survive restart; id reuse with different body is rejected
+  ---
+  duration_ms: 268.600181
+  type: 'test'
+  ...
+# Subtest: restart recovery: same world, learned state retained, no reseed, no duplicate world_created
+ok 33 - restart recovery: same world, learned state retained, no reseed, no duplicate world_created
+  ---
+  duration_ms: 2667.35375
+  type: 'test'
+  ...
+# Subtest: corrupt snapshots never trigger a silent new world; fallback to previous snapshot works
+ok 34 - corrupt snapshots never trigger a silent new world; fallback to previous snapshot works
+  ---
+  duration_ms: 208.568424
+  type: 'test'
+  ...
+# Subtest: downtime: capped, non-lethal catch-up; no mass death after a long outage
+ok 35 - downtime: capped, non-lethal catch-up; no mass death after a long outage
+  ---
+  duration_ms: 299.850567
+  type: 'test'
+  ...
+# Subtest: backup and restore bring back an earlier state; tampered backup is refused
+ok 36 - backup and restore bring back an earlier state; tampered backup is refused
+  ---
+  duration_ms: 619.950975
+  type: 'test'
+  ...
+# Subtest: schema migration from legacy v0 snapshot; newer schemas refused
+ok 37 - schema migration from legacy v0 snapshot; newer schemas refused
+  ---
+  duration_ms: 0.703445
+  type: 'test'
+  ...
+# Subtest: developer reset: requires auth + confirmation; archives; extinct world stays extinct until then
+ok 38 - developer reset: requires auth + confirmation; archives; extinct world stays extinct until then
+  ---
+  duration_ms: 431.249506
+  type: 'test'
+  ...
+# Subtest: visitor endpoints over HTTP: gift and startle with wallet sessions
+ok 39 - visitor endpoints over HTTP: gift and startle with wallet sessions
+  ---
+  duration_ms: 322.973234
+  type: 'test'
+  ...
+# Subtest: deterministic: same seed gives identical state; different seed differs
+ok 40 - deterministic: same seed gives identical state; different seed differs
+  ---
+  duration_ms: 938.970687
+  type: 'test'
+  ...
+# Subtest: initial seed of 24 is a seed, not a cap; autonomous feeding, gathering and building with real costs
+ok 41 - initial seed of 24 is a seed, not a cap; autonomous feeding, gathering and building with real costs
+  ---
+  duration_ms: 791.136837
+  type: 'test'
+  ...
+# Subtest: reproduction needs adulthood, shelter and food; offspring grow before fertility; recovery period
+ok 42 - reproduction needs adulthood, shelter and food; offspring grow before fertility; recovery period
+  ---
+  duration_ms: 9967.194447
+  type: 'test'
+  ...
+# Subtest: scarcity suppresses reproduction, harms health, kills by starvation; extinction preserves history and stops births
+ok 43 - scarcity suppresses reproduction, harms health, kills by starvation; extinction preserves history and stops births
+  ---
+  duration_ms: 213.009064
+  type: 'test'
+  ...
+# Subtest: disasters damage creatures and shelters; heal and food interventions help; bounds enforced
+ok 44 - disasters damage creatures and shelters; heal and food interventions help; bounds enforced
+  ---
+  duration_ms: 581.988662
+  type: 'test'
+  ...
+# Subtest: creatures react to fire (flee) and recover afterwards
+ok 45 - creatures react to fire (flee) and recover afterwards
+  ---
+  duration_ms: 364.561033
+  type: 'test'
+  ...
+# Subtest: visitor wallets: helpful vs harmful opinions change approach/avoid; disabled learning does not
+ok 46 - visitor wallets: helpful vs harmful opinions change approach/avoid; disabled learning does not
+  ---
+  duration_ms: 1320.530127
+  type: 'test'
+  ...
+# Subtest: learning changes weights; disabled keeps priors; speech is labelled template
+ok 47 - learning changes weights; disabled keeps priors; speech is labelled template
+  ---
+  duration_ms: 352.728824
+  type: 'test'
+  ...
+# Subtest: keccak256 and address derivation known vectors
+ok 48 - keccak256 and address derivation known vectors
+  ---
+  duration_ms: 9.921027
+  type: 'test'
+  ...
+# Subtest: signature roundtrip and tamper detection
+ok 49 - signature roundtrip and tamper detection
+  ---
+  duration_ms: 347.102226
+  type: 'test'
+  ...
+# Subtest: sign-in: nonce single-use, origin bound, expiry, roles
+ok 50 - sign-in: nonce single-use, origin bound, expiry, roles
+  ---
+  duration_ms: 861.767196
+  type: 'test'
+  ...
+# Subtest: server recovers the signer of every ethers-generated valid signature
+ok 51 - server recovers the signer of every ethers-generated valid signature
+  ---
+  duration_ms: 1977.806528
+  type: 'test'
+  ...
+# Subtest: invalid signatures never recover the claimed address (and agree with ethers where ethers recovers)
+ok 52 - invalid signatures never recover the claimed address (and agree with ethers where ethers recovers)
+  ---
+  duration_ms: 489.129432
+  type: 'test'
+  ...
+# Subtest: server-side test signer output is a canonical signature ethers-compatible in shape
+ok 53 - server-side test signer output is a canonical signature ethers-compatible in shape
+  ---
+  duration_ms: 317.516478
+  type: 'test'
+  ...
+1..53
+# tests 53
+# suites 0
+# pass 52
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 58770.592692

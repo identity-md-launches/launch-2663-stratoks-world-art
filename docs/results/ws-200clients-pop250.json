@@ -1,0 +1,97 @@
+{
+ "clients": 200,
+ "seconds": 30,
+ "tickMs": 250,
+ "population": 250,
+ "messages": 24119,
+ "mbReceivedTotal": 1780.7,
+ "deltaGaps": 0,
+ "closedByServer": 0,
+ "tickSpreadAcrossClients": 0,
+ "samples": [
+  {
+   "t": 5,
+   "cpu": 33.2,
+   "rssMB": 136,
+   "p95": 102.58,
+   "p99": 102.58,
+   "max": 102.58,
+   "lagMs": 0,
+   "overloaded": false,
+   "clients": 200,
+   "pop": 250
+  },
+  {
+   "t": 10,
+   "cpu": 31.7,
+   "rssMB": 151,
+   "p95": 88.18,
+   "p99": 102.58,
+   "max": 102.58,
+   "lagMs": 0,
+   "overloaded": false,
+   "clients": 200,
+   "pop": 250
+  },
+  {
+   "t": 15,
+   "cpu": 31.7,
+   "rssMB": 175,
+   "p95": 82.62,
+   "p99": 102.58,
+   "max": 102.58,
+   "lagMs": 0,
+   "overloaded": false,
+   "clients": 200,
+   "pop": 250
+  },
+  {
+   "t": 20,
+   "cpu": 31.9,
+   "rssMB": 174,
+   "p95": 80.8,
+   "p99": 102.58,
+   "max": 102.58,
+   "lagMs": 0,
+   "overloaded": false,
+   "clients": 200,
+   "pop": 250
+  },
+  {
+   "t": 25,
+   "cpu": 28.4,
+   "rssMB": 174,
+   "p95": 80.8,
+   "p99": 102.58,
+   "max": 102.58,
+   "lagMs": 0,
+   "overloaded": false,
+   "clients": 200,
+   "pop": 250
+  },
+  {
+   "t": 30,
+   "cpu": 31.4,
+   "rssMB": 175,
+   "p95": 72.52,
+   "p99": 88.18,
+   "max": 102.58,
+   "lagMs": 0,
+   "overloaded": false,
+   "clients": 200,
+   "pop": 250
+  }
+ ],
+ "last": {
+  "t": 30,
+  "cpu": 31.4,
+  "rssMB": 175,
+  "p95": 72.52,
+  "p99": 88.18,
+  "max": 102.58,
+  "lagMs": 0,
+  "overloaded": false,
+  "clients": 200,
+  "pop": 250
+ }
+}

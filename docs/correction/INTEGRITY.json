@@ -1,0 +1,619 @@
+{
+  "passed": true,
+  "baseline": "99e50b1c275b9422c14f279498b3e192b151992b",
+  "checkoutCommit": "ca7a1770779b3c55e519fc98ed80abe4b983fa7f",
+  "sourceTreeSha256": "df0a2e01be35e82d9d739dfe0ee34217f6d2cb43237843b6068b628ee181a3a3",
+  "exportTreeSha256": "54dd31b4f40eccf8e46b508380d29881965d8b8539cc13869d4671d7fda4435e",
+  "computedCid": "bafybeifukwi4jdpv4sf572jkdung5zgkhe76nkchsxl2gmd5g62mpetqpm",
+  "publicHttpsVerified": false,
+  "dockerVerified": false,
+  "contributionBytes": 8072874,
+  "reserveBytes": 315734,
+  "limitBytes": 8388608,
+  "evidencePathBytes": 3101183,
+  "evidencePathLimitBytes": 3145728,
+  "staticFiles": 19,
+  "capacityRows": 16,
+  "files": [
+    {
+      "file": "DESIGN.md",
+      "bytes": 8777
+    },
+    {
+      "file": "README.md",
+      "bytes": 9134
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/browser-install.txt",
+      "bytes": 11178
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/build.txt",
+      "bytes": 1379
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/capacity.txt",
+      "bytes": 846
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/chromium.txt",
+      "bytes": 1384
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/chromium/brain-390.jpg",
+      "bytes": 41590
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/chromium/checks.json",
+      "bytes": 11298
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/chromium/downloaded-experiment.json.gz",
+      "bytes": 4601
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/chromium/first-screen-390.jpg",
+      "bytes": 41143
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/chromium/keyboard-primary-390.jpg",
+      "bytes": 42319
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/chromium/lab-390.jpg",
+      "bytes": 38676
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/chromium/lab-landscape-667.jpg",
+      "bytes": 23762
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/chromium/reversal-390.jpg",
+      "bytes": 44711
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/chromium/shared-decision.json",
+      "bytes": 5879
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/ecology.txt",
+      "bytes": 5188
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/https.txt",
+      "bytes": 2114
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/integrity.txt",
+      "bytes": 657
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/learning.txt",
+      "bytes": 10410
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/original-regressions.tap",
+      "bytes": 52690
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/package-tests.tap",
+      "bytes": 24142
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/package.txt",
+      "bytes": 162
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/regressions.tap",
+      "bytes": 7394
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/release-build.txt",
+      "bytes": 219
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/server-tests.tap",
+      "bytes": 24140
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/taste-command.json",
+      "bytes": 3268
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/taste.json",
+      "bytes": 35987
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/typecheck.txt",
+      "bytes": 51
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/web-tests.tap",
+      "bytes": 1772
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/webkit.txt",
+      "bytes": 1384
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/webkit/brain-390.jpg",
+      "bytes": 42293
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/webkit/checks.json",
+      "bytes": 11288
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/webkit/downloaded-experiment.json.gz",
+      "bytes": 4601
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/webkit/first-screen-390.jpg",
+      "bytes": 36528
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/webkit/keyboard-primary-390.jpg",
+      "bytes": 37676
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/webkit/lab-390.jpg",
+      "bytes": 36410
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/webkit/lab-landscape-667.jpg",
+      "bytes": 17397
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/webkit/reversal-390.jpg",
+      "bytes": 45614
+    },
+    {
+      "file": "artifacts/phase2a-client/correction/webkit/shared-decision.json",
+      "bytes": 5879
+    },
+    {
+      "file": "artifacts/phase2a-client/review/before.tap.gz",
+      "bytes": 1639
+    },
+    {
+      "file": "artifacts/phase2a-client/review/build.txt",
+      "bytes": 1379
+    },
+    {
+      "file": "artifacts/phase2a-client/review/capacity.txt",
+      "bytes": 847
+    },
+    {
+      "file": "artifacts/phase2a-client/review/chromium-before.txt",
+      "bytes": 74
+    },
+    {
+      "file": "artifacts/phase2a-client/review/chromium-before/checks.json",
+      "bytes": 949
+    },
+    {
+      "file": "artifacts/phase2a-client/review/chromium.txt",
+      "bytes": 44
+    },
+    {
+      "file": "artifacts/phase2a-client/review/chromium/checks.json",
+      "bytes": 7947
+    },
+    {
+      "file": "artifacts/phase2a-client/review/docker.txt",
+      "bytes": 62
+    },
+    {
+      "file": "artifacts/phase2a-client/review/ecology.txt",
+      "bytes": 5256
+    },
+    {
+      "file": "artifacts/phase2a-client/review/https.txt",
+      "bytes": 2098
+    },
+    {
+      "file": "artifacts/phase2a-client/review/integrity.txt",
+      "bytes": 0
+    },
+    {
+      "file": "artifacts/phase2a-client/review/interactions-chromium.json",
+      "bytes": 11298
+    },
+    {
+      "file": "artifacts/phase2a-client/review/interactions-chromium.txt",
+      "bytes": 1384
+    },
+    {
+      "file": "artifacts/phase2a-client/review/interactions-webkit.json",
+      "bytes": 11288
+    },
+    {
+      "file": "artifacts/phase2a-client/review/interactions-webkit.txt",
+      "bytes": 1502
+    },
+    {
+      "file": "artifacts/phase2a-client/review/learning.txt",
+      "bytes": 10410
+    },
+    {
+      "file": "artifacts/phase2a-client/review/legacy-divergence.json",
+      "bytes": 3287
+    },
+    {
+      "file": "artifacts/phase2a-client/review/original-correction-regressions.tap.gz",
+      "bytes": 2333
+    },
+    {
+      "file": "artifacts/phase2a-client/review/original-correction.txt",
+      "bytes": 70
+    },
+    {
+      "file": "artifacts/phase2a-client/review/package-tests.tap.gz",
+      "bytes": 5839
+    },
+    {
+      "file": "artifacts/phase2a-client/review/package.txt",
+      "bytes": 162
+    },
+    {
+      "file": "artifacts/phase2a-client/review/preflight.txt",
+      "bytes": 758
+    },
+    {
+      "file": "artifacts/phase2a-client/review/regressions.tap.gz",
+      "bytes": 958
+    },
+    {
+      "file": "artifacts/phase2a-client/review/release.txt",
+      "bytes": 219
+    },
+    {
+      "file": "artifacts/phase2a-client/review/repaired-checks.tap.gz",
+      "bytes": 1530
+    },
+    {
+      "file": "artifacts/phase2a-client/review/report.txt",
+      "bytes": 90
+    },
+    {
+      "file": "artifacts/phase2a-client/review/reproduced.json",
+      "bytes": 3676
+    },
+    {
+      "file": "artifacts/phase2a-client/review/server-tests-final.tap.gz",
+      "bytes": 5844
+    },
+    {
+      "file": "artifacts/phase2a-client/review/server-tests.tap.gz",
+      "bytes": 6289
+    },
+    {
+      "file": "artifacts/phase2a-client/review/taste-command.json",
+      "bytes": 3269
+    },
+    {
+      "file": "artifacts/phase2a-client/review/taste.json",
+      "bytes": 35988
+    },
+    {
+      "file": "artifacts/phase2a-client/review/typecheck.txt",
+      "bytes": 51
+    },
+    {
+      "file": "artifacts/phase2a-client/review/web-tests.tap.gz",
+      "bytes": 943
+    },
+    {
+      "file": "artifacts/phase2a-client/review/webkit.txt",
+      "bytes": 160
+    },
+    {
+      "file": "artifacts/phase2a-client/review/webkit/checks.json",
+      "bytes": 7913
+    },
+    {
+      "file": "deploy/correction-benchmark.Dockerfile",
+      "bytes": 405
+    },
+    {
+      "file": "deploy/correction-client.car.gz",
+      "bytes": 685097
+    },
+    {
+      "file": "deploy/correction-vps-compose.yml",
+      "bytes": 862
+    },
+    {
+      "file": "deploy/correction-vps.tar.gz",
+      "bytes": 2128976
+    },
+    {
+      "file": "deploy/phase2a-demo/circuit/mushroom.js",
+      "bytes": 4925
+    },
+    {
+      "file": "dist/assets/demo.worker-Cg15FJoQ.js",
+      "bytes": 52426
+    },
+    {
+      "file": "dist/assets/dist-Be7xzg-E.js",
+      "bytes": 102687
+    },
+    {
+      "file": "dist/assets/index-CGsUcnbz.js",
+      "bytes": 415036
+    },
+    {
+      "file": "dist/assets/learning.worker-Chr4HT56.js",
+      "bytes": 52137
+    },
+    {
+      "file": "dist/index.html",
+      "bytes": 1085
+    },
+    {
+      "file": "docs/correction/HTTPS.json",
+      "bytes": 2098
+    },
+    {
+      "file": "docs/correction/INTEGRITY.json",
+      "bytes": 15191
+    },
+    {
+      "file": "docs/correction/PACKAGE.json",
+      "bytes": 34243
+    },
+    {
+      "file": "docs/correction/PUBLICATION.md",
+      "bytes": 4011
+    },
+    {
+      "file": "docs/correction/RELEASE.json",
+      "bytes": 18907
+    },
+    {
+      "file": "docs/correction/RESULTS.md",
+      "bytes": 9902
+    },
+    {
+      "file": "docs/correction/REVIEW.md",
+      "bytes": 15459
+    },
+    {
+      "file": "docs/correction/VALIDATION.md",
+      "bytes": 14304
+    },
+    {
+      "file": "docs/correction/VPS.md",
+      "bytes": 8334
+    },
+    {
+      "file": "docs/correction/screens/chromium-brain-1440.jpg",
+      "bytes": 127029
+    },
+    {
+      "file": "docs/correction/screens/review/chromium-before/retained-decision-390.jpg",
+      "bytes": 37064
+    },
+    {
+      "file": "docs/correction/screens/review/chromium/retained-decision-1440.jpg",
+      "bytes": 71094
+    },
+    {
+      "file": "docs/correction/screens/review/chromium/retained-decision-390.jpg",
+      "bytes": 37136
+    },
+    {
+      "file": "docs/correction/screens/review/webkit/retained-decision-1440.jpg",
+      "bytes": 74680
+    },
+    {
+      "file": "docs/correction/screens/review/webkit/retained-decision-390.jpg",
+      "bytes": 37525
+    },
+    {
+      "file": "docs/correction/screens/webkit-brain-1440.jpg",
+      "bytes": 131251
+    },
+    {
+      "file": "server/src/actions.js",
+      "bytes": 25367
+    },
+    {
+      "file": "server/src/controller.js",
+      "bytes": 4037
+    },
+    {
+      "file": "server/src/mushroom.js",
+      "bytes": 4925
+    },
+    {
+      "file": "server/src/view.js",
+      "bytes": 4065
+    },
+    {
+      "file": "shared/brain-v1.md",
+      "bytes": 7240
+    },
+    {
+      "file": "tests/brain-compatibility.test.js",
+      "bytes": 4659
+    },
+    {
+      "file": "tests/brain-correction.test.js",
+      "bytes": 9865
+    },
+    {
+      "file": "tests/durability.test.js",
+      "bytes": 12365
+    },
+    {
+      "file": "tests/experiments/check-correction.mjs",
+      "bytes": 5191
+    },
+    {
+      "file": "tests/experiments/mushroom-ecology.mjs",
+      "bytes": 2963
+    },
+    {
+      "file": "tests/experiments/mushroom-learning.mjs",
+      "bytes": 7480
+    },
+    {
+      "file": "tests/experiments/package-correction.py",
+      "bytes": 3299
+    },
+    {
+      "file": "tests/experiments/report-correction.mjs",
+      "bytes": 12067
+    },
+    {
+      "file": "tests/experiments/reproduce-correction.mjs",
+      "bytes": 1844
+    },
+    {
+      "file": "tests/experiments/reproduce-review.mjs",
+      "bytes": 5067
+    },
+    {
+      "file": "tests/fixtures/accepted99e50b1-mb-decision.json.gz",
+      "bytes": 4222
+    },
+    {
+      "file": "tests/fixtures/legacy-starvation-reference.mjs",
+      "bytes": 2271
+    },
+    {
+      "file": "tests/load/brain-capacity.mjs",
+      "bytes": 7377
+    },
+    {
+      "file": "tests/load/correction-docker.mjs",
+      "bytes": 6137
+    },
+    {
+      "file": "tests/results/correction/capacity/legacy-100-8-accelerated.json",
+      "bytes": 81921
+    },
+    {
+      "file": "tests/results/correction/capacity/legacy-24-8-accelerated.json",
+      "bytes": 81716
+    },
+    {
+      "file": "tests/results/correction/capacity/legacy-250-8-accelerated.json",
+      "bytes": 81344
+    },
+    {
+      "file": "tests/results/correction/capacity/mb-v1-100-8-accelerated.json",
+      "bytes": 81799
+    },
+    {
+      "file": "tests/results/correction/capacity/mb-v1-100-8-realtime.json",
+      "bytes": 15521
+    },
+    {
+      "file": "tests/results/correction/capacity/mb-v1-24-8-accelerated.json",
+      "bytes": 81852
+    },
+    {
+      "file": "tests/results/correction/capacity/mb-v1-24-8-realtime.json",
+      "bytes": 15388
+    },
+    {
+      "file": "tests/results/correction/capacity/mb-v1-250-32-accelerated.json",
+      "bytes": 82574
+    },
+    {
+      "file": "tests/results/correction/capacity/mb-v1-250-8-accelerated.json",
+      "bytes": 81608
+    },
+    {
+      "file": "tests/results/correction/capacity/mb-v1-250-8-realtime.json",
+      "bytes": 15495
+    },
+    {
+      "file": "tests/results/correction/capacity/mb-v1-ablated-100-8-accelerated.json",
+      "bytes": 81772
+    },
+    {
+      "file": "tests/results/correction/capacity/mb-v1-ablated-24-8-accelerated.json",
+      "bytes": 81763
+    },
+    {
+      "file": "tests/results/correction/capacity/mb-v1-ablated-250-8-accelerated.json",
+      "bytes": 81629
+    },
+    {
+      "file": "tests/results/correction/capacity/mb-v1-frozen-100-8-accelerated.json",
+      "bytes": 82005
+    },
+    {
+      "file": "tests/results/correction/capacity/mb-v1-frozen-24-8-accelerated.json",
+      "bytes": 81834
+    },
+    {
+      "file": "tests/results/correction/capacity/mb-v1-frozen-250-8-accelerated.json",
+      "bytes": 81409
+    },
+    {
+      "file": "tests/results/correction/capacity/status.json",
+      "bytes": 4331
+    },
+    {
+      "file": "tests/results/correction/docker/status.json",
+      "bytes": 324
+    },
+    {
+      "file": "tests/results/correction/ecology.json",
+      "bytes": 35934
+    },
+    {
+      "file": "tests/results/correction/learning.json",
+      "bytes": 1682106
+    },
+    {
+      "file": "tests/results/review/ca7a177-ecology.json.gz",
+      "bytes": 4057
+    },
+    {
+      "file": "tests/results/review/ca7a177-learning.json.gz",
+      "bytes": 94229
+    },
+    {
+      "file": "tests/review-regressions.test.js",
+      "bytes": 5239
+    },
+    {
+      "file": "tests/sim.test.js",
+      "bytes": 8969
+    },
+    {
+      "file": "web/scripts/check-correction-https.mjs",
+      "bytes": 3190
+    },
+    {
+      "file": "web/scripts/check-phase2a.mjs",
+      "bytes": 20424
+    },
+    {
+      "file": "web/scripts/check-review.mjs",
+      "bytes": 7978
+    },
+    {
+      "file": "web/scripts/release-correction.mjs",
+      "bytes": 5855
+    },
+    {
+      "file": "web/src/BrainBehavior.tsx",
+      "bytes": 7494
+    },
+    {
+      "file": "web/src/Panels.tsx",
+      "bytes": 36136
+    },
+    {
+      "file": "web/src/types.ts",
+      "bytes": 5176
+    }
+  ]
+}

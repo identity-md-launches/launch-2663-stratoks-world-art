@@ -1,0 +1,19 @@
+
+> stratoks-client@0.1.0 test
+> tsx --test src/*.test.ts
+
+✔ actual simulation snapshot is rendered as an entity map with its real population (55.94982ms)
+✔ delta updates one creature, removes consumed resources, and deduplicates replayed events (16.866837ms)
+✔ a sequence gap freezes existing state and asks for a full snapshot (14.685693ms)
+✔ reconnect snapshot replaces entities without duplicating past events (27.544829ms)
+✔ developer reset replaces world, history, events and sequence rather than merging old identities (13.338331ms)
+✔ a snapshot from an earlier restored backup discards events from the abandoned timeline (11.027189ms)
+✔ malformed snapshot is refused without changing the current world (10.268531ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 340.882728

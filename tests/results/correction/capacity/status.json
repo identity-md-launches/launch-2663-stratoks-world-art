@@ -1,0 +1,178 @@
+{
+  "local": true,
+  "target": {
+    "memoryBytes": 536870912,
+    "cpuQuota": 75000,
+    "cpuPeriod": 100000,
+    "platform": "linux/amd64"
+  },
+  "dockerAvailable": false,
+  "enforced": false,
+  "verified": false,
+  "rows": [
+    {
+      "mode": "legacy",
+      "n": 24,
+      "clients": 8,
+      "ticks": 1200,
+      "cadence": "accelerated",
+      "exitCode": 0,
+      "elapsedMs": 3652.621166,
+      "file": "legacy-24-8-accelerated.json"
+    },
+    {
+      "mode": "legacy",
+      "n": 100,
+      "clients": 8,
+      "ticks": 1200,
+      "cadence": "accelerated",
+      "exitCode": 0,
+      "elapsedMs": 8522.027381,
+      "file": "legacy-100-8-accelerated.json"
+    },
+    {
+      "mode": "legacy",
+      "n": 250,
+      "clients": 8,
+      "ticks": 1200,
+      "cadence": "accelerated",
+      "exitCode": 0,
+      "elapsedMs": 18466.895712999998,
+      "file": "legacy-250-8-accelerated.json"
+    },
+    {
+      "mode": "mb-v1",
+      "n": 24,
+      "clients": 8,
+      "ticks": 1200,
+      "cadence": "accelerated",
+      "exitCode": 0,
+      "elapsedMs": 3478.4104939999997,
+      "file": "mb-v1-24-8-accelerated.json"
+    },
+    {
+      "mode": "mb-v1",
+      "n": 100,
+      "clients": 8,
+      "ticks": 1200,
+      "cadence": "accelerated",
+      "exitCode": 0,
+      "elapsedMs": 9790.122688999996,
+      "file": "mb-v1-100-8-accelerated.json"
+    },
+    {
+      "mode": "mb-v1",
+      "n": 250,
+      "clients": 8,
+      "ticks": 1200,
+      "cadence": "accelerated",
+      "exitCode": 0,
+      "elapsedMs": 22859.605195000004,
+      "file": "mb-v1-250-8-accelerated.json"
+    },
+    {
+      "mode": "mb-v1-frozen",
+      "n": 24,
+      "clients": 8,
+      "ticks": 1200,
+      "cadence": "accelerated",
+      "exitCode": 0,
+      "elapsedMs": 3407.5035669999925,
+      "file": "mb-v1-frozen-24-8-accelerated.json"
+    },
+    {
+      "mode": "mb-v1-frozen",
+      "n": 100,
+      "clients": 8,
+      "ticks": 1200,
+      "cadence": "accelerated",
+      "exitCode": 0,
+      "elapsedMs": 8777.610027000002,
+      "file": "mb-v1-frozen-100-8-accelerated.json"
+    },
+    {
+      "mode": "mb-v1-frozen",
+      "n": 250,
+      "clients": 8,
+      "ticks": 1200,
+      "cadence": "accelerated",
+      "exitCode": 0,
+      "elapsedMs": 20988.16105699999,
+      "file": "mb-v1-frozen-250-8-accelerated.json"
+    },
+    {
+      "mode": "mb-v1-ablated",
+      "n": 24,
+      "clients": 8,
+      "ticks": 1200,
+      "cadence": "accelerated",
+      "exitCode": 0,
+      "elapsedMs": 3691.5052279999945,
+      "file": "mb-v1-ablated-24-8-accelerated.json"
+    },
+    {
+      "mode": "mb-v1-ablated",
+      "n": 100,
+      "clients": 8,
+      "ticks": 1200,
+      "cadence": "accelerated",
+      "exitCode": 0,
+      "elapsedMs": 10010.465677,
+      "file": "mb-v1-ablated-100-8-accelerated.json"
+    },
+    {
+      "mode": "mb-v1-ablated",
+      "n": 250,
+      "clients": 8,
+      "ticks": 1200,
+      "cadence": "accelerated",
+      "exitCode": 0,
+      "elapsedMs": 23089.881963999986,
+      "file": "mb-v1-ablated-250-8-accelerated.json"
+    },
+    {
+      "mode": "mb-v1",
+      "n": 24,
+      "clients": 8,
+      "ticks": 180,
+      "cadence": "realtime",
+      "exitCode": 0,
+      "elapsedMs": 179352.18907999998,
+      "file": "mb-v1-24-8-realtime.json"
+    },
+    {
+      "mode": "mb-v1",
+      "n": 100,
+      "clients": 8,
+      "ticks": 180,
+      "cadence": "realtime",
+      "exitCode": 0,
+      "elapsedMs": 179529.98843699996,
+      "file": "mb-v1-100-8-realtime.json"
+    },
+    {
+      "mode": "mb-v1",
+      "n": 250,
+      "clients": 8,
+      "ticks": 180,
+      "cadence": "realtime",
+      "exitCode": 0,
+      "elapsedMs": 179739.092449,
+      "file": "mb-v1-250-8-realtime.json"
+    },
+    {
+      "mode": "mb-v1",
+      "n": 250,
+      "clients": 32,
+      "ticks": 1200,
+      "cadence": "accelerated",
+      "exitCode": 0,
+      "elapsedMs": 60466.116750000045,
+      "file": "mb-v1-250-32-accelerated.json"
+    }
+  ],
+  "limitations": [
+    "UNENFORCED local fallback: no requested 512 MiB / 0.75 CPU cgroup. These results cannot qualify the VPS.",
+    "Short benchmark only. Docker image is amd64; native x86_64 target must still be checked on the VPS. Clients consume the same cgroup budget as the service. No whole-host 1 GB, long-term survival, WAN, or unbounded history capacity claim."
+  ]
+}

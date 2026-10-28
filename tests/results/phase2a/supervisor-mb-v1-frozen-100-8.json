@@ -1,0 +1,18 @@
+{
+  "method": "one-core affinity + 0.75 CPU-time duty budget + sampled 512 MiB RSS watchdog; NOT cgroup",
+  "limits": {
+    "logicalCores": 1,
+    "cpuBudget": 0.75,
+    "rssBytes": 536870912,
+    "burstSeconds": 0.03
+  },
+  "elapsedSeconds": 10.371144325006753,
+  "cpuSeconds": 7.741694,
+  "cpuFraction": 0.7464647831901576,
+  "peakSampledRssBytes": 177516544,
+  "peakRusageRssBytes": 179613696,
+  "watchdogSamples": 2060,
+  "stoppedSeconds": 1.413245984876994,
+  "memoryExceeded": false,
+  "exitCode": 0
+}

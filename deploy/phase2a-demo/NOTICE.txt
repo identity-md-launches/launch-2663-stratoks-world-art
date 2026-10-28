@@ -1,0 +1,21 @@
+Stratoks Phase 2A companion inspector
+
+The world/ directory is the byte-identical recovered client build from source
+commit 09af84d67722e30c0cb0c096ab8a8189a3b03166. Its original client/art MIT,
+Manrope SIL OFL 1.1, and RainbowKit MIT notices are in licenses/. Wallet marks
+remain their owners' trademarks. The verified source ZIP and original dependency
+lockfile are retained in deploy/recovered/stratoks-09af84d.zip.
+
+The circuit/ files match the delivered backend modules byte-for-byte. They are
+an independent reduced fruit-fly-inspired associative circuit, not biological
+connectivity, full-brain emulation, consciousness or an external inference API.
+No restricted scientific dataset or trained tensor is included.
+
+The recovered backend has no standalone distribution grant in the supplied
+archive. The client's MIT notice does not relicense it. Resolve backend rights
+with the owner before public redistribution of these modules. See
+../../docs/phase2a/MODEL.md in the delivered repository for the source/data review.
+
+Synthetic circuit controls run in the browser tab only. The server connector
+performs reads only. A local isolated demo can embed the recovered world client;
+that local demo does not load production state or configuration.

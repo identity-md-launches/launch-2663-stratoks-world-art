@@ -1,0 +1,12 @@
+{"seed":101,"scenario":"main","mode":"full","ms":11459,"end":18,"deaths":{"unknown":4,"injury":2},"axe":1972,"fire":2,"rev":{"berryEatenBefore":266,"berryEatenAfter":123,"berryGathered":389}}
+{"seed":101,"scenario":"main","mode":"frozen","ms":7393,"end":22,"deaths":{"unknown":2},"axe":null,"fire":0,"rev":{"berryEatenBefore":260,"berryEatenAfter":81,"berryGathered":341}}
+{"seed":101,"scenario":"main","mode":"no-planner","ms":4272,"end":22,"deaths":{"unknown":2},"axe":null,"fire":0,"rev":{"berryEatenBefore":275,"berryEatenAfter":253,"berryGathered":546}}
+{"seed":101,"scenario":"cold","mode":"full","ms":9280,"end":22,"deaths":{"burns":3},"axe":318,"fire":10,"rev":null}
+{"seed":101,"scenario":"cold","mode":"frozen","ms":6640,"end":22,"deaths":{"exposure":3},"axe":325,"fire":2,"rev":null}
+{"seed":101,"scenario":"cold","mode":"no-planner","ms":5343,"end":23,"deaths":{"exposure":1},"axe":1614,"fire":0,"rev":null}
+{"seed":202,"scenario":"main","mode":"full","ms":5336,"end":17,"deaths":{"unknown":6,"injury":1},"axe":505,"fire":1,"rev":{"berryEatenBefore":220,"berryEatenAfter":145,"berryGathered":366}}
+{"seed":202,"scenario":"main","mode":"frozen","ms":4038,"end":15,"deaths":{"unknown":6,"dehydration":2,"burns":1},"axe":null,"fire":6,"rev":{"berryEatenBefore":232,"berryEatenAfter":92,"berryGathered":329}}
+{"seed":202,"scenario":"main","mode":"no-planner","ms":8247,"end":21,"deaths":{"unknown":2,"injury":1},"axe":1214,"fire":0,"rev":{"berryEatenBefore":283,"berryEatenAfter":207,"berryGathered":504}}
+{"seed":202,"scenario":"cold","mode":"full","ms":9233,"end":0,"deaths":{"exposure":24},"axe":null,"fire":9,"rev":null}
+{"seed":202,"scenario":"cold","mode":"frozen","ms":28023,"end":0,"deaths":{"burns":1,"exposure":23},"axe":1201,"fire":10,"rev":null}
+{"seed":202,"scenario":"cold","mode":"no-planner","ms":11456,"end":3,"deaths":{"exposure":19,"dehydration":1,"injury":1},"axe":null,"fire":0,"rev":null}

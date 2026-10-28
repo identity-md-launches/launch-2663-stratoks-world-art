@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-27T10:06:11.417Z",
+  "baseline": false,
+  "checks": [
+    {
+      "name": "a real snapshot save failure returns 503 and keeps the exact retry ID",
+      "passed": true
+    },
+    {
+      "name": "an expired-session response to a retry cannot erase its earlier uncertain outcome",
+      "passed": true
+    },
+    {
+      "name": "account switch never offers another actor's uncertain retry",
+      "passed": true
+    },
+    {
+      "name": "original actor reloads, signs in again and commits the same request exactly once",
+      "passed": true
+    },
+    {
+      "name": "legacy unowned payload stays inspectable and cannot be silently assigned to a wallet",
+      "passed": true
+    },
+    {
+      "name": "saved history follows nextAfter, caps the rendered page at 100, filters and shows retention gaps",
+      "passed": true
+    },
+    {
+      "name": "busy history retains its page and retries the same cursor, then disables paging at the end",
+      "passed": true
+    },
+    {
+      "name": "snapshot recovery rewinds the same-world archive instead of retaining an abandoned page",
+      "passed": true
+    }
+  ],
+  "errors": [
+    "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n429 !== 200\n\n    at file:///root/stratoks-recovery/project/web/scripts/check-recovery.mjs:185:69\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+  ],
+  "observations": {
+    "uncertainId": "9fe47356-880b-42ea-a459-35b4347bf951",
+    "savedKeyIncludesActor": true,
+    "actorBSeesActorARetry": false
+  },
+  "chromium": "145.0.7632.6"
+}

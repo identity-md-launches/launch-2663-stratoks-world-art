@@ -1,0 +1,333 @@
+{
+ "cpuSeconds": 123.022,
+ "ticksRun": 500000,
+ "wallSeconds": 120.9,
+ "tickMs": {
+  "p50": 0.154,
+  "p95": 0.568,
+  "p99": 0.861,
+  "max": 58.432
+ },
+ "peakPopulation": 66,
+ "finalPopulation": 53,
+ "status": "alive",
+ "snapshotBytes": 1350998,
+ "snapshotSerializeMs": 63.9,
+ "peakRssMB": 290,
+ "totals": {
+  "births": 2625,
+  "deaths": 2596,
+  "deathsByCause": {
+   "exhaustion": 225,
+   "old_age": 784,
+   "starvation": 1587
+  },
+  "eaten": 69262.1378265064,
+  "sheltersBuilt": 20,
+  "sheltersLost": 0,
+  "interventions": 0,
+  "downtimeEvents": 0
+ },
+ "history": [
+  {
+   "tick": 25000,
+   "pop": 49,
+   "food": 258.7,
+   "bushes": 90,
+   "shelters": 16,
+   "births": 102,
+   "deaths": 77,
+   "causes": {
+    "exhaustion": 9,
+    "old_age": 29,
+    "starvation": 39
+   },
+   "rssMB": 153
+  },
+  {
+   "tick": 50000,
+   "pop": 30,
+   "food": 328.3,
+   "bushes": 90,
+   "shelters": 16,
+   "births": 186,
+   "deaths": 180,
+   "causes": {
+    "exhaustion": 17,
+    "old_age": 65,
+    "starvation": 98
+   },
+   "rssMB": 156
+  },
+  {
+   "tick": 75000,
+   "pop": 51,
+   "food": 257.1,
+   "bushes": 90,
+   "shelters": 16,
+   "births": 299,
+   "deaths": 272,
+   "causes": {
+    "exhaustion": 27,
+    "old_age": 91,
+    "starvation": 154
+   },
+   "rssMB": 241
+  },
+  {
+   "tick": 100000,
+   "pop": 57,
+   "food": 259.1,
+   "bushes": 90,
+   "shelters": 19,
+   "births": 415,
+   "deaths": 382,
+   "causes": {
+    "exhaustion": 30,
+    "old_age": 131,
+    "starvation": 221
+   },
+   "rssMB": 243
+  },
+  {
+   "tick": 125000,
+   "pop": 51,
+   "food": 277.3,
+   "bushes": 90,
+   "shelters": 19,
+   "births": 542,
+   "deaths": 515,
+   "causes": {
+    "exhaustion": 42,
+    "old_age": 174,
+    "starvation": 299
+   },
+   "rssMB": 252
+  },
+  {
+   "tick": 150000,
+   "pop": 54,
+   "food": 284.9,
+   "bushes": 90,
+   "shelters": 19,
+   "births": 676,
+   "deaths": 646,
+   "causes": {
+    "exhaustion": 48,
+    "old_age": 213,
+    "starvation": 385
+   },
+   "rssMB": 264
+  },
+  {
+   "tick": 175000,
+   "pop": 51,
+   "food": 272.2,
+   "bushes": 90,
+   "shelters": 19,
+   "births": 801,
+   "deaths": 774,
+   "causes": {
+    "exhaustion": 60,
+    "old_age": 249,
+    "starvation": 465
+   },
+   "rssMB": 274
+  },
+  {
+   "tick": 200000,
+   "pop": 57,
+   "food": 270.8,
+   "bushes": 90,
+   "shelters": 19,
+   "births": 924,
+   "deaths": 891,
+   "causes": {
+    "exhaustion": 70,
+    "old_age": 284,
+    "starvation": 537
+   },
+   "rssMB": 274
+  },
+  {
+   "tick": 225000,
+   "pop": 56,
+   "food": 253.3,
+   "bushes": 90,
+   "shelters": 19,
+   "births": 1056,
+   "deaths": 1024,
+   "causes": {
+    "exhaustion": 79,
+    "old_age": 325,
+    "starvation": 620
+   },
+   "rssMB": 274
+  },
+  {
+   "tick": 250000,
+   "pop": 62,
+   "food": 250.8,
+   "bushes": 90,
+   "shelters": 20,
+   "births": 1201,
+   "deaths": 1163,
+   "causes": {
+    "exhaustion": 92,
+    "old_age": 364,
+    "starvation": 707
+   },
+   "rssMB": 274
+  },
+  {
+   "tick": 275000,
+   "pop": 56,
+   "food": 250.9,
+   "bushes": 90,
+   "shelters": 20,
+   "births": 1335,
+   "deaths": 1303,
+   "causes": {
+    "exhaustion": 103,
+    "old_age": 406,
+    "starvation": 794
+   },
+   "rssMB": 278
+  },
+  {
+   "tick": 300000,
+   "pop": 57,
+   "food": 252.1,
+   "bushes": 90,
+   "shelters": 20,
+   "births": 1468,
+   "deaths": 1435,
+   "causes": {
+    "exhaustion": 117,
+    "old_age": 441,
+    "starvation": 877
+   },
+   "rssMB": 278
+  },
+  {
+   "tick": 325000,
+   "pop": 62,
+   "food": 238.9,
+   "bushes": 90,
+   "shelters": 20,
+   "births": 1615,
+   "deaths": 1577,
+   "causes": {
+    "exhaustion": 129,
+    "old_age": 480,
+    "starvation": 968
+   },
+   "rssMB": 278
+  },
+  {
+   "tick": 350000,
+   "pop": 58,
+   "food": 255.8,
+   "bushes": 90,
+   "shelters": 20,
+   "births": 1752,
+   "deaths": 1718,
+   "causes": {
+    "exhaustion": 135,
+    "old_age": 528,
+    "starvation": 1055
+   },
+   "rssMB": 278
+  },
+  {
+   "tick": 375000,
+   "pop": 59,
+   "food": 247,
+   "bushes": 90,
+   "shelters": 20,
+   "births": 1897,
+   "deaths": 1862,
+   "causes": {
+    "exhaustion": 153,
+    "old_age": 570,
+    "starvation": 1139
+   },
+   "rssMB": 286
+  },
+  {
+   "tick": 400000,
+   "pop": 59,
+   "food": 257.9,
+   "bushes": 90,
+   "shelters": 20,
+   "births": 2042,
+   "deaths": 2007,
+   "causes": {
+    "exhaustion": 169,
+    "old_age": 617,
+    "starvation": 1221
+   },
+   "rssMB": 290
+  },
+  {
+   "tick": 425000,
+   "pop": 55,
+   "food": 252.1,
+   "bushes": 90,
+   "shelters": 20,
+   "births": 2183,
+   "deaths": 2152,
+   "causes": {
+    "exhaustion": 181,
+    "old_age": 659,
+    "starvation": 1312
+   },
+   "rssMB": 290
+  },
+  {
+   "tick": 450000,
+   "pop": 58,
+   "food": 230.7,
+   "bushes": 90,
+   "shelters": 20,
+   "births": 2323,
+   "deaths": 2289,
+   "causes": {
+    "exhaustion": 194,
+    "old_age": 698,
+    "starvation": 1397
+   },
+   "rssMB": 290
+  },
+  {
+   "tick": 475000,
+   "pop": 60,
+   "food": 248.5,
+   "bushes": 90,
+   "shelters": 20,
+   "births": 2483,
+   "deaths": 2447,
+   "causes": {
+    "exhaustion": 209,
+    "old_age": 738,
+    "starvation": 1500
+   },
+   "rssMB": 288
+  },
+  {
+   "tick": 500000,
+   "pop": 53,
+   "food": 235.8,
+   "bushes": 90,
+   "shelters": 20,
+   "births": 2625,
+   "deaths": 2596,
+   "causes": {
+    "exhaustion": 225,
+    "old_age": 784,
+    "starvation": 1587
+   },
+   "rssMB": 288
+  }
+ ]
+}

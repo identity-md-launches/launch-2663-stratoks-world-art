@@ -1,0 +1,11 @@
+{
+ "baseline": "b57000a Store.readEvents(after=0, limit=1)",
+ "events": 64752,
+ "historyBytes": 15000000,
+ "perRequestBlockingMsP50": 95.3,
+ "perRequestBlockingMsMax": 295.5,
+ "bytesReadPerRequest": 15000000,
+ "linesParsedPerRequest": 64752,
+ "peakHeapDeltaMB": 138.9,
+ "note": "synchronous on the simulation thread: every tick waits for the whole read"
+}

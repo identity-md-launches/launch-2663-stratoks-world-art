@@ -1,0 +1,64 @@
+{
+  "checkedAt": "2026-10-28T09:16:14.286Z",
+  "expectedCid": "bafybeifukwi4jdpv4sf572jkdung5zgkhe76nkchsxl2gmd5g62mpetqpm",
+  "exportTreeSha256": "54dd31b4f40eccf8e46b508380d29881965d8b8539cc13869d4671d7fda4435e",
+  "checks": [
+    {
+      "baseUrl": "https://stratoks-a-little-world-unf-0d68.identitymd.eth.limo/",
+      "indexExact": false,
+      "files": [
+        {
+          "file": "assets/demo.worker-Cg15FJoQ.js",
+          "curlExit": 35,
+          "httpStatus": "000",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "exact": false
+        }
+      ],
+      "errors": [
+        "curl: (35) error:0A000438:SSL routines::tlsv1 alert internal error"
+      ],
+      "passed": false
+    },
+    {
+      "baseUrl": "https://bafybeifukwi4jdpv4sf572jkdung5zgkhe76nkchsxl2gmd5g62mpetqpm.ipfs.dweb.link/",
+      "indexExact": false,
+      "files": [
+        {
+          "file": "assets/demo.worker-Cg15FJoQ.js",
+          "curlExit": 0,
+          "httpStatus": "429",
+          "bytes": 219,
+          "sha256": "b3a1b6a77df7a8f2187cf1539c2412dabb42506a171a9799ff0580d44c78aea6",
+          "exact": false
+        }
+      ],
+      "errors": [
+        "HTTP 429; release bytes do not match."
+      ],
+      "passed": false
+    },
+    {
+      "baseUrl": "https://ipfs.io/ipfs/bafybeifukwi4jdpv4sf572jkdung5zgkhe76nkchsxl2gmd5g62mpetqpm/",
+      "indexExact": false,
+      "files": [
+        {
+          "file": "assets/demo.worker-Cg15FJoQ.js",
+          "curlExit": 0,
+          "httpStatus": "429",
+          "bytes": 219,
+          "sha256": "b3a1b6a77df7a8f2187cf1539c2412dabb42506a171a9799ff0580d44c78aea6",
+          "exact": false
+        }
+      ],
+      "errors": [
+        "HTTP 429; release bytes do not match."
+      ],
+      "passed": false
+    }
+  ],
+  "workingExactExportUrls": [],
+  "publicHttpsVerified": false,
+  "boundary": "The worker can prepare and verify content, but cannot publish through IMD or repair its ENS gateway DNS/TLS. Pinning and the final submission commit are assigned outside this worker."
+}

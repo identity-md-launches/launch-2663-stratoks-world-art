@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-27T10:00:39.928Z",
+  "baseline": false,
+  "checks": [],
+  "errors": [
+    "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Tools', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button aria-pressed=\"false\">…</button>\u001b[22m\n\u001b[2m  - elementHandle.press(\"Enter\")\u001b[22m\n\n    at tools (/root/stratoks-recovery/project/web/scripts/check-recovery.mjs:57:245)\n    at async file:///root/stratoks-recovery/project/web/scripts/check-recovery.mjs:80:68"
+  ],
+  "observations": {},
+  "chromium": "145.0.7632.6"
+}

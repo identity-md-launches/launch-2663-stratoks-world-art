@@ -1,0 +1,418 @@
+TAP version 13
+# Subtest: separate backup CLI refuses a live writer, exports a stopped backup, and restores exact committed state
+ok 1 - separate backup CLI refuses a live writer, exports a stopped backup, and restores exact committed state
+  ---
+  duration_ms: 304.097328
+  type: 'test'
+  ...
+# Subtest: legacy policy remains exactly baseline-equivalent over 4000 ticks including births and construction
+ok 2 - legacy policy remains exactly baseline-equivalent over 4000 ticks including births and construction
+  ---
+  duration_ms: 420.639843
+  type: 'test'
+  ...
+# Subtest: compatibility backup loads in actual recovered binary modules; original backup is byte-identical
+ok 3 - compatibility backup loads in actual recovered binary modules; original backup is byte-identical
+  ---
+  duration_ms: 380.597511
+  type: 'test'
+  ...
+# Subtest: compatibility export rejects tampering and traversal before writing output
+ok 4 - compatibility export rejects tampering and traversal before writing output
+  ---
+  duration_ms: 0.64209
+  type: 'test'
+  ...
+# Subtest: intervention IDs remain idempotent beyond the former 20,000-record window
+ok 5 - intervention IDs remain idempotent beyond the former 20,000-record window
+  ---
+  duration_ms: 180.570215
+  type: 'test'
+  ...
+# Subtest: a failed snapshot is never acknowledged as a durable intervention or backup
+ok 6 - a failed snapshot is never acknowledged as a durable intervention or backup
+  ---
+  duration_ms: 192.416258
+  type: 'test'
+  ...
+# Subtest: SIGKILL after lifecycle records but before the snapshot: recovered world never resurrects-and-re-kills
+ok 7 - SIGKILL after lifecycle records but before the snapshot: recovered world never resurrects-and-re-kills
+  ---
+  duration_ms: 1020.799626
+  type: 'test'
+  ...
+# Subtest: SIGKILL at write boundary lifecycle-appended:3, then repeated recovery and continued simulation stay consistent
+ok 8 - SIGKILL at write boundary lifecycle-appended:3, then repeated recovery and continued simulation stay consistent
+  ---
+  duration_ms: 1338.800498
+  type: 'test'
+  ...
+# Subtest: SIGKILL at write boundary events-appended:20, then repeated recovery and continued simulation stay consistent
+ok 9 - SIGKILL at write boundary events-appended:20, then repeated recovery and continued simulation stay consistent
+  ---
+  duration_ms: 1611.102891
+  type: 'test'
+  ...
+# Subtest: SIGKILL at write boundary snapshot-tmp-written:2, then repeated recovery and continued simulation stay consistent
+ok 10 - SIGKILL at write boundary snapshot-tmp-written:2, then repeated recovery and continued simulation stay consistent
+  ---
+  duration_ms: 1196.881258
+  type: 'test'
+  ...
+# Subtest: SIGKILL at write boundary snapshot-committed:3, then repeated recovery and continued simulation stay consistent
+ok 11 - SIGKILL at write boundary snapshot-committed:3, then repeated recovery and continued simulation stay consistent
+  ---
+  duration_ms: 1137.754054
+  type: 'test'
+  ...
+# Subtest: SIGKILL during recovery itself (after the orphan file, before truncation) recovers identically
+ok 12 - SIGKILL during recovery itself (after the orphan file, before truncation) recovers identically
+  ---
+  duration_ms: 942.936558
+  type: 'test'
+  ...
+# Subtest: interventions: crash before commit is not acknowledged and applies once on retry; crash after commit is a duplicate
+ok 13 - interventions: crash before commit is not acknowledged and applies once on retry; crash after commit is a duplicate
+  ---
+  duration_ms: 978.284113
+  type: 'test'
+  ...
+# Subtest: intervention save failure: 503-style failure, world keeps one application, a later commit makes it durable once
+ok 14 - intervention save failure: 503-style failure, world keeps one application, a later commit makes it durable once
+  ---
+  duration_ms: 133.170645
+  type: 'test'
+  ...
+# Subtest: failed and short event/intervention appends remain pending and a same-ID retry repairs every durable record
+ok 15 - failed and short event/intervention appends remain pending and a same-ID retry repairs every durable record
+  ---
+  duration_ms: 206.145969
+  type: 'test'
+  ...
+# Subtest: recovery refuses an ambiguous Phase-1 lost branch without moving its surviving records
+ok 16 - recovery refuses an ambiguous Phase-1 lost branch without moving its surviving records
+  ---
+  duration_ms: 56.546954
+  type: 'test'
+  ...
+# Subtest: a second recovery at the same snapshot sequence appends evidence instead of overwriting the first orphan
+ok 17 - a second recovery at the same snapshot sequence appends evidence instead of overwriting the first orphan
+  ---
+  duration_ms: 82.240276
+  type: 'test'
+  ...
+# Subtest: event pages preserve UTF-8 characters split across 64 KiB reads
+ok 18 - event pages preserve UTF-8 characters split across 64 KiB reads
+  ---
+  duration_ms: 8.515273
+  type: 'test'
+  ...
+# Subtest: a pending page pins its retained segment while rotation renames it
+ok 19 - a pending page pins its retained segment while rotation renames it
+  ---
+  duration_ms: 32.203291
+  type: 'test'
+  ...
+# Subtest: rotation syncs the outgoing log before closing its descriptor
+ok 20 - rotation syncs the outgoing log before closing its descriptor
+  ---
+  duration_ms: 9.588782
+  type: 'test'
+  ...
+# Subtest: static inspector uses real server data, GET-only transport, isolated live circuit and frozen heldout evaluation
+ok 21 - static inspector uses real server data, GET-only transport, isolated live circuit and frozen heldout evaluation
+  ---
+  duration_ms: 176.960539
+  type: 'test'
+  ...
+# Subtest: static circuit assets match exact server implementation
+ok 22 - static circuit assets match exact server implementation
+  ---
+  duration_ms: 1.467158
+  type: 'test'
+  ...
+# Subtest: MB circuit: deterministic sparse expansion, opponent plasticity, bounded storage, independent state
+ok 23 - MB circuit: deterministic sparse expansion, opponent plasticity, bounded storage, independent state
+  ---
+  duration_ms: 6.148098
+  type: 'test'
+  ...
+# Subtest: schema 2 -> 3 adds metadata only; explicit activation retains legacy state and global RNG
+ok 24 - schema 2 -> 3 adds metadata only; explicit activation retains legacy state and global RNG
+  ---
+  duration_ms: 16.369402
+  type: 'test'
+  ...
+# Subtest: default legacy and explicit configuration validation; unset restart retains stored mode
+ok 25 - default legacy and explicit configuration validation; unset restart retains stored mode
+  ---
+  duration_ms: 166.193034
+  type: 'test'
+  ...
+# Subtest: frozen learning, LEARNING=false, catchup and in-flight mode changes never alter neural weights
+ok 26 - frozen learning, LEARNING=false, catchup and in-flight mode changes never alter neural weights
+  ---
+  duration_ms: 2.050188
+  type: 'test'
+  ...
+# Subtest: ten fixed seeds: acquisition, heldout freeze, reversal, causal lesion and exact restart
+ok 27 - ten fixed seeds: acquisition, heldout freeze, reversal, causal lesion and exact restart
+  ---
+  duration_ms: 2010.596244
+  type: 'test'
+  ...
+# Subtest: actual decision/execution uses candidate target associations and consumes shared world food
+ok 28 - actual decision/execution uses candidate target associations and consumes shared world food
+  ---
+  duration_ms: 12.166305
+  type: 'test'
+  ...
+# Subtest: observation bounds exclude remote cue changes
+ok 29 - observation bounds exclude remote cue changes
+  ---
+  duration_ms: 1.131666
+  type: 'test'
+  ...
+# Subtest: exact neural/RNG/action retention through service restart, backup restore, and rollback on copied world
+ok 30 - exact neural/RNG/action retention through service restart, backup restore, and rollback on copied world
+  ---
+  duration_ms: 616.684432
+  type: 'test'
+  ...
+# Subtest: two actual clients see same server decisions; inspector is read-only and no mode mutation API exists
+ok 31 - two actual clients see same server decisions; inspector is read-only and no mode mutation API exists
+  ---
+  duration_ms: 146.908082
+  type: 'test'
+  ...
+# Subtest: actual health loss supplies punishment to the stored sensory eligibility
+ok 32 - actual health loss supplies punishment to the stored sensory eligibility
+  ---
+  duration_ms: 1.767534
+  type: 'test'
+  ...
+# Subtest: GET /api/events: three 5 MB logs, after=0 limit=1, concurrent requests are bounded and do not stall ticks
+ok 33 - GET /api/events: three 5 MB logs, after=0 limit=1, concurrent requests are bounded and do not stall ticks
+  ---
+  duration_ms: 764.940751
+  type: 'test'
+  ...
+# Subtest: event reads beyond the concurrency cap get an honest 503, not unbounded queued disk work
+ok 34 - event reads beyond the concurrency cap get an honest 503, not unbounded queued disk work
+  ---
+  duration_ms: 298.199263
+  type: 'test'
+  ...
+# Subtest: rate limits: creature detail and list share the public limiter, 429 has Retry-After, recovery after window
+ok 35 - rate limits: creature detail and list share the public limiter, 429 has Retry-After, recovery after window
+  ---
+  duration_ms: 55.619686
+  type: 'test'
+  ...
+# Subtest: spoofed X-Forwarded-For cannot bypass limits (Caddy deployment: TRUST_PROXY=1, proxy on private network)
+ok 36 - spoofed X-Forwarded-For cannot bypass limits (Caddy deployment: TRUST_PROXY=1, proxy on private network)
+  ---
+  duration_ms: 76.555637
+  type: 'test'
+  ...
+# Subtest: WebSocket upgrade and resync share the public-read budget and close on resync abuse
+ok 37 - WebSocket upgrade and resync share the public-read budget and close on resync abuse
+  ---
+  duration_ms: 62.635261
+  type: 'test'
+  ...
+# Subtest: event API and WebSocket snapshots expose only committed cursors across a crash/restart
+ok 38 - event API and WebSocket snapshots expose only committed cursors across a crash/restart
+  ---
+  duration_ms: 128.242237
+  type: 'test'
+  ...
+# Subtest: HTTP intervention retry returns 503 until failed event or ledger append is repaired
+ok 39 - HTTP intervention retry returns 503 until failed event or ledger append is repaired
+  ---
+  duration_ms: 204.971074
+  type: 'test'
+  ...
+# Subtest: a stale numeric PID-1 lock is not considered live by an offline one-shot container/tool
+ok 40 - a stale numeric PID-1 lock is not considered live by an offline one-shot container/tool
+  ---
+  duration_ms: 0.684218
+  type: 'test'
+  ...
+# Subtest: LEARNING: explicit change applies on restart without erasing weights/memory; unset keeps stored; invalid fails startup
+ok 41 - LEARNING: explicit change applies on restart without erasing weights/memory; unset keeps stored; invalid fails startup
+  ---
+  duration_ms: 2337.265073
+  type: 'test'
+  ...
+# Subtest: GET /api/status reports the learning policy
+ok 42 - GET /api/status reports the learning policy
+  ---
+  duration_ms: 64.256483
+  type: 'test'
+  ...
+# Subtest: intervention idempotency is scoped to world + authenticated actor + id, persisted across restart
+ok 43 - intervention idempotency is scoped to world + authenticated actor + id, persisted across restart
+  ---
+  duration_ms: 370.74355
+  type: 'test'
+  ...
+# Subtest: schema v1 -> v2 migration re-keys existing intervention IDs to their original actor
+ok 44 - schema v1 -> v2 migration re-keys existing intervention IDs to their original actor
+  ---
+  duration_ms: 0.416712
+  type: 'test'
+  ...
+# Subtest: two clients share identical state; reconnect resyncs without duplicate events
+ok 45 - two clients share identical state; reconnect resyncs without duplicate events
+  ---
+  duration_ms: 421.356601
+  type: 'test'
+  ...
+# Subtest: unauthorized access to developer endpoints is rejected; visitor token is not enough
+ok 46 - unauthorized access to developer endpoints is rejected; visitor token is not enough
+  ---
+  duration_ms: 168.610873
+  type: 'test'
+  ...
+# Subtest: duplicate intervention ids apply once, survive restart; id reuse with different body is rejected
+ok 47 - duplicate intervention ids apply once, survive restart; id reuse with different body is rejected
+  ---
+  duration_ms: 216.363016
+  type: 'test'
+  ...
+# Subtest: restart recovery: same world, learned state retained, no reseed, no duplicate world_created
+ok 48 - restart recovery: same world, learned state retained, no reseed, no duplicate world_created
+  ---
+  duration_ms: 782.425289
+  type: 'test'
+  ...
+# Subtest: corrupt snapshots never trigger a silent new world; fallback to previous snapshot works
+ok 49 - corrupt snapshots never trigger a silent new world; fallback to previous snapshot works
+  ---
+  duration_ms: 260.31516
+  type: 'test'
+  ...
+# Subtest: downtime: capped, non-lethal catch-up; no mass death after a long outage
+ok 50 - downtime: capped, non-lethal catch-up; no mass death after a long outage
+  ---
+  duration_ms: 173.152425
+  type: 'test'
+  ...
+# Subtest: backup and restore bring back an earlier state; tampered backup is refused
+ok 51 - backup and restore bring back an earlier state; tampered backup is refused
+  ---
+  duration_ms: 289.22508
+  type: 'test'
+  ...
+# Subtest: schema migration from legacy v0 snapshot; newer schemas refused
+ok 52 - schema migration from legacy v0 snapshot; newer schemas refused
+  ---
+  duration_ms: 0.543606
+  type: 'test'
+  ...
+# Subtest: developer reset: requires auth + confirmation; archives; extinct world stays extinct until then
+ok 53 - developer reset: requires auth + confirmation; archives; extinct world stays extinct until then
+  ---
+  duration_ms: 218.377527
+  type: 'test'
+  ...
+# Subtest: visitor endpoints over HTTP: gift and startle with wallet sessions
+ok 54 - visitor endpoints over HTTP: gift and startle with wallet sessions
+  ---
+  duration_ms: 102.712147
+  type: 'test'
+  ...
+# Subtest: deterministic: same seed gives identical state; different seed differs
+ok 55 - deterministic: same seed gives identical state; different seed differs
+  ---
+  duration_ms: 212.995467
+  type: 'test'
+  ...
+# Subtest: initial seed of 24 is a seed, not a cap; autonomous feeding, gathering and building with real costs
+ok 56 - initial seed of 24 is a seed, not a cap; autonomous feeding, gathering and building with real costs
+  ---
+  duration_ms: 178.178265
+  type: 'test'
+  ...
+# Subtest: reproduction needs adulthood, shelter and food; offspring grow before fertility; recovery period
+ok 57 - reproduction needs adulthood, shelter and food; offspring grow before fertility; recovery period
+  ---
+  duration_ms: 2295.318804
+  type: 'test'
+  ...
+# Subtest: scarcity suppresses reproduction, harms health, kills by starvation; extinction preserves history and stops births
+ok 58 - scarcity suppresses reproduction, harms health, kills by starvation; extinction preserves history and stops births
+  ---
+  duration_ms: 50.904853
+  type: 'test'
+  ...
+# Subtest: disasters damage creatures and shelters; heal and food interventions help; bounds enforced
+ok 59 - disasters damage creatures and shelters; heal and food interventions help; bounds enforced
+  ---
+  duration_ms: 122.913746
+  type: 'test'
+  ...
+# Subtest: creatures react to fire (flee) and recover afterwards
+ok 60 - creatures react to fire (flee) and recover afterwards
+  ---
+  duration_ms: 73.14026
+  type: 'test'
+  ...
+# Subtest: visitor wallets: helpful vs harmful opinions change approach/avoid; disabled learning does not
+ok 61 - visitor wallets: helpful vs harmful opinions change approach/avoid; disabled learning does not
+  ---
+  duration_ms: 299.892399
+  type: 'test'
+  ...
+# Subtest: learning changes weights; disabled keeps priors; speech is labelled template
+ok 62 - learning changes weights; disabled keeps priors; speech is labelled template
+  ---
+  duration_ms: 87.812247
+  type: 'test'
+  ...
+# Subtest: keccak256 and address derivation known vectors
+ok 63 - keccak256 and address derivation known vectors
+  ---
+  duration_ms: 2.465628
+  type: 'test'
+  ...
+# Subtest: signature roundtrip and tamper detection
+ok 64 - signature roundtrip and tamper detection
+  ---
+  duration_ms: 80.211098
+  type: 'test'
+  ...
+# Subtest: sign-in: nonce single-use, origin bound, expiry, roles
+ok 65 - sign-in: nonce single-use, origin bound, expiry, roles
+  ---
+  duration_ms: 270.483304
+  type: 'test'
+  ...
+# Subtest: server recovers the signer of every ethers-generated valid signature
+ok 66 - server recovers the signer of every ethers-generated valid signature
+  ---
+  duration_ms: 381.308739
+  type: 'test'
+  ...
+# Subtest: invalid signatures never recover the claimed address (and agree with ethers where ethers recovers)
+ok 67 - invalid signatures never recover the claimed address (and agree with ethers where ethers recovers)
+  ---
+  duration_ms: 95.145751
+  type: 'test'
+  ...
+# Subtest: server-side test signer output is a canonical signature ethers-compatible in shape
+ok 68 - server-side test signer output is a canonical signature ethers-compatible in shape
+  ---
+  duration_ms: 42.699874
+  type: 'test'
+  ...
+1..68
+# tests 68
+# suites 0
+# pass 68
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 13292.279376

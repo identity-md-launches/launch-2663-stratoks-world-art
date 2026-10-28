@@ -1,0 +1,9 @@
+# Terminates TLS (HTTPS + WSS) and proxies to the world container. Needs a DNS A/AAAA record for $SERVER_HOSTNAME.
+{$SERVER_HOSTNAME} {
+	encode zstd gzip
+	reverse_proxy world:8787 {
+		# Overwrite (never append to) any client-supplied X-Forwarded-For: the world server rate-limits on the
+		# right-most entry, so this makes it exactly the TCP peer Caddy saw. Spoofed headers are discarded.
+		header_up X-Forwarded-For {remote_host}
+	}
+}

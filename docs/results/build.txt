@@ -1,0 +1,19 @@
+
+> stratoks-client@0.1.0 build
+> vite build
+
+vite v8.3.5 building client environment for production...
+transforming...
+[plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/tmp/stratoks-build-98b272a4e703/web/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+✓ 1630 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                         1.03 kB │ gzip:   0.51 kB
+dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2   24.83 kB
+dist/assets/demo.worker-Crv7d6pX.js                    45.63 kB
+dist/assets/index-CQFqDDRF.css                         25.57 kB │ gzip:   6.12 kB
+dist/assets/dist-DXqq5tVz.js                          102.68 kB │ gzip:  33.78 kB
+dist/assets/index-wROlv9fH.js                         392.69 kB │ gzip: 121.88 kB
+
+✓ built in 997ms
+Static export copied to dist/.

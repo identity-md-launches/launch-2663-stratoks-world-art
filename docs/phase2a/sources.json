@@ -1,0 +1,119 @@
+[
+  {
+    "repository": "philshiu/Drosophila_brain_model",
+    "commit": "91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+    "path": "LICENSE",
+    "url": "https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/LICENSE",
+    "sha256": "3621f6d6476189190e2960fa43f11b275ba4eca848fdac50a1ba2925de6223e8",
+    "bytes": 1085
+  },
+  {
+    "repository": "philshiu/Drosophila_brain_model",
+    "commit": "91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+    "path": "Readme.md",
+    "url": "https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/Readme.md",
+    "sha256": "0654ac53f9af85000b50f6a5d2297aade8602c507a44e811f8aff602629c2625",
+    "bytes": 3617
+  },
+  {
+    "repository": "philshiu/Drosophila_brain_model",
+    "commit": "91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+    "path": "model.py",
+    "url": "https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/model.py",
+    "sha256": "fc45837d7122c6ce2a7f3f2f23c515992e4b232aadb919efabb72337fac88e4e",
+    "bytes": 11900
+  },
+  {
+    "repository": "philshiu/Drosophila_brain_model",
+    "commit": "91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+    "path": "environment.yml",
+    "url": "https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/environment.yml",
+    "sha256": "52991bcc78eb5a18534c2c02e8240330f8ad376f31f63546756ad0724924a667",
+    "bytes": 174
+  },
+  {
+    "repository": "TuragaLab/flyvis",
+    "commit": "0a69fa2fc8e1bfe1d837d722c252ab5f5d6fcbfa",
+    "path": "flyvis/connectome/connectome.py",
+    "url": "https://raw.githubusercontent.com/TuragaLab/flyvis/0a69fa2fc8e1bfe1d837d722c252ab5f5d6fcbfa/flyvis/connectome/connectome.py",
+    "sha256": "1fdc68d14472b3c3ef3ee4e245b87f1f391e02f28f98b901bfb3ca9707848777",
+    "bytes": 47953
+  },
+  {
+    "repository": "TuragaLab/flyvis",
+    "commit": "0a69fa2fc8e1bfe1d837d722c252ab5f5d6fcbfa",
+    "path": "flyvis/network/network.py",
+    "url": "https://raw.githubusercontent.com/TuragaLab/flyvis/0a69fa2fc8e1bfe1d837d722c252ab5f5d6fcbfa/flyvis/network/network.py",
+    "sha256": "eb172be7db1727a2b1af9f4211c2e1a8655004e8602a4db677e56702a3dfeb43",
+    "bytes": 32126
+  },
+  {
+    "repository": "TuragaLab/flyvis",
+    "commit": "0a69fa2fc8e1bfe1d837d722c252ab5f5d6fcbfa",
+    "path": "license",
+    "url": "https://raw.githubusercontent.com/TuragaLab/flyvis/0a69fa2fc8e1bfe1d837d722c252ab5f5d6fcbfa/license",
+    "sha256": "1e0e24112aaccf40ab3c8fd78688628c73da5031d1d9aa4f890558a748e84f41",
+    "bytes": 1146
+  },
+  {
+    "repository": "TuragaLab/flyvis",
+    "commit": "0a69fa2fc8e1bfe1d837d722c252ab5f5d6fcbfa",
+    "path": "readme.md",
+    "url": "https://raw.githubusercontent.com/TuragaLab/flyvis/0a69fa2fc8e1bfe1d837d722c252ab5f5d6fcbfa/readme.md",
+    "sha256": "50d091c9a906f81f87e9291bb0de3b2324bcf6e1c19e1308fd4e3172c1280633",
+    "bytes": 5026
+  },
+  {
+    "repository": "TuragaLab/flyvis",
+    "commit": "0a69fa2fc8e1bfe1d837d722c252ab5f5d6fcbfa",
+    "path": "pyproject.toml",
+    "url": "https://raw.githubusercontent.com/TuragaLab/flyvis/0a69fa2fc8e1bfe1d837d722c252ab5f5d6fcbfa/pyproject.toml",
+    "sha256": "4884734153222648d3dfe798070454aaf2224a5c92dd15b07c08d02930fb1f42",
+    "bytes": 4492
+  },
+  {
+    "repository": "alitwinkumar/jiang_litwin-kumar_mb_rnn",
+    "commit": "a16f86a3e9e476eff6860c3c0e0e1bbe729d7f85",
+    "path": "LICENSE",
+    "url": "https://raw.githubusercontent.com/alitwinkumar/jiang_litwin-kumar_mb_rnn/a16f86a3e9e476eff6860c3c0e0e1bbe729d7f85/LICENSE",
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "bytes": 35149,
+    "bundled": false
+  },
+  {
+    "repository": "alitwinkumar/jiang_litwin-kumar_mb_rnn",
+    "commit": "a16f86a3e9e476eff6860c3c0e0e1bbe729d7f85",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/alitwinkumar/jiang_litwin-kumar_mb_rnn/a16f86a3e9e476eff6860c3c0e0e1bbe729d7f85/README.md",
+    "sha256": "134f8668c2dd2bb79aa4577f72c4630669df3cc0e070f7d2135e9377ed050152",
+    "bytes": 81,
+    "bundled": false
+  },
+  {
+    "repository": "alitwinkumar/jiang_litwin-kumar_mb_rnn",
+    "commit": "a16f86a3e9e476eff6860c3c0e0e1bbe729d7f85",
+    "path": "definemodel.py",
+    "url": "https://raw.githubusercontent.com/alitwinkumar/jiang_litwin-kumar_mb_rnn/a16f86a3e9e476eff6860c3c0e0e1bbe729d7f85/definemodel.py",
+    "sha256": "d351c586abe42d55d5b088fbd3f3f0e3cf53578a2c4dfb95d8de4629263a9f2a",
+    "bytes": 2118,
+    "bundled": false
+  },
+  {
+    "repository": "alitwinkumar/jiang_litwin-kumar_mb_rnn",
+    "commit": "a16f86a3e9e476eff6860c3c0e0e1bbe729d7f85",
+    "path": "gentrials.py",
+    "url": "https://raw.githubusercontent.com/alitwinkumar/jiang_litwin-kumar_mb_rnn/a16f86a3e9e476eff6860c3c0e0e1bbe729d7f85/gentrials.py",
+    "sha256": "d0ab70fb87f1f6915947fe881653e5bef86b155773a1b7f52b557f8121bbe2ea",
+    "bytes": 7082,
+    "bundled": false
+  },
+  {
+    "repository": "alitwinkumar/jiang_litwin-kumar_mb_rnn",
+    "commit": "a16f86a3e9e476eff6860c3c0e0e1bbe729d7f85",
+    "path": "train.py",
+    "url": "https://raw.githubusercontent.com/alitwinkumar/jiang_litwin-kumar_mb_rnn/a16f86a3e9e476eff6860c3c0e0e1bbe729d7f85/train.py",
+    "sha256": "aeb1cd1d038e5795aaedebcecca082516aaa2239502a2092c1dca42d2e98aa2b",
+    "bytes": 2408,
+    "bundled": false
+  }
+]

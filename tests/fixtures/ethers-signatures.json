@@ -1,0 +1,102 @@
+{
+ "generator": "ethers 6.17.0 (npm), Wallet.createRandom + signMessage (EIP-191 personal_sign); keys discarded, never funded",
+ "valid": [
+  {
+   "address": "0xdfC9016e2766564fd348d777427156c044f2F6dC",
+   "message": "hello",
+   "signature": "0x727653f06e2348a1e37f6a2d942010f96b5e6126b17e7cbe908b5b4c9fed2b961d6b5f51134adb0cb68db7bd616e06e896bf10c3e3a7952aa43cde633812eb6a1c"
+  },
+  {
+   "address": "0x068bAA1E2FB0b2E35617965e83979EEe7c03fb2C",
+   "message": "stratoks wants you to sign in with your wallet.\nAddress: x\nNonce: 00112233445566778899aabbccddeeff",
+   "signature": "0xb230849ab718cd4fccd3dcea305725ad6bc6322c86ce6c5b2e240d79a404ed8173c94f186fd279d97322ee4567d2248875651433e9220b8650ef9d58b55e80f31b"
+  },
+  {
+   "address": "0xd27630D09Cce0940a23b4E70952B4b1E46EeE745",
+   "message": "ünïcødé ✓ 🌱",
+   "signature": "0x8075267b9d24a04c8b4ce213ddb467fd24d2ccdd74ae812cb827e2e6fcb924853029fd92b1882c9e53ef9e39856d98dec25d8f5abaef218e188193f2293a2c9d1c"
+  },
+  {
+   "address": "0xc58fF9CB30eE828F061ea48DdD1F662804c43662",
+   "message": "",
+   "signature": "0x97ced7f827e94cd57a65a4d87b3d5c4473218d37647b5f6dacc71b70216bf4fc3d0016aaac530831274a264ce95ee5b4afb16b42d4f3e5160dc0d567a22c94031c"
+  },
+  {
+   "address": "0x2C50be55b2498BB9bEf16e7b176192f1e627fDcE",
+   "message": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+   "signature": "0x9b7211bf0a235d4922412a7ca299624915b27b5ca5a67cb813562daf05085dc96bba62900ce493cd194c35249444c1013cf589bf2553b7d0fffc86f1bd794dab1b"
+  },
+  {
+   "address": "0xD8706f47C7310Af740299A0bFa8Ef4570876d7a7",
+   "message": "hello #5",
+   "signature": "0x60374102cddfdac4b01ae08eab49ab44b32aeda6121eb1329f0c048ae92a4b232aee6c2e9ba4179edc4f0b8ccc8657057aad028c42810035cc6dc77a326c042d1b"
+  },
+  {
+   "address": "0x1ccfF4c0FF973831014fe3E03F16B5168177348D",
+   "message": "stratoks wants you to sign in with your wallet.\nAddress: x\nNonce: 00112233445566778899aabbccddeeff #6",
+   "signature": "0x331b097dbc0631818e6773b99730e64daaaf88802218be80784488ebec3e8e42787a8e727820134e0e37fd712b593c14077a50a750296191f7c5fc5592b0be071b"
+  },
+  {
+   "address": "0x485B9bB67fDd6ed4639d1D30704997e49a0D87E2",
+   "message": "ünïcødé ✓ 🌱 #7",
+   "signature": "0x96be4c8c2b090cb1e23d9bffd3b667d0e45d91d1ea2570723dcc95b5f9a5046b727ae67b0363621950cf446b0e48628e26adb515077ebc2922b919f84a81a1d61c"
+  },
+  {
+   "address": "0xf43EDeC74D6E38C88102a46e90026052fC176925",
+   "message": " #8",
+   "signature": "0x8b347bcdc1a2c22cb2015203aedaadc4a39b0903460d03561c5c60a6ddd671e472c64d5e3b3e1cbca2ae919337ac7bc32b1b1884c862ecbc3100d2dff79a1d291c"
+  },
+  {
+   "address": "0x96939d6eC187989455d263BB3cF3901C905137F9",
+   "message": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx #9",
+   "signature": "0x45efce2b9c389bac29bd30349f2a143142142503a86c52d1286e6ece3802acdb5954f1bc86271ceafa2b7ddf522184bc3e2cc0288be19a808526bd8bc9669dfc1b"
+  },
+  {
+   "address": "0xeC4dE91549a5c3F144d7a9C09fC36B02C81Ce369",
+   "message": "hello #10",
+   "signature": "0x515f903caf7032c8ecbe7b0d73ca8e55188ed0c42f5b9b2f6d3d781338a027dc726a08f71e1da85c13c541f7c8459dd628ee1584c87a2fb6cb6c1f02fd2bee231b"
+  },
+  {
+   "address": "0xeE1A90AAD2eFa76E9B4772c54FAE821A8a655250",
+   "message": "stratoks wants you to sign in with your wallet.\nAddress: x\nNonce: 00112233445566778899aabbccddeeff #11",
+   "signature": "0x74fea0bd5dd377514a264023bdc514956cde77368fd9f5bcd6833968bc68a3f8443054bc48053d4be6787392d1441f0bcce4e234d1fcaa2527c5a820072949dd1b"
+  }
+ ],
+ "invalid": [
+  {
+   "case": "tampered message",
+   "address": "0xdfC9016e2766564fd348d777427156c044f2F6dC",
+   "message": "hello!",
+   "signature": "0x727653f06e2348a1e37f6a2d942010f96b5e6126b17e7cbe908b5b4c9fed2b961d6b5f51134adb0cb68db7bd616e06e896bf10c3e3a7952aa43cde633812eb6a1c",
+   "ethersRecovers": "0x5c1F7863F8a0738728F935eac4C1A7e62F8938f0"
+  },
+  {
+   "case": "signature from another key",
+   "address": "0xdfC9016e2766564fd348d777427156c044f2F6dC",
+   "message": "hello",
+   "signature": "0xb230849ab718cd4fccd3dcea305725ad6bc6322c86ce6c5b2e240d79a404ed8173c94f186fd279d97322ee4567d2248875651433e9220b8650ef9d58b55e80f31b",
+   "ethersRecovers": "0xE81cE3a97755E0d1197EcDa38d352C98E025fd14"
+  },
+  {
+   "case": "flipped recovery id",
+   "address": "0xdfC9016e2766564fd348d777427156c044f2F6dC",
+   "message": "hello",
+   "signature": "0x727653f06e2348a1e37f6a2d942010f96b5e6126b17e7cbe908b5b4c9fed2b961d6b5f51134adb0cb68db7bd616e06e896bf10c3e3a7952aa43cde633812eb6a1b",
+   "ethersRecovers": "0x82C2b558b9Cf5e8DA47DE95C2a4A774cDec6750e"
+  },
+  {
+   "case": "truncated signature",
+   "address": "0xdfC9016e2766564fd348d777427156c044f2F6dC",
+   "message": "hello",
+   "signature": "0x727653f06e2348a1e37f6a2d942010f96b5e6126b17e7cbe908b5b4c9fed2b961d6b5f51134adb0cb68db7bd616e06e896bf10c3e3a7952aa43cde",
+   "ethersRecovers": null
+  },
+  {
+   "case": "r = 0",
+   "address": "0xdfC9016e2766564fd348d777427156c044f2F6dC",
+   "message": "hello",
+   "signature": "0x00000000000000000000000000000000000000000000000000000000000000001d6b5f51134adb0cb68db7bd616e06e896bf10c3e3a7952aa43cde633812eb6a1b",
+   "ethersRecovers": null
+  }
+ ]
+}

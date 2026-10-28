@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-26T11:15:02.326Z",
+  "scope": "Local machine only. No ARM64, Docker or real VPS capacity measurement.",
+  "node": "v24.21.0",
+  "platform": "linux",
+  "release": "6.12.107+deb13-amd64",
+  "arch": "x64",
+  "cpuModel": "QEMU Virtual CPU version 2.5+",
+  "logicalCpus": 8,
+  "reportedMemoryGiB": 15.62,
+  "allocationNote": "Logical CPUs and RAM are OS-reported. Shared scheduling, quota and target-VPS availability are not inferred."
+}

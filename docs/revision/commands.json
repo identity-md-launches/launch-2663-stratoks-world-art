@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-26",
+  "node": "v24.22.1",
+  "chromium": "156.0.8078.4",
+  "commands": [
+    {
+      "command": "node web/scripts/task.mjs build",
+      "exitCode": 0,
+      "result": "Vite 8.3.5 production export in dist/; existing transitive ox node:worker_threads externalization warning"
+    },
+    {
+      "command": "node web/scripts/task.mjs typecheck",
+      "exitCode": 0,
+      "result": "tsc --noEmit"
+    },
+    {
+      "command": "node web/scripts/task.mjs test",
+      "exitCode": 0,
+      "passed": 7,
+      "failed": 0
+    },
+    {
+      "command": "node --test tests/*.test.js",
+      "exitCode": 0,
+      "passed": 23,
+      "failed": 0
+    },
+    {
+      "command": "node web/scripts/check-revision.mjs",
+      "exitCode": 0,
+      "passed": 22,
+      "layoutMeasurements": 57,
+      "evidence": "checks.json"
+    },
+    {
+      "command": "node web/scripts/check-browser.mjs",
+      "exitCode": 0,
+      "passed": 20,
+      "evidence": "browser-checks.json"
+    },
+    {
+      "command": "node web/scripts/check-interface.mjs",
+      "exitCode": 0,
+      "passed": 9,
+      "evidence": "interface-checks.json"
+    },
+    {
+      "command": "node .imd/reads/skills/design-critic/scripts/taste.mjs --out test/scratch/taste",
+      "exitCode": 0,
+      "passed": 16,
+      "evidence": "taste.json",
+      "runtime": "IMD_PLAYWRIGHT and PLAYWRIGHT_BROWSERS_PATH selected the temporary installation"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "result": "No whitespace errors"
+    }
+  ],
+  "limitations": [
+    "WebKit was attempted; host GTK/GStreamer and other runtime libraries are missing.",
+    "No ARM64, Docker, real VPS, physical devices, real wallet app or public hosting test in this revision.",
+    "Earlier long-run, population/load and learning comparisons were retained, not rerun for the client fixes."
+  ]
+}

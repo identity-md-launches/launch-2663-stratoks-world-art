@@ -1,0 +1,7 @@
+Architecture:                            x86_64
+CPU(s):                                  8
+Model name:                              Intel Xeon Processor (Skylake, IBRS)
+BIOS Model name:                         pc-q35-8.2  CPU @ 2.0GHz
+Thread(s) per core:                      2
+Mem:           32089        1502       21536           1        9518       30587
+Linux 6.8.0-146-generic

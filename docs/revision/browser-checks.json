@@ -1,0 +1,100 @@
+{
+  "date": "2026-10-26T12:44:43.692Z",
+  "browsers": {
+    "chromium": "156.0.8078.4",
+    "webkit": {
+      "notRun": "browserType.launch: \n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Host system is missing dependencies to run browsers. \u2551\n\u2551 Missing libraries:                                   \u2551\n\u2551     libgstreamer-1.0.so.0                            \u2551\n\u2551     libgtk-4.so.1                                    \u2551\n\u2551     libpangocairo-1.0.so.0                           \u2551\n\u2551     libgdk_pixbuf-2.0.so.0                           \u2551\n\u2551     libcairo-gobject.so.2                            \u2551\n\u2551     libgraphene-1.0.so.0                             \u2551\n\u2551     libatomic.so.1                                   \u2551\n\u2551     libxslt.so.1                                     \u2551\n\u2551     liblcms2.so.2                                    \u2551\n\u2551     libevent-2.1.so.7                                \u2551\n\u2551     libopus.so.0                                     \u2551\n\u2551     libgstallocators-1.0.so.0                        \u2551\n\u2551     libgstapp-1.0.so.0                               \u2551\n\u2551     libgstbase-1.0.so.0                              \u2551\n\u2551     libgstpbutils-1.0.so.0                           \u2551\n\u2551     libgstaudio-1.0.so.0                             \u2551\n\u2551     libgsttag-1.0.so.0                               \u2551\n\u2551     libgstvideo-1.0.so.0             "
+    }
+  },
+  "checks": [
+    {
+      "name": "unconfigured export shows no fabricated live metrics and makes no remote requests",
+      "passed": true
+    },
+    {
+      "name": "product and primary action visible without overflow at 320, 390, 768, 1440",
+      "passed": true
+    },
+    {
+      "name": "settings validate insecure remote URL; keyboard dialog traps focus and Escape restores trigger",
+      "passed": true
+    },
+    {
+      "name": "same-engine worker demo runs and pause stops simulation ticks",
+      "passed": true
+    },
+    {
+      "name": "pan, zoom and center controls respond to keyboard and pointer",
+      "passed": true
+    },
+    {
+      "name": "resident search, needs, relationships, memories, decisions and learned state inspect real creatures",
+      "passed": true
+    },
+    {
+      "name": "mobile inspector no longer collides with status footer",
+      "passed": true
+    },
+    {
+      "name": "demo interventions change simulation and destructive actions require explicit confirmation",
+      "passed": true
+    },
+    {
+      "name": "population/resource history, event filtering and CSV download",
+      "passed": true
+    },
+    {
+      "name": "reduced-motion preference disables cosmetic animation",
+      "passed": true
+    },
+    {
+      "name": "two real browser clients share the authoritative world, tick and metrics",
+      "passed": true
+    },
+    {
+      "name": "EIP-6963 wallet discovered; viem personal signature verified by delivered server",
+      "passed": true
+    },
+    {
+      "name": "authenticated visitor presence and food gift reach the shared server",
+      "passed": true
+    },
+    {
+      "name": "authenticated developer intervention survives a lost response; retry applies effect exactly once",
+      "passed": true
+    },
+    {
+      "name": "HTTP 5xx preserves uncertain request ID and retry cannot repeat an accepted effect",
+      "passed": true
+    },
+    {
+      "name": "anonymous destructive API request rejected",
+      "passed": true
+    },
+    {
+      "name": "socket interruption reconnects and resynchronizes without duplicate visible events",
+      "passed": true
+    },
+    {
+      "name": "explicit server reset resynchronizes geometry and new event sequence",
+      "passed": true
+    },
+    {
+      "name": "automated axe WCAG A/AA scan: inspector has no violations",
+      "passed": true
+    },
+    {
+      "name": "no uncaught application errors across tested Chromium flows",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "axe": [
+    {
+      "state": "inspector",
+      "violations": []
+    }
+  ],
+  "screenshotsArchived": false,
+  "screenshotsNote": "Broader regression captures remain transient under artifacts/; the six revision screenshots are archived alongside checks.json."
+}

@@ -1,0 +1,123 @@
+{
+  "date": "2026-10-26T12:37:29.199Z",
+  "browser": "156.0.8078.4",
+  "landscape": {
+    "innerHeight": 375,
+    "scrollY": 0,
+    "scrollHeight": 560,
+    "app": {
+      "x": 0,
+      "y": 0,
+      "width": 667,
+      "height": 560,
+      "top": 0,
+      "right": 667,
+      "bottom": 560,
+      "left": 0
+    },
+    "action": {
+      "x": 77.359375,
+      "y": 347.375,
+      "width": 282,
+      "height": 46,
+      "top": 347.375,
+      "right": 359.359375,
+      "bottom": 393.375,
+      "left": 77.359375
+    },
+    "footer": {
+      "x": 0,
+      "y": 460,
+      "width": 667,
+      "height": 100,
+      "top": 460,
+      "right": 667,
+      "bottom": 560,
+      "left": 0
+    },
+    "heading": {
+      "x": 20,
+      "y": 90,
+      "width": 303,
+      "height": 62,
+      "top": 90,
+      "right": 323,
+      "bottom": 152,
+      "left": 20
+    },
+    "worldId": ""
+  },
+  "connection": {
+    "innerHeight": 844,
+    "scrollY": 0,
+    "scrollHeight": 844,
+    "app": {
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "height": 844,
+      "top": 0,
+      "right": 390,
+      "bottom": 844,
+      "left": 0
+    },
+    "action": {
+      "x": 40,
+      "y": 409.78125,
+      "width": 270,
+      "height": 46,
+      "top": 409.78125,
+      "right": 310,
+      "bottom": 455.78125,
+      "left": 40
+    },
+    "footer": {
+      "x": 0,
+      "y": 750,
+      "width": 390,
+      "height": 94,
+      "top": 750,
+      "right": 390,
+      "bottom": 844,
+      "left": 0
+    },
+    "heading": {
+      "x": 16,
+      "y": 82,
+      "width": 303,
+      "height": 62,
+      "top": 82,
+      "right": 319,
+      "bottom": 144,
+      "left": 16
+    },
+    "notice": {
+      "x": 16,
+      "y": 76,
+      "width": 358,
+      "height": 54,
+      "top": 76,
+      "right": 374,
+      "bottom": 130,
+      "left": 16
+    },
+    "text": "Connection lost. Retrying automatically; the last world view is frozen.Settings",
+    "worldId": ""
+  },
+  "learning": {
+    "worldLearning": true,
+    "whileLoading": "Learning disabled for this world. A small local learning model adjusts action preferences.",
+    "updates": "Learning updates\n–\nMean reward\n–\nKnown food sites\n–"
+  },
+  "presence": {
+    "status": 200,
+    "response": {
+      "ok": false
+    },
+    "serverVisitors": 64,
+    "walletPresent": false,
+    "success": "Your visitor is in the world.",
+    "error": "",
+    "leaveFoodEnabled": true
+  }
+}
