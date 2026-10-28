@@ -4,6 +4,7 @@
 FROM node:22-bookworm-slim
 WORKDIR /app
 COPY server/ ./server/
+RUN mkdir -p /data && chown node:node /data
 USER node
 ENV EXPANSE_DATA_DIR=/data PORT=8788 HOST=0.0.0.0 TICK_MS=1000
 EXPOSE 8788

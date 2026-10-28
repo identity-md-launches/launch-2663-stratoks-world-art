@@ -1,0 +1,30 @@
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+PASS preview reflow 320
+PASS preview reflow 390
+PASS 390 first screen contains product and main action
+PASS preview reflow 768
+PASS preview reflow 1440
+PASS preview automated accessibility
+PASS server validation, modal Escape and focus return
+PASS isolated demo runs real ticks and pauses
+PASS mobile resident selection, perception overlay, learning and plan inspector
+PASS demo has no server/API traffic
+PASS exit demo clears private state
+PASS two independent browser contexts share authoritative tick
+PASS both inspectors and downloaded JSON equal actual server evidence
+PASS expanded recent plans display actual successful and failed rewards
+PASS wheel zoom changes observer viewport
+PASS keyboard pan, zoom, home and minimap fetch real negative-coordinate terrain
+PASS discovery history matches engine, including empty state
+PASS social history matches engine
+PASS resident search and empty-state recovery
+PASS both clients synchronize after authoritative transitions
+PASS shared inspector automated accessibility
+PASS shared inspector and map reflow 320/390/768/1440
+PASS nonempty discovery history and creator inspector match unforced engine transitions
+PASS connection failure retains last frame with stale status
+PASS automatic reconnect after persistent server restart
+PASS preserved settlement route loads
+PASS return from settlement
+PASS all world API traffic is GET only
+PASS no browser runtime errors

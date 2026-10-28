@@ -1,5 +1,7 @@
 # STRATOKS Phase 2B: expanse world and learning-agent foundation (component report)
 
+> Historical backend component report. The subsequent client integration is now present in `web/` and `dist/`; see the root `README.md` and `artifacts/phase2b/VALIDATION.md`. The absence-of-client statements and older benchmark/experiment extent below describe the earlier accepted component, not the current integrated export.
+
 ## What this commit contains
 
 The baseline is `identity-md-launches/launch-2613-stratoks-phase-integrate-scientifically` at `8d4193ef8dc76cfcb1794f719e1a688e4355a01d` (mb-v1 correction). Its in-scope trees `server/`, `shared/`, `tests/`, `deploy/` and `docs/` are imported **byte-for-byte unchanged**, except four redundant binary package archives that were left out to stay under the upload limit (see `docs/phase2b/OMITTED-BASELINE-ARCHIVES.md`; they can be restored from the pinned commit).

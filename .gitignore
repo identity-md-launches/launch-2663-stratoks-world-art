@@ -1,0 +1,12 @@
+# Delivery evidence has an explicit 2 MiB budget; see artifacts/phase2b/RELEASE.json.
+# Override the workspace exclusion only for this assignment's evidence.
+!artifacts/
+artifacts/*
+!artifacts/phase2b/
+!artifacts/phase2b/**
+
+# Installed packages and build caches never belong in the delivery, at any depth.
+**/node_modules/
+**/.vite/
+**/.npm/
+**/.cache/
