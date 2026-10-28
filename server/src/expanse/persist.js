@@ -6,12 +6,14 @@ import zlib from 'node:zlib';
 import crypto from 'node:crypto';
 import { Expanse, EXPANSE_SCHEMA } from './engine.js';
 import { migrate as migrateLegacy } from '../migrations.js';
+import { MEMORY_VERSION } from './agent.js';
 
 export const SNAPSHOT = 'expanse.json.gz';
 const sha = (b) => crypto.createHash('sha256').update(b).digest('hex');
 
 // Expanse migrations: MIGRATIONS[n] upgrades a state from schema n to n+1 in place.
 // v1 (first 2B prototype layout) had no warmth/reputation/followers and kept `knownNodes` instead of `mind.known`.
+// v2 used the old 10-weight inventory ceiling and had no individual shelter memory.
 export const MIGRATIONS = {
   1(s) {
     for (const c of s.creatures ?? []) {
@@ -19,6 +21,17 @@ export const MIGRATIONS = {
       if (c.knownNodes && c.mind) { c.mind.known = { ...c.knownNodes, ...(c.mind.known ?? {}) }; delete c.knownNodes; }
     }
     s.social ??= []; s.totals.burnedItems ??= {}; s.schema = 2;
+  },
+  2(s) {
+    s.cfg ??= {};
+    s.cfg.invCapacity = Math.max(12, s.cfg.invCapacity ?? 12);
+    for (const c of s.creatures ?? []) {
+      c.energy = Math.max(0, Math.min(100, c.energy ?? 80));
+      c.mind ??= {};
+      c.mind.shelters ??= [];
+      c.mind.memoryVersion = MEMORY_VERSION;
+    }
+    s.schema = 3;
   },
 };
 export function migrateExpanse(s) {

@@ -1,6 +1,6 @@
 // Read-only views of the expanse for clients: a bounded viewport, a coarse minimap and a creature inspector.
 // These never mutate the world; generating a viewport may materialize pristine chunks deterministically.
-import { NODE_KINDS } from './terrain.js';
+import { NODE_KINDS, settleNode } from './terrain.js';
 export const VIEW_VERSION = 1;
 const MAX_W = 96, MAX_H = 96;
 
@@ -8,7 +8,7 @@ export function viewport(e, x0, y0, w, h) {
   x0 = Math.round(x0); y0 = Math.round(y0); w = Math.min(MAX_W, Math.max(1, w | 0)); h = Math.min(MAX_H, Math.max(1, h | 0));
   const tiles = new Array(w * h);
   for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) tiles[j * w + i] = e.tile(x0 + i, y0 + j);
-  const nodes = e.nodesNear(x0 + (w >> 1), y0 + (h >> 1), Math.max(w, h) >> 1).filter((n) => n.x >= x0 && n.y >= y0 && n.x < x0 + w && n.y < y0 + h).map((n) => [n.id, n.kind, n.x, n.y, n.units]);
+  const nodes = e.nodesNear(x0 + (w >> 1), y0 + (h >> 1), Math.max(w, h) >> 1, false).filter((n) => n.x >= x0 && n.y >= y0 && n.x < x0 + w && n.y < y0 + h).map((n) => [n.id, n.kind, n.x, n.y, settleNode({ ...n }, e.tick).units]);
   const creatures = e.creaturesNear(x0 + (w >> 1), y0 + (h >> 1), Math.max(w, h) >> 1).map((c) => [c.id, c.name, c.x, c.y, c.act?.prim ?? null, Math.round(c.health)]);
   return { v: VIEW_VERSION, tick: e.tick, x0, y0, w, h, tiles, biome: e.biome(x0 + (w >> 1), y0 + (h >> 1)), nodes, creatures,
     fires: e.fires.filter((f) => f.x >= x0 && f.y >= y0 && f.x < x0 + w && f.y < y0 + h).map((f) => [f.id, f.x, f.y]),

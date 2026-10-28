@@ -6,9 +6,9 @@ import { ensureMushroom, encode, readout, reinforce, pickMushroom, MB_PARAMS } f
 import { World } from '../world.js';
 import { DEFAULTS, deepMerge } from '../config.js';
 import { CHUNK, BASE, T, MOVE_COST, FRESH, SALT, NODE_KINDS, CLIMATE, generateChunk, settleNode, chunkKey, chunkOf } from './terrain.js';
-import { createMind, recordEpisode, modelKey, updateModel, predict, plan, rememberNode, rememberWater, markVisited, LIMITS, OBSERVATION_VERSION, PLANNER_VERSION } from './agent.js';
+import { createMind, recordEpisode, modelKey, updateModel, predict, plan, rememberNode, rememberWater, rememberShelter, markVisited, LIMITS, MEMORY_VERSION, OBSERVATION_VERSION, PLANNER_VERSION } from './agent.js';
 
-export const EXPANSE_SCHEMA = 2;
+export const EXPANSE_SCHEMA = 3;
 export const MODES = ['full', 'frozen', 'no-planner'];
 // Designer-defined material rules. Agents are NOT given this table: they only see generic affordances
 // (combine any two held items, use any held item on a target) and learn results from transitions.
@@ -24,7 +24,7 @@ export const EXPANSE_DEFAULTS = {
   initialCount: 24, mode: 'full', learning: true,
   maxDecisionsPerTick: 64, perception: 7, nightPerception: 5, dayLength: 1200,
   hungerRate: 0.045, thirstRate: 0.06, adultAge: 1500, elderAge: 14000, lifespanBase: 20000,
-  invCapacity: 10, eventRing: 400, socialRing: 300, graveyardMax: 5000, historyEvery: 100, historyMax: 1000,
+  invCapacity: 12, eventRing: 400, socialRing: 300, graveyardMax: 5000, historyEvery: 100, historyMax: 1000,
   rewardReversal: null,     // { item:'berry', fromTick } makes that food harmful from fromTick (experiment hook)
   planner: { bonus: 0.6, lambda: 0.03, mu: 0.02, gamma: 0.9, scale: 1.0 },
   observeWeight: 0.3,
@@ -59,7 +59,9 @@ export class Expanse {
   // Keeps all legacy fields (ids, coordinates, brain incl. mb-v1 weights, memories, relationships, personality).
   adoptCreature(c) {
     c.thirst ??= 20; c.warmth ??= 90; c.injury ??= 0; c.inventory ??= {}; c.reputation ??= {}; c.relationships ??= {};
+    c.energy = clamp(c.energy ?? 80, 0, 100);
     c.mind ??= createMind(); c.plan ??= null; c.act = null; c.path = []; c.following ??= null; c.followers ??= {};
+    c.mind.shelters ??= []; c.mind.memoryVersion = MEMORY_VERSION;
     c.home ??= { x: Math.round(c.x), y: Math.round(c.y) }; c.x = Math.round(c.x); c.y = Math.round(c.y);
     c.lifespan ??= this.cfg.lifespanBase; c.cooldown ??= 0; c.stats ??= {}; c.stats.moved ??= 0; c.carrying = null;
     if (c.inside !== undefined) delete c.inside;
@@ -89,7 +91,7 @@ export class Expanse {
   biome(x, y) { const ch = this.chunkAt(x, y); return ch ? ch.biome[(y - ch.cy * CHUNK) * CHUNK + (x - ch.cx * CHUNK)] : 'cold'; }
   nodeAt(x, y) { const ch = this.chunkAt(x, y); const n = ch?.at.get(y * 100000 + x); return n ? this.settle(n) : null; }
   pileAt(x, y) { return this.chunkAt(x, y)?.pileAt.get(y * 100000 + x) ?? null; }
-  settle(n) { const before = n.units; settleNode(n, this.tick); if (n.units > before) { const it = NODE_KINDS[n.kind].item; this.totals.regrown[it] = (this.totals.regrown[it] ?? 0) + n.units - before; } return n; }
+  settle(n) { const before = n.units; settleNode(n, this.tick); if (n.units > before) { const it = NODE_KINDS[n.kind].item; this.totals.regrown[it] = (this.totals.regrown[it] ?? 0) + n.units - before; this.dirty(n.x, n.y); } return n; }
   moveCost(x, y) {
     const c = MOVE_COST[this.tile(x, y)]; if (c === Infinity) return Infinity;
     const n = this.chunkAt(x, y).at.get(y * 100000 + x);
@@ -97,11 +99,11 @@ export class Expanse {
     return c;
   }
   passable(x, y) { return this.moveCost(x, y) !== Infinity; }
-  nodesNear(x, y, r) {
+  nodesNear(x, y, r, settle = true) {
     const out = [];
     for (let cy = Math.floor((y - r) / CHUNK); cy <= Math.floor((y + r) / CHUNK); cy++) for (let cx = Math.floor((x - r) / CHUNK); cx <= Math.floor((x + r) / CHUNK); cx++) {
       const ch = this.chunk(cx, cy); if (!ch) continue;
-      for (const n of ch.nodes) if (Math.abs(n.x - x) <= r && Math.abs(n.y - y) <= r) out.push(this.settle(n));
+      for (const n of ch.nodes) if (Math.abs(n.x - x) <= r && Math.abs(n.y - y) <= r) out.push(settle ? this.settle(n) : n);
     }
     return out;
   }
@@ -149,11 +151,16 @@ export class Expanse {
     return out;
   }
   invWeight(c) { let w = 0; for (const [k, n] of Object.entries(c.inventory)) w += (WEIGHT[k] ?? 1) * n; return w; }
+  spendEnergy(c, amount) {
+    if (c.energy + 1e-9 < amount) return false;
+    c.energy = Math.max(0, c.energy - amount);
+    return true;
+  }
   addItem(c, item, n = 1) { c.inventory[item] = (c.inventory[item] ?? 0) + n; }
   takeItem(c, item, n = 1) { if ((c.inventory[item] ?? 0) < n) return false; c.inventory[item] -= n; if (!c.inventory[item]) delete c.inventory[item]; return true; }
   isAdult(c) { return c.age >= this.cfg.adultAge; }
 
-  // ---------------- perception & observation (interface v1) ----------------
+  // ---------------- perception & observation (interface v2) ----------------
   perceive(c) {
     const r = this.daylight() < -0.3 ? this.cfg.nightPerception : this.cfg.perception, m = c.mind;
     const nodes = this.nodesNear(c.x, c.y, r).filter((n) => !n.dead);
@@ -169,6 +176,8 @@ export class Expanse {
     const novel = markVisited(m, c.x, c.y);
     const others = this.creaturesNear(c.x, c.y, r).filter((o) => o !== c).slice(0, 8);
     const fires = this.fires.filter((f) => Math.abs(f.x - c.x) <= r && Math.abs(f.y - c.y) <= r);
+    const shelters = this.shelters.filter((s) => Math.abs(s.x - c.x) <= r && Math.abs(s.y - c.y) <= r);
+    for (const s of shelters) rememberShelter(m, s, this.tick);
     const piles = []; for (let dy = -2; dy <= 2; dy++) for (let dx = -2; dx <= 2; dx++) { const p = this.pileAt(c.x + dx, c.y + dy); if (p) piles.push(p); }
     const obs = {
       version: OBSERVATION_VERSION, tick: this.tick, radius: r, novelCell: novel,
@@ -176,7 +185,7 @@ export class Expanse {
       ambient: { biome: this.biome(c.x, c.y), tile: this.tile(c.x, c.y), daylight: Math.round(this.daylight() * 100) / 100, rain: this.weather.rain },
       nodes: nodes.map((n) => ({ id: n.id, kind: n.kind, x: n.x, y: n.y, units: n.units })).slice(0, 24),
       water: fresh ? { x: fresh.x, y: fresh.y } : null, saltWater: salt ? { x: salt.x, y: salt.y } : null,
-      fires: fires.map((f) => ({ id: f.id, x: f.x, y: f.y })), piles: piles.map((p) => ({ id: p.id, x: p.x, y: p.y, items: { ...p.items } })),
+      fires: fires.map((f) => ({ id: f.id, x: f.x, y: f.y })), shelters: shelters.map((s) => ({ id: s.id, x: s.x, y: s.y, integrity: s.integrity })), piles: piles.map((p) => ({ id: p.id, x: p.x, y: p.y, items: { ...p.items } })),
       creatures: others.map((o) => ({ id: o.id, x: o.x, y: o.y, act: o.act?.prim ?? null, health: Math.round(o.health), holding: Object.keys(o.inventory).slice(0, 3) })),
     };
     c.lastObs = obs;
@@ -185,13 +194,14 @@ export class Expanse {
   features(c, obs) {
     const foodKinds = new Set(['bush', 'cactus', 'shellfish', 'lichen']);
     const foodNear = obs.nodes.some((n) => foodKinds.has(n.kind) && n.units > 0), foodKnown = Object.values(c.mind.known).some((k) => foodKinds.has(k.kind));
-    const fireOn = this.fires.some((f) => f.x === c.x && f.y === c.y);
-    return [c.hunger / 100, 1 - c.energy / 100, 1 - c.health / 100, foodNear ? 1 : 0, foodKnown ? 1 : 0, this.shelters.length ? 0 : 1, this.invWeight(c) / this.cfg.invCapacity, 0,
-      obs.creatures.length ? 1 : 0, fireOn || c.injury > 0 ? 1 : 0, this.weather.rain ? 1 : 0, obs.creatures.length ? 0 : 1];
+    const fireOn = obs.fires.some((f) => f.x === c.x && f.y === c.y);
+    const shelterKnown = obs.shelters.length > 0 || c.mind.shelters.length > 0;
+    return [c.hunger / 100, 1 - c.energy / 100, 1 - c.health / 100, foodNear ? 1 : 0, foodKnown ? 1 : 0, shelterKnown ? 0 : 1, this.invWeight(c) / this.cfg.invCapacity, 0,
+      obs.creatures.length ? 1 : 0, fireOn || c.injury > 0 ? 1 : 0, obs.ambient.rain ? 1 : 0, obs.creatures.length ? 0 : 1];
   }
   cues(c, obs) { return [c.thirst / 100, 1 - c.warmth / 100, obs.fires.length ? 1 : 0, c.inventory.hand_axe ? 1 : 0]; }
 
-  // ---------------- affordances (interface v1) ----------------
+  // ---------------- affordances (interface v2) ----------------
   // Generic: every visible/known node can be gathered/inspected, any two held item kinds can be combined, any held
   // item can be used on self, a nearby fire or a pile, or placed. No recipe or ignition rule is consulted here.
   affordances(c, obs) {
@@ -202,7 +212,7 @@ export class Expanse {
       const d = Math.max(Math.abs(k.x - c.x), Math.abs(k.y - c.y));
       const cur = nearest.get(k.kind); if (!cur || d < cur.d) nearest.set(k.kind, { id, ...k, d });
     }
-    const pileHere = this.pileAt(c.x, c.y), fireNear = obs.fires.slice().sort((a, b) => Math.max(Math.abs(a.x - c.x), Math.abs(a.y - c.y)) - Math.max(Math.abs(b.x - c.x), Math.abs(b.y - c.y)))[0];
+    const pileHere = obs.piles.find((p) => p.x === c.x && p.y === c.y), fireNear = obs.fires.slice().sort((a, b) => Math.max(Math.abs(a.x - c.x), Math.abs(a.y - c.y)) - Math.max(Math.abs(b.x - c.x), Math.abs(b.y - c.y)))[0];
     const water = c.mind.water.slice().sort((a, b) => Math.abs(a.x - c.x) + Math.abs(a.y - c.y) - Math.abs(b.x - c.x) - Math.abs(b.y - c.y))[0];
     return (inv, prev) => {
       const out = [];
@@ -210,22 +220,27 @@ export class Expanse {
       const held = Object.keys(inv).filter((k) => inv[k] > 0).sort();
       const tool = inv.hand_axe ? 'tool' : ctxTool === 'tool' && inv.hand_axe !== 0 ? 'tool' : 'bare';
       for (const it of held) if (FOOD[it] !== undefined || it === 'berry') out.push({ prim: 'use', item: it, on: 'self', key: modelKey('use', `${it}@self`), consumes: [it], label: 'EAT' });
-      if (!full) for (const n of nearest.values()) out.push({ prim: 'gather', node: n.id, kind: n.kind, x: n.x, y: n.y, key: modelKey('gather', n.kind, TOOL_GATHER.has(n.kind) ? tool : ''), label: ['stone', 'flint'].includes(n.kind) ? 'GATHER_STONE' : ['bush', 'cactus', 'shellfish', 'lichen'].includes(n.kind) ? 'EAT' : 'GATHER_WOOD' });
+      if (!full) for (const n of nearest.values()) {
+        const space = Math.floor((this.cfg.invCapacity - Object.entries(inv).reduce((s, [k, q]) => s + (WEIGHT[k] ?? 1) * q, 0)) / (WEIGHT[NODE_KINDS[n.kind]?.item] ?? 1));
+        const quantity = Math.min(tool === 'tool' && TOOL_GATHER.has(n.kind) ? 2 : 1, n.units, space);
+        if (quantity > 0 && c.energy >= 1.2 * quantity) out.push({ prim: 'gather', node: n.id, kind: n.kind, x: n.x, y: n.y, key: modelKey('gather', n.kind, TOOL_GATHER.has(n.kind) ? tool : ''), label: ['stone', 'flint'].includes(n.kind) ? 'GATHER_STONE' : ['bush', 'cactus', 'shellfish', 'lichen'].includes(n.kind) ? 'EAT' : 'GATHER_WOOD' });
+      }
       if (water) out.push({ prim: 'use', item: null, on: 'water', x: water.x, y: water.y, key: modelKey('drink', 'known-fresh'), label: 'EAT' });
       if (obs.saltWater && !prev) out.push({ prim: 'use', item: null, on: 'water', x: obs.saltWater.x, y: obs.saltWater.y, key: modelKey('drink', 'sea'), label: 'EAT', firstOnly: true });
-      for (let i = 0; i < held.length; i++) for (let j = i + 1; j < held.length; j++) out.push({ prim: 'combine', a: held[i], b: held[j], key: modelKey('combine', `${held[i]}+${held[j]}`), consumes: [], label: 'GATHER_WOOD' });
+      if (c.energy >= 1) for (let i = 0; i < held.length; i++) for (let j = i + 1; j < held.length; j++) out.push({ prim: 'combine', a: held[i], b: held[j], key: modelKey('combine', `${held[i]}+${held[j]}`), consumes: [], label: 'GATHER_WOOD' });
       for (const it of held) {
         if (FUEL[it]) out.push({ prim: 'place', item: it, key: modelKey('place', it, pileHere ? 'pile' : 'ground'), consumes: [it], label: 'GATHER_WOOD' });
-        if (prev?.prim === 'place' || pileHere) out.push({ prim: 'use', item: it, on: 'pile', key: modelKey('use', `${it}@pile`), consumes: [it], label: 'GATHER_WOOD' });
-        if (fireNear) out.push({ prim: 'use', item: it, on: 'fire', fire: fireNear.id, x: fireNear.x, y: fireNear.y, key: modelKey('use', `${it}@fire`), consumes: [it], label: 'GATHER_WOOD' });
+        if (c.energy >= 1.5 && (prev?.prim === 'place' || pileHere)) out.push({ prim: 'use', item: it, on: 'pile', key: modelKey('use', `${it}@pile`), consumes: [it], label: 'GATHER_WOOD' });
+        if (fireNear && c.energy >= 1) out.push({ prim: 'use', item: it, on: 'fire', fire: fireNear.id, x: fireNear.x, y: fireNear.y, key: modelKey('use', `${it}@fire`), consumes: [it], label: 'GATHER_WOOD' });
       }
       if (pileHere && !full && !prev) for (const it of Object.keys(pileHere.items).slice(0, 3)) out.push({ prim: 'carry', item: it, key: modelKey('carry', it), label: 'GATHER_WOOD' });
-      if ((inv.wood ?? 0) >= 4 && (inv.stone ?? 0) >= 2) out.push({ prim: 'build', key: modelKey('build', 'shelter'), consumes: ['wood', 'wood', 'wood', 'wood', 'stone', 'stone'], label: 'BUILD' });
+      if ((inv.wood ?? 0) >= 4 && (inv.stone ?? 0) >= 2 && c.energy >= 6) out.push({ prim: 'build', key: modelKey('build', 'shelter'), consumes: ['wood', 'wood', 'wood', 'wood', 'stone', 'stone'], label: 'BUILD' });
       if (!prev) {
-        out.push({ prim: 'rest', key: modelKey('rest', fireNear ? 'fire' : this.shelterAt(c.x, c.y) ? 'shelter' : 'open', this.biome(c.x, c.y)), label: 'REST', x: fireNear?.x, y: fireNear?.y });
-        const sh = this.nearestShelter(c);
-        if (sh && (sh.x !== c.x || sh.y !== c.y)) out.push({ prim: 'move', x: sh.x, y: sh.y, purpose: 'shelter', key: modelKey('move', 'to-shelter', this.weather.rain ? 'rain' : ''), label: 'REST' });
-        out.push({ prim: 'move', purpose: 'explore', key: modelKey('move', 'explore', this.biome(c.x, c.y)), label: 'WANDER' });
+        const shelterHere = obs.shelters.some((s) => s.x === c.x && s.y === c.y);
+        out.push({ prim: 'rest', key: modelKey('rest', fireNear ? 'fire' : shelterHere ? 'shelter' : 'open', obs.ambient.biome), label: 'REST', x: fireNear?.x, y: fireNear?.y });
+        const sh = this.nearestKnownShelter(c);
+        if (sh && (sh.x !== c.x || sh.y !== c.y)) out.push({ prim: 'move', x: sh.x, y: sh.y, purpose: 'shelter', key: modelKey('move', 'to-shelter', obs.ambient.rain ? 'rain' : ''), label: 'REST' });
+        out.push({ prim: 'move', purpose: 'explore', key: modelKey('move', 'explore', obs.ambient.biome), label: 'WANDER' });
         if (Math.max(Math.abs(c.home.x - c.x), Math.abs(c.home.y - c.y)) > 12) out.push({ prim: 'move', x: c.home.x, y: c.home.y, purpose: 'home', key: modelKey('move', 'home'), label: 'WANDER' });
         for (const n of obs.nodes.slice(0, 3)) if (!c.mind.model[modelKey('inspect', n.kind)]) out.push({ prim: 'inspect', node: n.id, kind: n.kind, x: n.x, y: n.y, key: modelKey('inspect', n.kind), label: 'WANDER' });
         for (const o of obs.creatures.slice(0, 3)) this.socialAffordances(c, o, inv, out);
@@ -234,20 +249,19 @@ export class Expanse {
     };
   }
   socialAffordances(c, o, inv, out) {
-    const other = this.getCreature(o.id); if (!other) return;
     const rel = c.relationships[o.id] ?? 0, rep = c.reputation[o.id] ?? 0;
     const food = Object.keys(inv).find((k) => FOOD[k] && inv[k] > 0);
-    if (food && other.hunger > 60) out.push({ prim: 'share', target: o.id, item: food, key: modelKey('share', food, rel > 0.3 ? 'friend' : 'other'), consumes: [food], label: 'SOCIALIZE' });
-    if (!c.following && rep > 0.05 && this.isAdult(other)) out.push({ prim: 'follow', target: o.id, key: modelKey('follow', rep > 0.3 ? 'reputable' : 'known'), label: 'SOCIALIZE' });
+    if (food) out.push({ prim: 'share', target: o.id, item: food, key: modelKey('share', food, rel > 0.3 ? 'friend' : 'other'), consumes: [food], label: 'SOCIALIZE' });
+    if (!c.following && rep > 0.05 && o.health >= 30) out.push({ prim: 'follow', target: o.id, key: modelKey('follow', rep > 0.3 ? 'reputable' : 'known'), label: 'SOCIALIZE' });
     out.push({ prim: 'socialize', target: o.id, key: modelKey('socialize', rel > 0.3 ? 'friend' : 'other'), label: 'SOCIALIZE' });
-    const competing = c.hunger > 55 && other.act?.prim === 'gather';
+    const competing = c.hunger > 55 && o.act === 'gather';
     if ((competing || (c.lastAttacker === o.id)) && this.isAdult(c)) {
-      out.push({ prim: 'threaten', target: o.id, key: modelKey('threaten', competing ? 'food' : 'retaliate'), label: 'APPROACH' });
-      out.push({ prim: 'attack', target: o.id, key: modelKey('attack', competing ? 'food' : 'retaliate', inv.stone_club || inv.hand_axe ? 'armed' : 'bare'), label: 'APPROACH' });
+      if (c.energy >= 2) out.push({ prim: 'threaten', target: o.id, key: modelKey('threaten', competing ? 'food' : 'retaliate'), label: 'APPROACH' });
+      if (c.energy >= 5) out.push({ prim: 'attack', target: o.id, key: modelKey('attack', competing ? 'food' : 'retaliate', inv.stone_club || inv.hand_axe ? 'armed' : 'bare'), label: 'APPROACH' });
     }
     if (c.lastAttacker === o.id || c.threatenedBy === o.id) out.push({ prim: 'flee', from: o.id, key: modelKey('flee', 'threat'), label: 'FLEE' });
   }
-  nearestShelter(c) { let best = null, bd = 30; for (const s of this.shelters) { const d = Math.max(Math.abs(s.x - c.x), Math.abs(s.y - c.y)); if (d < bd) { bd = d; best = s; } } return best; }
+  nearestKnownShelter(c) { let best = null, bd = Infinity; for (const s of c.mind.shelters ?? []) { const d = Math.max(Math.abs(s.x - c.x), Math.abs(s.y - c.y)); if (d < bd) { bd = d; best = s; } } return best; }
 
   // ---------------- decision ----------------
   wellbeing(c) { return -(c.hunger + c.thirst) / 25 + Math.min(c.warmth, 80) / 25 + c.health / 20 + c.energy / 100; }
@@ -360,9 +374,10 @@ export class Expanse {
     if (mc === Infinity) { a.retarget = true; a.blocked = (a.blocked ?? 0) + 1; if (a.blocked > 3) this.endStep(c, false, 'blocked'); return; }
     c.moveProgress = (c.moveProgress ?? 0) + 1;
     if (c.moveProgress < mc) return;
+    const cost = 0.08 * mc + 0.01 * this.invWeight(c);
+    if (!this.spendEnergy(c, cost)) { c.moveProgress = 0; return this.endStep(c, false, 'exhausted'); }
     c.moveProgress = 0; a.path.shift();
     c.face = nx > c.x ? 1 : nx < c.x ? -1 : c.face; c.x = nx; c.y = ny; c.stats.moved++;
-    c.energy -= 0.08 * mc + 0.01 * this.invWeight(c);
     if (c.stats.moved % 6 === 0) { const novel = markVisited(c.mind, c.x, c.y); if (novel) a.novel = (a.novel ?? 0) + 1; }
   }
   actTarget(c, a) {
@@ -389,8 +404,8 @@ export class Expanse {
         if (a.work < dur) return;
         const item = NODE_KINDS[target.kind].item, units = Math.min(tool ? 2 : 1, target.units);
         const fits = Math.floor((this.cfg.invCapacity - this.invWeight(c)) / (WEIGHT[item] ?? 1)), q = Math.min(units, fits);
-        c.energy -= 1.2 * Math.max(1, q);
         if (q <= 0) return this.endStep(c, false, 'inventory-full');
+        if (!this.spendEnergy(c, 1.2 * q)) return this.endStep(c, false, 'exhausted');
         target.units -= q; target.t = target.units + q >= NODE_KINDS[target.kind].max ? this.tick : target.t; this.dirty(target.x, target.y);
         this.addItem(c, item, q); this.totals.gathered[item] = (this.totals.gathered[item] ?? 0) + q; c.stats.gathered += q;
         rememberNode(c.mind, target, this.tick);
@@ -399,8 +414,8 @@ export class Expanse {
       }
       case 'combine': {
         if (a.work < 4) return;
-        c.energy -= 1;
         if (!c.inventory[a.a] || !c.inventory[a.b]) return this.endStep(c, false, 'missing-item');
+        if (!this.spendEnergy(c, 1)) return this.endStep(c, false, 'exhausted');
         const out = RECIPES[`${a.a}+${a.b}`];
         if (!out) return this.endStep(c, false, 'no-result');
         this.takeItem(c, a.a); this.takeItem(c, a.b); this.addItem(c, out);
@@ -426,12 +441,12 @@ export class Expanse {
       }
       case 'build': {
         if (a.work < 30) return;
-        c.energy -= 6;
         if ((c.inventory.wood ?? 0) < 4 || (c.inventory.stone ?? 0) < 2 || this.shelters.some((s) => Math.max(Math.abs(s.x - c.x), Math.abs(s.y - c.y)) < 2) || this.fires.some((f) => f.x === c.x && f.y === c.y)) return this.endStep(c, false, 'cannot-build');
+        if (!this.spendEnergy(c, 6)) return this.endStep(c, false, 'exhausted');
         this.takeItem(c, 'wood', 4); this.takeItem(c, 'stone', 2);
         this.totals.built.wood = (this.totals.built.wood ?? 0) + 4; this.totals.built.stone = (this.totals.built.stone ?? 0) + 2;
         const s = { id: this.nextId.shelter++, x: c.x, y: c.y, cap: 4, integrity: 100, builder: c.id, tick: this.tick };
-        this.shelters.push(s); c.home = { x: c.x, y: c.y }; c.stats.built++;
+        this.shelters.push(s); rememberShelter(c.mind, s, this.tick); c.home = { x: c.x, y: c.y }; c.stats.built++;
         const far = Math.hypot(c.x - BASE / 2, c.y - BASE / 2) > 40;
         this.emit('shelter_built', { shelter: s.id, by: c.id, x: c.x, y: c.y, biome: this.biome(c.x, c.y), newSettlement: far });
         if (far && !this.shelters.some((o) => o !== s && Math.hypot(o.x - s.x, o.y - s.y) < 15)) this.discover(c, `settlement:${s.x >> 4},${s.y >> 4}`);
@@ -458,7 +473,7 @@ export class Expanse {
         return this.endStep(c, true, null, { social: 0.1 });
       }
       case 'threaten': {
-        c.energy -= 2;
+        if (!this.spendEnergy(c, 2)) return this.endStep(c, false, 'exhausted');
         const yields = target.personality.boldness * target.health < c.personality.boldness * c.health;
         target.threatenedBy = c.id; target.relationships[c.id] = clamp((target.relationships[c.id] ?? 0) - 0.2, -1, 1);
         this.socialEvent('threaten', c, target, yields ? 'target-yielded' : 'target-stood');
@@ -480,7 +495,7 @@ export class Expanse {
     if (a.work < 2) return;
     if (!c.inventory[a.item]) return this.endStep(c, false, 'missing-item');
     if (a.on === 'self') {
-      const fd = FOOD[a.item]; if (!fd) { c.energy -= 0.5; return this.endStep(c, false, 'inedible'); }
+      const fd = FOOD[a.item]; if (!fd) { if (!this.spendEnergy(c, 0.5)) return this.endStep(c, false, 'exhausted'); return this.endStep(c, false, 'inedible'); }
       this.takeItem(c, a.item); this.totals.eaten[a.item] = (this.totals.eaten[a.item] ?? 0) + 1; c.stats.eaten++;
       const rev = this.cfg.rewardReversal;
       if (rev && rev.item === a.item && this.tick >= rev.fromTick) { c.hunger = Math.max(0, c.hunger - 4); c.health -= 10; return this.endStep(c, true, null, { toxic: true }); }
@@ -488,8 +503,9 @@ export class Expanse {
       return this.endStep(c, true);
     }
     if (a.on === 'pile') {
-      const p = this.pileAt(c.x, c.y); c.energy -= 1.5;
+      const p = this.pileAt(c.x, c.y);
       if (!p) return this.endStep(c, false, 'no-pile');
+      if (!this.spendEnergy(c, 1.5)) return this.endStep(c, false, 'exhausted');
       // Ignition rule (designed physics): striking flint while also holding stone, onto a pile with fuel.
       if (a.item !== 'flint' || !c.inventory.stone) return this.endStep(c, false, 'no-ignition');
       const fuel = Object.entries(p.items).reduce((s, [k, n]) => s + (FUEL[k] ?? 0) * n, 0);
@@ -505,7 +521,8 @@ export class Expanse {
       return this.endStep(c, true, null, { fire: true });
     }
     if (a.on === 'fire') {
-      const f = target; c.energy -= 1;
+      const f = target;
+      if (!this.spendEnergy(c, 1)) return this.endStep(c, false, 'exhausted');
       this.takeItem(c, a.item);
       if (FUEL[a.item]) { f.fuel += FUEL[a.item]; this.totals.burnedItems[a.item] = (this.totals.burnedItems[a.item] ?? 0) + 1; return this.endStep(c, true, null, { fed: true }); }
       // anything non-flammable smothers (sand/stone/soil-like)
@@ -516,7 +533,7 @@ export class Expanse {
   }
   performAttack(c, target) {
     // Range 1 (reach), energy cost, hit chance, damage; injuries bleed. Death only via the health rule.
-    c.energy -= 5;
+    if (!this.spendEnergy(c, 5)) return this.endStep(c, false, 'exhausted');
     const armed = c.inventory.stone_club ? 7 : c.inventory.hand_axe ? 5 : 0;
     const hit = this.rng.next() < 0.65 + 0.2 * (c.personality.boldness - target.personality.boldness);
     target.lastAttacker = c.id; target.relationships[c.id] = clamp((target.relationships[c.id] ?? 0) - 0.5, -1, 1);
@@ -584,6 +601,7 @@ export class Expanse {
   // ---------------- world tick ----------------
   step() {
     this.tick++;
+    if (this.tick % 200 === 0) this.pruneFollowers();
     if (this.tick % 300 === 0) { if (this.weather.rain && this.tick >= this.weather.until) this.weather.rain = false; else if (!this.weather.rain && this.rng.next() < 0.25) { this.weather = { rain: true, until: this.tick + 300 }; } }
     this.rebuildIndex();
     this.stepFires();
@@ -592,7 +610,7 @@ export class Expanse {
       this.needs(c);
       if (c.health <= 0) continue;
       if (c.act) this.stepAct(c);
-      else if (c.following && c.hunger < 70 && c.thirst < 70 && c.warmth > 40) { this.followStep(c); continue; }
+      else if (c.following && c.hunger < 70 && c.thirst < 70 && c.warmth > 40 && c.energy > 10) { this.followStep(c); continue; }
       if (!c.act && c.health > 0) queue.push(c);
     }
     // Fair scheduling: bounded decisions per tick, served oldest-waiting first; others wait (never removed).
@@ -609,7 +627,18 @@ export class Expanse {
     if (!l) { c.following = null; return; }
     if (Math.max(Math.abs(l.x - c.x), Math.abs(l.y - c.y)) > 2) {
       const p = this.findPath(c.x, c.y, l.x, l.y, true, 400);
-      if (p?.length) { const [nx, ny] = p[0]; c.x = nx; c.y = ny; c.energy -= 0.08; c.stats.moved++; }
+      if (!p?.length) { c.followProgress = null; return; }
+      const [nx, ny] = p[0], mc = this.moveCost(nx, ny);
+      if (mc === Infinity) { c.followProgress = null; return; }
+      if (!c.followProgress || c.followProgress.x !== nx || c.followProgress.y !== ny) c.followProgress = { x: nx, y: ny, ticks: 0 };
+      c.followProgress.ticks++;
+      if (c.followProgress.ticks < mc) return;
+      const cost = 0.08 * mc + 0.01 * this.invWeight(c);
+      c.followProgress = null;
+      if (!this.spendEnergy(c, cost)) return;
+      c.face = nx > c.x ? 1 : nx < c.x ? -1 : c.face; c.x = nx; c.y = ny; c.stats.moved++;
+    } else {
+      c.followProgress = null;
     }
   }
   needs(c) {
@@ -621,8 +650,9 @@ export class Expanse {
     c.thirst = Math.min(100, c.thirst + cf.thirstRate * (1 + Math.max(0, temp - 26) / 8));
     // Warmth: cold exposure below 10C drains it; comfortable temperatures restore it.
     if (temp < 10) c.warmth = Math.max(0, c.warmth - (10 - temp) * 0.012); else c.warmth = Math.min(100, c.warmth + 0.25);
-    if (!resting) c.energy = Math.max(0, c.energy - 0.02); if (c.energy <= 0) c.health -= 0.03;
     let cause = null;
+    if (!resting) c.energy = Math.max(0, c.energy - 0.02);
+    if (c.energy <= 0) { c.health -= 0.03; cause = 'exhaustion'; }
     if (c.hunger >= 100) { c.health -= 0.08; cause = 'starvation'; } else if (c.hunger >= 90) { c.health -= 0.02; cause = 'starvation'; }
     if (c.thirst >= 100) { c.health -= 0.12; cause = 'dehydration'; }
     if (c.warmth < 25) { c.health -= 0.05 * (1 - c.warmth / 25) + 0.01; cause = 'exposure'; }
@@ -688,14 +718,17 @@ export class Expanse {
   run(n) { for (let i = 0; i < n; i++) this.step(); }
 
   // ---------------- leadership (observed pattern, not assigned) ----------------
+  pruneFollowers(window = 2000) {
+    for (const c of this.creatures) for (const [id, tick] of Object.entries(c.followers)) if (this.tick - tick > window) delete c.followers[id];
+  }
   leadership(window = 2000) {
     const out = [];
-    for (const c of this.creatures) { const f = Object.entries(c.followers).filter(([, t]) => this.tick - t <= window); for (const [id] of Object.entries(c.followers)) if (this.tick - c.followers[id] > window) delete c.followers[id]; if (f.length) out.push({ id: c.id, voluntaryFollowers: f.length }); }
+    for (const c of this.creatures) { const f = Object.entries(c.followers).filter(([, t]) => this.tick - t <= window); if (f.length) out.push({ id: c.id, voluntaryFollowers: f.length }); }
     return out.sort((a, b) => b.voluntaryFollowers - a.voluntaryFollowers);
   }
   summary() {
     const by = {}; for (const c of this.creatures) { const b = this.biome(c.x, c.y); by[b] = (by[b] ?? 0) + 1; }
-    return { tick: this.tick, population: this.creatures.length, byBiome: by, fires: this.fires.length, shelters: this.shelters.length, chunks: this.chunks.size, births: this.totals.births, deaths: this.totals.deaths };
+    return { tick: this.tick, population: this.creatures.length, byBiome: by, fires: this.fires.length, shelters: this.shelters.length, chunks: [...this.chunks.values()].filter((ch) => ch.dirty).length, births: this.totals.births, deaths: this.totals.deaths };
   }
   // Holdings per item across inventories and ground piles (for conservation checks).
   holdings() {
@@ -713,7 +746,7 @@ export class Expanse {
     return { kind: 'stratoks-expanse', schema: EXPANSE_SCHEMA, seed: this.seed, cfg: this.cfg, tick: this.tick, seq: this.seq, rng: this.rng.s, mode: this.mode, learning: this.learning,
       base: { tiles: Buffer.from(this.base.tiles).toString('base64'), trees: this.base.trees, stones: this.base.stones, bushes: this.base.bushes },
       chunks, fires: this.fires, shelters: this.shelters, creatures, graveyard: this.graveyard, events: this.events, social: this.social, discoveries: this.discoveries,
-      history: this.history, totals: this.totals, weather: this.weather, nextId: this.nextId, generated: [...this.chunks.values()].filter((c) => !c.dirty).map((c) => [c.cx, c.cy]) };
+      history: this.history, totals: this.totals, weather: this.weather, nextId: this.nextId };
   }
   static fromState(s, cfgOverride = {}) {
     if (s.kind !== 'stratoks-expanse') throw new Error('not an expanse snapshot');
@@ -731,7 +764,7 @@ export class Expanse {
       e.indexChunk(ch); e.chunks.set(chunkKey(c.cx, c.cy), ch);
     }
     for (const [cx, cy] of st.generated ?? []) e.chunk(cx, cy); // pristine chunks regenerate deterministically
-    for (const c of e.creatures) { ensureMushroom(c.brain, e.seed, c.id); }
+    for (const c of e.creatures) { c.energy = clamp(c.energy ?? 80, 0, 100); c.mind ??= createMind(); c.mind.shelters ??= []; c.mind.memoryVersion = MEMORY_VERSION; ensureMushroom(c.brain, e.seed, c.id); }
     return e;
   }
 }

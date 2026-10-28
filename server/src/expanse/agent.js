@@ -2,11 +2,11 @@
 // (success, reward, duration, energy and produced items of each (action, argument, context) seen in the
 // creature's own or observed transitions) and the mb-v1 circuit weights. What is DESIGNED: the primitive set,
 // affordance enumeration, need-based reward, reflexes, and the planner's search procedure.
-export const OBSERVATION_VERSION = 1;
-export const MEMORY_VERSION = 1;
+export const OBSERVATION_VERSION = 2;
+export const MEMORY_VERSION = 2;
 export const MODEL_VERSION = 1;
-export const PLANNER_VERSION = 1;
-export const LIMITS = Object.freeze({ episodes: 48, modelEntries: 96, producedKinds: 3, knownNodes: 40, knownWater: 6, visited: 384, plans: 8, horizon: 3, beam: 5, branch: 7 });
+export const PLANNER_VERSION = 2;
+export const LIMITS = Object.freeze({ episodes: 48, modelEntries: 96, producedKinds: 3, knownNodes: 40, knownWater: 6, knownShelters: 16, visited: 384, plans: 8, horizon: 3, beam: 5 });
 
 // ---------------- bounded episodic memory ----------------
 export function recordEpisode(mind, ep) {
@@ -22,7 +22,7 @@ export function recordEpisode(mind, ep) {
 // ---------------- outcome model ----------------
 // key = `${action}|${arg}|${ctx}`. Running mean/variance (Welford) of reward, plus means of cost and outcome.
 export function createMind() {
-  return { version: MODEL_VERSION, model: {}, total: 0, episodes: [], known: {}, water: [], visited: [], plans: [], discoveries: [], lastPlan: null };
+  return { version: MODEL_VERSION, memoryVersion: MEMORY_VERSION, model: {}, total: 0, episodes: [], known: {}, water: [], shelters: [], visited: [], plans: [], discoveries: [], lastPlan: null };
 }
 export function modelKey(action, arg, ctx = '') { return `${action}|${arg}|${ctx}`; }
 export function updateModel(mind, key, o, weight = 1) {
@@ -60,15 +60,18 @@ export function predict(mind, key) {
 // value = sum(reward + bonus*sigma - lambda*duration - mu*energy) * success, discounted by gamma per step.
 export function plan(mind, start, affordFn, opts) {
   const { bonus = 0.5, lambda = 0.02, mu = 0.02, gamma = 0.9, horizon = LIMITS.horizon, enabled = true } = opts;
-  const first = affordFn(start.inventory, null).slice(0, 24);
+  // Affordances are already bounded by versioned local observation, map memory and inventory limits.
+  // Evaluate the full set and impose a canonical order so enumeration order cannot hide or bias choices.
+  const ordered = (steps) => steps.slice().sort((a, b) => compareKeys(stepOrderKey(a), stepOrderKey(b)));
+  const first = ordered(affordFn(start.inventory, null));
   const score = (step, key) => { const p = predict(mind, key); return { p, v: (p.reward + bonus * p.sigma) * p.success - lambda * p.duration - mu * p.energy }; };
   let beam = first.map((s) => { const { p, v } = score(s, s.key); return { steps: [s], preds: [p], value: v, inv: applyPred(start.inventory, s, p) }; });
   const all = beam.slice();
   if (enabled) {
     for (let d = 1; d < horizon; d++) {
-      beam.sort((a, b) => b.value - a.value); beam = beam.slice(0, LIMITS.beam);
+      beam.sort((a, b) => b.value - a.value || compareKeys(sequenceOrderKey(a), sequenceOrderKey(b))); beam = beam.slice(0, LIMITS.beam);
       const next = [];
-      for (const b of beam) for (const s of affordFn(b.inv, b.steps.at(-1)).slice(0, LIMITS.branch)) {
+      for (const b of beam) for (const s of ordered(affordFn(b.inv, b.steps.at(-1)))) {
         if (s.firstOnly) continue;
         const { p, v } = score(s, s.key);
         next.push({ steps: [...b.steps, s], preds: [...b.preds, p], value: b.value + Math.pow(gamma, d) * v, inv: applyPred(b.inv, s, p) });
@@ -78,6 +81,9 @@ export function plan(mind, start, affordFn, opts) {
   }
   return all;
 }
+function stepOrderKey(step) { return `${step.key ?? ''}\u0000${JSON.stringify(step)}`; }
+function sequenceOrderKey(seq) { return seq.steps.map(stepOrderKey).join('\u0001'); }
+function compareKeys(a, b) { return a < b ? -1 : a > b ? 1 : 0; }
 function applyPred(inv, step, p) {
   const out = { ...inv };
   for (const it of step.consumes ?? []) out[it] = Math.max(0, (out[it] ?? 0) - 1);
@@ -96,6 +102,17 @@ export function rememberWater(mind, x, y, tick) {
   if (near) { near.t = tick; return; }
   mind.water.push({ x, y, t: tick });
   if (mind.water.length > LIMITS.knownWater) { mind.water.sort((a, b) => b.t - a.t); mind.water.length = LIMITS.knownWater; }
+}
+export function rememberShelter(mind, shelter, tick) {
+  mind.shelters ??= [];
+  const known = mind.shelters.find((s) => s.id === shelter.id);
+  if (known) { known.x = shelter.x; known.y = shelter.y; known.t = tick; return; }
+  mind.shelters.push({ id: shelter.id, x: shelter.x, y: shelter.y, t: tick });
+  if (mind.shelters.length > LIMITS.knownShelters) {
+    let oldest = 0;
+    for (let i = 1; i < mind.shelters.length; i++) if (mind.shelters[i].t < mind.shelters[oldest].t) oldest = i;
+    mind.shelters.splice(oldest, 1);
+  }
 }
 export function markVisited(mind, x, y) {
   const k = `${x >> 3},${y >> 3}`;

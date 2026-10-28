@@ -1,5 +1,7 @@
 # STRATOKS Phase 2B: expanse world and learning-agent foundation (component report)
 
+Reviewer revision results are recorded in [REVISION-2026-10-28.md](REVISION-2026-10-28.md), with raw paired experiments and current 24/100/250-resident benchmarks under `tests/results/expanse/revision-*`.
+
 ## What this commit contains
 
 The baseline is `identity-md-launches/launch-2613-stratoks-phase-integrate-scientifically` at `8d4193ef8dc76cfcb1794f719e1a688e4355a01d` (mb-v1 correction). Its in-scope trees `server/`, `shared/`, `tests/`, `deploy/` and `docs/` are imported **byte-for-byte unchanged**, except four redundant binary package archives that were left out to stay under the upload limit (see `docs/phase2b/OMITTED-BASELINE-ARCHIVES.md`; they can be restored from the pinned commit).
@@ -31,13 +33,13 @@ The Phase 2A service (`server/src/main.js`, `service.js`, `world.js`) is untouch
 - **Extent.** By default there are 4 chunks of 28 tiles on every side, giving 280×280 tiles = **25×** the settlement area (16× is the floor; tested).
 - **Chunk generation.** Chunks are generated lazily from `(seed, cx, cy)` only, so an unvisited chunk is reproducible (tested).
   - A chunk that has been modified ("dirty") is saved whole: tiles, nodes and piles.
-  - A generated but untouched chunk is saved only as a key and regenerated on load.
+  - Pristine chunk cache entries are not persisted; they are recreated from the seed. Read-only views can populate this cache without changing snapshot bytes. Resource regrowth observed by simulation marks its chunk dirty and is persisted.
 - **Biomes and their physics.** These are designed rules, not learned:
   - **Temperate forest:** grass and forest floor, lakes. Has trees, bushes, deadfall (sticks), scrub (fiber) and some stone.
   - **Arid:** sand and dunes (move cost 1.5–1.6). Fresh water only in rare oases. Has cactus fruit (food plus water), flint and scrub. Hot days raise thirst (×(1+(T−26)/8)) and fire is more likely to light and spread.
   - **Cold highlands:** rock and snow (move cost 2–2.5), impassable cliffs, drinkable streams. Has stone, flint, lichen and sparse trees. Below 10 °C warmth drains, health falls under 25 warmth (death cause `exposure`), and hunger rises ×1.3 under 5 °C.
   - **Coast and islands:** sea is impassable and salty. Shallows can be waded (cost 3, −6 °C). Has sand, shellfish and driftwood. **Drinking salt water raises thirst and costs health.**
-- **Weather and shelter.** There is a day/night temperature swing and night reduces perception from 7 to 5 tiles. Seeded rain episodes lower temperature, block fire spread and burn fuel faster. A shelter (4 wood + 2 stone, 30 work ticks) raises effective temperature to at least 17 °C.
+- **Weather and shelter.** There is a day/night temperature swing and night reduces perception from 7 to 5 tiles. Seeded rain episodes lower temperature, block fire spread and burn fuel faster. A shelter (4 wood + 2 stone, 30 work ticks) raises effective temperature to at least 17 °C. The default 12-weight inventory holds the 12-weight recipe.
 - **Traversal.** Water, cliffs, trees and stones block movement. Paths use a bounded A* with terrain costs, so there is no teleporting. Spawns are only in the settlement, and a test checks that each tested spawn reaches at least 600 tiles.
 - **Resources.**
   - Nodes regrow by whole units on a fixed period, evaluated lazily and **exactly**: computing late gives the same value as ticking every tick.
@@ -51,8 +53,8 @@ The Phase 2A service (`server/src/main.js`, `service.js`, `world.js`) is untouch
 |---|---|
 | **Outcome model** (`agent.js`, v1). Keyed by `(action, argument, context)`, e.g. `gather\|tree\|tool` or `combine\|flint+stick\|`. Keeps a Welford mean/variance of reward, success rate, mean duration, energy cost and the items produced. Bounded to 96 entries with least-supported eviction. Uncertainty is σ/√(n+1) plus a prior term. | Primitive set, physics, recipes, ignition rule, need dynamics |
 | **mb-v1 circuit weights.** The unchanged `mushroom.js` encodes 12 need features, a 4×4 position, and 4 cues (thirst, cold, fire seen, tool held). It is reinforced with the realised reward of the first step of each chosen sequence. | Reward = change in need-based wellbeing, plus small drives: +0.12 per item gained, +0.4 for a never-held item, +0.3 for lighting a fire, plus social terms scaled by personality |
-| **Map knowledge.** Up to 40 seen nodes (removed when seen depleted), 6 freshwater sites, and 384 visited 8×8 cells. | Reflexes, labelled `source:"reflex"`: step out of fire; drink or eat when need is above 88 *and* a source is known |
-| **Episodic memory.** 48 episodes, keeping the most salient. | Planner search: beam 5, branch 7, horizon 3, discount 0.9; value = (r̂ + bonus·σ)·p̂ − λ·duration − μ·energy |
+| **Map knowledge.** Up to 40 seen nodes, 6 freshwater sites, 16 locally seen or self-built shelters, and 384 visited 8×8 cells. | Reflexes, labelled `source:"reflex"`: step out of fire; drink or eat when need is above 88 *and* a source is known |
+| **Episodic memory.** 48 episodes, keeping the most salient. | Planner search: bounded beam 5, horizon 3, discount 0.9; it compares all affordances admitted by the bounded observation, memory and inventory interfaces. Value = (r̂ + bonus·σ)·p̂ − λ·duration − μ·energy |
 
 - **Affordances are generic.** The agent sees "combine any two held items", "use any held item on self, pile or fire", "place any fuel item", and "gather any known node". It is **not** given the recipe table or the ignition rule.
 - **What the planner may assume.** It chains a later step only through items the *model* predicts the earlier step produces. An unlearned combination cannot be assumed to yield a tool (tested). The planner never reads simulator state beyond the creature's own observation and memory.
@@ -67,7 +69,7 @@ The Phase 2A service (`server/src/main.js`, `service.js`, `world.js`) is untouch
 
 ## Primitives, tool, fire
 
-- **Primitives:** `move`, `inspect`, `gather`, `carry` (pick up one item from a ground pile on the creature's tile), `combine`, `use`, `place`, `build`, `rest`. Each has a reach of 1 tile (threaten: 3), an inventory capacity of 10 weight units (wood and stone weigh 2), energy costs and a duration.
+- **Primitives:** `move`, `inspect`, `gather`, `carry` (pick up one item from a ground pile on the creature's tile), `combine`, `use`, `place`, `build`, `rest`. Each has its reach constraint (threaten: 3), a 12-weight default inventory limit (wood and stone weigh 2), energy limits where the action has a cost, and a duration.
 - **Tools.** `flint+stick → hand_axe` makes tree, deadfall, driftwood and scrub gathering yield 2 units in 3 ticks instead of 1 in 6 (tested). `stick+stone → stone_club` adds attack damage. `fiber+stick → bundle` is tinder. All other pairs fail and waste 4 ticks.
 - **Fire.**
   - *Ignition:* strike flint on a pile containing fuel while also holding stone. The chance is 30%, +35% with fiber or bundle tinder, ×0.25 when wet (rain, snow, shallows) and ×1.3 in arid land.
@@ -82,7 +84,7 @@ The Phase 2A service (`server/src/main.js`, `service.js`, `world.js`) is untouch
 
 | Behaviour | Status |
 |---|---|
-| share (give one food item to a hungry neighbour; relationship +; observers' reputation of the giver +) | operational |
+| share (offer one food item to an observed neighbour; relationship +; observers' reputation of the giver +) | operational; hunger is not exposed to the actor |
 | socialize (relationships, which gate reproduction) | operational |
 | follow / refuse (follower asks; the target refuses if its relationship to the follower is below −0.15 or it is weak) | operational |
 | leadership = count of distinct voluntary followers in the last 2000 ticks (`leadership()`); nobody is assigned | operational, observed metric only |
@@ -94,10 +96,10 @@ The Phase 2A service (`server/src/main.js`, `service.js`, `world.js`) is untouch
 
 ## Persistence, migration, scale
 
-- **What is saved.** Chunks (dirty ones in full, pristine ones as keys), inventories, piles, fires, shelters, minds (models, memory, knowledge, plans), mb-v1 weights, the RNG state, discoveries, the social log and totals.
+- **What is saved.** Modified chunks in full; pristine chunks regenerate from the seed. Inventories, piles, fires, shelters, minds (models, memory, knowledge, plans), mb-v1 weights, the RNG state, discoveries, the social log and totals are saved.
 - **Exact restart.** Saving at tick 400 and running 300 more ticks gives a state byte-identical to running 700 ticks straight (tested).
 - **Migrations:**
-  - expanse v1 → v2 (tested), and a newer schema is refused.
+  - expanse v1/v2 → v3 (tested), including raising the old 10-weight inventory limit to 12 and initializing bounded shelter memory without clearing brain/history; a newer schema is refused.
   - Phase 2A snapshot → expanse (`fromLegacySnapshot`, CLI `server/bin/expanse-migrate.js <world.json> <new-dir>`). The CLI checks the source sha256 and never writes the source. Brains, IDs, memories and tick are preserved (tested in unit tests and on a `Store`-written copy).
 - **Backup and rollback.** Backup, restore (moves the current snapshot to `pre-restore-*`) and rollback to the previous generation (keeps `rolled-back-*`) are tested on temporary copies. A corrupted snapshot is refused by its checksum.
 - **Scheduling.** At most 64 decisions per tick, served oldest-waiting first. Waiting creatures keep their needs and lifecycle every tick. **No resident is ever removed for budget.** Births, ageing, starvation and other deaths are natural.
@@ -106,7 +108,7 @@ The Phase 2A service (`server/src/main.js`, `service.js`, `world.js`) is untouch
 
 ## Results (raw data in `tests/results/expanse/`, nothing filtered)
 
-The experiment and benchmark runs below were made **before** the `carry` primitive (picking items up from piles) was added at the end of this session, so they do not include it. The tests were re-run afterwards (17/17 pass). Rerun the scripts to get numbers for the final code.
+The experiment and benchmark runs in the tables below are historical results from before the `carry` primitive and this reviewer revision. They remain unchanged as the accepted baseline evidence; current code has separate raw runs in the revision report linked above.
 
 **Experiments.** `tests/experiments/expanse-experiments.mjs` was run with 10 fixed seeds (101…1010) × 3 conditions × 2 scenarios × 3000 ticks with 24 creatures, 60 runs in total. Raw per-run files are `raw/exp-*.json`; aggregates and per-seed paired differences are in `summary.json`.
 
@@ -147,19 +149,19 @@ What these numbers show, including failures:
 | 250 | 177 | 28.8 / 66.3 / 164 | 426 MiB | 2.2 MB | 8.1 / 20.9 KB |
 
 - At the 1000 ms production tick, 250 creatures use about 3% of a core on average, and p99 is well under the tick.
-- **Supported limit, as measured here: 250 creatures within 1536 MB.** This must be re-measured on the ARM64 host; shared vCPUs are slower.
+- Historical local measurement: 250 creatures stayed below 1536 MiB RSS. Current post-revision measurements and their x64/no-cgroup assumptions are in the revision report; ARM64 remains untested.
 - **Populations decline in every benchmark.** Starvation dominates at 24 creatures (seed 4242). This is an ecology-tuning gap, not a culling mechanism.
-- Some deaths are recorded with cause `unknown`, because there is no damage attribution for low energy or salt water. This is a known bug.
+- Exhaustion deaths now record cause `exhaustion`. Deaths caused by salt-water damage may still be `unknown` when no other health rule attributes them.
 
 **Checks run.**
 
-- `node --test tests/*.test.js`: **153/153 pass** (137 baseline + 16 expanse).
-- With the service test added, `tests/expanse.test.js` has 17 tests, all passing. The service test covers ticking with no viewer, two clients agreeing, POST/PUT/DELETE/PATCH returning 405, and restart resuming the same world.
+- Historical accepted run: `node --test tests/*.test.js`, 153/153; historical expanse-only suite, 17 tests.
+- Current reviewer revision: `node --test --test-concurrency=2 tests/*.test.js`, **162/162 pass**; `tests/expanse.test.js` now has 25 tests. See the revision report for cases added and raw current benchmarks.
 
 ## Integration notes and mocks
 
 - **Not wired.** The expanse is **not** wired into the Phase 2A HTTP/WS service, wallet auth or the React client. `expanse/server.js` is a stand-alone read-only API that integration should replace or mount.
-- **Viewer payloads are a simulation.** The `viewport()`/`inspect()` JSON from `view.js` (v1) is the agreed payload shape. The benchmark's 8 "clients" are serialisations of these payloads, not WebSocket clients.
+- **Viewer payloads.** The original benchmark's 8 simulated viewers serialize `viewport()`/`inspect()` payloads in-process. The revision adds 8 actual local HTTP clients (1,600 requests) in `tests/load/expanse-http-clients.mjs`; this is not browser rendering or WebSocket validation.
 - **No UI.** Pan/zoom, minimap, biome indicators, follow-creature, discovery history and the plan/outcome inspector are **not implemented** in the client, because `web/` is outside this assignment. The data is available from `/api/expanse/{view,minimap,discoveries,creature/:id}`. No browser evidence, IMD static publication or HTTPS/WSS client configuration was produced.
 - **Docker.** `deploy/expanse/Dockerfile` and `compose.yml` were not built here (no Docker available) and are unverified. The base image should be pinned by digest.
 
@@ -175,10 +177,13 @@ What these numbers show, including failures:
 ## Reproduce
 
 ```sh
-node --test tests/*.test.js
-node tests/experiments/expanse-experiments.mjs 3000 out.json 0 10
+node --test --test-concurrency=2 tests/*.test.js
+node tests/experiments/expanse-experiments.mjs 3000 tests/results/expanse/revision-experiments-10seeds.json 0 10
 node tests/experiments/expanse-report.mjs tests/results/expanse/raw
-node tests/load/expanse-bench.mjs 250 10000 bench-250.json
+node tests/load/expanse-bench.mjs 24 10000 tests/results/expanse/revision-bench-24.json
+node tests/load/expanse-bench.mjs 100 10000 tests/results/expanse/revision-bench-100.json
+node tests/load/expanse-bench.mjs 250 10000 tests/results/expanse/revision-bench-250.json
+node tests/load/expanse-http-clients.mjs 100
 ```
 
 ## Remaining gaps
@@ -186,11 +191,11 @@ node tests/load/expanse-bench.mjs 250 10000 bench-250.json
 - Client UI and browser evidence.
 - WS streaming and multi-client protocol integration.
 - An ARM64 cgroup-enforced benchmark.
-- Shelter building never occurs.
-- Cold-survival regression of the full agent.
+- Shelter building and new settlements are possible but not reliable or universal: full built shelters in 6/10 main and 3/10 cold runs; new-settlement discoveries occurred in 3/10 cold full runs.
+- Cold survival remains a failure risk; full learning/planning did not reliably beat the planner-disabled condition and averaged 6.2 exposure deaths versus 5.1.
 - Salt-water avoidance not learned.
-- `unknown` death causes.
-- Ecology decline at 24 creatures.
+- Unknown death causes remain on some non-exhaustion health-loss routes; exhaustion deaths now have an explicit cause.
+- Long-term ecological equilibrium is not established; 24 residents grew to 35 in the 10,000-tick seed-4242 benchmark, but this does not imply survival across seeds/configurations.
 - Coalition and trade social behaviours.
 - Licence notices: no new third-party dependencies were added; the baseline's notices in `docs/licenses/` apply.
 - Independent review of the final commit has not been done; this report is the author's own.

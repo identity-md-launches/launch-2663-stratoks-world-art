@@ -1,0 +1,81 @@
+{
+ "creaturesStart": 250,
+ "ticks": 10000,
+ "populationSamples": [
+  250,
+  250,
+  250,
+  250,
+  252,
+  254,
+  251,
+  258,
+  262,
+  279,
+  282,
+  294,
+  315,
+  332,
+  336,
+  359,
+  369,
+  386,
+  407,
+  404
+ ],
+ "populationEnd": 405,
+ "births": 233,
+ "deaths": {
+  "burns": 33,
+  "unknown": 4,
+  "dehydration": 5,
+  "starvation": 11,
+  "exposure": 5,
+  "injury": 1,
+  "old_age": 19
+ },
+ "deferredDecisions": 389,
+ "tickMs": {
+  "mean": 44.42,
+  "p50": 39.831,
+  "p95": 86.08,
+  "p99": 109.142,
+  "max": 257.921
+ },
+ "rssMiB": {
+  "max": 533,
+  "samples": [
+   92,
+   294,
+   362,
+   403,
+   408,
+   411,
+   418,
+   421,
+   426,
+   436,
+   443,
+   449,
+   457,
+   478,
+   484,
+   489,
+   496,
+   514,
+   522,
+   533
+  ]
+ },
+ "snapshotGzipBytes": 5594384,
+ "chunksGenerated": 48,
+ "viewerPayloadBytes": {
+  "mean": 10077,
+  "max": 31210
+ },
+ "clients": 8,
+ "node": "v24.21.0",
+ "arch": "x64",
+ "cpus": 4,
+ "note": "accelerated (no sleep); single process; no cgroup enforcement on this machine"
+}

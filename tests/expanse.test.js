@@ -8,9 +8,10 @@ import { World } from '../server/src/world.js';
 import { DEFAULTS, deepMerge } from '../server/src/config.js';
 import { Expanse, RECIPES } from '../server/src/expanse/engine.js';
 import { CHUNK, BASE, T, generateChunk, NODE_KINDS } from '../server/src/expanse/terrain.js';
-import { createMind, updateModel, predict, plan, LIMITS, recordEpisode, modelKey } from '../server/src/expanse/agent.js';
+import { createMind, updateModel, predict, plan, LIMITS, recordEpisode, modelKey, OBSERVATION_VERSION, MEMORY_VERSION } from '../server/src/expanse/agent.js';
 import { save, load, backup, restore, rollback, fromLegacySnapshot, migrateExpanse, readState, SNAPSHOT } from '../server/src/expanse/persist.js';
 import { MIGRATIONS as LEGACY_MIGRATIONS } from '../server/src/migrations.js';
+import { viewport, minimap } from '../server/src/expanse/view.js';
 
 const tmp = () => fs.mkdtempSync(path.join(os.tmpdir(), 'expanse-'));
 const mk = (seed = 11, n = 24, cfg = {}) => Expanse.create({ initialCount: n, ...cfg }, { seed });
@@ -113,6 +114,112 @@ test('outcome model learns from transitions with shrinking uncertainty; planner 
   assert.ok(!blank.some((s) => s.steps.some((x) => x.prim === 'gather')), 'unlearned outcome cannot be assumed');
 });
 
+test('planner compares all root affordances and does not enumerate away later primitive branches', () => {
+  const e = mk(7), c = e.creatures[0], obs = e.perceive(c);
+  c.home = { x: c.x + 20, y: c.y };
+  c.inventory = { wood: 1, stick: 1, fiber: 1, stone: 1, flint: 1, berry: 1 };
+  for (let i = 0; i < 10; i++) c.mind.known[`test-${i}`] = { x: c.x + 2 + i, y: c.y, kind: `node-${i}`, units: 3, t: 0 };
+  c.mind.water.push({ x: c.x + 3, y: c.y + 3, t: 0 });
+  const afford = e.affordances(c, obs), all = afford(c.inventory, null);
+  const plans = plan(c.mind, { inventory: c.inventory }, afford, {});
+  const starts = new Set(plans.map((p) => `${p.steps[0].prim}:${p.steps[0].purpose ?? ''}`));
+  for (const expected of ['rest:', 'move:explore', 'move:home', 'inspect:', 'share:', 'socialize:']) {
+    assert.ok(all.some((s) => `${s.prim}:${s.purpose ?? ''}`.startsWith(expected)), `affordance ${expected}`);
+    assert.ok([...starts].some((s) => s.startsWith(expected)), `planner compares ${expected}`);
+  }
+  assert.deepEqual(plan(c.mind, { inventory: c.inventory }, (inv, prev) => afford(inv, prev).reverse(), {}).map((p) => p.steps), plans.map((p) => p.steps));
+  const deep = plan(createMind(), { inventory: {} }, (_inv, prev) => prev ? [
+    ...Array.from({ length: 9 }, (_, i) => ({ prim: 'gather', key: `gather-${i}`, label: 'GATHER_WOOD' })),
+    { prim: 'combine', key: 'combine|late-pair|', label: 'GATHER_WOOD' },
+  ] : [{ prim: 'inspect', key: 'inspect|root|', label: 'WANDER' }], { horizon: 2 });
+  assert.ok(deep.some((p) => p.steps.length === 2 && p.steps[1].prim === 'combine'));
+});
+
+test('energy costs block gathering, shelter construction and attacks without allowing negative energy', () => {
+  const e = mk(17), c = e.creatures[0], target = e.creatures[1];
+  stage(e, c, { wood: 4, stone: 2 }); c.energy = 0;
+  const before = { ...c.inventory };
+  const built = run(e, c, { prim: 'build' });
+  assert.equal(built.reason, 'exhausted'); assert.equal(e.shelters.length, 0); assert.deepEqual(c.inventory, before); assert.equal(c.energy, 0);
+
+  const tree = e.chunk(0, 0).nodes.find((n) => n.kind === 'tree' && n.units > 0);
+  const spot = freeSpot(e, tree.x, tree.y); c.x = spot.x; c.y = spot.y; stage(e, c, {}); c.energy = 1.1;
+  const units = tree.units;
+  const gathered = run(e, c, { prim: 'gather', node: tree.id, kind: 'tree', x: tree.x, y: tree.y });
+  assert.equal(gathered.reason, 'exhausted'); assert.equal(tree.units, units); assert.equal(c.energy, 1.1);
+
+  target.x = c.x + 1; target.y = c.y; stage(e, c, {}); c.energy = 4.9;
+  const health = target.health;
+  const attacked = run(e, c, { prim: 'attack', target: target.id });
+  assert.equal(attacked.reason, 'exhausted'); assert.equal(target.health, health); assert.equal(c.energy, 4.9);
+});
+
+test('shelter choices and mb features use only observed or individually remembered shelters', () => {
+  const e = mk(11, 1), c = e.creatures[0], obs = e.perceive(c);
+  assert.equal(obs.version, OBSERVATION_VERSION);
+  assert.equal(obs.shelters.length, 0);
+  const feature = e.features(c, obs)[5], afford = e.affordances(c, obs);
+  e.shelters.push({ id: 99, x: c.x + 20, y: c.y, cap: 4, integrity: 100 });
+  assert.equal(e.features(c, obs)[5], feature);
+  assert.ok(!afford(c.inventory, null).some((s) => s.purpose === 'shelter'));
+  const local = { id: 100, x: c.x + 2, y: c.y, cap: 4, integrity: 100 };
+  e.shelters.push(local);
+  const seen = e.perceive(c);
+  assert.ok(seen.shelters.some((s) => s.id === local.id));
+  assert.ok(c.mind.shelters.some((s) => s.id === local.id));
+  assert.ok(e.features(c, seen)[5] === 0);
+});
+
+test('shelter materials fit the inventory limit and normal gather actions can build one', () => {
+  const e = mk(19, 1), c = e.creatures[0];
+  assert.ok(e.cfg.invCapacity >= 12);
+  stage(e, c, {});
+  const tree = e.chunk(0, 0).nodes.find((n) => n.kind === 'tree' && n.units >= 4);
+  let spot = freeSpot(e, tree.x, tree.y); c.x = spot.x; c.y = spot.y;
+  for (let i = 0; i < 4; i++) assert.equal(run(e, c, { prim: 'gather', node: tree.id, kind: 'tree', x: tree.x, y: tree.y }).success, true);
+  const stone = e.chunk(0, 0).nodes.find((n) => n.kind === 'stone' && n.units >= 2);
+  assert.ok(stone, 'legacy settlement has gatherable stone');
+  spot = freeSpot(e, stone.x, stone.y); c.x = spot.x; c.y = spot.y;
+  for (let i = 0; i < 2; i++) assert.equal(run(e, c, { prim: 'gather', node: stone.id, kind: 'stone', x: stone.x, y: stone.y }).success, true);
+  assert.deepEqual(c.inventory, { wood: 4, stone: 2 });
+  assert.equal(e.invWeight(c), 12);
+  assert.equal(run(e, c, { prim: 'build' }).success, true);
+  assert.equal(e.shelters.length, 1);
+});
+
+test('share affordances depend on observed neighbor data, and exhaustion deaths are attributed', () => {
+  const e = mk(23), [a, b] = e.creatures; a.x = 30; a.y = 30; b.x = 31; b.y = 30; a.inventory = { berry: 2 }; e.rebuildIndex();
+  const obs = e.perceive(a), afford = e.affordances(a, obs), before = afford(a.inventory, null).filter((s) => s.prim === 'share');
+  b.hunger = 59; const low = afford(a.inventory, null).filter((s) => s.prim === 'share');
+  b.hunger = 61; const high = afford(a.inventory, null).filter((s) => s.prim === 'share');
+  assert.deepEqual(low, before); assert.deepEqual(high, before); assert.ok(before.length);
+  a.energy = 0; a.health = 0.02; a.hunger = 65; a.thirst = 10; a.warmth = 90; a.injury = 0; a.act = null;
+  e.needs(a); assert.ok(a.health < 0); assert.equal(a.deathCause, 'exhaustion');
+});
+
+test('followers pay terrain movement time and energy like other walkers', () => {
+  const e = mk(7), b = e.bounds(); let run = null;
+  for (let y = b.y0; y < b.y1 && !run; y++) for (let x = b.x0; x < b.x1 && !run; x++) if ([0, 1, 2, 3, 4].every((i) => e.tile(x + i, y) === T.SHALLOW)) run = { x, y };
+  assert.ok(run, 'seed has a five tile shallow run');
+  const [f, leader] = e.creatures;
+  Object.assign(f, { x: run.x, y: run.y, hunger: 10, thirst: 10, warmth: 90, energy: 80 });
+  Object.assign(leader, { x: run.x + 4, y: run.y, act: { prim: 'rest' } });
+  f.following = { id: leader.id, until: e.tick + 1000 }; e.rebuildIndex();
+  e.followStep(f); e.followStep(f); assert.equal(f.x, run.x);
+  e.followStep(f); assert.equal(f.x, run.x + 1); assert.equal(e.moveCost(f.x, f.y), 3);
+  assert.ok(Math.abs(f.energy - 79.76) < 1e-9);
+});
+
+test('leadership and read-only world views leave persisted state unchanged', () => {
+  const e = mk(29), c = e.creatures[0]; c.followers = { 5: 0 }; e.tick = 5000;
+  const node = e.chunk(0, 0).nodes.find((n) => n.kind === 'bush');
+  node.units = 0; node.t = 0; e.dirty(node.x, node.y);
+  const before = JSON.stringify(e.toState());
+  assert.deepEqual(e.leadership(), []); assert.deepEqual(c.followers, { 5: 0 });
+  e.summary(); viewport(e, -20, -20, 48, 32); minimap(e);
+  assert.equal(JSON.stringify(e.toState()), before);
+});
+
 test('affordances use only individually acquired knowledge (no omniscient coordinates)', () => {
   const e = mk(4), c = e.creatures[0]; c.mind = createMind();
   const obs = e.perceive(c), steps = e.affordances(c, obs)(c.inventory, null);
@@ -198,9 +305,16 @@ test('legacy Phase 2A snapshot migrates without resetting brains, ids or history
   for (const c of w.creatures) { const m = e.getCreature(c.id); assert.ok(m); assert.deepEqual(m.brain.mb.positive, c.brain.mb.positive); assert.equal(m.name, c.name); assert.deepEqual(m.memories, c.memories); }
   assert.equal(e.tick, w.tick); e.run(200); assert.ok(e.tick === w.tick + 200);
   // expanse v1 -> v2
-  const st = e.toState(); st.schema = 1; for (const c of st.creatures) { delete c.warmth; delete c.reputation; c.knownNodes = c.mind.known; c.mind.known = {}; }
-  const m = migrateExpanse(st); assert.equal(m.from, 1); assert.equal(m.to, 2);
+  const st = e.toState(); st.schema = 1; for (const c of st.creatures) { delete c.warmth; delete c.reputation; c.knownNodes = c.mind.known; c.mind.known = {}; delete c.mind.shelters; delete c.mind.memoryVersion; }
+  const m = migrateExpanse(st); assert.equal(m.from, 1); assert.equal(m.to, 3);
   const e2 = Expanse.fromState(m.state); assert.equal(e2.creatures[0].warmth, 90); assert.ok(Object.keys(e2.creatures[0].mind.known).length > 0);
+  assert.deepEqual(e2.creatures[0].mind.shelters, []); assert.equal(e2.creatures[0].mind.memoryVersion, MEMORY_VERSION);
+  assert.equal(e2.cfg.invCapacity, 12);
+  const old2 = e.toState(); old2.schema = 2; old2.cfg.invCapacity = 10;
+  for (const c of old2.creatures) { c.energy = -55; delete c.mind.shelters; delete c.mind.memoryVersion; }
+  const m2 = migrateExpanse(old2); assert.equal(m2.from, 2); assert.equal(m2.to, 3);
+  const e3 = Expanse.fromState(m2.state); assert.equal(e3.cfg.invCapacity, 12); assert.equal(e3.creatures[0].energy, 0);
+  assert.deepEqual(e3.creatures[0].mind.episodes, e.creatures[0].mind.episodes);
   assert.throws(() => migrateExpanse({ ...e.toState(), schema: 99 }), /newer/);
   assert.ok(LEGACY_MIGRATIONS);
 });
@@ -248,4 +362,17 @@ test('read-only service: runs without viewers, two clients see the same world, w
   const svc2 = startExpanse({ dataDir: dir, seed: 999, tickMs: 1000, port: port + 1, initialCount: 3 });
   assert.equal(svc2.world.seed, 31); assert.equal(svc2.world.tick, before); assert.equal(svc2.world.creatures.length, svc.world.creatures.length);
   await svc2.stop();
+});
+
+test('GET /api/expanse/info leaves the saved world state unchanged', async () => {
+  const { startExpanse } = await import('../server/src/expanse/server.js');
+  const svc = startExpanse({ dataDir: tmp(), seed: 37, tickMs: 60_000, port: 0, host: '127.0.0.1', initialCount: 4 });
+  await new Promise((resolve) => svc.server.once('listening', resolve));
+  svc.world.tick = 5000; svc.world.creatures[0].followers = { 5: 0 };
+  const before = JSON.stringify(svc.world.toState()), port = svc.server.address().port;
+  const response = await fetch(`http://127.0.0.1:${port}/api/expanse/info`);
+  assert.equal(response.status, 200); assert.deepEqual((await response.json()).leadership, []);
+  assert.deepEqual(svc.world.creatures[0].followers, { 5: 0 });
+  assert.equal(JSON.stringify(svc.world.toState()), before);
+  await svc.stop();
 });
