@@ -1,0 +1,167 @@
+{
+  "engine": "webkit",
+  "started": "2026-10-28T12:54:13.047Z",
+  "checks": [
+    {
+      "name": "preview reflow 320",
+      "passed": true
+    },
+    {
+      "name": "preview reflow 390",
+      "passed": true
+    },
+    {
+      "name": "390 first screen contains product and main action",
+      "passed": true,
+      "buttonBottom": 246.984375
+    },
+    {
+      "name": "preview reflow 768",
+      "passed": true
+    },
+    {
+      "name": "preview reflow 1440",
+      "passed": true
+    },
+    {
+      "name": "preview automated accessibility",
+      "passed": true
+    },
+    {
+      "name": "server validation, modal Escape and focus return",
+      "passed": true
+    },
+    {
+      "name": "isolated demo runs real ticks and pauses",
+      "passed": true,
+      "tick": 2
+    },
+    {
+      "name": "mobile resident selection, perception overlay, learning and plan inspector",
+      "passed": true
+    },
+    {
+      "name": "demo has no server/API traffic",
+      "passed": true
+    },
+    {
+      "name": "exit demo clears private state",
+      "passed": true
+    },
+    {
+      "name": "two independent browser contexts share authoritative tick",
+      "passed": true,
+      "tick": 220,
+      "population": 24
+    },
+    {
+      "name": "both inspectors and downloaded JSON equal actual server evidence",
+      "passed": true,
+      "id": 1,
+      "plan": 381,
+      "observationTick": 212
+    },
+    {
+      "name": "expanded recent plans display actual successful and failed rewards",
+      "passed": true,
+      "plans": 8,
+      "failed": 2
+    },
+    {
+      "name": "wheel zoom changes observer viewport",
+      "passed": true
+    },
+    {
+      "name": "keyboard pan, zoom, home and minimap fetch real negative-coordinate terrain",
+      "passed": true,
+      "view": {
+        "x": -112,
+        "y": -112,
+        "w": 56,
+        "h": 39,
+        "biome": "cold"
+      }
+    },
+    {
+      "name": "discovery history matches engine, including empty state",
+      "passed": true,
+      "records": 0
+    },
+    {
+      "name": "social history matches engine",
+      "passed": true
+    },
+    {
+      "name": "resident search and empty-state recovery",
+      "passed": true
+    },
+    {
+      "name": "both clients synchronize after authoritative transitions",
+      "passed": true,
+      "tick": 244
+    },
+    {
+      "name": "shared inspector automated accessibility",
+      "passed": true
+    },
+    {
+      "name": "shared inspector and map reflow 320/390/768/1440",
+      "passed": true
+    },
+    {
+      "name": "nonempty discovery history and creator inspector match unforced engine transitions",
+      "passed": true,
+      "seed": 303,
+      "tick": 1200,
+      "records": 20,
+      "creator": 11
+    },
+    {
+      "name": "connection failure retains last frame with stale status",
+      "passed": true,
+      "tick": 1200
+    },
+    {
+      "name": "automatic reconnect after persistent server restart",
+      "passed": true
+    },
+    {
+      "name": "preserved settlement route loads",
+      "passed": true
+    },
+    {
+      "name": "return from settlement",
+      "passed": true
+    },
+    {
+      "name": "all world API traffic is GET only",
+      "passed": true,
+      "requests": 18
+    },
+    {
+      "name": "no browser runtime errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "screens": [
+    "preview-390.jpg",
+    "preview-1440.jpg",
+    "demo-inspector-390.jpg",
+    "keyboard-map-1440.jpg",
+    "shared-world-1440.jpg",
+    "shared-inspector-390.jpg",
+    "discovery-history-1440.jpg"
+  ],
+  "limitations": [],
+  "previewAxe": [],
+  "sharedAxe": [],
+  "runtimeErrors": [],
+  "failedRequests": [
+    {
+      "url": "http://127.0.0.1:33561/api/expanse/frame?x=-19&y=-27&w=56&h=39&creature=11",
+      "error": "Could not connect to 127.0.0.1: Connection refused"
+    }
+  ],
+  "finished": "2026-10-28T12:54:25.628Z"
+}

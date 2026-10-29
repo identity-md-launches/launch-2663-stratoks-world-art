@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { Expanse } from './engine.js';
 import { save, load, SNAPSHOT } from './persist.js';
-import { viewport, minimap, inspect } from './view.js';
+import { viewport, minimap, inspect, frame } from './view.js';
 
 export function startExpanse({ dataDir, seed, tickMs = 1000, saveEveryTicks = 300, port = 8788, host = '127.0.0.1', initialCount = 24, allowedOrigins = [] }) {
   fs.mkdirSync(dataDir, { recursive: true });
@@ -18,11 +18,13 @@ export function startExpanse({ dataDir, seed, tickMs = 1000, saveEveryTicks = 30
   }, tickMs);
   const server = http.createServer((req, res) => {
     const origin = req.headers.origin;
+    res.setHeader('vary', 'Origin');
     if (origin && allowedOrigins.includes(origin)) res.setHeader('access-control-allow-origin', origin);
     if (req.method !== 'GET' && req.method !== 'HEAD') { res.writeHead(405, { allow: 'GET, HEAD', 'content-type': 'application/json' }); return res.end('{"error":"read-only"}'); }
     const u = new URL(req.url, 'http://x'), q = (k, d) => Number(u.searchParams.get(k) ?? d);
     let body;
-    if (u.pathname === '/api/expanse/info') body = { tick: world.tick, seed: world.seed, mode: world.mode, population: world.creatures.length, bounds: world.bounds(), summary: world.summary(), leadership: world.leadership().slice(0, 5) };
+    if (u.pathname === '/api/expanse/frame') body = frame(world, { x: q('x', 0), y: q('y', 0), w: q('w', 48), h: q('h', 32), creature: u.searchParams.has('creature') ? q('creature', 0) : null });
+    else if (u.pathname === '/api/expanse/info') body = { tick: world.tick, seed: world.seed, mode: world.mode, population: world.creatures.length, bounds: world.bounds(), summary: world.summary(), leadership: world.leadership().slice(0, 5) };
     else if (u.pathname === '/api/expanse/view') body = viewport(world, q('x', 0), q('y', 0), q('w', 48), q('h', 32));
     else if (u.pathname === '/api/expanse/minimap') body = minimap(world);
     else if (u.pathname.startsWith('/api/expanse/creature/')) body = inspect(world, Number(u.pathname.split('/').pop()));

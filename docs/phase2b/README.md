@@ -1,6 +1,7 @@
 # STRATOKS Phase 2B: expanse world and learning-agent foundation (component report)
 
 Reviewer revision results are recorded in [REVISION-2026-10-28.md](REVISION-2026-10-28.md), with raw paired experiments and current 24/100/250-resident benchmarks under `tests/results/expanse/revision-*`.
+> Historical backend component report. The subsequent client integration is now present in `web/` and `dist/`; see the root `README.md` and `artifacts/phase2b/VALIDATION.md`. The absence-of-client statements and older benchmark/experiment extent below describe the earlier accepted component, not the current integrated export.
 
 ## What this commit contains
 

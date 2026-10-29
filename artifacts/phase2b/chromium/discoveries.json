@@ -1,0 +1,142 @@
+[
+  {
+    "tick": 458,
+    "what": "combine:stick+stone->stone_club",
+    "by": 23,
+    "firstInWorld": true,
+    "selfFound": true
+  },
+  {
+    "tick": 466,
+    "what": "combine:fiber+stick->bundle",
+    "by": 13,
+    "firstInWorld": true,
+    "selfFound": true
+  },
+  {
+    "tick": 471,
+    "what": "combine:stick+stone->stone_club",
+    "by": 3,
+    "firstInWorld": false,
+    "selfFound": true
+  },
+  {
+    "tick": 471,
+    "what": "combine:stick+stone->stone_club",
+    "by": 7,
+    "firstInWorld": false,
+    "selfFound": false
+  },
+  {
+    "tick": 474,
+    "what": "combine:fiber+stick->bundle",
+    "by": 14,
+    "firstInWorld": false,
+    "selfFound": true
+  },
+  {
+    "tick": 480,
+    "what": "combine:stick+stone->stone_club",
+    "by": 21,
+    "firstInWorld": false,
+    "selfFound": false
+  },
+  {
+    "tick": 484,
+    "what": "combine:stick+stone->stone_club",
+    "by": 14,
+    "firstInWorld": false,
+    "selfFound": false
+  },
+  {
+    "tick": 505,
+    "what": "combine:stick+stone->stone_club",
+    "by": 2,
+    "firstInWorld": false,
+    "selfFound": false
+  },
+  {
+    "tick": 508,
+    "what": "combine:stick+stone->stone_club",
+    "by": 18,
+    "firstInWorld": false,
+    "selfFound": false
+  },
+  {
+    "tick": 512,
+    "what": "combine:stick+stone->stone_club",
+    "by": 13,
+    "firstInWorld": false,
+    "selfFound": false
+  },
+  {
+    "tick": 524,
+    "what": "combine:stick+stone->stone_club",
+    "by": 4,
+    "firstInWorld": false,
+    "selfFound": false
+  },
+  {
+    "tick": 543,
+    "what": "combine:fiber+stick->bundle",
+    "by": 3,
+    "firstInWorld": false,
+    "selfFound": false
+  },
+  {
+    "tick": 590,
+    "what": "combine:stick+stone->stone_club",
+    "by": 24,
+    "firstInWorld": false,
+    "selfFound": false
+  },
+  {
+    "tick": 618,
+    "what": "combine:fiber+stick->bundle",
+    "by": 4,
+    "firstInWorld": false,
+    "selfFound": false
+  },
+  {
+    "tick": 688,
+    "what": "combine:fiber+stick->bundle",
+    "by": 7,
+    "firstInWorld": false,
+    "selfFound": false
+  },
+  {
+    "tick": 708,
+    "what": "combine:fiber+stick->bundle",
+    "by": 8,
+    "firstInWorld": false,
+    "selfFound": false
+  },
+  {
+    "tick": 978,
+    "what": "combine:stick+stone->stone_club",
+    "by": 8,
+    "firstInWorld": false,
+    "selfFound": false
+  },
+  {
+    "tick": 1029,
+    "what": "combine:stick+stone->stone_club",
+    "by": 16,
+    "firstInWorld": false,
+    "selfFound": false
+  },
+  {
+    "tick": 1159,
+    "what": "combine:fiber+stick->bundle",
+    "by": 19,
+    "firstInWorld": false,
+    "selfFound": false
+  },
+  {
+    "tick": 1179,
+    "what": "combine:stick+stone->stone_club",
+    "by": 11,
+    "firstInWorld": false,
+    "selfFound": true
+  }
+]

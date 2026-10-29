@@ -1,0 +1,41 @@
+{
+  "method": "WCAG 2 sRGB relative luminance; declared solid tokens, confirmed in rendered interface. Canvas artwork and blended backgrounds are not measured by this calculation.",
+  "pairs": [
+    {
+      "role": "ink/paper",
+      "foreground": "#263f31",
+      "background": "#fafaf1",
+      "ratio": 10.89
+    },
+    {
+      "role": "muted/paper",
+      "foreground": "#5c6c58",
+      "background": "#fafaf1",
+      "ratio": 5.35
+    },
+    {
+      "role": "muted/surface",
+      "foreground": "#5c6c58",
+      "background": "#f3f4e8",
+      "ratio": 5.06
+    },
+    {
+      "role": "primary text/accent",
+      "foreground": "#fafaf1",
+      "background": "#315d40",
+      "ratio": 7.22
+    },
+    {
+      "role": "focus/paper",
+      "foreground": "#29592e",
+      "background": "#fafaf1",
+      "ratio": 7.81
+    },
+    {
+      "role": "danger/danger-bg",
+      "foreground": "#98462e",
+      "background": "#f4e5da",
+      "ratio": 5.25
+    }
+  ]
+}

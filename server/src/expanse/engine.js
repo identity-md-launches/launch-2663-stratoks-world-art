@@ -698,8 +698,9 @@ export class Expanse {
     }
     // Natural births: bonded adults, both nearby, fed/watered/warm, at a shelter or fire, no cooldown.
     for (const m of this.creatures) {
-      if (m.sex !== 'F' || !this.isAdult(m) || m.cooldown > 0 || m.age > this.cfg.elderAge) continue;
+      if (m.sex !== 'F') continue;
       if (m.pregnant) { if (this.tick >= m.pregnant.due) this.birth(m); continue; }
+      if (!this.isAdult(m) || m.cooldown > 0 || m.age > this.cfg.elderAge) continue;
       if (m.hunger > 50 || m.thirst > 50 || m.health < 60 || m.warmth < 50) continue;
       if (!this.shelterAt(m.x, m.y) && !this.fireWarmth(m.x, m.y)) continue;
       const f = this.creaturesNear(m.x, m.y, 1).find((o) => o.sex === 'M' && this.isAdult(o) && o.cooldown === 0 && (m.relationships[o.id] ?? 0) > 0.4 && (o.relationships[m.id] ?? 0) > 0.4 && o.hunger < 50 && o.thirst < 50);
@@ -743,7 +744,7 @@ export class Expanse {
     const chunks = [];
     for (const ch of this.chunks.values()) if (ch.dirty) chunks.push({ cx: ch.cx, cy: ch.cy, tiles: Buffer.from(ch.tiles).toString('base64'), nodes: ch.nodes, piles: ch.piles });
     const creatures = this.creatures.map((c) => { const { lastObs, ...rest } = c; return { ...rest, plan: c.plan ? { ...c.plan } : null, act: c.act ? { ...c.act } : null }; });
-    return { kind: 'stratoks-expanse', schema: EXPANSE_SCHEMA, seed: this.seed, cfg: this.cfg, tick: this.tick, seq: this.seq, rng: this.rng.s, mode: this.mode, learning: this.learning,
+    return { id: this.id, legacyArchive: this.legacyArchive, kind: 'stratoks-expanse', schema: EXPANSE_SCHEMA, seed: this.seed, cfg: this.cfg, tick: this.tick, seq: this.seq, rng: this.rng.s, mode: this.mode, learning: this.learning,
       base: { tiles: Buffer.from(this.base.tiles).toString('base64'), trees: this.base.trees, stones: this.base.stones, bushes: this.base.bushes },
       chunks, fires: this.fires, shelters: this.shelters, creatures, graveyard: this.graveyard, events: this.events, social: this.social, discoveries: this.discoveries,
       history: this.history, totals: this.totals, weather: this.weather, nextId: this.nextId };
@@ -753,7 +754,7 @@ export class Expanse {
     if (s.schema !== EXPANSE_SCHEMA) throw new Error(`expanse schema ${s.schema} requires migration to ${EXPANSE_SCHEMA}`);
     const e = new Expanse({ ...s.cfg, ...cfgOverride });
     const st = structuredClone(s);
-    Object.assign(e, { seed: st.seed, schema: st.schema, tick: st.tick, seq: st.seq, mode: cfgOverride.mode ?? st.mode, learning: cfgOverride.learning ?? st.learning, fires: st.fires, shelters: st.shelters,
+    Object.assign(e, { id: st.id, legacyArchive: st.legacyArchive, seed: st.seed, schema: st.schema, tick: st.tick, seq: st.seq, mode: cfgOverride.mode ?? st.mode, learning: cfgOverride.learning ?? st.learning, fires: st.fires, shelters: st.shelters,
       creatures: st.creatures, graveyard: st.graveyard, events: st.events, social: st.social, discoveries: st.discoveries, history: st.history, totals: st.totals, weather: st.weather, nextId: st.nextId });
     e.rng = new Rng(1); e.rng.s = st.rng >>> 0;
     e.base = { tiles: Uint8Array.from(Buffer.from(st.base.tiles, 'base64')), trees: st.base.trees, stones: st.base.stones, bushes: st.base.bushes };

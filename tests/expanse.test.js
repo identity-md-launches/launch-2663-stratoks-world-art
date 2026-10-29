@@ -300,7 +300,15 @@ test('salt water does not quench thirst; water barriers block walking (no telepo
 test('legacy Phase 2A snapshot migrates without resetting brains, ids or history; newer schema refused', () => {
   const cfg = deepMerge(DEFAULTS, { world: { seed: 21, brainMode: 'mb-v1', initialSeedCount: 12 } });
   const w = World.create(cfg); for (let i = 0; i < 300; i++) w.step();
-  const snap = { schemaVersion: 3, state: structuredClone(w.toState()) };
+  // Mature populated worlds may have unfinished construction. The safe importer now
+  // refuses it instead of dropping it; use a snapshot with only completed structures
+  // for the brain/schema assertions below. Full structure preservation/refusal has
+  // separate populated-world tests in expanse-migration-recovery.test.js.
+  const original = { schemaVersion: 3, state: structuredClone(w.toState()) };
+  if (original.state.shelters.some(h => h.stage !== 3))
+    assert.throws(() => fromLegacySnapshot(original), /Unfinished legacy shelters/);
+  const snap = structuredClone(original);
+  snap.state.shelters = snap.state.shelters.filter(h => h.stage === 3);
   const e = fromLegacySnapshot(snap);
   for (const c of w.creatures) { const m = e.getCreature(c.id); assert.ok(m); assert.deepEqual(m.brain.mb.positive, c.brain.mb.positive); assert.equal(m.name, c.name); assert.deepEqual(m.memories, c.memories); }
   assert.equal(e.tick, w.tick); e.run(200); assert.ok(e.tick === w.tick + 200);

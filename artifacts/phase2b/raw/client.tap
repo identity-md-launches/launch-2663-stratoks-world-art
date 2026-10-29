@@ -1,0 +1,40 @@
+
+> stratoks-client@0.1.0 test
+> tsx --test src/*.test.ts
+
+✔ three real policies acquire, reverse and lose preference with output ablation across ten seeds (2396.463708ms)
+✔ lab reproducibility, validation and bounded retained evidence (266.433915ms)
+✔ uncertain interventions stay owned by the actor, world and service across reloads (1.381944ms)
+✔ legacy payloads remain readable but cannot be mistaken for actor-owned storage (0.245233ms)
+✔ invalid stored requests cannot be retried (0.206923ms)
+✔ 429 and durability/busy errors expose actionable honest server guidance (21.02331ms)
+✔ event cursor is bounded and pagination uses the server cursor unchanged (1.566057ms)
+✔ responses from a stopped connection cannot update a new world (4.777881ms)
+✔ actual simulation snapshot is rendered as an entity map with its real population (36.860894ms)
+✔ delta updates one creature, removes consumed resources, and deduplicates replayed events (17.450931ms)
+✔ a sequence gap freezes existing state and asks for a full snapshot (14.418068ms)
+✔ reconnect snapshot replaces entities without duplicating past events (11.069822ms)
+✔ developer reset replaces world, history, events and sequence rather than merging old identities (10.627247ms)
+✔ a snapshot from an earlier restored backup discards events from the abandoned timeline (13.935274ms)
+✔ malformed snapshot is refused without changing the current world (10.209472ms)
+✔ same-tick snapshot recovery discards uncommitted events as well as lower-tick recovery (17.176268ms)
+✔ restart epoch clears abandoned events even when the new sequence has already caught up (17.314092ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2803.72195
+✔ configuration permits HTTPS subpaths and refuses credentials or mixed content (1.040241ms)
+✔ wire query preserves negative world coordinates and selected creature (0.303032ms)
+✔ incompatible and incoherent frames are not presented as shared state (0.217634ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 103.907751
