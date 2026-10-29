@@ -48,7 +48,7 @@ export function frame(e, { x = 0, y = 0, w = 48, h = 32, creature = null } = {})
   x = Math.max(bounds.x0, Math.min(bounds.x1 - w, finite(x, 0)));
   y = Math.max(bounds.y0, Math.min(bounds.y1 - h, finite(y, 0)));
   const view = viewport(e, x, y, w, h);
-  return { v: VIEW_VERSION, tick: e.tick, seed: e.seed, mode: e.mode, bounds, summary: e.summary(), view, minimap: minimap(e),
+  return { worldId: e.id ?? null, v: VIEW_VERSION, tick: e.tick, seed: e.seed, mode: e.mode, bounds, summary: e.summary(), view, minimap: minimap(e),
     residents: e.creatures.map((c) => ({ id: c.id, name: c.name, x: c.x, y: c.y, health: Math.round(c.health), action: c.act?.prim ?? null })),
     inspector: creature === null ? null : inspect(e, creature),
     discoveries: e.discoveries.slice(-200), social: e.social.slice(-100),

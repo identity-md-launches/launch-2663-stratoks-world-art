@@ -29,7 +29,7 @@ export function startExpanse({ dataDir, seed, tickMs = 1000, saveEveryTicks = 30
     else if (u.pathname === '/api/expanse/minimap') body = minimap(world);
     else if (u.pathname.startsWith('/api/expanse/creature/')) body = inspect(world, Number(u.pathname.split('/').pop()));
     else if (u.pathname === '/api/expanse/discoveries') body = { discoveries: world.discoveries.slice(-200), social: world.social.slice(-100) };
-    else if (u.pathname === '/healthz') body = { ok: true, tick: world.tick };
+    else if (u.pathname === '/healthz') body = { ok: true, worldId: world.id ?? null, tick: world.tick, mode: world.mode };
     if (body === undefined || body === null) { res.writeHead(404, { 'content-type': 'application/json' }); return res.end('{"error":"not found"}'); }
     res.writeHead(200, { 'content-type': 'application/json', 'cache-control': 'no-store' }); res.end(JSON.stringify(body));
   });
