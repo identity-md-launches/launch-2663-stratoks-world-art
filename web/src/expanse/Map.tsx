@@ -141,6 +141,8 @@ export function WorldMap({
         if (renderer.current!.stats.frames % 15 === 0) {
           el.dataset.drawn = String(renderer.current!.stats.drawn);
           el.dataset.culled = String(renderer.current!.stats.culled);
+          el.dataset.terrainBuilds = String(renderer.current!.stats.terrainBuilds);
+          el.dataset.terrainChunks = String(renderer.current!.stats.terrainChunks);
           el.dataset.drawTimes = JSON.stringify(
             renderer.current!.stats.drawTimes.slice(-120),
           );
@@ -472,6 +474,9 @@ export function MiniMap({
             }
           }}
           onClick={(e) => {
+            // Native keyboard/AT activation has no chosen map coordinate.
+            // Arrow keys above provide an explicit keyboard navigation path.
+            if (e.detail === 0) return;
             const rect = e.currentTarget.getBoundingClientRect(),
               p = miniWorld(
                 {

@@ -1,5 +1,7 @@
 import { drawSprite, type Art } from "./art";
 import { project, scale, type Size } from "./projection";
+import { GroundCache, WATER } from "./ground";
+import { settlementWear, WornPaths, type WornSegment } from "./paths";
 import type { Camera, Resident, WorldFrame } from "./types";
 export const TILE_NAMES = [
   "Grass",
@@ -14,22 +16,8 @@ export const TILE_NAMES = [
   "Dune",
   "Freshwater stream",
 ];
-const COLORS = [
-  "#89ad59",
-  "#3bafb2",
-  "#2b9eac",
-  "#74cbbd",
-  "#dfc78d",
-  "#9ba7a1",
-  "#e3ece9",
-  "#778f90",
-  "#6e964c",
-  "#d4b779",
-  "#69beb7",
-];
 export const hash = (x: number, y = 0) =>
   ((x * 374761393 + y * 668265263) ^ ((x + 19) * (y + 37) * 1274126177)) >>> 0;
-const WATER = new Set([1, 2, 3, 10]);
 export function biomeAt(f: WorldFrame, x: number, y: number) {
   const cx = Math.floor(x / 28),
     cy = Math.floor(y / 28);
@@ -44,18 +32,20 @@ export function residentPose(
   frame: WorldFrame,
   moving: boolean,
 ): Pose {
+  const carryingWood =
+    frame.inspector?.id === r.id &&
+    (frame.inspector.inventory.wood ?? 0) > 0;
+  // The active action is the destination task; the engine walks to it first.
+  if (moving) return carryingWood ? "carry" : "walk";
   if (r.action === "rest") return "rest";
   if (r.action === "build") return "build";
   if (r.action === "gather") return "gather";
   if (
     (r.action === "carry" || r.action === "move") &&
-    frame.inspector?.id === r.id &&
-    (frame.inspector.inventory.wood ?? 0) > 0
+    carryingWood
   )
     return "carry";
-  return moving && (r.action === "move" || r.action === "flee")
-    ? "walk"
-    : "idle";
+  return "idle";
 }
 type Track = {
   from: { x: number; y: number };
@@ -66,8 +56,10 @@ type Track = {
   moving: boolean;
 };
 export class WorldRenderer {
-  private ground = document.createElement("canvas");
-  private groundKey = "";
+  private ground: GroundCache;
+  private paths: WornPaths;
+  private travelled = new Map<string, WornSegment>();
+  private wear: WornSegment[] = [];
   private tracks = new Map<number, Track>();
   private frame: WorldFrame | null = null;
   private received = 0;
@@ -77,18 +69,24 @@ export class WorldRenderer {
     drawn: 0,
     culled: 0,
     terrainBuilds: 0,
+    terrainChunks: 0,
     frames: 0,
     drawTimes: [] as number[],
   };
-  constructor(private art: Art) {}
+  constructor(private art: Art) {
+    this.ground = new GroundCache(art);
+    this.paths = new WornPaths(art);
+  }
   update(f: WorldFrame, now: number, recorded: boolean) {
     if (this.frame === f) return;
     if (
       this.frame?.worldId !== f.worldId ||
       this.frame?.seed !== f.seed ||
       f.tick < (this.tick ?? 0)
-    )
+    ) {
       this.tracks.clear();
+      this.travelled.clear();
+    }
     const duration = Math.max(100, Math.min(1100, now - this.received || 500));
     if (f.tick !== this.tick) {
       for (const r of f.residents) {
@@ -97,6 +95,13 @@ export class WorldRenderer {
           dy = r.y - (old?.to.y ?? r.y);
         const adjacent = Math.max(Math.abs(dx), Math.abs(dy)) <= 1;
         const moving = !!old && (dx !== 0 || dy !== 0) && adjacent && !recorded;
+        if (moving) {
+          const from = { x: old!.to.x, y: old!.to.y }, to = { x: r.x, y: r.y };
+          const key = [`${from.x},${from.y}`, `${to.x},${to.y}`].sort().join(":");
+          this.travelled.delete(key);
+          this.travelled.set(key, { from, to });
+          if (this.travelled.size > 256) this.travelled.delete(this.travelled.keys().next().value!);
+        }
         let direction =
           old?.direction ?? ["se", "sw", "ne", "nw"][hash(r.id) % 4];
         if (dx || dy) {
@@ -119,132 +124,8 @@ export class WorldRenderer {
       this.received = now;
       this.tick = f.tick;
     }
+    this.wear = settlementWear(f, this.travelled.values());
     this.frame = f;
-  }
-  private diamond(
-    ctx: CanvasRenderingContext2D,
-    x: number,
-    y: number,
-    s: number,
-  ) {
-    ctx.beginPath();
-    ctx.moveTo(x, y - s / 2);
-    ctx.lineTo(x + s, y);
-    ctx.lineTo(x, y + s / 2);
-    ctx.lineTo(x - s, y);
-    ctx.closePath();
-  }
-  private terrain(f: WorldFrame, c: Camera, size: Size, dpr: number) {
-    const v = f.view,
-      key =
-        `${v.x0},${v.y0},${v.w},${v.h},${c.x},${c.y},${c.span},${size.w},${size.h},${dpr}:` +
-        v.tiles.join("");
-    if (key === this.groundKey) return;
-    this.groundKey = key;
-    this.stats.terrainBuilds++;
-    this.ground.width = Math.round(size.w * dpr);
-    this.ground.height = Math.round(size.h * dpr);
-    const ctx = this.ground.getContext("2d")!;
-    ctx.scale(dpr, dpr);
-    const g = ctx.createLinearGradient(0, 0, size.w, size.h);
-    g.addColorStop(0, "#bdcecf");
-    g.addColorStop(1, "#8da9ac");
-    ctx.fillStyle = g;
-    ctx.fillRect(0, 0, size.w, size.h);
-    const s = scale(c, size);
-    const tile = (x: number, y: number) =>
-      x >= v.x0 && y >= v.y0 && x < v.x0 + v.w && y < v.y0 + v.h
-        ? v.tiles[(y - v.y0) * v.w + x - v.x0]
-        : -1;
-    for (let j = 0; j < v.h; j++)
-      for (let i = 0; i < v.w; i++) {
-        const x = v.x0 + i,
-          y = v.y0 + j,
-          t = v.tiles[j * v.w + i],
-          p = project({ x: x + 0.5, y: y + 0.5 }, c, size);
-        if (
-          p.x < -s * 2 ||
-          p.x > size.w + s * 2 ||
-          p.y < -s ||
-          p.y > size.h + s
-        )
-          continue;
-        this.diamond(ctx, p.x, p.y, s + 0.65);
-        ctx.fillStyle = COLORS[t] ?? COLORS[0];
-        ctx.fill();
-        if (!WATER.has(t)) {
-          ctx.save();
-          this.diamond(ctx, p.x, p.y, s + 0.7);
-          ctx.clip();
-          // Texture is the provided ground artwork, clipped to the exact authoritative tile.
-          const biome =
-            t === 6
-              ? "cold"
-              : t === 4 || t === 9
-                ? "arid"
-                : t === 5 || t === 7
-                  ? "coast"
-                  : "temperate";
-          drawSprite(
-            ctx,
-            this.art,
-            `${biome}.ground`,
-            p.x,
-            p.y + s * 0.45,
-            s * 2.8,
-            0.27,
-          );
-          const n = hash(x, y);
-          ctx.fillStyle = n % 2 ? "#fff3b30c" : "#355b2a0a";
-          ctx.fillRect(p.x - s, p.y - s / 2, s * 2, s);
-          ctx.restore();
-        } else {
-          // Every shoreline segment lies on a real water/land boundary; no terrain is relocated.
-          const verts = [
-            { x: p.x, y: p.y - s / 2 },
-            { x: p.x + s, y: p.y },
-            { x: p.x, y: p.y + s / 2 },
-            { x: p.x - s, y: p.y },
-          ];
-          const neighbors = [
-            [x, y - 1],
-            [x + 1, y],
-            [x, y + 1],
-            [x - 1, y],
-          ];
-          for (let edge = 0; edge < 4; edge++) {
-            const nt = tile(neighbors[edge][0], neighbors[edge][1]);
-            if (nt < 0 || WATER.has(nt)) continue;
-            const a = verts[edge],
-              b = verts[(edge + 1) % 4];
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.strokeStyle = "#eee4b491";
-            ctx.lineWidth = Math.max(2, s * 0.12);
-            ctx.stroke();
-            ctx.beginPath();
-            ctx.moveTo((a.x + p.x * 0.08) / 1.08, (a.y + p.y * 0.08) / 1.08);
-            ctx.lineTo((b.x + p.x * 0.08) / 1.08, (b.y + p.y * 0.08) / 1.08);
-            ctx.strokeStyle = "#d5fff081";
-            ctx.lineWidth = 1;
-            ctx.stroke();
-          }
-        }
-      }
-    // Soft upper-left sunlight belongs to the observer presentation, never simulation weather.
-    const light = ctx.createRadialGradient(
-      size.w * 0.12,
-      0,
-      0,
-      size.w * 0.12,
-      0,
-      size.w * 0.9,
-    );
-    light.addColorStop(0, "#fff7ca20");
-    light.addColorStop(1, "#ffffff00");
-    ctx.fillStyle = light;
-    ctx.fillRect(0, 0, size.w, size.h);
   }
   draw(
     ctx: CanvasRenderingContext2D,
@@ -263,20 +144,12 @@ export class WorldRenderer {
   ) {
     const start = performance.now();
     this.update(f, now, opts.recorded);
-    this.terrain(f, c, size, dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, size.w, size.h);
-    ctx.drawImage(
-      this.ground,
-      0,
-      0,
-      this.ground.width,
-      this.ground.height,
-      0,
-      0,
-      size.w,
-      size.h,
-    );
+    this.ground.draw(ctx, f, c, size, dpr);
+    this.stats.terrainBuilds = this.ground.builds;
+    this.stats.terrainChunks = this.ground.size;
+    this.paths.draw(ctx, this.wear, c, size);
     const s = scale(c, size),
       v = f.view;
     if (opts.borders) {

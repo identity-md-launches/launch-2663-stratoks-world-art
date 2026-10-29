@@ -1,5 +1,7 @@
 # STRATOKS world art and interface validation
 
+This is the retained report from the accepted first round. For the reopened findings, final commands, current screenshots and camera-motion measurements, see [REVISION.md](REVISION.md). Statistics below describe the original run; repeated evidence filenames are refreshed by the final revision check.
+
 This is the worker's measured report for the rebuilt `dist/`, not independent certification. Scope is the frontend from pinned `fc1df0f9e641d05b7e32e1c96cb1b963e61576aa`, building on the accepted original atlas contribution. Server, shared simulation, tests, deployment source, dependencies and build configuration were preserved. No owner VPS deployment or second shared world was performed.
 
 ## Completion and scope

@@ -14,7 +14,7 @@ const f = { inspector: null } as WorldFrame;
 test("appearances require confirmed engine state; inventory is not inferred from action", () => {
   assert.equal(residentPose({ ...r, action: "move" }, f, false), "idle");
   assert.equal(residentPose({ ...r, action: "move" }, f, true), "walk");
-  assert.equal(residentPose({ ...r, action: "carry" }, f, true), "idle");
+  assert.equal(residentPose({ ...r, action: "carry" }, f, true), "walk");
   for (const [action, pose] of [
     ["rest", "rest"],
     ["build", "build"],
@@ -35,7 +35,7 @@ test("appearances require confirmed engine state; inventory is not inferred from
       { ...f, inspector: { ...inspector!, id: 43 } },
       true,
     ),
-    "idle",
+    "walk",
   );
   assert.equal(
     residentPose(
@@ -43,6 +43,17 @@ test("appearances require confirmed engine state; inventory is not inferred from
       { ...f, inspector: { ...inspector!, inventory: { stone: 2 } } },
       true,
     ),
-    "idle",
+    "walk",
   );
+});
+
+test("confirmed travel takes precedence over the destination task until arrival", () => {
+  for (const action of ["gather", "build", "rest", "socialize", "use", "follow", "flee", null]) {
+    assert.equal(residentPose({ ...r, action }, f, true), "walk", String(action));
+  }
+  assert.equal(residentPose({ ...r, action: "gather" }, f, false), "gather");
+  assert.equal(residentPose({ ...r, action: "build" }, f, false), "build");
+  const inspector = { id: r.id, inventory: { wood: 1 } } as unknown as WorldFrame["inspector"];
+  assert.equal(residentPose({ ...r, action: "gather" }, { ...f, inspector }, true), "carry");
+  assert.equal(residentPose({ ...r, action: "gather" }, { ...f, inspector }, false), "gather");
 });

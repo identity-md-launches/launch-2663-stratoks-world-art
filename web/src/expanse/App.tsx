@@ -431,6 +431,7 @@ export default function ExpanseApp() {
               </button>
             )}
           </nav>
+          <div className="exp-scene-messages">
           <div className="exp-scene-notice" role="status">
             {error ? (
               <>
@@ -524,6 +525,7 @@ export default function ExpanseApp() {
               <Icon name="close" size={14} />
             </button>
           )}
+          </div>
           <MiniMap
             frame={display}
             camera={camera}

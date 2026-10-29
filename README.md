@@ -6,20 +6,19 @@ The review opens a **recorded preview** of `world-20260101-0` at tick 171,933, c
 
 ## Install, preview and rebuild
 
-Use Node 22.12+; Node 24 was used here. The existing frontend manifest and lockfile are unchanged.
+Use Node 22.12+; this revision used Node 22.23.3 (the original accepted build used Node 24). The existing frontend manifest and lockfile are unchanged.
 
 ```sh
 cd web
 npm ci
 npm run typecheck
 npm test
-npx tsx --test src/expanse/*.test.ts
 npm run build
 cd ..
 node web/scripts/preview.mjs 4173
 ```
 
-Open `http://127.0.0.1:4173/preview/`. The preview command only serves the static export; stop it with Ctrl+C. Vite retains `base: './'` and writes `../dist/`. Use HTTP rather than opening `index.html` as a file, because the demo uses module workers and runtime JSON. Dependencies and caches must stay out of Git. The existing `web/scripts/task.mjs` helper can alternatively install/build in `/tmp`; the added Expanse tests should also be run with the explicit command above.
+Open `http://127.0.0.1:4173/preview/`. The preview command only serves the static export; stop it with Ctrl+C. Vite retains `base: './'` and writes `../dist/`. Use HTTP rather than opening `index.html` as a file, because the demo uses module workers and runtime JSON. Dependencies and caches must stay out of Git. The existing `web/scripts/task.mjs` helper can alternatively install, typecheck, test and build in `/tmp`: `node web/scripts/task.mjs <task>`. `npm test` discovers the Expanse projection, appearance, transport and terrain suites through `src/expanse.test.ts`, alongside the existing client tests; the protected package manifest and lockfile remain unchanged.
 
 The source patch at `artifacts/overhaul/stratoks-source.patch.gz` applies against pinned commit `fc1df0f9e641d05b7e32e1c96cb1b963e61576aa`. It includes editable source, art and documentation; the matching prebuilt `dist/` and rendered validation evidence are delivered alongside it, rather than duplicated inside the patch. Apply it on a separate review branch, then rebuild with the commands above:
 
@@ -56,7 +55,7 @@ See [DESIGN.md](DESIGN.md) for the implemented tokens, typography, components an
 
 Drag or use arrow keys to pan. Scroll, pinch, use +/−, or use the zoom controls. Select a creature or search **Find residents**. Follow tracks its confirmed position. The atlas supports pointer and arrow navigation. Plans, Perception and Learning retain actual predictions, uncertainty, observations, inventories, memories and outcomes. JSON downloads contain the actual inspector. Counts are scoped to the indicated world/capture and tick. World records retain the API's bounded history.
 
-The map and inspector use separate viewports on phones. Canvas picking, pointer-centered zoom, viewport requests, camera limits, knowledge overlays and the atlas share the same projection module. Terrain is cached offscreen, and sprites are culled and sorted by ground depth. Decorative art never changes pathfinding or adds a resource/building.
+The map and inspector use separate viewports on phones. Short phones use a horizontal rail, separate zoom and notice rows, and a collapsed atlas. Follow flows below the actual connection notice height. Canvas picking, pointer-centered zoom, viewport requests, camera limits, knowledge overlays and the atlas share the same projection module. Minimap Enter/Space preserve the camera; arrows choose a chunk and pointer clicks choose a location. Terrain uses fixed world-coordinate caches across pan/zoom, and sprites are culled and sorted by ground depth. Worn ground marks clear shelter approaches and adjacent travel observed in the viewer session; it has no simulation behavior. Decorative art never changes pathfinding or adds a resource/building.
 
 ## Validation and review evidence
 
@@ -69,6 +68,8 @@ cd web
 npx playwright install chromium webkit
 cd ..
 node web/scripts/overhaul-check.mjs
+# Reopened-review regressions: short layouts, keyboard minimap, moving-camera performance.
+node web/scripts/revision-check.mjs
 # Optional: contact the existing public world read-only, test CORS and record live interactions.
 node web/scripts/overhaul-check.mjs --live
 # With the static preview running, also render the actual private-worker biomes.
@@ -77,11 +78,11 @@ node web/scripts/biomes-check.mjs
 
 Playwright needs its platform libraries. On this machine, browser binaries and extracted WebKit/Mesa libraries were installed only under `/tmp`; none are shipped. `IMD_PLAYWRIGHT` can point at an external Playwright `index.mjs`. `STRATOKS_FFMPEG` can select a VP9 encoder; the script also finds Playwright's bundled encoder for compact recording output. Without `--live`, validation uses the static capture, browser demo and labeled synthetic fixtures.
 
-The pinned Better Interface review covers all six domains; findings, fixes and coverage limits are in the validation document. Build, typecheck, 17 existing client tests, 7 Expanse tests, browser flows and the design probe were run. These are worker observations, not independent certification. Earlier backend/scientific reports remain in their existing documentation and are not substituted for these frontend checks.
+The pinned Better Interface review covers all six domains; findings, fixes and coverage limits are in the validation document. The revision's reproduction evidence, final commands, browser results and performance phases are in [revision validation](artifacts/overhaul/REVISION.md) and `revision-results.json`. The standard test command runs 27 tests, including the new travel-priority and terrain-cache/path regressions. These are worker observations, not independent certification. Earlier backend/scientific reports remain in their existing documentation and are not substituted for these frontend checks.
 
 ## Limits and provenance
 
-The snapshot covers only its recorded 80×80 viewport, and detailed evidence for one resident. The demo/live service supplies new views; the capture does not invent terrain beyond its coverage. Generated animation frames have subtle shape variation. Only adjacent confirmed movement is interpolated; larger changes snap because intermediate paths are unavailable. Carrying art is limited to confirmed wood; incomplete shelter stages remain unused because the API does not expose them. Biome decoration uses the API's representative chunk biome. Cosmetic motion respects reduced motion and has a pause control. The renderer caps visual updates at 30 Hz; heavy synthetic populations and terrain rebuild spikes are documented.
+The snapshot covers only its recorded 80×80 viewport, and detailed evidence for one resident. The demo/live service supplies new views; the capture does not invent terrain beyond its coverage. Generated animation frames have subtle shape variation. Only adjacent confirmed movement is interpolated; larger changes snap because intermediate paths are unavailable. Confirmed travel takes precedence over the destination task's work/rest pose; carrying art is limited to inspected wood inventory. Incomplete shelter stages remain unused because the API does not expose them. Biome decoration uses the API's representative chunk biome. Cosmetic motion respects reduced motion and has a pause control. The renderer caps visual updates at 30 Hz. New/changed chunks still need rasterization; fixed-resolution terrain can soften at high zoom. Performance measurements are machine-specific, with synthetic pan, zoom and follow separated from live evidence.
 
 Physical phones, assistive screen readers, native 200% browser zoom, RTL/localization, all canvas-background contrast combinations and owner installation were not independently checked. No change was deployed to the owner's VPS. IMD publication is a separate review preview, recorded in `artifacts/overhaul/publication.json` when available.
 

@@ -1,38 +1,42 @@
 {
   "typecheck": {
-    "command": "cd web && npm run typecheck",
+    "command": "node web/scripts/task.mjs typecheck",
     "exitCode": 0
   },
-  "clientTests": {
-    "command": "cd web && npm test",
+  "tests": {
+    "command": "node web/scripts/task.mjs test",
+    "npmScript": "tsx --test src/*.test.ts",
     "exitCode": 0,
-    "passed": 17
-  },
-  "expanseTests": {
-    "command": "cd web && npx tsx --test src/expanse/*.test.ts",
-    "exitCode": 0,
-    "passed": 7
+    "passed": 27,
+    "expanseIncluded": 10
   },
   "build": {
-    "command": "cd web && npm run build",
+    "command": "node web/scripts/task.mjs build",
     "exitCode": 0
   },
   "atlas": {
-    "command": "python3 tools/art/validate_renderer.py",
+    "command": "python3 tools/art/validate_renderer.py (external Pillow/numpy)",
     "exitCode": 0,
     "sprites": 134
   },
-  "browser": {
-    "command": "node web/scripts/overhaul-check.mjs --live",
-    "exitCode": 0
+  "revisionBrowser": {
+    "command": "node web/scripts/revision-check.mjs",
+    "exitCode": 0,
+    "layoutCases": 16,
+    "performanceKind": "synthetic, 120 residents, pan/zoom/follow, DPR 1/2"
   },
-  "biomes": {
-    "command": "node web/scripts/biomes-check.mjs",
+  "browser": {
+    "command": "node web/scripts/overhaul-check.mjs --live (external staging tree)",
     "exitCode": 0
   },
   "taste": {
+    "command": "node .imd/reads/skills/design-critic/scripts/taste.mjs --out test/scratch/taste",
+    "exitCode": 0,
     "checksPassed": 16,
     "checksTotal": 16
+  },
+  "biomes": {
+    "scope": "original accepted round; source artwork retained"
   },
   "serverAndBuildConfigurationIntegrity": {
     "against": "fc1df0f9e641d05b7e32e1c96cb1b963e61576aa",

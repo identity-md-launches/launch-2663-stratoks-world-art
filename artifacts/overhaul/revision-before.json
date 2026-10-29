@@ -1,0 +1,250 @@
+{
+  "layouts": [
+    {
+      "width": 667,
+      "height": 390,
+      "findResidents": "intercepted",
+      "issues": [
+        {
+          "name": "Explore demo",
+          "rect": {
+            "x": 32,
+            "y": 183.78125,
+            "width": 121,
+            "height": 44,
+            "top": 183.78125,
+            "right": 153,
+            "bottom": 227.78125,
+            "left": 32
+          },
+          "clipped": false,
+          "covered": true,
+          "cover": "exp-scene-notice"
+        },
+        {
+          "name": "Find residents",
+          "rect": {
+            "x": 161,
+            "y": 183.78125,
+            "width": 122,
+            "height": 44,
+            "top": 183.78125,
+            "right": 283,
+            "bottom": 227.78125,
+            "left": 161
+          },
+          "clipped": false,
+          "covered": true,
+          "cover": "exp-scene-notice"
+        },
+        {
+          "name": "View world records",
+          "rect": {
+            "x": 20,
+            "y": 330,
+            "width": 40,
+            "height": 40,
+            "top": 330,
+            "right": 60,
+            "bottom": 370,
+            "left": 20
+          },
+          "clipped": true,
+          "covered": false,
+          "cover": {}
+        },
+        {
+          "name": "Show chunk boundaries",
+          "rect": {
+            "x": 20,
+            "y": 385,
+            "width": 40,
+            "height": 40,
+            "top": 385,
+            "right": 60,
+            "bottom": 425,
+            "left": 20
+          },
+          "clipped": true,
+          "covered": true
+        },
+        {
+          "name": "Pause visual motion",
+          "rect": {
+            "x": 20,
+            "y": 427,
+            "width": 40,
+            "height": 40,
+            "top": 427,
+            "right": 60,
+            "bottom": 467,
+            "left": 20
+          },
+          "clipped": true,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 600,
+      "findResidents": "passed",
+      "issues": [
+        {
+          "name": "Show chunk boundaries",
+          "rect": {
+            "x": 20,
+            "y": 385,
+            "width": 40,
+            "height": 40,
+            "top": 385,
+            "right": 60,
+            "bottom": 425,
+            "left": 20
+          },
+          "clipped": false,
+          "covered": true,
+          "cover": ""
+        },
+        {
+          "name": "Pause visual motion",
+          "rect": {
+            "x": 20,
+            "y": 427,
+            "width": 40,
+            "height": 40,
+            "top": 427,
+            "right": 60,
+            "bottom": 467,
+            "left": 20
+          },
+          "clipped": false,
+          "covered": true,
+          "cover": "exp-text-button"
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "findResidents": "passed",
+      "issues": [
+        {
+          "name": "Zoom in",
+          "rect": {
+            "x": 15,
+            "y": 441,
+            "width": 32,
+            "height": 40,
+            "top": 441,
+            "right": 47,
+            "bottom": 481,
+            "left": 15
+          },
+          "clipped": false,
+          "covered": true,
+          "cover": ""
+        },
+        {
+          "name": "View world records",
+          "rect": {
+            "x": 16,
+            "y": 330,
+            "width": 40,
+            "height": 40,
+            "top": 330,
+            "right": 56,
+            "bottom": 370,
+            "left": 16
+          },
+          "clipped": false,
+          "covered": true,
+          "cover": "exp-scene-notice"
+        },
+        {
+          "name": "Show chunk boundaries",
+          "rect": {
+            "x": 16,
+            "y": 385,
+            "width": 40,
+            "height": 40,
+            "top": 385,
+            "right": 56,
+            "bottom": 425,
+            "left": 16
+          },
+          "clipped": false,
+          "covered": true,
+          "cover": "exp-text-button"
+        }
+      ]
+    }
+  ],
+  "minimap": {
+    "before": {
+      "span": 12,
+      "x": 14.5,
+      "y": 21.5
+    },
+    "after": {
+      "span": 12,
+      "x": -78.925,
+      "y": -78.925
+    }
+  },
+  "follow": {
+    "notice": {
+      "x": 12,
+      "y": 160,
+      "width": 250,
+      "height": 54,
+      "top": 160,
+      "right": 262,
+      "bottom": 214,
+      "left": 12
+    },
+    "follow": {
+      "x": 12,
+      "y": 196,
+      "width": 139,
+      "height": 26.796875,
+      "top": 196,
+      "right": 151,
+      "bottom": 222.796875,
+      "left": 12
+    },
+    "button": {
+      "x": 20,
+      "y": 187,
+      "width": 78,
+      "height": 24,
+      "top": 187,
+      "right": 98,
+      "bottom": 211,
+      "left": 20
+    },
+    "covered": true,
+    "hit": "exp-follow-banner"
+  },
+  "performance": {
+    "idle": {
+      "samples": 75,
+      "medianMs": 1.1000001430511475,
+      "p95Ms": 2.8999998569488525,
+      "maxMs": 159.60000014305115
+    },
+    "pan": {
+      "samples": 120,
+      "medianMs": 1.2000000476837158,
+      "p95Ms": 96.39999985694885,
+      "maxMs": 128.29999995231628
+    },
+    "zoom": {
+      "samples": 120,
+      "medianMs": 1.5,
+      "p95Ms": 100.5,
+      "maxMs": 128.29999995231628
+    }
+  },
+  "scope": "Reproduced against the accepted pre-revision dist, Chromium, DPR 1. Performance used the frozen recorded 120-resident capture; pan/zoom traces include intervening idle frames and cold rebuilds. No live/synthetic claims are combined."
+}

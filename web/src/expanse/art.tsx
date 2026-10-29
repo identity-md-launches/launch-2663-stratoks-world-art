@@ -6,6 +6,7 @@ export type Sprite = {
   widthInHalfTiles: number;
 };
 export const sprites = atlas.sprites as Record<string, Sprite>;
+export const wornGround = atlas.presentation.wornGround;
 export type Art = Record<string, HTMLImageElement>;
 let pending: Promise<Art> | null = null;
 export function loadArt(): Promise<Art> {

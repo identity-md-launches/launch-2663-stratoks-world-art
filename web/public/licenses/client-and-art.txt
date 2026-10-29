@@ -3,7 +3,16 @@ MIT License
 Copyright (c) 2026 Stratoks contributors
 
 Applies to the original browser client in web/src, the original isometric canvas artwork,
-mascot, favicon and interface icons. It does not relicense existing server code or third-party assets.
+mascot, favicon and interface icons, and the STRATOKS raster artwork in web/art-source
+and web/public/art (distributed in dist/art), including characters.png, world.png,
+extra.png, their atlas manifests and derived favicon/share images.
+
+Raster art provenance: original STRATOKS contributor artwork generated with OpenAI
+image generation, 2026. Technical extraction, registration and supplemental artwork
+by the STRATOKS interface contributor. No third-party art was incorporated intentionally.
+The PNGs are editable raster sources; no layered painting or skeletal rig is claimed.
+This provenance statement does not certify copyright eligibility or uniqueness.
+It does not relicense existing server code, third-party assets, fonts or trademarks.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

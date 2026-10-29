@@ -79,5 +79,12 @@ for slot,(_,_,idx) in enumerate(sorted(items)):
     manifest['sprites'][f'extra.{name}']={'sheet':'extra','rect':[slot%3*128,slot//3*128,128,128],'anchor':[64,110],'widthInHalfTiles':1.9 if name=='cactus' else 2 if name.startswith('fire') else 1.5,'sourceRect':[x0,y0,x1-x0,y1-y0]}
 atlas.quantize(colors=256,method=Image.Quantize.FASTOCTREE,dither=Image.Dither.NONE).save(OUT/'extra.png',optimize=True)
 manifest['sheets']['extra']={'file':'extra.png','width':384,'height':256,'cell':128,'padding':8,'sha256':hashlib.sha256((OUT/'extra.png').read_bytes()).hexdigest(),'editableSource':'web/art-source/extra.png'}
+# Renderer appearance gates and the resource-free ground swatch are part of provenance.
+manifest['animation']['walk']['requires']='interpolation between adjacent confirmed different positions; takes precedence over destination work/rest action'
+manifest['animation']['rest']['requires']='rest action after confirmed movement completes'
+manifest['animation']['gather']['requires']='gather action after confirmed movement completes'
+manifest['animation']['carry']['requires']='inspected inventory.wood > 0 AND (confirmed movement OR carry/move action)'
+manifest['animation']['build']['requires']='build action after confirmed movement completes'
+manifest['presentation']={'wornGround':{'sheet':'world','sourceSprite':'arid.ground','rect':[438,449,20,12],'purpose':'Bare-earth texture only; excludes resource rocks and plants. Cosmetic clear-land shelter approaches and up to 256 adjacent confirmed travel segments retained only in the viewer session. No API, terrain or walk-cost mutation.'}}
 text=json.dumps(manifest,indent=2)+'\n';(OUT/'manifest.json').write_text(text);(ROOT/'web/src/expanse/atlas.json').write_text(text)
 print(json.dumps({k:{'bytes':(OUT/f'{k}.png').stat().st_size,**v} for k,v in manifest['sheets'].items()},indent=2))

@@ -77,7 +77,6 @@ else {
       recursive: true,
     });
   run(["run", task]);
-  if (task === "test") run(["exec", "--", "tsx", "--test", "src/expanse/transport.test.ts"]);
   if (task === "build") {
     await fs.rm(path.join(root, "dist"), { recursive: true, force: true });
     await fs.cp(path.join(temp, "dist"), path.join(root, "dist"), {

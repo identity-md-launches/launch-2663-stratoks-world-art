@@ -3060,25 +3060,28 @@
         1,
         2,
         3
-      ]
+      ],
+      "requires": "interpolation between adjacent confirmed different positions; takes precedence over destination work/rest action"
     },
     "rest": {
       "frames": 2,
-      "fps": 1
+      "fps": 1,
+      "requires": "rest action after confirmed movement completes"
     },
     "gather": {
       "frames": 2,
-      "fps": 3
+      "fps": 3,
+      "requires": "gather action after confirmed movement completes"
     },
     "carry": {
       "frames": 2,
       "fps": 3,
-      "requires": "inspected inventory.wood > 0 AND carry/move action"
+      "requires": "inspected inventory.wood > 0 AND (confirmed movement OR carry/move action)"
     },
     "build": {
       "frames": 2,
       "fps": 3,
-      "requires": "build action"
+      "requires": "build action after confirmed movement completes"
     },
     "distress": {
       "requires": "health < 30; static ring overlay, no invented action"
@@ -3088,5 +3091,18 @@
     "Raster source only; no layered painting or rig. Generated loops are registered pose sequences, not a skeletal animation.",
     "Only completed shelters are exposed by the API; frame/partial artwork remains unused.",
     "Resource variants are chosen from actual units; no decorative resource nodes are added."
-  ]
+  ],
+  "presentation": {
+    "wornGround": {
+      "sheet": "world",
+      "sourceSprite": "arid.ground",
+      "rect": [
+        438,
+        449,
+        20,
+        12
+      ],
+      "purpose": "Bare-earth texture only; excludes resource rocks and plants. Cosmetic clear-land shelter approaches and up to 256 adjacent confirmed travel segments retained only in the viewer session. No API, terrain or walk-cost mutation."
+    }
+  }
 }

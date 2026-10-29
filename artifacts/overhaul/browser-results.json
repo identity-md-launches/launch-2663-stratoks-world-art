@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-29T11:52:15.364Z",
+  "date": "2026-10-29T13:08:00.522Z",
   "export": "dist/",
   "base": "/preview/",
   "viewports": [
@@ -132,7 +132,7 @@
       "passed": true,
       "evidence": {
         "first": 2,
-        "second": 6
+        "second": 7
       }
     },
     {
@@ -257,16 +257,16 @@
           "viewport": "1440x900",
           "renderCapHz": 30,
           "rafGapMs": {
-            "samples": 120,
+            "samples": 122,
             "median": 16.699999999999818,
             "p95": 16.799999999999727,
-            "max": 33.40000000000009
+            "max": 16.800000000000182
           },
           "drawMs": {
-            "samples": 105,
-            "median": 0.8000000715255737,
-            "p95": 2.5,
-            "max": 148.5
+            "samples": 90,
+            "median": 0.8000001907348633,
+            "p95": 2.0999999046325684,
+            "max": 164.40000009536743
           },
           "drawn": 143,
           "culled": 567,
@@ -278,16 +278,16 @@
           "viewport": "1440x900",
           "renderCapHz": 30,
           "rafGapMs": {
-            "samples": 84,
+            "samples": 121,
             "median": 16.699999999999818,
-            "p95": 66.59999999999991,
-            "max": 66.70000000000027
+            "p95": 16.799999999999727,
+            "max": 33.40000000000009
           },
           "drawMs": {
-            "samples": 90,
-            "median": 1.2000000476837158,
-            "p95": 7.399999976158142,
-            "max": 129.79999995231628
+            "samples": 105,
+            "median": 1.1000001430511475,
+            "p95": 3.5,
+            "max": 163.29999995231628
           },
           "drawn": 238,
           "culled": 568,
@@ -299,16 +299,16 @@
           "viewport": "1440x900",
           "renderCapHz": 30,
           "rafGapMs": {
-            "samples": 110,
+            "samples": 103,
             "median": 16.699999999999818,
-            "p95": 33.30000000000018,
+            "p95": 33.40000000000009,
             "max": 50
           },
           "drawMs": {
             "samples": 105,
-            "median": 1.9000000953674316,
-            "p95": 5.899999976158142,
-            "max": 123.39999997615814
+            "median": 1.6999998092651367,
+            "p95": 3.299999952316284,
+            "max": 160.09999990463257
           },
           "drawn": 368,
           "culled": 568,
@@ -320,16 +320,16 @@
           "viewport": "1440x900",
           "renderCapHz": 30,
           "rafGapMs": {
-            "samples": 41,
+            "samples": 43,
             "median": 50,
-            "p95": 83.29999999999973,
-            "max": 83.30000000000018
+            "p95": 66.70000000000027,
+            "max": 66.79999999999973
           },
           "drawMs": {
             "samples": 75,
-            "median": 3.700000047683716,
-            "p95": 13,
-            "max": 212.30000007152557
+            "median": 2.799999952316284,
+            "p95": 5.099999904632568,
+            "max": 159.60000014305115
           },
           "drawn": 618,
           "culled": 568,
@@ -348,12 +348,12 @@
       "evidence": {
         "transport": "Playwright read-only route proxy; bypasses CORS only in validation",
         "worldId": "world-20260101-0",
-        "firstTick": 176465,
-        "lastTick": 176477,
-        "population": 152,
-        "movedResidents": 121,
-        "frames": 10,
-        "selected": "Midu\n#608 · gather",
+        "firstTick": 180987,
+        "lastTick": 180998,
+        "population": 224,
+        "movedResidents": 184,
+        "frames": 9,
+        "selected": "Haye\n#626 · socialize",
         "actions": [
           "selection",
           "follow",
@@ -379,16 +379,16 @@
       "viewport": "1440x900",
       "renderCapHz": 30,
       "rafGapMs": {
-        "samples": 120,
+        "samples": 122,
         "median": 16.699999999999818,
         "p95": 16.799999999999727,
-        "max": 33.40000000000009
+        "max": 16.800000000000182
       },
       "drawMs": {
-        "samples": 105,
-        "median": 0.8000000715255737,
-        "p95": 2.5,
-        "max": 148.5
+        "samples": 90,
+        "median": 0.8000001907348633,
+        "p95": 2.0999999046325684,
+        "max": 164.40000009536743
       },
       "drawn": 143,
       "culled": 567,
@@ -400,16 +400,16 @@
       "viewport": "1440x900",
       "renderCapHz": 30,
       "rafGapMs": {
-        "samples": 84,
+        "samples": 121,
         "median": 16.699999999999818,
-        "p95": 66.59999999999991,
-        "max": 66.70000000000027
+        "p95": 16.799999999999727,
+        "max": 33.40000000000009
       },
       "drawMs": {
-        "samples": 90,
-        "median": 1.2000000476837158,
-        "p95": 7.399999976158142,
-        "max": 129.79999995231628
+        "samples": 105,
+        "median": 1.1000001430511475,
+        "p95": 3.5,
+        "max": 163.29999995231628
       },
       "drawn": 238,
       "culled": 568,
@@ -421,16 +421,16 @@
       "viewport": "1440x900",
       "renderCapHz": 30,
       "rafGapMs": {
-        "samples": 110,
+        "samples": 103,
         "median": 16.699999999999818,
-        "p95": 33.30000000000018,
+        "p95": 33.40000000000009,
         "max": 50
       },
       "drawMs": {
         "samples": 105,
-        "median": 1.9000000953674316,
-        "p95": 5.899999976158142,
-        "max": 123.39999997615814
+        "median": 1.6999998092651367,
+        "p95": 3.299999952316284,
+        "max": 160.09999990463257
       },
       "drawn": 368,
       "culled": 568,
@@ -442,16 +442,16 @@
       "viewport": "1440x900",
       "renderCapHz": 30,
       "rafGapMs": {
-        "samples": 41,
+        "samples": 43,
         "median": 50,
-        "p95": 83.29999999999973,
-        "max": 83.30000000000018
+        "p95": 66.70000000000027,
+        "max": 66.79999999999973
       },
       "drawMs": {
         "samples": 75,
-        "median": 3.700000047683716,
-        "p95": 13,
-        "max": 212.30000007152557
+        "median": 2.799999952316284,
+        "p95": 5.099999904632568,
+        "max": 159.60000014305115
       },
       "drawn": 618,
       "culled": 568,
@@ -461,12 +461,12 @@
   "live": {
     "transport": "Playwright read-only route proxy; bypasses CORS only in validation",
     "worldId": "world-20260101-0",
-    "firstTick": 176465,
-    "lastTick": 176477,
-    "population": 152,
-    "movedResidents": 121,
-    "frames": 10,
-    "selected": "Midu\n#608 · gather",
+    "firstTick": 180987,
+    "lastTick": 180998,
+    "population": 224,
+    "movedResidents": 184,
+    "frames": 9,
+    "selected": "Haye\n#626 · socialize",
     "actions": [
       "selection",
       "follow",
@@ -485,7 +485,7 @@
     "status": "stale",
     "publicServer": "https://stratoks.2-29-11-211.sslip.io",
     "expectedConsoleMessages": [
-      "Access to fetch at 'https://stratoks.2-29-11-211.sslip.io/api/expanse/frame?x=-8&y=-8&w=64&h=64' from origin 'http://127.0.0.1:46859' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "Access to fetch at 'https://stratoks.2-29-11-211.sslip.io/api/expanse/frame?x=-8&y=-8&w=64&h=64' from origin 'http://127.0.0.1:42921' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
       "Failed to load resource: net::ERR_FAILED"
     ]
   }

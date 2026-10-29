@@ -418,6 +418,9 @@
   font-size: 12px;
   box-shadow: 0 4px 16px #172b3326;
 }
+.exp-scene-messages {
+  display: contents;
+}
 .exp-scene-notice .exp-text-button {
   font-size: 12px;
   min-height: 24px;
@@ -1301,6 +1304,22 @@
   .exp-scene-notice .exp-text-button {
     min-height: 28px;
   }
+  .exp-scene-messages {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    left: 16px;
+    bottom: 110px;
+    max-width: calc(100% - 152px);
+  }
+  .exp-scene-messages > .exp-scene-notice,
+  .exp-scene-messages > .exp-follow-banner {
+    position: static;
+    transform: none;
+    max-width: 100%;
+  }
   .exp-map-caption {
     left: 16px;
     bottom: 14px;
@@ -1389,11 +1408,27 @@
     min-height: 24px;
   }
   .exp-app.has-panel .exp-follow-banner {
-    top: 104px;
     left: 12px;
     transform: none;
     padding: 5px 8px;
     font-size: 12px;
+  }
+  /* Flow the follow action after the notice's actual wrapped height. */
+  .exp-app.has-panel .exp-scene-messages {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    top: 68px;
+    left: 12px;
+    max-width: calc(100% - 70px);
+  }
+  .exp-app.has-panel .exp-scene-messages > .exp-scene-notice,
+  .exp-app.has-panel .exp-scene-messages > .exp-follow-banner {
+    position: static;
+    max-width: 100%;
+    transform: none;
   }
   .exp-inspector {
     padding: 0 20px 24px;
@@ -1439,6 +1474,10 @@
     gap: 6px;
   }
   .exp-scene-notice {
+    left: 12px;
+    max-width: calc(100% - 138px);
+  }
+  .exp-scene-messages {
     left: 12px;
     max-width: calc(100% - 138px);
   }
@@ -1524,6 +1563,13 @@
 }
 
 /* Keep zoom and tools in distinct zones, including short desktop windows. */
+@media (min-width: 701px) and (max-width: 1000px) {
+  .exp-follow-banner {
+    left: auto;
+    right: 28px;
+    transform: none;
+  }
+}
 @media (min-width: 701px) {
   .exp-map-controls {
     left: 28px;
@@ -1689,6 +1735,103 @@
 @media (max-width: 700px) {
   .exp-app[data-connection="connecting"] .exp-statusbar:after {
     content: "Connecting";
+  }
+}
+/* A phone's vertical rail needs room for both the title and connection notice.
+   Short portrait and landscape stages reserve independent HUD rows instead. */
+@media (max-width: 700px) and (max-height: 720px) {
+  .exp-tool-rail,
+  .exp-app.has-panel .exp-tool-rail {
+    top: auto;
+    bottom: 72px;
+    left: 12px;
+    flex-direction: row;
+    padding: 4px;
+    gap: 2px;
+  }
+  .exp-tool-rail > button,
+  .exp-app.has-panel .exp-tool-rail > button {
+    width: 40px;
+    height: 40px;
+  }
+  .exp-tool-rail > span,
+  .exp-app.has-panel .exp-tool-rail > span {
+    width: 1px;
+    height: 24px;
+    margin: 8px 3px;
+  }
+  .exp-map-controls,
+  .exp-app.has-panel .exp-map-controls {
+    left: 12px;
+    bottom: 12px;
+  }
+  .exp-map-caption {
+    display: none;
+  }
+  .exp-atlas .exp-minimap {
+    display: none;
+  }
+  .exp-atlas.expanded .exp-minimap {
+    display: block;
+  }
+  .exp-scene-messages,
+  .exp-app.has-panel .exp-scene-messages {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    left: 12px;
+    right: 12px;
+    max-width: none;
+    top: auto;
+    bottom: 132px;
+  }
+  .exp-scene-messages > .exp-scene-notice,
+  .exp-scene-messages > .exp-follow-banner,
+  .exp-app.has-panel .exp-scene-messages > .exp-scene-notice,
+  .exp-app.has-panel .exp-scene-messages > .exp-follow-banner {
+    position: static;
+    transform: none;
+    max-width: 100%;
+  }
+  .exp-app.has-panel .exp-scene-messages {
+    top: 12px;
+    bottom: auto;
+  }
+  .exp-app.has-panel .exp-workspace {
+    grid-template-rows: minmax(0, 1fr) 44%;
+  }
+}
+@media (min-width: 540px) and (max-width: 700px) and (max-height: 500px) {
+  .exp-scene-heading {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    top: 12px;
+    left: 12px;
+    padding: 10px 12px;
+  }
+  .exp-scene-heading h1 {
+    font-size: 24px;
+  }
+  .exp-scene-heading > p {
+    display: none;
+  }
+  .exp-scene-actions {
+    margin-top: 0;
+  }
+  .exp-tool-rail,
+  .exp-app.has-panel .exp-tool-rail {
+    bottom: 12px;
+  }
+  .exp-map-controls,
+  .exp-app.has-panel .exp-map-controls {
+    left: 268px;
+  }
+  .exp-scene-messages {
+    bottom: 78px;
+    right: 160px;
   }
 }
 /* Keep keyboard focus inside the canvas clip, with a visible two-color perimeter. */

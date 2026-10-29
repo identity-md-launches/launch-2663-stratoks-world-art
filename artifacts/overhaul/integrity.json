@@ -1,117 +1,15 @@
 {
   "protectedSourceAndConfigurationUnchanged": true,
-  "measurement": "Conservative sum of complete modified/new files, excluding scratch/browser-tool output; deletions do not reduce the sum.",
-  "changedAndNewFullBytes": 7684800,
+  "measurement": "Conservative sum of complete modified/new files against the pinned source, excluding scratch/input/tool output; deletions do not reduce the sum. Review responses included even if specially excluded by Git.",
+  "base": "fc1df0f9e641d05b7e32e1c96cb1b963e61576aa",
+  "changedAndNewFullBytes": 8007533,
+  "revisionChangedAndNewFullBytes": 4914919,
   "submissionLimitBytes": 8388608,
-  "evidencePathBytes": 3996392,
+  "evidencePathBytes": 4131754,
   "evidencePathBudgetBytes": 4194304,
-  "runtimeAndEditableArtBytes": 4021365,
+  "runtimeAndEditableArtBytes": 4030779,
   "runtimeAndArtBudgetBytes": 4194304,
   "distFiles": {
-    "share.png": {
-      "bytes": 438626,
-      "sha256": "bf55643b74bbd71c072bcab4c68c607976e8766696c35eb0bbc544a69c280dbd"
-    },
-    "share-world.jpg": {
-      "bytes": 164414,
-      "sha256": "e5e5d778d940ce8d241113d60c6d2321a45963d5bde44742405afc26bce27c64"
-    },
-    "share-current.jpg": {
-      "bytes": 97077,
-      "sha256": "bff85f31012db484a48b59e1ed0103aa8d99e7c62a5baf8e079f63d3c0f9c5bb"
-    },
-    "favicon.png": {
-      "bytes": 4392,
-      "sha256": "4d2f250672cb8c7182b25e76783611fb74721539f73bdd0e9881a4b8175a7390"
-    },
-    "favicon.svg": {
-      "bytes": 518,
-      "sha256": "6b89303ef4309e6f75bed173557e15dba63ea2d749a4690e04a9b7140f639a02"
-    },
-    "expanse-config.json": {
-      "bytes": 113,
-      "sha256": "4f25e8e5458cad5965d198ad5fef2e169736132bc7b2c011a76a2b068d4d1ee3"
-    },
-    "index.html": {
-      "bytes": 1195,
-      "sha256": "9f68428c3f38b368bbbe7e80d34c92a16acc132ff45b9c0910ed46968498b632"
-    },
-    "world-config.json": {
-      "bytes": 35,
-      "sha256": "6c04b749606afa71d027cc3c65895a2241948dade26cc8b6f0337f5416d50d83"
-    },
-    "assets/Legacy-DjIznllY.js": {
-      "bytes": 187006,
-      "sha256": "fefd63551f985f203a87e19d94a300ef48352e2ad24193b5aad73ef01d0d078f"
-    },
-    "assets/learning.worker-Chr4HT56.js": {
-      "bytes": 52137,
-      "sha256": "b7b43178664c90d4b3bbcddedb62c2d3b92414db7fd946c172b4905fcfef8c11"
-    },
-    "assets/index-86wOJ4GX.js": {
-      "bytes": 377981,
-      "sha256": "82103fca567d2f7957545e707eb88165ad1f6d67feb0b76df669d5e15f1cb513"
-    },
-    "assets/demo.worker-Cg15FJoQ.js": {
-      "bytes": 52426,
-      "sha256": "5224b3c1b5d8ab0cbad95b80384aba5af4675a7e19a62c53ef27d1fe080bae37"
-    },
-    "assets/demo.worker-D7hjyDmu.js": {
-      "bytes": 97050,
-      "sha256": "c77676c62d139a364b06422c0fb55207a7bb86b4689c028229261ff57067ec8b"
-    },
-    "assets/index-DgqXKrx6.css": {
-      "bytes": 54672,
-      "sha256": "b467fe013d4cc881970c13f48a512bf72fea4b1ffa4f5db367988a934ac5d836"
-    },
-    "assets/manrope-latin-wght-normal-DHIcAJRg.woff2": {
-      "bytes": 24836,
-      "sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972"
-    },
-    "assets/dist-CG54iGaA.js": {
-      "bytes": 102725,
-      "sha256": "3b647011926de7962bbe6e118a214f35dcfd250607cbfdadaf515e0a5a21b961"
-    },
-    "wallets/rabby.svg": {
-      "bytes": 2290,
-      "sha256": "dcae4de88ebfa10cffa1fe28df13d7c8c0b40736ef2b704f1f2fc348e777e443"
-    },
-    "wallets/coinbase.svg": {
-      "bytes": 542,
-      "sha256": "cf559ef8c56defc8995fe7aababadc4bb9e09151ad96ff7f13f7659249b1c771"
-    },
-    "wallets/phantom.svg": {
-      "bytes": 861,
-      "sha256": "f841f8112e131259a2e5123177950099c79487e61e77971f4e193e6c374419eb"
-    },
-    "wallets/metamask.svg": {
-      "bytes": 1665,
-      "sha256": "892c7dfab8c4ca5682878dda3f42f55a75195d7d365e4adb0832845f3a0a2135"
-    },
-    "licenses/dependencies.json": {
-      "bytes": 10974,
-      "sha256": "834e4f123324136c2504888466da6abfb55e55c3f7e3fdcdd780820e6c36f6e1"
-    },
-    "licenses/THIRD_PARTY_NOTICES.txt": {
-      "bytes": 48693,
-      "sha256": "3fab1a2112a445c2da2148830fe697a3cac099287f30a8b539ff8d5955b77d43"
-    },
-    "licenses/rainbowkit.txt": {
-      "bytes": 1064,
-      "sha256": "5095037afa1ba03be36e04305c01ec9ee600e14377738a026482b1a888c4e365"
-    },
-    "licenses/client-and-art.txt": {
-      "bytes": 1272,
-      "sha256": "098f879111c9f5b6b7a06ace2c75d1407b6cff38d1232508fc4577d2796285c2"
-    },
-    "licenses/manrope.txt": {
-      "bytes": 4383,
-      "sha256": "d826ab6583b12c26807d8716a545bdbbb672df04f48608a364ba9efdbe501c30"
-    },
-    "art/world.png": {
-      "bytes": 312566,
-      "sha256": "60d178921fcf812ce01368910ce55a57df5571a4b39da144ad388e7df989b68c"
-    },
     "art/characters.png": {
       "bytes": 184726,
       "sha256": "2e17130f99ef443828fae036cddfdaaec8e872da60053325fb075a0fdf6c898f"
@@ -121,8 +19,112 @@
       "sha256": "dec18c1d0de9caf3db7330ea2533c99af32ea4ebffab2ead3a51ff905fa57a93"
     },
     "art/manifest.json": {
-      "bytes": 49902,
-      "sha256": "94fb6ea68ac44512c9bd87216c9089141fb547bbd8f2709d5ba95d34fe8fb951"
+      "bytes": 50663,
+      "sha256": "55af7c192bad905d97233d4de5718eaae6d782abb3ff47b545cd1c5604577b1d"
+    },
+    "art/world.png": {
+      "bytes": 312566,
+      "sha256": "60d178921fcf812ce01368910ce55a57df5571a4b39da144ad388e7df989b68c"
+    },
+    "assets/Legacy-CybNjfOC.js": {
+      "bytes": 187006,
+      "sha256": "6f0b6ccd8bb6a9691231b3b25b1aa362c0894841fb35e2ad776d4dc1c116d0d3"
+    },
+    "assets/demo.worker-Cg15FJoQ.js": {
+      "bytes": 52426,
+      "sha256": "5224b3c1b5d8ab0cbad95b80384aba5af4675a7e19a62c53ef27d1fe080bae37"
+    },
+    "assets/demo.worker-D7hjyDmu.js": {
+      "bytes": 97050,
+      "sha256": "c77676c62d139a364b06422c0fb55207a7bb86b4689c028229261ff57067ec8b"
+    },
+    "assets/dist-MBLEVX3H.js": {
+      "bytes": 102725,
+      "sha256": "7768ed55d0a724beca16f4b23571b6b84103fc470173e6f68df90d482231e667"
+    },
+    "assets/index-6Mfu9GZL.js": {
+      "bytes": 382971,
+      "sha256": "cfd5291a560a4f17b379c1c5ac123166bb4f060ce00dedd0daff1d511178d5fd"
+    },
+    "assets/index-CG4F4B6I.css": {
+      "bytes": 56931,
+      "sha256": "3245f82e539b47e438ebcb0691226b3c13049f8bd785a8d7ce57c6db8c912561"
+    },
+    "assets/learning.worker-Chr4HT56.js": {
+      "bytes": 52137,
+      "sha256": "b7b43178664c90d4b3bbcddedb62c2d3b92414db7fd946c172b4905fcfef8c11"
+    },
+    "assets/manrope-latin-wght-normal-DHIcAJRg.woff2": {
+      "bytes": 24836,
+      "sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972"
+    },
+    "expanse-config.json": {
+      "bytes": 113,
+      "sha256": "4f25e8e5458cad5965d198ad5fef2e169736132bc7b2c011a76a2b068d4d1ee3"
+    },
+    "favicon.png": {
+      "bytes": 4392,
+      "sha256": "4d2f250672cb8c7182b25e76783611fb74721539f73bdd0e9881a4b8175a7390"
+    },
+    "favicon.svg": {
+      "bytes": 518,
+      "sha256": "6b89303ef4309e6f75bed173557e15dba63ea2d749a4690e04a9b7140f639a02"
+    },
+    "index.html": {
+      "bytes": 1195,
+      "sha256": "970f921a4f1ee627158b645661064c1a45fd6fe4727190bf11bebb69d33028b2"
+    },
+    "licenses/THIRD_PARTY_NOTICES.txt": {
+      "bytes": 48693,
+      "sha256": "3fab1a2112a445c2da2148830fe697a3cac099287f30a8b539ff8d5955b77d43"
+    },
+    "licenses/client-and-art.txt": {
+      "bytes": 1915,
+      "sha256": "6e74079f1931f630567f388f6ce9c6eb6899db08f2fbfc89330941608e3a8906"
+    },
+    "licenses/dependencies.json": {
+      "bytes": 10974,
+      "sha256": "834e4f123324136c2504888466da6abfb55e55c3f7e3fdcdd780820e6c36f6e1"
+    },
+    "licenses/manrope.txt": {
+      "bytes": 4383,
+      "sha256": "d826ab6583b12c26807d8716a545bdbbb672df04f48608a364ba9efdbe501c30"
+    },
+    "licenses/rainbowkit.txt": {
+      "bytes": 1064,
+      "sha256": "5095037afa1ba03be36e04305c01ec9ee600e14377738a026482b1a888c4e365"
+    },
+    "share-current.jpg": {
+      "bytes": 97077,
+      "sha256": "bff85f31012db484a48b59e1ed0103aa8d99e7c62a5baf8e079f63d3c0f9c5bb"
+    },
+    "share-world.jpg": {
+      "bytes": 164414,
+      "sha256": "e5e5d778d940ce8d241113d60c6d2321a45963d5bde44742405afc26bce27c64"
+    },
+    "share.png": {
+      "bytes": 438626,
+      "sha256": "bf55643b74bbd71c072bcab4c68c607976e8766696c35eb0bbc544a69c280dbd"
+    },
+    "wallets/coinbase.svg": {
+      "bytes": 542,
+      "sha256": "cf559ef8c56defc8995fe7aababadc4bb9e09151ad96ff7f13f7659249b1c771"
+    },
+    "wallets/metamask.svg": {
+      "bytes": 1665,
+      "sha256": "892c7dfab8c4ca5682878dda3f42f55a75195d7d365e4adb0832845f3a0a2135"
+    },
+    "wallets/phantom.svg": {
+      "bytes": 861,
+      "sha256": "f841f8112e131259a2e5123177950099c79487e61e77971f4e193e6c374419eb"
+    },
+    "wallets/rabby.svg": {
+      "bytes": 2290,
+      "sha256": "dcae4de88ebfa10cffa1fe28df13d7c8c0b40736ef2b704f1f2fc348e777e443"
+    },
+    "world-config.json": {
+      "bytes": 35,
+      "sha256": "6c04b749606afa71d027cc3c65895a2241948dade26cc8b6f0337f5416d50d83"
     }
   }
 }
