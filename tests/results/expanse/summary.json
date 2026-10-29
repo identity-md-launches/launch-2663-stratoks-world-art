@@ -1,0 +1,878 @@
+{
+ "runs": 60,
+ "seeds": 10,
+ "conditions": {
+  "main/full": {
+   "survivors": 19.4,
+   "deaths": 4.6,
+   "births": 0,
+   "starvationDeaths": 0,
+   "exposureDeaths": 0.1,
+   "wentFar20": 22.8,
+   "returnedHome": 19.6,
+   "chunks": 21.4,
+   "saltFails1": 8.8,
+   "saltFails2": 13.7,
+   "handAxeFound": 0.8,
+   "handAxesCrafted": 4.1,
+   "stoneClubs": 27,
+   "fireLighters": 1.5,
+   "firesLit": 2.6,
+   "shelters": 0,
+   "berryBefore": 242.2,
+   "berryAfter": 108.9,
+   "reversalRatio": 0.457,
+   "predErr": 0.046,
+   "multiStepPlans": 74.8,
+   "attacks": 1.5,
+   "shares": 17.6,
+   "follows": 17.2,
+   "refusals": 5.8
+  },
+  "main/frozen": {
+   "survivors": 20.1,
+   "deaths": 4,
+   "births": 0.1,
+   "starvationDeaths": 0.1,
+   "exposureDeaths": 0.3,
+   "wentFar20": 23,
+   "returnedHome": 18,
+   "chunks": 18.6,
+   "saltFails1": 13.6,
+   "saltFails2": 7.8,
+   "handAxeFound": 0.3,
+   "handAxesCrafted": 1.4,
+   "stoneClubs": 18.4,
+   "fireLighters": 0.8,
+   "firesLit": 0.8,
+   "shelters": 0,
+   "berryBefore": 235.2,
+   "berryAfter": 107.8,
+   "reversalRatio": 0.462,
+   "predErr": 0.101,
+   "multiStepPlans": 129.7,
+   "attacks": 0,
+   "shares": 3.7,
+   "follows": 1.8,
+   "refusals": 0.8
+  },
+  "main/no-planner": {
+   "survivors": 16.4,
+   "deaths": 7.6,
+   "births": 0,
+   "starvationDeaths": 0,
+   "exposureDeaths": 0.1,
+   "wentFar20": 23.9,
+   "returnedHome": 22.8,
+   "chunks": 21.1,
+   "saltFails1": 9.9,
+   "saltFails2": 18.3,
+   "handAxeFound": 0.2,
+   "handAxesCrafted": 0.7,
+   "stoneClubs": 1.8,
+   "fireLighters": 0,
+   "firesLit": 0,
+   "shelters": 0,
+   "berryBefore": 263.1,
+   "berryAfter": 232.7,
+   "reversalRatio": 0.894,
+   "predErr": 0.048,
+   "multiStepPlans": 0,
+   "attacks": 0.3,
+   "shares": 19.7,
+   "follows": 12,
+   "refusals": 8.3
+  },
+  "cold/full": {
+   "survivors": 16.3,
+   "deaths": 8.6,
+   "births": 0.9,
+   "starvationDeaths": 0.1,
+   "exposureDeaths": 7.4,
+   "wentFar20": 19.1,
+   "returnedHome": 15.3,
+   "chunks": 16.9,
+   "saltFails1": 13.1,
+   "saltFails2": 4.9,
+   "handAxeFound": 0.9,
+   "handAxesCrafted": 22.5,
+   "stoneClubs": 40.8,
+   "fireLighters": 7,
+   "firesLit": 11,
+   "shelters": 0,
+   "berryBefore": null,
+   "berryAfter": null,
+   "reversalRatio": null,
+   "predErr": 0.078,
+   "multiStepPlans": 53.5,
+   "attacks": 2.4,
+   "shares": 4.5,
+   "follows": 15.5,
+   "refusals": 0.2
+  },
+  "cold/frozen": {
+   "survivors": 14.4,
+   "deaths": 9.8,
+   "births": 0.2,
+   "starvationDeaths": 0.2,
+   "exposureDeaths": 8.4,
+   "wentFar20": 15.7,
+   "returnedHome": 11.1,
+   "chunks": 14.2,
+   "saltFails1": 0.6,
+   "saltFails2": 0.5,
+   "handAxeFound": 1,
+   "handAxesCrafted": 19.8,
+   "stoneClubs": 18.4,
+   "fireLighters": 3.3,
+   "firesLit": 4.2,
+   "shelters": 0,
+   "berryBefore": null,
+   "berryAfter": null,
+   "reversalRatio": null,
+   "predErr": 0.128,
+   "multiStepPlans": 86.8,
+   "attacks": 0.5,
+   "shares": 3.8,
+   "follows": 4.8,
+   "refusals": 0.9
+  },
+  "cold/no-planner": {
+   "survivors": 20.9,
+   "deaths": 4.2,
+   "births": 1.1,
+   "starvationDeaths": 0,
+   "exposureDeaths": 3.9,
+   "wentFar20": 21.1,
+   "returnedHome": 18.5,
+   "chunks": 16.5,
+   "saltFails1": 3.2,
+   "saltFails2": 4.2,
+   "handAxeFound": 0.9,
+   "handAxesCrafted": 5.6,
+   "stoneClubs": 9.8,
+   "fireLighters": 1.5,
+   "firesLit": 1.7,
+   "shelters": 0,
+   "berryBefore": null,
+   "berryAfter": null,
+   "reversalRatio": null,
+   "predErr": 0.066,
+   "multiStepPlans": 0,
+   "attacks": 1.2,
+   "shares": 7.6,
+   "follows": 13.5,
+   "refusals": 0.7
+  }
+ },
+ "paired": {
+  "main: full - frozen": {
+   "survivors": {
+    "meanDiff": -0.7,
+    "sd": 3.368,
+    "fullBetterOrHigherSeeds": 3,
+    "lowerSeeds": 5,
+    "n": 10
+   },
+   "deaths": {
+    "meanDiff": 0.6,
+    "sd": 3.406,
+    "fullBetterOrHigherSeeds": 5,
+    "lowerSeeds": 4,
+    "n": 10
+   },
+   "births": {
+    "meanDiff": -0.1,
+    "sd": 0.316,
+    "fullBetterOrHigherSeeds": 0,
+    "lowerSeeds": 1,
+    "n": 10
+   },
+   "starvationDeaths": {
+    "meanDiff": -0.1,
+    "sd": 0.316,
+    "fullBetterOrHigherSeeds": 0,
+    "lowerSeeds": 1,
+    "n": 10
+   },
+   "exposureDeaths": {
+    "meanDiff": -0.2,
+    "sd": 0.789,
+    "fullBetterOrHigherSeeds": 1,
+    "lowerSeeds": 2,
+    "n": 10
+   },
+   "wentFar20": {
+    "meanDiff": -0.2,
+    "sd": 2.251,
+    "fullBetterOrHigherSeeds": 4,
+    "lowerSeeds": 5,
+    "n": 10
+   },
+   "returnedHome": {
+    "meanDiff": 1.6,
+    "sd": 3.471,
+    "fullBetterOrHigherSeeds": 5,
+    "lowerSeeds": 3,
+    "n": 10
+   },
+   "chunks": {
+    "meanDiff": 2.8,
+    "sd": 3.293,
+    "fullBetterOrHigherSeeds": 7,
+    "lowerSeeds": 1,
+    "n": 10
+   },
+   "saltFails1": {
+    "meanDiff": -4.8,
+    "sd": 28.569,
+    "fullBetterOrHigherSeeds": 2,
+    "lowerSeeds": 2,
+    "n": 10
+   },
+   "saltFails2": {
+    "meanDiff": 5.9,
+    "sd": 10.63,
+    "fullBetterOrHigherSeeds": 3,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "handAxeFound": {
+    "meanDiff": 0.5,
+    "sd": 0.527,
+    "fullBetterOrHigherSeeds": 5,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "handAxesCrafted": {
+    "meanDiff": 2.7,
+    "sd": 2.869,
+    "fullBetterOrHigherSeeds": 8,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "stoneClubs": {
+    "meanDiff": 8.6,
+    "sd": 4.351,
+    "fullBetterOrHigherSeeds": 10,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "fireLighters": {
+    "meanDiff": 0.7,
+    "sd": 2.541,
+    "fullBetterOrHigherSeeds": 5,
+    "lowerSeeds": 2,
+    "n": 10
+   },
+   "firesLit": {
+    "meanDiff": 1.8,
+    "sd": 4.417,
+    "fullBetterOrHigherSeeds": 5,
+    "lowerSeeds": 2,
+    "n": 10
+   },
+   "shelters": {
+    "meanDiff": 0,
+    "sd": 0,
+    "fullBetterOrHigherSeeds": 0,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "berryBefore": {
+    "meanDiff": 7,
+    "sd": 38.312,
+    "fullBetterOrHigherSeeds": 4,
+    "lowerSeeds": 5,
+    "n": 10
+   },
+   "berryAfter": {
+    "meanDiff": 1.1,
+    "sd": 37.843,
+    "fullBetterOrHigherSeeds": 4,
+    "lowerSeeds": 5,
+    "n": 10
+   },
+   "reversalRatio": {
+    "meanDiff": -0.005,
+    "sd": 0.203,
+    "fullBetterOrHigherSeeds": 4,
+    "lowerSeeds": 6,
+    "n": 10
+   },
+   "predErr": {
+    "meanDiff": -0.055,
+    "sd": 0.015,
+    "fullBetterOrHigherSeeds": 0,
+    "lowerSeeds": 10,
+    "n": 10
+   },
+   "multiStepPlans": {
+    "meanDiff": -54.9,
+    "sd": 29.278,
+    "fullBetterOrHigherSeeds": 0,
+    "lowerSeeds": 10,
+    "n": 10
+   },
+   "attacks": {
+    "meanDiff": 1.5,
+    "sd": 1.581,
+    "fullBetterOrHigherSeeds": 6,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "shares": {
+    "meanDiff": 13.9,
+    "sd": 9.562,
+    "fullBetterOrHigherSeeds": 9,
+    "lowerSeeds": 1,
+    "n": 10
+   },
+   "follows": {
+    "meanDiff": 15.4,
+    "sd": 14.592,
+    "fullBetterOrHigherSeeds": 8,
+    "lowerSeeds": 1,
+    "n": 10
+   },
+   "refusals": {
+    "meanDiff": 5,
+    "sd": 5.754,
+    "fullBetterOrHigherSeeds": 7,
+    "lowerSeeds": 0,
+    "n": 10
+   }
+  },
+  "main: full - no-planner": {
+   "survivors": {
+    "meanDiff": 3,
+    "sd": 6.65,
+    "fullBetterOrHigherSeeds": 6,
+    "lowerSeeds": 3,
+    "n": 10
+   },
+   "deaths": {
+    "meanDiff": -3,
+    "sd": 6.65,
+    "fullBetterOrHigherSeeds": 3,
+    "lowerSeeds": 6,
+    "n": 10
+   },
+   "births": {
+    "meanDiff": 0,
+    "sd": 0,
+    "fullBetterOrHigherSeeds": 0,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "starvationDeaths": {
+    "meanDiff": 0,
+    "sd": 0,
+    "fullBetterOrHigherSeeds": 0,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "exposureDeaths": {
+    "meanDiff": 0,
+    "sd": 0,
+    "fullBetterOrHigherSeeds": 0,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "wentFar20": {
+    "meanDiff": -1.1,
+    "sd": 1.524,
+    "fullBetterOrHigherSeeds": 1,
+    "lowerSeeds": 6,
+    "n": 10
+   },
+   "returnedHome": {
+    "meanDiff": -3.2,
+    "sd": 2.781,
+    "fullBetterOrHigherSeeds": 0,
+    "lowerSeeds": 8,
+    "n": 10
+   },
+   "chunks": {
+    "meanDiff": 0.3,
+    "sd": 2.983,
+    "fullBetterOrHigherSeeds": 4,
+    "lowerSeeds": 5,
+    "n": 10
+   },
+   "saltFails1": {
+    "meanDiff": -1.1,
+    "sd": 20.936,
+    "fullBetterOrHigherSeeds": 2,
+    "lowerSeeds": 2,
+    "n": 10
+   },
+   "saltFails2": {
+    "meanDiff": -4.6,
+    "sd": 20.403,
+    "fullBetterOrHigherSeeds": 1,
+    "lowerSeeds": 3,
+    "n": 10
+   },
+   "handAxeFound": {
+    "meanDiff": 0.6,
+    "sd": 0.516,
+    "fullBetterOrHigherSeeds": 6,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "handAxesCrafted": {
+    "meanDiff": 3.4,
+    "sd": 4.6,
+    "fullBetterOrHigherSeeds": 7,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "stoneClubs": {
+    "meanDiff": 25.2,
+    "sd": 6.828,
+    "fullBetterOrHigherSeeds": 10,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "fireLighters": {
+    "meanDiff": 1.5,
+    "sd": 1.509,
+    "fullBetterOrHigherSeeds": 6,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "firesLit": {
+    "meanDiff": 2.6,
+    "sd": 3.718,
+    "fullBetterOrHigherSeeds": 6,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "shelters": {
+    "meanDiff": 0,
+    "sd": 0,
+    "fullBetterOrHigherSeeds": 0,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "berryBefore": {
+    "meanDiff": -20.9,
+    "sd": 28.668,
+    "fullBetterOrHigherSeeds": 2,
+    "lowerSeeds": 8,
+    "n": 10
+   },
+   "berryAfter": {
+    "meanDiff": -123.8,
+    "sd": 51.745,
+    "fullBetterOrHigherSeeds": 0,
+    "lowerSeeds": 10,
+    "n": 10
+   },
+   "reversalRatio": {
+    "meanDiff": -0.437,
+    "sd": 0.247,
+    "fullBetterOrHigherSeeds": 0,
+    "lowerSeeds": 10,
+    "n": 10
+   },
+   "predErr": {
+    "meanDiff": -0.002,
+    "sd": 0.021,
+    "fullBetterOrHigherSeeds": 4,
+    "lowerSeeds": 6,
+    "n": 10
+   },
+   "multiStepPlans": {
+    "meanDiff": 74.8,
+    "sd": 19.792,
+    "fullBetterOrHigherSeeds": 10,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "attacks": {
+    "meanDiff": 1.2,
+    "sd": 1.619,
+    "fullBetterOrHigherSeeds": 4,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "shares": {
+    "meanDiff": -2.1,
+    "sd": 15.445,
+    "fullBetterOrHigherSeeds": 4,
+    "lowerSeeds": 6,
+    "n": 10
+   },
+   "follows": {
+    "meanDiff": 5.2,
+    "sd": 22.135,
+    "fullBetterOrHigherSeeds": 6,
+    "lowerSeeds": 4,
+    "n": 10
+   },
+   "refusals": {
+    "meanDiff": -2.5,
+    "sd": 11.919,
+    "fullBetterOrHigherSeeds": 5,
+    "lowerSeeds": 4,
+    "n": 10
+   }
+  },
+  "cold: full - frozen": {
+   "survivors": {
+    "meanDiff": 1.9,
+    "sd": 4.28,
+    "fullBetterOrHigherSeeds": 4,
+    "lowerSeeds": 2,
+    "n": 10
+   },
+   "deaths": {
+    "meanDiff": -1.2,
+    "sd": 3.676,
+    "fullBetterOrHigherSeeds": 2,
+    "lowerSeeds": 4,
+    "n": 10
+   },
+   "births": {
+    "meanDiff": 0.7,
+    "sd": 1.337,
+    "fullBetterOrHigherSeeds": 4,
+    "lowerSeeds": 1,
+    "n": 10
+   },
+   "starvationDeaths": {
+    "meanDiff": -0.1,
+    "sd": 0.568,
+    "fullBetterOrHigherSeeds": 1,
+    "lowerSeeds": 2,
+    "n": 10
+   },
+   "exposureDeaths": {
+    "meanDiff": -1,
+    "sd": 3.712,
+    "fullBetterOrHigherSeeds": 4,
+    "lowerSeeds": 5,
+    "n": 10
+   },
+   "wentFar20": {
+    "meanDiff": 3.4,
+    "sd": 6.62,
+    "fullBetterOrHigherSeeds": 6,
+    "lowerSeeds": 2,
+    "n": 10
+   },
+   "returnedHome": {
+    "meanDiff": 4.2,
+    "sd": 6.233,
+    "fullBetterOrHigherSeeds": 6,
+    "lowerSeeds": 2,
+    "n": 10
+   },
+   "chunks": {
+    "meanDiff": 2.7,
+    "sd": 3.057,
+    "fullBetterOrHigherSeeds": 8,
+    "lowerSeeds": 1,
+    "n": 10
+   },
+   "saltFails1": {
+    "meanDiff": 12.5,
+    "sd": 39.528,
+    "fullBetterOrHigherSeeds": 1,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "saltFails2": {
+    "meanDiff": 4.4,
+    "sd": 13.914,
+    "fullBetterOrHigherSeeds": 1,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "handAxeFound": {
+    "meanDiff": -0.1,
+    "sd": 0.316,
+    "fullBetterOrHigherSeeds": 0,
+    "lowerSeeds": 1,
+    "n": 10
+   },
+   "handAxesCrafted": {
+    "meanDiff": 2.7,
+    "sd": 7.558,
+    "fullBetterOrHigherSeeds": 5,
+    "lowerSeeds": 4,
+    "n": 10
+   },
+   "stoneClubs": {
+    "meanDiff": 22.4,
+    "sd": 10.844,
+    "fullBetterOrHigherSeeds": 10,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "fireLighters": {
+    "meanDiff": 3.7,
+    "sd": 2.751,
+    "fullBetterOrHigherSeeds": 8,
+    "lowerSeeds": 1,
+    "n": 10
+   },
+   "firesLit": {
+    "meanDiff": 6.8,
+    "sd": 4.638,
+    "fullBetterOrHigherSeeds": 9,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "shelters": {
+    "meanDiff": 0,
+    "sd": 0,
+    "fullBetterOrHigherSeeds": 0,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "berryBefore": {
+    "meanDiff": null,
+    "sd": null,
+    "fullBetterOrHigherSeeds": 0,
+    "lowerSeeds": 0,
+    "n": 0
+   },
+   "berryAfter": {
+    "meanDiff": null,
+    "sd": null,
+    "fullBetterOrHigherSeeds": 0,
+    "lowerSeeds": 0,
+    "n": 0
+   },
+   "reversalRatio": {
+    "meanDiff": null,
+    "sd": null,
+    "fullBetterOrHigherSeeds": 0,
+    "lowerSeeds": 0,
+    "n": 0
+   },
+   "predErr": {
+    "meanDiff": -0.05,
+    "sd": 0.02,
+    "fullBetterOrHigherSeeds": 0,
+    "lowerSeeds": 9,
+    "n": 9
+   },
+   "multiStepPlans": {
+    "meanDiff": -33.3,
+    "sd": 31.69,
+    "fullBetterOrHigherSeeds": 1,
+    "lowerSeeds": 8,
+    "n": 10
+   },
+   "attacks": {
+    "meanDiff": 1.9,
+    "sd": 2.025,
+    "fullBetterOrHigherSeeds": 8,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "shares": {
+    "meanDiff": 0.7,
+    "sd": 4.572,
+    "fullBetterOrHigherSeeds": 5,
+    "lowerSeeds": 4,
+    "n": 10
+   },
+   "follows": {
+    "meanDiff": 10.7,
+    "sd": 17.01,
+    "fullBetterOrHigherSeeds": 6,
+    "lowerSeeds": 3,
+    "n": 10
+   },
+   "refusals": {
+    "meanDiff": -0.7,
+    "sd": 1.947,
+    "fullBetterOrHigherSeeds": 1,
+    "lowerSeeds": 3,
+    "n": 10
+   }
+  },
+  "cold: full - no-planner": {
+   "survivors": {
+    "meanDiff": -4.6,
+    "sd": 5.275,
+    "fullBetterOrHigherSeeds": 2,
+    "lowerSeeds": 8,
+    "n": 10
+   },
+   "deaths": {
+    "meanDiff": 4.4,
+    "sd": 3.406,
+    "fullBetterOrHigherSeeds": 9,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "births": {
+    "meanDiff": -0.2,
+    "sd": 2.486,
+    "fullBetterOrHigherSeeds": 4,
+    "lowerSeeds": 2,
+    "n": 10
+   },
+   "starvationDeaths": {
+    "meanDiff": 0.1,
+    "sd": 0.316,
+    "fullBetterOrHigherSeeds": 1,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "exposureDeaths": {
+    "meanDiff": 3.5,
+    "sd": 3.206,
+    "fullBetterOrHigherSeeds": 8,
+    "lowerSeeds": 1,
+    "n": 10
+   },
+   "wentFar20": {
+    "meanDiff": -2,
+    "sd": 2.404,
+    "fullBetterOrHigherSeeds": 1,
+    "lowerSeeds": 8,
+    "n": 10
+   },
+   "returnedHome": {
+    "meanDiff": -3.2,
+    "sd": 3.676,
+    "fullBetterOrHigherSeeds": 2,
+    "lowerSeeds": 8,
+    "n": 10
+   },
+   "chunks": {
+    "meanDiff": 0.4,
+    "sd": 4.169,
+    "fullBetterOrHigherSeeds": 6,
+    "lowerSeeds": 3,
+    "n": 10
+   },
+   "saltFails1": {
+    "meanDiff": 9.9,
+    "sd": 33.468,
+    "fullBetterOrHigherSeeds": 1,
+    "lowerSeeds": 1,
+    "n": 10
+   },
+   "saltFails2": {
+    "meanDiff": 0.7,
+    "sd": 4.715,
+    "fullBetterOrHigherSeeds": 1,
+    "lowerSeeds": 1,
+    "n": 10
+   },
+   "handAxeFound": {
+    "meanDiff": 0,
+    "sd": 0,
+    "fullBetterOrHigherSeeds": 0,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "handAxesCrafted": {
+    "meanDiff": 16.9,
+    "sd": 8.465,
+    "fullBetterOrHigherSeeds": 9,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "stoneClubs": {
+    "meanDiff": 31,
+    "sd": 13.792,
+    "fullBetterOrHigherSeeds": 10,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "fireLighters": {
+    "meanDiff": 5.5,
+    "sd": 3.689,
+    "fullBetterOrHigherSeeds": 10,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "firesLit": {
+    "meanDiff": 9.3,
+    "sd": 5.078,
+    "fullBetterOrHigherSeeds": 10,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "shelters": {
+    "meanDiff": 0,
+    "sd": 0,
+    "fullBetterOrHigherSeeds": 0,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "berryBefore": {
+    "meanDiff": null,
+    "sd": null,
+    "fullBetterOrHigherSeeds": 0,
+    "lowerSeeds": 0,
+    "n": 0
+   },
+   "berryAfter": {
+    "meanDiff": null,
+    "sd": null,
+    "fullBetterOrHigherSeeds": 0,
+    "lowerSeeds": 0,
+    "n": 0
+   },
+   "reversalRatio": {
+    "meanDiff": null,
+    "sd": null,
+    "fullBetterOrHigherSeeds": 0,
+    "lowerSeeds": 0,
+    "n": 0
+   },
+   "predErr": {
+    "meanDiff": 0.013,
+    "sd": 0.019,
+    "fullBetterOrHigherSeeds": 7,
+    "lowerSeeds": 2,
+    "n": 9
+   },
+   "multiStepPlans": {
+    "meanDiff": 53.5,
+    "sd": 28.313,
+    "fullBetterOrHigherSeeds": 9,
+    "lowerSeeds": 0,
+    "n": 10
+   },
+   "attacks": {
+    "meanDiff": 1.2,
+    "sd": 1.932,
+    "fullBetterOrHigherSeeds": 6,
+    "lowerSeeds": 2,
+    "n": 10
+   },
+   "shares": {
+    "meanDiff": -3.1,
+    "sd": 6.607,
+    "fullBetterOrHigherSeeds": 3,
+    "lowerSeeds": 7,
+    "n": 10
+   },
+   "follows": {
+    "meanDiff": 2,
+    "sd": 12.534,
+    "fullBetterOrHigherSeeds": 4,
+    "lowerSeeds": 5,
+    "n": 10
+   },
+   "refusals": {
+    "meanDiff": -0.5,
+    "sd": 1.716,
+    "fullBetterOrHigherSeeds": 1,
+    "lowerSeeds": 2,
+    "n": 10
+   }
+  }
+ }
+}

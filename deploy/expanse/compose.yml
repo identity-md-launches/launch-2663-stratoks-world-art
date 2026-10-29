@@ -1,0 +1,16 @@
+# Owner-hosted Phase 2B backend. Budget from the brief: 1.5 CPU / 1536 MB on a 2 vCPU / 4 GB ARM64 host.
+# Put it behind the existing Caddy (deploy/Caddyfile) for HTTPS; set ALLOWED_ORIGINS to the static client origin.
+services:
+  expanse:
+    build: { context: ../.., dockerfile: deploy/expanse/Dockerfile }
+    restart: unless-stopped
+    environment:
+      WORLD_SEED: "20260101"
+      ALLOWED_ORIGINS: ""
+      INITIAL_SEED_COUNT: "24"
+    volumes: [ "expanse-data:/data" ]
+    ports: [ "127.0.0.1:8788:8788" ]
+    cpus: 1.5
+    mem_limit: 1536m
+volumes:
+  expanse-data: {}

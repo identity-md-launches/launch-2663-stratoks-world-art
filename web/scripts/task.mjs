@@ -73,13 +73,14 @@ else {
   if (!["build", "typecheck", "test", "preview"].includes(task))
     throw new Error("Use build, typecheck, test, preview, install or path.");
   if (task === "preview")
-    await fs.cp(path.join(root, "dist"), path.join(project, "dist"), {
+    await fs.cp(path.join(root, "dist"), path.join(temp, "dist"), {
       recursive: true,
     });
   run(["run", task]);
+  if (task === "test") run(["exec", "--", "tsx", "--test", "src/expanse/transport.test.ts"]);
   if (task === "build") {
     await fs.rm(path.join(root, "dist"), { recursive: true, force: true });
-    await fs.cp(path.join(project, "dist"), path.join(root, "dist"), {
+    await fs.cp(path.join(temp, "dist"), path.join(root, "dist"), {
       recursive: true,
     });
     console.log("Static export copied to dist/.");

@@ -5,6 +5,6 @@ export default defineConfig({
   base: "./",
   plugins: [react()],
   define: { __DEMO_CONFIG__: JSON.stringify(DEFAULTS) },
-  build: { outDir: "dist", sourcemap: false, chunkSizeWarningLimit: 700 },
+  build: { outDir: "../dist", emptyOutDir: true, sourcemap: false, chunkSizeWarningLimit: 700 },
   worker: { format: "es" },
 });

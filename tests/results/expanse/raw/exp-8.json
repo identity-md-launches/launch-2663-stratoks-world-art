@@ -1,0 +1,1185 @@
+{
+ "node": "v24.22.1",
+ "ticks": 3000,
+ "seeds": [
+  909,
+  1010
+ ],
+ "modes": [
+  "full",
+  "frozen",
+  "no-planner"
+ ],
+ "generated": "2026-10-28T11:50:50.918Z",
+ "runs": [
+  {
+   "seed": 909,
+   "mode": "full",
+   "scenario": "main",
+   "ticks": 3000,
+   "ms": 10421,
+   "coldStart": null,
+   "population": {
+    "start": 24,
+    "end": 19,
+    "births": 0,
+    "deaths": 5,
+    "deathsByCause": {
+     "unknown": 4,
+     "dehydration": 1
+    }
+   },
+   "exploration": {
+    "chunksGenerated": 19,
+    "meanVisitedCells": 16.105,
+    "wentFar20": 20,
+    "returnedHome": 14,
+    "maxDistance": 61
+   },
+   "waterBarrier": {
+    "saltDrinkFailuresFirstHalf": 28,
+    "saltDrinkFailuresSecondHalf": 26,
+    "noPathFirstHalf": 7,
+    "noPathSecondHalf": 8
+   },
+   "tools": {
+    "crafted": {
+     "stone_club": 29,
+     "bundle": 4,
+     "hand_axe": 5
+    },
+    "firstHandAxeTick": 2292,
+    "handAxeHolders": 2,
+    "discoveries": {
+     "combine:stick+stone->stone_club": {
+      "creatures": 8,
+      "selfFound": 5,
+      "first": 399
+     },
+     "combine:fiber+stick->bundle": {
+      "creatures": 3,
+      "selfFound": 3,
+      "first": 432
+     },
+     "combine:flint+stick->hand_axe": {
+      "creatures": 2,
+      "selfFound": 2,
+      "first": 2292
+     }
+    }
+   },
+   "fire": {
+    "creaturesWhoLitFire": 0,
+    "firesLitEvents": 0,
+    "burnedNodes": {},
+    "burnedItems": {},
+    "sheltersBuilt": 0
+   },
+   "reversal": {
+    "berryEatenBefore": 261,
+    "berryEatenAfter": 44,
+    "berryGathered": 307
+   },
+   "planning": {
+    "decisions": 8265,
+    "reflex": 0,
+    "deferred": 0,
+    "meanAbsPredictionError": 0.051,
+    "plansMultiStep": 90,
+    "plansSampled": 152
+   },
+   "social": {
+    "attack": 1,
+    "threaten": 18,
+    "share": 1
+   },
+   "leadership": [],
+   "needsEnd": {
+    "hunger": 77.035,
+    "thirst": 1.307,
+    "warmth": 97.659,
+    "health": 81.792
+   }
+  },
+  {
+   "seed": 909,
+   "mode": "frozen",
+   "scenario": "main",
+   "ticks": 3000,
+   "ms": 7199,
+   "coldStart": null,
+   "population": {
+    "start": 24,
+    "end": 19,
+    "births": 1,
+    "deaths": 6,
+    "deathsByCause": {
+     "unknown": 3,
+     "exposure": 2,
+     "starvation": 1
+    }
+   },
+   "exploration": {
+    "chunksGenerated": 18,
+    "meanVisitedCells": 15.474,
+    "wentFar20": 24,
+    "returnedHome": 16,
+    "maxDistance": 62
+   },
+   "waterBarrier": {
+    "saltDrinkFailuresFirstHalf": 0,
+    "saltDrinkFailuresSecondHalf": 0,
+    "noPathFirstHalf": 4,
+    "noPathSecondHalf": 3
+   },
+   "tools": {
+    "crafted": {
+     "hand_axe": 3,
+     "stone_club": 23,
+     "bundle": 8
+    },
+    "firstHandAxeTick": 213,
+    "handAxeHolders": 1,
+    "discoveries": {
+     "combine:flint+stick->hand_axe": {
+      "creatures": 3,
+      "selfFound": 3,
+      "first": 213
+     },
+     "combine:stick+stone->stone_club": {
+      "creatures": 14,
+      "selfFound": 14,
+      "first": 277
+     },
+     "combine:fiber+stick->bundle": {
+      "creatures": 6,
+      "selfFound": 6,
+      "first": 453
+     },
+     "fire:strike-flint-on-fuel": {
+      "creatures": 1,
+      "selfFound": 1,
+      "first": 1410
+     }
+    }
+   },
+   "fire": {
+    "creaturesWhoLitFire": 1,
+    "firesLitEvents": 1,
+    "burnedNodes": {},
+    "burnedItems": {
+     "wood": 1
+    },
+    "sheltersBuilt": 0
+   },
+   "reversal": {
+    "berryEatenBefore": 200,
+    "berryEatenAfter": 85,
+    "berryGathered": 285
+   },
+   "planning": {
+    "decisions": 7438,
+    "reflex": 11,
+    "deferred": 0,
+    "meanAbsPredictionError": 0.085,
+    "plansMultiStep": 127,
+    "plansSampled": 152
+   },
+   "social": {
+    "share": 7
+   },
+   "leadership": [],
+   "needsEnd": {
+    "hunger": 73.86,
+    "thirst": 1.102,
+    "warmth": 93.285,
+    "health": 75.099
+   }
+  },
+  {
+   "seed": 909,
+   "mode": "no-planner",
+   "scenario": "main",
+   "ticks": 3000,
+   "ms": 6973,
+   "coldStart": null,
+   "population": {
+    "start": 24,
+    "end": 13,
+    "births": 0,
+    "deaths": 11,
+    "deathsByCause": {
+     "unknown": 10,
+     "injury": 1
+    }
+   },
+   "exploration": {
+    "chunksGenerated": 20,
+    "meanVisitedCells": 27.692,
+    "wentFar20": 24,
+    "returnedHome": 22,
+    "maxDistance": 59
+   },
+   "waterBarrier": {
+    "saltDrinkFailuresFirstHalf": 0,
+    "saltDrinkFailuresSecondHalf": 0,
+    "noPathFirstHalf": 4,
+    "noPathSecondHalf": 35
+   },
+   "tools": {
+    "crafted": {
+     "stone_club": 4,
+     "hand_axe": 3,
+     "bundle": 1
+    },
+    "firstHandAxeTick": 682,
+    "handAxeHolders": 0,
+    "discoveries": {
+     "combine:stick+stone->stone_club": {
+      "creatures": 3,
+      "selfFound": 3,
+      "first": 624
+     },
+     "combine:flint+stick->hand_axe": {
+      "creatures": 2,
+      "selfFound": 2,
+      "first": 682
+     },
+     "combine:fiber+stick->bundle": {
+      "creatures": 1,
+      "selfFound": 1,
+      "first": 788
+     }
+    }
+   },
+   "fire": {
+    "creaturesWhoLitFire": 0,
+    "firesLitEvents": 0,
+    "burnedNodes": {},
+    "burnedItems": {},
+    "sheltersBuilt": 0
+   },
+   "reversal": {
+    "berryEatenBefore": 279,
+    "berryEatenAfter": 223,
+    "berryGathered": 513
+   },
+   "planning": {
+    "decisions": 8801,
+    "reflex": 0,
+    "deferred": 0,
+    "meanAbsPredictionError": 0.044,
+    "plansMultiStep": 0,
+    "plansSampled": 104
+   },
+   "social": {
+    "share": 27,
+    "follow": 10,
+    "attack": 1,
+    "threaten": 1,
+    "refuse": 4
+   },
+   "leadership": [
+    {
+     "id": 23,
+     "voluntaryFollowers": 2
+    },
+    {
+     "id": 14,
+     "voluntaryFollowers": 1
+    }
+   ],
+   "needsEnd": {
+    "hunger": 48.82,
+    "thirst": 2.1,
+    "warmth": 80.969,
+    "health": 50.238
+   }
+  },
+  {
+   "seed": 909,
+   "mode": "full",
+   "scenario": "cold",
+   "ticks": 3000,
+   "ms": 8911,
+   "coldStart": {
+    "x": 10,
+    "y": -20
+   },
+   "population": {
+    "start": 24,
+    "end": 4,
+    "births": 0,
+    "deaths": 20,
+    "deathsByCause": {
+     "burns": 1,
+     "exposure": 18,
+     "starvation": 1
+    }
+   },
+   "exploration": {
+    "chunksGenerated": 13,
+    "meanVisitedCells": 7.5,
+    "wentFar20": 19,
+    "returnedHome": 6,
+    "maxDistance": 57
+   },
+   "waterBarrier": {
+    "saltDrinkFailuresFirstHalf": 0,
+    "saltDrinkFailuresSecondHalf": 0,
+    "noPathFirstHalf": 21,
+    "noPathSecondHalf": 0
+   },
+   "tools": {
+    "crafted": {
+     "hand_axe": 26,
+     "stone_club": 22,
+     "bundle": 5
+    },
+    "firstHandAxeTick": 43,
+    "handAxeHolders": 3,
+    "discoveries": {
+     "combine:flint+stick->hand_axe": {
+      "creatures": 15,
+      "selfFound": 3,
+      "first": 43
+     },
+     "combine:stick+stone->stone_club": {
+      "creatures": 13,
+      "selfFound": 3,
+      "first": 156
+     },
+     "fire:strike-flint-on-fuel": {
+      "creatures": 5,
+      "selfFound": 3,
+      "first": 271
+     },
+     "combine:fiber+stick->bundle": {
+      "creatures": 2,
+      "selfFound": 2,
+      "first": 344
+     }
+    }
+   },
+   "fire": {
+    "creaturesWhoLitFire": 5,
+    "firesLitEvents": 8,
+    "burnedNodes": {},
+    "burnedItems": {
+     "wood": 12,
+     "stick": 1,
+     "fiber": 3
+    },
+    "sheltersBuilt": 0
+   },
+   "reversal": null,
+   "planning": {
+    "decisions": 8859,
+    "reflex": 23,
+    "deferred": 0,
+    "meanAbsPredictionError": 0.067,
+    "plansMultiStep": 11,
+    "plansSampled": 32
+   },
+   "social": {
+    "attack": 2,
+    "threaten": 4
+   },
+   "leadership": [],
+   "needsEnd": {
+    "hunger": 70.846,
+    "thirst": 0.51,
+    "warmth": 99.539,
+    "health": 70.594
+   }
+  },
+  {
+   "seed": 909,
+   "mode": "frozen",
+   "scenario": "cold",
+   "ticks": 3000,
+   "ms": 4751,
+   "coldStart": {
+    "x": 10,
+    "y": -20
+   },
+   "population": {
+    "start": 24,
+    "end": 7,
+    "births": 0,
+    "deaths": 17,
+    "deathsByCause": {
+     "exposure": 17
+    }
+   },
+   "exploration": {
+    "chunksGenerated": 11,
+    "meanVisitedCells": 8.714,
+    "wentFar20": 14,
+    "returnedHome": 6,
+    "maxDistance": 40
+   },
+   "waterBarrier": {
+    "saltDrinkFailuresFirstHalf": 0,
+    "saltDrinkFailuresSecondHalf": 0,
+    "noPathFirstHalf": 0,
+    "noPathSecondHalf": 1
+   },
+   "tools": {
+    "crafted": {
+     "hand_axe": 37,
+     "stone_club": 13,
+     "bundle": 7
+    },
+    "firstHandAxeTick": 31,
+    "handAxeHolders": 6,
+    "discoveries": {
+     "combine:flint+stick->hand_axe": {
+      "creatures": 17,
+      "selfFound": 17,
+      "first": 31
+     },
+     "combine:stick+stone->stone_club": {
+      "creatures": 12,
+      "selfFound": 12,
+      "first": 92
+     },
+     "combine:fiber+stick->bundle": {
+      "creatures": 6,
+      "selfFound": 6,
+      "first": 376
+     },
+     "fire:strike-flint-on-fuel": {
+      "creatures": 2,
+      "selfFound": 2,
+      "first": 1110
+     }
+    }
+   },
+   "fire": {
+    "creaturesWhoLitFire": 2,
+    "firesLitEvents": 3,
+    "burnedNodes": {},
+    "burnedItems": {
+     "fiber": 1,
+     "wood": 1,
+     "bundle": 2
+    },
+    "sheltersBuilt": 0
+   },
+   "reversal": null,
+   "planning": {
+    "decisions": 5496,
+    "reflex": 5,
+    "deferred": 0,
+    "meanAbsPredictionError": 0.127,
+    "plansMultiStep": 42,
+    "plansSampled": 56
+   },
+   "social": {
+    "threaten": 2,
+    "share": 3,
+    "follow": 2,
+    "refuse": 5
+   },
+   "leadership": [
+    {
+     "id": 14,
+     "voluntaryFollowers": 1
+    }
+   ],
+   "needsEnd": {
+    "hunger": 46.145,
+    "thirst": 1.929,
+    "warmth": 79.556,
+    "health": 75.524
+   }
+  },
+  {
+   "seed": 909,
+   "mode": "no-planner",
+   "scenario": "cold",
+   "ticks": 3000,
+   "ms": 6139,
+   "coldStart": {
+    "x": 10,
+    "y": -20
+   },
+   "population": {
+    "start": 24,
+    "end": 12,
+    "births": 0,
+    "deaths": 12,
+    "deathsByCause": {
+     "exposure": 11,
+     "burns": 1
+    }
+   },
+   "exploration": {
+    "chunksGenerated": 14,
+    "meanVisitedCells": 15.5,
+    "wentFar20": 19,
+    "returnedHome": 12,
+    "maxDistance": 46
+   },
+   "waterBarrier": {
+    "saltDrinkFailuresFirstHalf": 0,
+    "saltDrinkFailuresSecondHalf": 0,
+    "noPathFirstHalf": 3,
+    "noPathSecondHalf": 4
+   },
+   "tools": {
+    "crafted": {
+     "stone_club": 8,
+     "hand_axe": 13,
+     "bundle": 1
+    },
+    "firstHandAxeTick": 442,
+    "handAxeHolders": 3,
+    "discoveries": {
+     "combine:stick+stone->stone_club": {
+      "creatures": 6,
+      "selfFound": 4,
+      "first": 32
+     },
+     "fire:strike-flint-on-fuel": {
+      "creatures": 4,
+      "selfFound": 4,
+      "first": 261
+     },
+     "combine:flint+stick->hand_axe": {
+      "creatures": 6,
+      "selfFound": 5,
+      "first": 442
+     },
+     "combine:fiber+stick->bundle": {
+      "creatures": 1,
+      "selfFound": 1,
+      "first": 519
+     }
+    }
+   },
+   "fire": {
+    "creaturesWhoLitFire": 4,
+    "firesLitEvents": 5,
+    "burnedNodes": {},
+    "burnedItems": {
+     "stick": 3,
+     "wood": 4
+    },
+    "sheltersBuilt": 0
+   },
+   "reversal": null,
+   "planning": {
+    "decisions": 11702,
+    "reflex": 8,
+    "deferred": 0,
+    "meanAbsPredictionError": 0.039,
+    "plansMultiStep": 0,
+    "plansSampled": 96
+   },
+   "social": {
+    "threaten": 3,
+    "attack": 3,
+    "share": 9,
+    "follow": 15,
+    "refuse": 4
+   },
+   "leadership": [
+    {
+     "id": 1,
+     "voluntaryFollowers": 7
+    },
+    {
+     "id": 14,
+     "voluntaryFollowers": 3
+    },
+    {
+     "id": 12,
+     "voluntaryFollowers": 1
+    }
+   ],
+   "needsEnd": {
+    "hunger": 38.894,
+    "thirst": 1.14,
+    "warmth": 40.71,
+    "health": 74.684
+   }
+  },
+  {
+   "seed": 1010,
+   "mode": "full",
+   "scenario": "main",
+   "ticks": 3000,
+   "ms": 29669,
+   "coldStart": null,
+   "population": {
+    "start": 24,
+    "end": 21,
+    "births": 0,
+    "deaths": 3,
+    "deathsByCause": {
+     "unknown": 2,
+     "dehydration": 1
+    }
+   },
+   "exploration": {
+    "chunksGenerated": 21,
+    "meanVisitedCells": 17.714,
+    "wentFar20": 22,
+    "returnedHome": 20,
+    "maxDistance": 46
+   },
+   "waterBarrier": {
+    "saltDrinkFailuresFirstHalf": 26,
+    "saltDrinkFailuresSecondHalf": 72,
+    "noPathFirstHalf": 155,
+    "noPathSecondHalf": 112
+   },
+   "tools": {
+    "crafted": {
+     "bundle": 4,
+     "stone_club": 37
+    },
+    "firstHandAxeTick": null,
+    "handAxeHolders": 0,
+    "discoveries": {
+     "combine:fiber+stick->bundle": {
+      "creatures": 3,
+      "selfFound": 2,
+      "first": 224
+     },
+     "combine:stick+stone->stone_club": {
+      "creatures": 13,
+      "selfFound": 4,
+      "first": 297
+     }
+    }
+   },
+   "fire": {
+    "creaturesWhoLitFire": 0,
+    "firesLitEvents": 0,
+    "burnedNodes": {},
+    "burnedItems": {},
+    "sheltersBuilt": 0
+   },
+   "reversal": {
+    "berryEatenBefore": 291,
+    "berryEatenAfter": 120,
+    "berryGathered": 412
+   },
+   "planning": {
+    "decisions": 10029,
+    "reflex": 3,
+    "deferred": 0,
+    "meanAbsPredictionError": 0.06,
+    "plansMultiStep": 96,
+    "plansSampled": 168
+   },
+   "social": {
+    "share": 10,
+    "follow": 9,
+    "refuse": 15
+   },
+   "leadership": [
+    {
+     "id": 9,
+     "voluntaryFollowers": 1
+    },
+    {
+     "id": 17,
+     "voluntaryFollowers": 1
+    }
+   ],
+   "needsEnd": {
+    "hunger": 60.661,
+    "thirst": 0.486,
+    "warmth": 100,
+    "health": 57.739
+   }
+  },
+  {
+   "seed": 1010,
+   "mode": "frozen",
+   "scenario": "main",
+   "ticks": 3000,
+   "ms": 5616,
+   "coldStart": null,
+   "population": {
+    "start": 24,
+    "end": 16,
+    "births": 0,
+    "deaths": 8,
+    "deathsByCause": {
+     "unknown": 8
+    }
+   },
+   "exploration": {
+    "chunksGenerated": 19,
+    "meanVisitedCells": 16.313,
+    "wentFar20": 23,
+    "returnedHome": 18,
+    "maxDistance": 48
+   },
+   "waterBarrier": {
+    "saltDrinkFailuresFirstHalf": 28,
+    "saltDrinkFailuresSecondHalf": 64,
+    "noPathFirstHalf": 7,
+    "noPathSecondHalf": 2
+   },
+   "tools": {
+    "crafted": {
+     "stone_club": 26,
+     "bundle": 11
+    },
+    "firstHandAxeTick": null,
+    "handAxeHolders": 0,
+    "discoveries": {
+     "combine:stick+stone->stone_club": {
+      "creatures": 14,
+      "selfFound": 14,
+      "first": 397
+     },
+     "combine:fiber+stick->bundle": {
+      "creatures": 9,
+      "selfFound": 9,
+      "first": 405
+     }
+    }
+   },
+   "fire": {
+    "creaturesWhoLitFire": 0,
+    "firesLitEvents": 0,
+    "burnedNodes": {},
+    "burnedItems": {},
+    "sheltersBuilt": 0
+   },
+   "reversal": {
+    "berryEatenBefore": 244,
+    "berryEatenAfter": 120,
+    "berryGathered": 366
+   },
+   "planning": {
+    "decisions": 6709,
+    "reflex": 0,
+    "deferred": 0,
+    "meanAbsPredictionError": 0.104,
+    "plansMultiStep": 111,
+    "plansSampled": 128
+   },
+   "social": {
+    "share": 3,
+    "follow": 3
+   },
+   "leadership": [],
+   "needsEnd": {
+    "hunger": 75.192,
+    "thirst": 0.934,
+    "warmth": 100,
+    "health": 80.279
+   }
+  },
+  {
+   "seed": 1010,
+   "mode": "no-planner",
+   "scenario": "main",
+   "ticks": 3000,
+   "ms": 5037,
+   "coldStart": null,
+   "population": {
+    "start": 24,
+    "end": 8,
+    "births": 0,
+    "deaths": 16,
+    "deathsByCause": {
+     "unknown": 16
+    }
+   },
+   "exploration": {
+    "chunksGenerated": 21,
+    "meanVisitedCells": 24.875,
+    "wentFar20": 24,
+    "returnedHome": 23,
+    "maxDistance": 51
+   },
+   "waterBarrier": {
+    "saltDrinkFailuresFirstHalf": 76,
+    "saltDrinkFailuresSecondHalf": 127,
+    "noPathFirstHalf": 16,
+    "noPathSecondHalf": 2
+   },
+   "tools": {
+    "crafted": {},
+    "firstHandAxeTick": null,
+    "handAxeHolders": 0,
+    "discoveries": {}
+   },
+   "fire": {
+    "creaturesWhoLitFire": 0,
+    "firesLitEvents": 0,
+    "burnedNodes": {},
+    "burnedItems": {},
+    "sheltersBuilt": 0
+   },
+   "reversal": {
+    "berryEatenBefore": 268,
+    "berryEatenAfter": 223,
+    "berryGathered": 507
+   },
+   "planning": {
+    "decisions": 10733,
+    "reflex": 0,
+    "deferred": 0,
+    "meanAbsPredictionError": 0.02,
+    "plansMultiStep": 0,
+    "plansSampled": 64
+   },
+   "social": {
+    "share": 28,
+    "follow": 21,
+    "threaten": 1,
+    "refuse": 5
+   },
+   "leadership": [],
+   "needsEnd": {
+    "hunger": 62.789,
+    "thirst": 0.9,
+    "warmth": 100,
+    "health": 57.328
+   }
+  },
+  {
+   "seed": 1010,
+   "mode": "full",
+   "scenario": "cold",
+   "ticks": 3000,
+   "ms": 7173,
+   "coldStart": {
+    "x": 10,
+    "y": -20
+   },
+   "population": {
+    "start": 24,
+    "end": 14,
+    "births": 0,
+    "deaths": 10,
+    "deathsByCause": {
+     "unknown": 5,
+     "burns": 1,
+     "exposure": 4
+    }
+   },
+   "exploration": {
+    "chunksGenerated": 20,
+    "meanVisitedCells": 16.929,
+    "wentFar20": 23,
+    "returnedHome": 17,
+    "maxDistance": 44
+   },
+   "waterBarrier": {
+    "saltDrinkFailuresFirstHalf": 131,
+    "saltDrinkFailuresSecondHalf": 49,
+    "noPathFirstHalf": 3,
+    "noPathSecondHalf": 34
+   },
+   "tools": {
+    "crafted": {
+     "hand_axe": 40,
+     "stone_club": 43,
+     "bundle": 6
+    },
+    "firstHandAxeTick": 95,
+    "handAxeHolders": 11,
+    "discoveries": {
+     "combine:flint+stick->hand_axe": {
+      "creatures": 18,
+      "selfFound": 3,
+      "first": 95
+     },
+     "fire:strike-flint-on-fuel": {
+      "creatures": 6,
+      "selfFound": 3,
+      "first": 110
+     },
+     "combine:stick+stone->stone_club": {
+      "creatures": 18,
+      "selfFound": 4,
+      "first": 138
+     },
+     "combine:fiber+stick->bundle": {
+      "creatures": 3,
+      "selfFound": 2,
+      "first": 182
+     }
+    }
+   },
+   "fire": {
+    "creaturesWhoLitFire": 6,
+    "firesLitEvents": 13,
+    "burnedNodes": {
+     "berry": 1
+    },
+    "burnedItems": {
+     "wood": 12,
+     "fiber": 5,
+     "bundle": 1,
+     "stick": 2
+    },
+    "sheltersBuilt": 0
+   },
+   "reversal": null,
+   "planning": {
+    "decisions": 5296,
+    "reflex": 16,
+    "deferred": 0,
+    "meanAbsPredictionError": 0.119,
+    "plansMultiStep": 55,
+    "plansSampled": 112
+   },
+   "social": {
+    "threaten": 2,
+    "share": 4,
+    "attack": 2,
+    "follow": 8
+   },
+   "leadership": [
+    {
+     "id": 15,
+     "voluntaryFollowers": 3
+    },
+    {
+     "id": 19,
+     "voluntaryFollowers": 1
+    }
+   ],
+   "needsEnd": {
+    "hunger": 33.572,
+    "thirst": 2.927,
+    "warmth": 50.516,
+    "health": 70.256
+   }
+  },
+  {
+   "seed": 1010,
+   "mode": "frozen",
+   "scenario": "cold",
+   "ticks": 3000,
+   "ms": 6271,
+   "coldStart": {
+    "x": 10,
+    "y": -20
+   },
+   "population": {
+    "start": 24,
+    "end": 14,
+    "births": 0,
+    "deaths": 10,
+    "deathsByCause": {
+     "burns": 1,
+     "exposure": 8,
+     "unknown": 1
+    }
+   },
+   "exploration": {
+    "chunksGenerated": 14,
+    "meanVisitedCells": 17.857,
+    "wentFar20": 23,
+    "returnedHome": 21,
+    "maxDistance": 46
+   },
+   "waterBarrier": {
+    "saltDrinkFailuresFirstHalf": 6,
+    "saltDrinkFailuresSecondHalf": 5,
+    "noPathFirstHalf": 4,
+    "noPathSecondHalf": 1
+   },
+   "tools": {
+    "crafted": {
+     "hand_axe": 33,
+     "bundle": 7,
+     "stone_club": 27
+    },
+    "firstHandAxeTick": 83,
+    "handAxeHolders": 10,
+    "discoveries": {
+     "combine:flint+stick->hand_axe": {
+      "creatures": 16,
+      "selfFound": 16,
+      "first": 83
+     },
+     "combine:fiber+stick->bundle": {
+      "creatures": 5,
+      "selfFound": 5,
+      "first": 129
+     },
+     "combine:stick+stone->stone_club": {
+      "creatures": 13,
+      "selfFound": 13,
+      "first": 200
+     },
+     "fire:strike-flint-on-fuel": {
+      "creatures": 2,
+      "selfFound": 2,
+      "first": 1388
+     }
+    }
+   },
+   "fire": {
+    "creaturesWhoLitFire": 2,
+    "firesLitEvents": 3,
+    "burnedNodes": {},
+    "burnedItems": {
+     "fiber": 1,
+     "wood": 2
+    },
+    "sheltersBuilt": 0
+   },
+   "reversal": null,
+   "planning": {
+    "decisions": 5775,
+    "reflex": 7,
+    "deferred": 0,
+    "meanAbsPredictionError": 0.143,
+    "plansMultiStep": 75,
+    "plansSampled": 112
+   },
+   "social": {
+    "share": 7,
+    "follow": 16,
+    "attack": 1,
+    "refuse": 3,
+    "threaten": 1
+   },
+   "leadership": [
+    {
+     "id": 1,
+     "voluntaryFollowers": 9
+    },
+    {
+     "id": 2,
+     "voluntaryFollowers": 1
+    },
+    {
+     "id": 7,
+     "voluntaryFollowers": 1
+    }
+   ],
+   "needsEnd": {
+    "hunger": 38.471,
+    "thirst": 5.297,
+    "warmth": 26.562,
+    "health": 61.536
+   }
+  },
+  {
+   "seed": 1010,
+   "mode": "no-planner",
+   "scenario": "cold",
+   "ticks": 3000,
+   "ms": 5938,
+   "coldStart": {
+    "x": 10,
+    "y": -20
+   },
+   "population": {
+    "start": 24,
+    "end": 28,
+    "births": 5,
+    "deaths": 1,
+    "deathsByCause": {
+     "exposure": 1
+    }
+   },
+   "exploration": {
+    "chunksGenerated": 19,
+    "meanVisitedCells": 22.679,
+    "wentFar20": 24,
+    "returnedHome": 24,
+    "maxDistance": 48
+   },
+   "waterBarrier": {
+    "saltDrinkFailuresFirstHalf": 26,
+    "saltDrinkFailuresSecondHalf": 36,
+    "noPathFirstHalf": 2,
+    "noPathSecondHalf": 3
+   },
+   "tools": {
+    "crafted": {
+     "hand_axe": 8,
+     "stone_club": 16,
+     "bundle": 1
+    },
+    "firstHandAxeTick": 190,
+    "handAxeHolders": 6,
+    "discoveries": {
+     "combine:flint+stick->hand_axe": {
+      "creatures": 7,
+      "selfFound": 3,
+      "first": 190
+     },
+     "combine:stick+stone->stone_club": {
+      "creatures": 9,
+      "selfFound": 3,
+      "first": 279
+     },
+     "combine:fiber+stick->bundle": {
+      "creatures": 1,
+      "selfFound": 1,
+      "first": 782
+     },
+     "fire:strike-flint-on-fuel": {
+      "creatures": 2,
+      "selfFound": 2,
+      "first": 968
+     }
+    }
+   },
+   "fire": {
+    "creaturesWhoLitFire": 2,
+    "firesLitEvents": 2,
+    "burnedNodes": {},
+    "burnedItems": {
+     "wood": 2,
+     "stick": 1
+    },
+    "sheltersBuilt": 0
+   },
+   "reversal": null,
+   "planning": {
+    "decisions": 7975,
+    "reflex": 20,
+    "deferred": 0,
+    "meanAbsPredictionError": 0.099,
+    "plansMultiStep": 0,
+    "plansSampled": 224
+   },
+   "social": {
+    "threaten": 1,
+    "share": 5,
+    "follow": 8,
+    "refuse": 3,
+    "attack": 1
+   },
+   "leadership": [
+    {
+     "id": 3,
+     "voluntaryFollowers": 4
+    },
+    {
+     "id": 2,
+     "voluntaryFollowers": 3
+    },
+    {
+     "id": 22,
+     "voluntaryFollowers": 1
+    }
+   ],
+   "needsEnd": {
+    "hunger": 20.197,
+    "thirst": 6.416,
+    "warmth": 56.108,
+    "health": 87.496
+   }
+  }
+ ]
+}

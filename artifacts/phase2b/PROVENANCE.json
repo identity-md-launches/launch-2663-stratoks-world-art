@@ -1,0 +1,403 @@
+{
+  "schema": "stratoks-client-provenance/1",
+  "pinnedRepository": "https://github.com/identity-md-launches/launch-2613-stratoks-phase-integrate-scientifically",
+  "pinnedCommit": "8d4193ef8dc76cfcb1794f719e1a688e4355a01d",
+  "archiveUrl": "https://codeload.github.com/identity-md-launches/launch-2613-stratoks-phase-integrate-scientifically/tar.gz/8d4193ef8dc76cfcb1794f719e1a688e4355a01d",
+  "archiveSha256": "3c3100bd59b167f06f89c461b075282bf8f7034a691dfd5ad2e0fbc382cf6cad",
+  "acceptedWorkingTreeParent": "12f2140da7e2e7c94ff6d1b3756b731fb621cfd9",
+  "baselineSourceComparison": {
+    "server": {
+      "baselineFileCount": 28,
+      "missing": [],
+      "changedBaselineFiles": []
+    },
+    "shared": {
+      "baselineFileCount": 4,
+      "missing": [],
+      "changedBaselineFiles": []
+    },
+    "tests": {
+      "baselineFileCount": 113,
+      "missing": [],
+      "changedBaselineFiles": []
+    },
+    "deploy": {
+      "baselineFileCount": 41,
+      "missing": [
+        "deploy/correction-client.car.gz",
+        "deploy/correction-vps.tar.gz",
+        "deploy/phase2a-source.bundle",
+        "deploy/recovered/stratoks-09af84d.zip"
+      ],
+      "changedBaselineFiles": []
+    },
+    "docs": {
+      "baselineFileCount": 105,
+      "missing": [],
+      "changedBaselineFiles": []
+    }
+  },
+  "restoredFrontendFiles": [
+    {
+      "path": "web/index.html",
+      "baselineSha256": "04e37d9bc976f09487d6cedb96fbaf9ac27ffa7d6f8466fffa73d4e028a167a8",
+      "finalSha256": "4c539419677aa5fb956eda3215e79c7957ae1a5a4dffaf4e3e3621a3b44cc282",
+      "unchanged": false
+    },
+    {
+      "path": "web/package-lock.json",
+      "baselineSha256": "13ec56d88c1a75ce728928113554ac52129c7d687d3976c7f3a62aa43624af7b",
+      "finalSha256": "13ec56d88c1a75ce728928113554ac52129c7d687d3976c7f3a62aa43624af7b",
+      "unchanged": true
+    },
+    {
+      "path": "web/package.json",
+      "baselineSha256": "8fd8504677414687ff6831197c4c044d98fdc6e095c321674d264cbbd6d84a00",
+      "finalSha256": "8fd8504677414687ff6831197c4c044d98fdc6e095c321674d264cbbd6d84a00",
+      "unchanged": true
+    },
+    {
+      "path": "web/public/favicon.svg",
+      "baselineSha256": "6b89303ef4309e6f75bed173557e15dba63ea2d749a4690e04a9b7140f639a02",
+      "finalSha256": "6b89303ef4309e6f75bed173557e15dba63ea2d749a4690e04a9b7140f639a02",
+      "unchanged": true
+    },
+    {
+      "path": "web/public/licenses/THIRD_PARTY_NOTICES.txt",
+      "baselineSha256": "3fab1a2112a445c2da2148830fe697a3cac099287f30a8b539ff8d5955b77d43",
+      "finalSha256": "3fab1a2112a445c2da2148830fe697a3cac099287f30a8b539ff8d5955b77d43",
+      "unchanged": true
+    },
+    {
+      "path": "web/public/licenses/client-and-art.txt",
+      "baselineSha256": "098f879111c9f5b6b7a06ace2c75d1407b6cff38d1232508fc4577d2796285c2",
+      "finalSha256": "098f879111c9f5b6b7a06ace2c75d1407b6cff38d1232508fc4577d2796285c2",
+      "unchanged": true
+    },
+    {
+      "path": "web/public/licenses/dependencies.json",
+      "baselineSha256": "834e4f123324136c2504888466da6abfb55e55c3f7e3fdcdd780820e6c36f6e1",
+      "finalSha256": "834e4f123324136c2504888466da6abfb55e55c3f7e3fdcdd780820e6c36f6e1",
+      "unchanged": true
+    },
+    {
+      "path": "web/public/licenses/manrope.txt",
+      "baselineSha256": "d826ab6583b12c26807d8716a545bdbbb672df04f48608a364ba9efdbe501c30",
+      "finalSha256": "d826ab6583b12c26807d8716a545bdbbb672df04f48608a364ba9efdbe501c30",
+      "unchanged": true
+    },
+    {
+      "path": "web/public/licenses/rainbowkit.txt",
+      "baselineSha256": "5095037afa1ba03be36e04305c01ec9ee600e14377738a026482b1a888c4e365",
+      "finalSha256": "5095037afa1ba03be36e04305c01ec9ee600e14377738a026482b1a888c4e365",
+      "unchanged": true
+    },
+    {
+      "path": "web/public/share.png",
+      "baselineSha256": "bf55643b74bbd71c072bcab4c68c607976e8766696c35eb0bbc544a69c280dbd",
+      "finalSha256": "bf55643b74bbd71c072bcab4c68c607976e8766696c35eb0bbc544a69c280dbd",
+      "unchanged": true
+    },
+    {
+      "path": "web/public/wallets/coinbase.svg",
+      "baselineSha256": "cf559ef8c56defc8995fe7aababadc4bb9e09151ad96ff7f13f7659249b1c771",
+      "finalSha256": "cf559ef8c56defc8995fe7aababadc4bb9e09151ad96ff7f13f7659249b1c771",
+      "unchanged": true
+    },
+    {
+      "path": "web/public/wallets/metamask.svg",
+      "baselineSha256": "892c7dfab8c4ca5682878dda3f42f55a75195d7d365e4adb0832845f3a0a2135",
+      "finalSha256": "892c7dfab8c4ca5682878dda3f42f55a75195d7d365e4adb0832845f3a0a2135",
+      "unchanged": true
+    },
+    {
+      "path": "web/public/wallets/phantom.svg",
+      "baselineSha256": "f841f8112e131259a2e5123177950099c79487e61e77971f4e193e6c374419eb",
+      "finalSha256": "f841f8112e131259a2e5123177950099c79487e61e77971f4e193e6c374419eb",
+      "unchanged": true
+    },
+    {
+      "path": "web/public/wallets/rabby.svg",
+      "baselineSha256": "dcae4de88ebfa10cffa1fe28df13d7c8c0b40736ef2b704f1f2fc348e777e443",
+      "finalSha256": "dcae4de88ebfa10cffa1fe28df13d7c8c0b40736ef2b704f1f2fc348e777e443",
+      "unchanged": true
+    },
+    {
+      "path": "web/public/world-config.json",
+      "baselineSha256": "6c04b749606afa71d027cc3c65895a2241948dade26cc8b6f0337f5416d50d83",
+      "finalSha256": "6c04b749606afa71d027cc3c65895a2241948dade26cc8b6f0337f5416d50d83",
+      "unchanged": true
+    },
+    {
+      "path": "web/scripts/check-browser.mjs",
+      "baselineSha256": "5d2a3c1e5d1cd72ff9b121692a3b0b230949112a9d077c6869a4196277284bf4",
+      "finalSha256": "5d2a3c1e5d1cd72ff9b121692a3b0b230949112a9d077c6869a4196277284bf4",
+      "unchanged": true
+    },
+    {
+      "path": "web/scripts/check-correction-https.mjs",
+      "baselineSha256": "f2f980daf614ff290b311cc7a676c427f54c4e624535b02efc726951b4ffda0f",
+      "finalSha256": "f2f980daf614ff290b311cc7a676c427f54c4e624535b02efc726951b4ffda0f",
+      "unchanged": true
+    },
+    {
+      "path": "web/scripts/check-demo-launcher.mjs",
+      "baselineSha256": "ecc52b639d86a39b7a0d6ef9f350c8e743126aaaa34d5cf572685d77b7318d28",
+      "finalSha256": "ecc52b639d86a39b7a0d6ef9f350c8e743126aaaa34d5cf572685d77b7318d28",
+      "unchanged": true
+    },
+    {
+      "path": "web/scripts/check-interface.mjs",
+      "baselineSha256": "d392b3e944504dbe76590d1bc8ceb07a8cfbac88d8be5b60ca34aafdc2b501cc",
+      "finalSha256": "d392b3e944504dbe76590d1bc8ceb07a8cfbac88d8be5b60ca34aafdc2b501cc",
+      "unchanged": true
+    },
+    {
+      "path": "web/scripts/check-phase11.mjs",
+      "baselineSha256": "25a3276dd78550eb7461b4eecf8026a0ee9ecbdcc566e6ae83d64567d211041f",
+      "finalSha256": "25a3276dd78550eb7461b4eecf8026a0ee9ecbdcc566e6ae83d64567d211041f",
+      "unchanged": true
+    },
+    {
+      "path": "web/scripts/check-phase2a.mjs",
+      "baselineSha256": "94fe15693b903908c8e8e04c03d9f24bcca228a9555f4bc8db5b3e5ef6366b19",
+      "finalSha256": "94fe15693b903908c8e8e04c03d9f24bcca228a9555f4bc8db5b3e5ef6366b19",
+      "unchanged": true
+    },
+    {
+      "path": "web/scripts/check-review.mjs",
+      "baselineSha256": "e4d336167f4b85bbb007df0bd435927657a8e92595f1264c5aa616c7d431c94b",
+      "finalSha256": "e4d336167f4b85bbb007df0bd435927657a8e92595f1264c5aa616c7d431c94b",
+      "unchanged": true
+    },
+    {
+      "path": "web/scripts/check-revision.mjs",
+      "baselineSha256": "e79cb3d24a85890e37bd6abc1938ddeddf8893c2b17b5a30c37a37ee5bbd56a6",
+      "finalSha256": "e79cb3d24a85890e37bd6abc1938ddeddf8893c2b17b5a30c37a37ee5bbd56a6",
+      "unchanged": true
+    },
+    {
+      "path": "web/scripts/check-signatures.mjs",
+      "baselineSha256": "c5f75c3087ddc3b959eb6ca9ba72b87169c62bcad570f8d62214890496f0b482",
+      "finalSha256": "c5f75c3087ddc3b959eb6ca9ba72b87169c62bcad570f8d62214890496f0b482",
+      "unchanged": true
+    },
+    {
+      "path": "web/scripts/demo-server.mjs",
+      "baselineSha256": "4036f9de81304c7a1b5224f9fd6e68d957114683480d65c6ea1604c6f209596f",
+      "finalSha256": "4036f9de81304c7a1b5224f9fd6e68d957114683480d65c6ea1604c6f209596f",
+      "unchanged": true
+    },
+    {
+      "path": "web/scripts/licenses.mjs",
+      "baselineSha256": "ecccda444dbea3f7712503b54032e5b57b9972c65337aad867e28b3d62b4caeb",
+      "finalSha256": "ecccda444dbea3f7712503b54032e5b57b9972c65337aad867e28b3d62b4caeb",
+      "unchanged": true
+    },
+    {
+      "path": "web/scripts/measure-learning-lab.mjs",
+      "baselineSha256": "80cc84484fa8edbff3b439bd877f7b561ea085f3b33a01ef2184139336e2986e",
+      "finalSha256": "80cc84484fa8edbff3b439bd877f7b561ea085f3b33a01ef2184139336e2986e",
+      "unchanged": true
+    },
+    {
+      "path": "web/scripts/measure-service.mjs",
+      "baselineSha256": "05cc04c14c279364777057e5ecc42caa8723487fa7debc79ee1b781276c5baa7",
+      "finalSha256": "05cc04c14c279364777057e5ecc42caa8723487fa7debc79ee1b781276c5baa7",
+      "unchanged": true
+    },
+    {
+      "path": "web/scripts/preflight-phase2a.mjs",
+      "baselineSha256": "a2574799e52b90e1de3c2b8e8b59a1b1aa52563b82c212b70b2af7ef1d94a096",
+      "finalSha256": "a2574799e52b90e1de3c2b8e8b59a1b1aa52563b82c212b70b2af7ef1d94a096",
+      "unchanged": true
+    },
+    {
+      "path": "web/scripts/preflight.mjs",
+      "baselineSha256": "4f325d079b2c41d4f77f58248980d88deae3d7bb5e3b1e56b24be0c1b8980906",
+      "finalSha256": "4f325d079b2c41d4f77f58248980d88deae3d7bb5e3b1e56b24be0c1b8980906",
+      "unchanged": true
+    },
+    {
+      "path": "web/scripts/preview.mjs",
+      "baselineSha256": "5c476862a79309a8d10d5e16df3630fab8de5284ca313495ad8b64c21c99b143",
+      "finalSha256": "5c476862a79309a8d10d5e16df3630fab8de5284ca313495ad8b64c21c99b143",
+      "unchanged": true
+    },
+    {
+      "path": "web/scripts/release-correction.mjs",
+      "baselineSha256": "72b43dacdd94f0775ce0b5675030de095095705a171ee92417e30cd31a1fc998",
+      "finalSha256": "72b43dacdd94f0775ce0b5675030de095095705a171ee92417e30cd31a1fc998",
+      "unchanged": true
+    },
+    {
+      "path": "web/scripts/task.mjs",
+      "baselineSha256": "403399d54ad688e5491c9b70293f21576b31f2217ba579abc539f59d0c6212fc",
+      "finalSha256": "64b73f4a14d89a029d78834b9260fcb0e41da5170c3ff62c1ddfb0811af2f93d",
+      "unchanged": false
+    },
+    {
+      "path": "web/scripts/verify-publication.mjs",
+      "baselineSha256": "26a94b732e079f225a6a72af24e6f1c195f604c6d13bc716331b6e6757393cfc",
+      "finalSha256": "26a94b732e079f225a6a72af24e6f1c195f604c6d13bc716331b6e6757393cfc",
+      "unchanged": true
+    },
+    {
+      "path": "web/src/App.tsx",
+      "baselineSha256": "dd59434a8fa3deb2dd30e696bf4d9b6c97813ab49e8acf1f8f769fe849deed95",
+      "finalSha256": "dd59434a8fa3deb2dd30e696bf4d9b6c97813ab49e8acf1f8f769fe849deed95",
+      "unchanged": true
+    },
+    {
+      "path": "web/src/BrainBehavior.tsx",
+      "baselineSha256": "a30097f9d391244ee547f5062fd4f34cf2ba5d0d3333b034a7a5d73009e800d9",
+      "finalSha256": "a30097f9d391244ee547f5062fd4f34cf2ba5d0d3333b034a7a5d73009e800d9",
+      "unchanged": true
+    },
+    {
+      "path": "web/src/LearningLab.tsx",
+      "baselineSha256": "115f474556dc84f504f1c72542888729d547c834dba1bbf4377a8c179e07a5ea",
+      "finalSha256": "115f474556dc84f504f1c72542888729d547c834dba1bbf4377a8c179e07a5ea",
+      "unchanged": true
+    },
+    {
+      "path": "web/src/Modal.tsx",
+      "baselineSha256": "353a934bb1821d4a114c73f8b70ac5d3f81b7320bb6eedfdc56c86e2626ccd77",
+      "finalSha256": "353a934bb1821d4a114c73f8b70ac5d3f81b7320bb6eedfdc56c86e2626ccd77",
+      "unchanged": true
+    },
+    {
+      "path": "web/src/Panels.tsx",
+      "baselineSha256": "fd9adb14ca6ce478ff5490b404ee889770bbd55b2f1b111fb7d170a556ed7d8a",
+      "finalSha256": "fd9adb14ca6ce478ff5490b404ee889770bbd55b2f1b111fb7d170a556ed7d8a",
+      "unchanged": true
+    },
+    {
+      "path": "web/src/WorldCanvas.tsx",
+      "baselineSha256": "3ff888422fd495cc5770201db158c7b73fc607d5cbb1ca068a8eab68c88e1220",
+      "finalSha256": "3ff888422fd495cc5770201db158c7b73fc607d5cbb1ca068a8eab68c88e1220",
+      "unchanged": true
+    },
+    {
+      "path": "web/src/demo.worker.ts",
+      "baselineSha256": "ad5b0e74aa12e0a3aa5dfef59e454ae23106156856958bc5caf8d125eb030811",
+      "finalSha256": "ad5b0e74aa12e0a3aa5dfef59e454ae23106156856958bc5caf8d125eb030811",
+      "unchanged": true
+    },
+    {
+      "path": "web/src/format.ts",
+      "baselineSha256": "636cfb7d7766926b3fd2a11ae2f5504b9311dce7daf44d6b1839025d1bb82d7b",
+      "finalSha256": "636cfb7d7766926b3fd2a11ae2f5504b9311dce7daf44d6b1839025d1bb82d7b",
+      "unchanged": true
+    },
+    {
+      "path": "web/src/icons.tsx",
+      "baselineSha256": "3d7372f8ba050947b6b7a5805ee3454d006cba2513acc158e33187d0624a0a68",
+      "finalSha256": "3d7372f8ba050947b6b7a5805ee3454d006cba2513acc158e33187d0624a0a68",
+      "unchanged": true
+    },
+    {
+      "path": "web/src/learning.worker.ts",
+      "baselineSha256": "5f174159c0b26a6d61d40276bb5a78b6869d9e1c17ec0725346dbc711a18df22",
+      "finalSha256": "5f174159c0b26a6d61d40276bb5a78b6869d9e1c17ec0725346dbc711a18df22",
+      "unchanged": true
+    },
+    {
+      "path": "web/src/learningLab.test.ts",
+      "baselineSha256": "39a62d4b3ede04c39c3d5a06082cf99fbd14e3645aefedc1ef72fded5a78540b",
+      "finalSha256": "39a62d4b3ede04c39c3d5a06082cf99fbd14e3645aefedc1ef72fded5a78540b",
+      "unchanged": true
+    },
+    {
+      "path": "web/src/learningLab.ts",
+      "baselineSha256": "50875806e34a637ec3564fc578d4fa2890b2a9aaf85b2e30756d7835fda78d04",
+      "finalSha256": "50875806e34a637ec3564fc578d4fa2890b2a9aaf85b2e30756d7835fda78d04",
+      "unchanged": true
+    },
+    {
+      "path": "web/src/main.tsx",
+      "baselineSha256": "bb4b42c8fcd1cc88bea2034d025016211932c4e69c8cda1a6725ae93ad55f132",
+      "finalSha256": "2027456745424346390bc8bb0f5f31ed7543bdbabb88d804544b6194a11a5ab7",
+      "unchanged": false
+    },
+    {
+      "path": "web/src/pending.test.ts",
+      "baselineSha256": "45a08e7ca54944e43a2c6516025a488976548127d1ca1e41853e41c3d01327a3",
+      "finalSha256": "45a08e7ca54944e43a2c6516025a488976548127d1ca1e41853e41c3d01327a3",
+      "unchanged": true
+    },
+    {
+      "path": "web/src/pending.ts",
+      "baselineSha256": "198d163afa47457c6de312bb39c98d71239899c9856a7e6fef0eb9faee7e1ab1",
+      "finalSha256": "198d163afa47457c6de312bb39c98d71239899c9856a7e6fef0eb9faee7e1ab1",
+      "unchanged": true
+    },
+    {
+      "path": "web/src/renderer.ts",
+      "baselineSha256": "7829a3aa81b23093f1b7e3c56fa36c938769544ae1badfd42d731351bae34074",
+      "finalSha256": "7829a3aa81b23093f1b7e3c56fa36c938769544ae1badfd42d731351bae34074",
+      "unchanged": true
+    },
+    {
+      "path": "web/src/service.test.ts",
+      "baselineSha256": "46bfcbcf07efa22c0fadfbf9733756884aecbe11492938fc08b97a0ebe14bc89",
+      "finalSha256": "46bfcbcf07efa22c0fadfbf9733756884aecbe11492938fc08b97a0ebe14bc89",
+      "unchanged": true
+    },
+    {
+      "path": "web/src/service.ts",
+      "baselineSha256": "f1976b7e86dd08e378853eb39f08824008b254c7ac464e7e07b47fcfb3d0f244",
+      "finalSha256": "f1976b7e86dd08e378853eb39f08824008b254c7ac464e7e07b47fcfb3d0f244",
+      "unchanged": true
+    },
+    {
+      "path": "web/src/store.test.ts",
+      "baselineSha256": "cfd1e2b3ba05cab5decc962114ecc24dd41efd3d3a8c6f755eb891498cc6b314",
+      "finalSha256": "cfd1e2b3ba05cab5decc962114ecc24dd41efd3d3a8c6f755eb891498cc6b314",
+      "unchanged": true
+    },
+    {
+      "path": "web/src/store.ts",
+      "baselineSha256": "a685d62d59377b4ea85bb4a73efa4eef0f9676d8ad4475f163c2b9a184cb1d6a",
+      "finalSha256": "a685d62d59377b4ea85bb4a73efa4eef0f9676d8ad4475f163c2b9a184cb1d6a",
+      "unchanged": true
+    },
+    {
+      "path": "web/src/styles.css",
+      "baselineSha256": "3a59a3fff263c891ad9b9ddeabcfd07f63de7b2c192f2fba2e55b265de524ece",
+      "finalSha256": "3a59a3fff263c891ad9b9ddeabcfd07f63de7b2c192f2fba2e55b265de524ece",
+      "unchanged": true
+    },
+    {
+      "path": "web/src/types.ts",
+      "baselineSha256": "385b899aa15274d5aa615bb5f3d37600d52a4e4c023ad8705c4d2640476a411b",
+      "finalSha256": "385b899aa15274d5aa615bb5f3d37600d52a4e4c023ad8705c4d2640476a411b",
+      "unchanged": true
+    },
+    {
+      "path": "web/src/wallet.tsx",
+      "baselineSha256": "319a0e4dd9ab965afa0bada53f5d39ab51c016e148e172e1bc3af10749857062",
+      "finalSha256": "319a0e4dd9ab965afa0bada53f5d39ab51c016e148e172e1bc3af10749857062",
+      "unchanged": true
+    },
+    {
+      "path": "web/tsconfig.json",
+      "baselineSha256": "ca99f1ffea5fc72e9fa010a68ef0cd85e80770267eee5960eec12186640e7b5f",
+      "finalSha256": "ca99f1ffea5fc72e9fa010a68ef0cd85e80770267eee5960eec12186640e7b5f",
+      "unchanged": true
+    },
+    {
+      "path": "web/vite.config.ts",
+      "baselineSha256": "993fb8358298c2058818d8ce5672d89d847e15e8a536d0db6a6e428fa71b03cf",
+      "finalSha256": "73012b23dbe98acd10ec33d3e797f12e0337d3582cd0f2965c597c8f75a77eb1",
+      "unchanged": false
+    }
+  ],
+  "notes": [
+    "Compared directly with pinned archive bytes, not a mutable staging directory.",
+    "All 59 pinned frontend files are present. Manifest and lockfile are unchanged. Four frontend entry/build-helper files were extended; Expanse source is additive.",
+    "All pinned backend/shared/tests/docs files are present and unchanged. Accepted Expanse extensions already existed in the working tree; this integration changes only its view/server projections, deployment Docker data ownership, and historical-report notice.",
+    "Four redundant historical packaging archives were already omitted by accepted work; their paths, bytes and hashes remain in docs/phase2b/OMITTED-BASELINE-ARCHIVES.md. No new required runtime artifact was dropped.",
+    "No production access or writes, contract/token/payment addition, submodule, installed package, cache or registry archive is included."
+  ]
+}

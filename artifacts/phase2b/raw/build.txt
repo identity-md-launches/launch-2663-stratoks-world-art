@@ -1,0 +1,24 @@
+
+> stratoks-client@0.1.0 build
+> vite build
+
+vite v8.3.5 building client environment for production...
+transforming...
+[plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/tmp/stratoks-build-e57a07ef7f02/web/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[plugin rolldown:vite-resolve] Module "node:fs" has been externalized for browser compatibility, imported by "/tmp/stratoks-build-e57a07ef7f02/server/src/config.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[plugin rolldown:vite-resolve] Module "node:fs" has been externalized for browser compatibility, imported by "/tmp/stratoks-build-e57a07ef7f02/server/src/config.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+✓ 1640 modules transformed.
+rendering chunks...
+computing gzip size...
+../dist/index.html                                         1.09 kB │ gzip:   0.55 kB
+../dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2   24.83 kB
+../dist/assets/learning.worker-Chr4HT56.js                52.13 kB
+../dist/assets/demo.worker-Cg15FJoQ.js                    52.42 kB
+../dist/assets/demo.worker-Bhb_wpMu.js                    94.75 kB
+../dist/assets/index-De1-FTDD.css                         48.57 kB │ gzip:   9.89 kB
+../dist/assets/App-DPO2-ItN.js                            73.70 kB │ gzip:  22.80 kB
+../dist/assets/dist-CcCrtjnf.js                          102.68 kB │ gzip:  33.77 kB
+../dist/assets/index-BQHU9gaH.js                         396.95 kB │ gzip: 120.96 kB
+
+✓ built in 355ms
+Static export copied to dist/.

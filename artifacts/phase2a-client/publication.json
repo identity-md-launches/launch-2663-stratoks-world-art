@@ -1,7 +1,0 @@
-{
-  "status": "ready-for-imd-export-pinning",
-  "staticExport": "dist/",
-  "publicClientUrl": null,
-  "cid": null,
-  "note": "The contributor network pins the committed export after review. No publishing command, production deployment or live-world write was performed."
-}
