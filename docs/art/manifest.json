@@ -1,0 +1,2860 @@
+{
+  "version": 1,
+  "status": "generated art; manual isolation, repacking and animation review required",
+  "source": "DIRECTION.md",
+  "attribution": "Original STRATOKS contributor artwork generated with OpenAI image generation, 2026",
+  "license": "MIT; see docs/licenses/client-and-art.txt",
+  "pixelOrigin": "top-left",
+  "boundsConvention": "half-open",
+  "anchors": "candidate cell-local normalized ground pivots, not measured or approved",
+  "assets": [
+    {
+      "path": "artifacts/art/characters.png",
+      "sha256": "69fd01ffb49b65f57972d659362b84afc71578a6e2aea8b91065d3826b5c90e5",
+      "format": "image/png",
+      "width": 1254,
+      "height": 1254,
+      "color": "RGBA",
+      "bitDepth": 8,
+      "grid": [
+        8,
+        8
+      ],
+      "safeUniformExtraction": false,
+      "slots": [
+        {
+          "name": "southeast.idle.0",
+          "direction": "southeast",
+          "pose": "idle",
+          "frame": 0,
+          "proposedRect": [
+            0,
+            0,
+            156,
+            156
+          ],
+          "observedAlphaBounds": [
+            49,
+            27,
+            155,
+            156
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southeast.idle.1",
+          "direction": "southeast",
+          "pose": "idle",
+          "frame": 1,
+          "proposedRect": [
+            156,
+            0,
+            157,
+            156
+          ],
+          "observedAlphaBounds": [
+            207,
+            24,
+            312,
+            156
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southeast.idle.2",
+          "direction": "southeast",
+          "pose": "idle",
+          "frame": 2,
+          "proposedRect": [
+            313,
+            0,
+            157,
+            156
+          ],
+          "observedAlphaBounds": [
+            363,
+            24,
+            469,
+            156
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southeast.idle.3",
+          "direction": "southeast",
+          "pose": "idle",
+          "frame": 3,
+          "proposedRect": [
+            470,
+            0,
+            157,
+            156
+          ],
+          "observedAlphaBounds": [
+            519,
+            25,
+            622,
+            156
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southeast.walk.0",
+          "direction": "southeast",
+          "pose": "walk",
+          "frame": 0,
+          "proposedRect": [
+            627,
+            0,
+            156,
+            156
+          ],
+          "observedAlphaBounds": [
+            675,
+            25,
+            778,
+            156
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southeast.walk.1",
+          "direction": "southeast",
+          "pose": "walk",
+          "frame": 1,
+          "proposedRect": [
+            783,
+            0,
+            157,
+            156
+          ],
+          "observedAlphaBounds": [
+            825,
+            25,
+            923,
+            156
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southeast.walk.2",
+          "direction": "southeast",
+          "pose": "walk",
+          "frame": 2,
+          "proposedRect": [
+            940,
+            0,
+            157,
+            156
+          ],
+          "observedAlphaBounds": [
+            973,
+            26,
+            1073,
+            156
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southeast.walk.3",
+          "direction": "southeast",
+          "pose": "walk",
+          "frame": 3,
+          "proposedRect": [
+            1097,
+            0,
+            157,
+            156
+          ],
+          "observedAlphaBounds": [
+            1119,
+            26,
+            1226,
+            156
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southwest.idle.0",
+          "direction": "southwest",
+          "pose": "idle",
+          "frame": 0,
+          "proposedRect": [
+            0,
+            156,
+            156,
+            157
+          ],
+          "observedAlphaBounds": [
+            50,
+            156,
+            153,
+            313
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southwest.idle.1",
+          "direction": "southwest",
+          "pose": "idle",
+          "frame": 1,
+          "proposedRect": [
+            156,
+            156,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            206,
+            156,
+            307,
+            313
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southwest.idle.2",
+          "direction": "southwest",
+          "pose": "idle",
+          "frame": 2,
+          "proposedRect": [
+            313,
+            156,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            364,
+            156,
+            464,
+            313
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southwest.idle.3",
+          "direction": "southwest",
+          "pose": "idle",
+          "frame": 3,
+          "proposedRect": [
+            470,
+            156,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            519,
+            156,
+            621,
+            313
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southwest.walk.0",
+          "direction": "southwest",
+          "pose": "walk",
+          "frame": 0,
+          "proposedRect": [
+            627,
+            156,
+            156,
+            157
+          ],
+          "observedAlphaBounds": [
+            677,
+            156,
+            775,
+            313
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southwest.walk.1",
+          "direction": "southwest",
+          "pose": "walk",
+          "frame": 1,
+          "proposedRect": [
+            783,
+            156,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            829,
+            156,
+            926,
+            313
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southwest.walk.2",
+          "direction": "southwest",
+          "pose": "walk",
+          "frame": 2,
+          "proposedRect": [
+            940,
+            156,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            979,
+            156,
+            1078,
+            313
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southwest.walk.3",
+          "direction": "southwest",
+          "pose": "walk",
+          "frame": 3,
+          "proposedRect": [
+            1097,
+            156,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            1122,
+            156,
+            1224,
+            313
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northeast.idle.0",
+          "direction": "northeast",
+          "pose": "idle",
+          "frame": 0,
+          "proposedRect": [
+            0,
+            313,
+            156,
+            157
+          ],
+          "observedAlphaBounds": [
+            50,
+            313,
+            155,
+            470
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northeast.idle.1",
+          "direction": "northeast",
+          "pose": "idle",
+          "frame": 1,
+          "proposedRect": [
+            156,
+            313,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            208,
+            313,
+            309,
+            470
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northeast.idle.2",
+          "direction": "northeast",
+          "pose": "idle",
+          "frame": 2,
+          "proposedRect": [
+            313,
+            313,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            364,
+            313,
+            468,
+            470
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northeast.idle.3",
+          "direction": "northeast",
+          "pose": "idle",
+          "frame": 3,
+          "proposedRect": [
+            470,
+            313,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            520,
+            313,
+            624,
+            470
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northeast.walk.0",
+          "direction": "northeast",
+          "pose": "walk",
+          "frame": 0,
+          "proposedRect": [
+            627,
+            313,
+            156,
+            157
+          ],
+          "observedAlphaBounds": [
+            675,
+            313,
+            779,
+            470
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northeast.walk.1",
+          "direction": "northeast",
+          "pose": "walk",
+          "frame": 1,
+          "proposedRect": [
+            783,
+            313,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            830,
+            313,
+            932,
+            470
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northeast.walk.2",
+          "direction": "northeast",
+          "pose": "walk",
+          "frame": 2,
+          "proposedRect": [
+            940,
+            313,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            981,
+            313,
+            1086,
+            470
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northeast.walk.3",
+          "direction": "northeast",
+          "pose": "walk",
+          "frame": 3,
+          "proposedRect": [
+            1097,
+            313,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            1128,
+            313,
+            1234,
+            470
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northwest.idle.0",
+          "direction": "northwest",
+          "pose": "idle",
+          "frame": 0,
+          "proposedRect": [
+            0,
+            470,
+            156,
+            157
+          ],
+          "observedAlphaBounds": [
+            41,
+            470,
+            151,
+            627
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northwest.idle.1",
+          "direction": "northwest",
+          "pose": "idle",
+          "frame": 1,
+          "proposedRect": [
+            156,
+            470,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            199,
+            470,
+            306,
+            627
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northwest.idle.2",
+          "direction": "northwest",
+          "pose": "idle",
+          "frame": 2,
+          "proposedRect": [
+            313,
+            470,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            360,
+            470,
+            466,
+            627
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northwest.idle.3",
+          "direction": "northwest",
+          "pose": "idle",
+          "frame": 3,
+          "proposedRect": [
+            470,
+            470,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            513,
+            470,
+            623,
+            627
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northwest.walk.0",
+          "direction": "northwest",
+          "pose": "walk",
+          "frame": 0,
+          "proposedRect": [
+            627,
+            470,
+            156,
+            157
+          ],
+          "observedAlphaBounds": [
+            674,
+            470,
+            777,
+            627
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northwest.walk.1",
+          "direction": "northwest",
+          "pose": "walk",
+          "frame": 1,
+          "proposedRect": [
+            783,
+            470,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            824,
+            470,
+            929,
+            627
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northwest.walk.2",
+          "direction": "northwest",
+          "pose": "walk",
+          "frame": 2,
+          "proposedRect": [
+            940,
+            470,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            970,
+            470,
+            1074,
+            627
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northwest.walk.3",
+          "direction": "northwest",
+          "pose": "walk",
+          "frame": 3,
+          "proposedRect": [
+            1097,
+            470,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            1123,
+            470,
+            1229,
+            627
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southeast.rest.0",
+          "direction": "southeast",
+          "pose": "rest",
+          "frame": 0,
+          "proposedRect": [
+            0,
+            627,
+            156,
+            156
+          ],
+          "observedAlphaBounds": [
+            29,
+            627,
+            156,
+            783
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southeast.rest.1",
+          "direction": "southeast",
+          "pose": "rest",
+          "frame": 1,
+          "proposedRect": [
+            156,
+            627,
+            157,
+            156
+          ],
+          "observedAlphaBounds": [
+            156,
+            627,
+            313,
+            783
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southeast.gather.0",
+          "direction": "southeast",
+          "pose": "gather",
+          "frame": 0,
+          "proposedRect": [
+            313,
+            627,
+            157,
+            156
+          ],
+          "observedAlphaBounds": [
+            313,
+            627,
+            468,
+            783
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southeast.gather.1",
+          "direction": "southeast",
+          "pose": "gather",
+          "frame": 1,
+          "proposedRect": [
+            470,
+            627,
+            157,
+            156
+          ],
+          "observedAlphaBounds": [
+            515,
+            627,
+            627,
+            783
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southeast.carry.wood.0",
+          "direction": "southeast",
+          "pose": "carry.wood",
+          "frame": 0,
+          "proposedRect": [
+            627,
+            627,
+            156,
+            156
+          ],
+          "observedAlphaBounds": [
+            667,
+            627,
+            781,
+            783
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southeast.carry.wood.1",
+          "direction": "southeast",
+          "pose": "carry.wood",
+          "frame": 1,
+          "proposedRect": [
+            783,
+            627,
+            157,
+            156
+          ],
+          "observedAlphaBounds": [
+            816,
+            627,
+            933,
+            783
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southeast.build.0",
+          "direction": "southeast",
+          "pose": "build",
+          "frame": 0,
+          "proposedRect": [
+            940,
+            627,
+            157,
+            156
+          ],
+          "observedAlphaBounds": [
+            968,
+            627,
+            1097,
+            783
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southeast.build.1",
+          "direction": "southeast",
+          "pose": "build",
+          "frame": 1,
+          "proposedRect": [
+            1097,
+            627,
+            157,
+            156
+          ],
+          "observedAlphaBounds": [
+            1119,
+            627,
+            1244,
+            783
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southwest.rest.0",
+          "direction": "southwest",
+          "pose": "rest",
+          "frame": 0,
+          "proposedRect": [
+            0,
+            783,
+            156,
+            157
+          ],
+          "observedAlphaBounds": [
+            35,
+            783,
+            156,
+            938
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southwest.rest.1",
+          "direction": "southwest",
+          "pose": "rest",
+          "frame": 1,
+          "proposedRect": [
+            156,
+            783,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            156,
+            783,
+            313,
+            938
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southwest.gather.0",
+          "direction": "southwest",
+          "pose": "gather",
+          "frame": 0,
+          "proposedRect": [
+            313,
+            783,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            313,
+            783,
+            470,
+            940
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southwest.gather.1",
+          "direction": "southwest",
+          "pose": "gather",
+          "frame": 1,
+          "proposedRect": [
+            470,
+            783,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            470,
+            783,
+            627,
+            940
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southwest.carry.wood.0",
+          "direction": "southwest",
+          "pose": "carry.wood",
+          "frame": 0,
+          "proposedRect": [
+            627,
+            783,
+            156,
+            157
+          ],
+          "observedAlphaBounds": [
+            627,
+            783,
+            775,
+            940
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southwest.carry.wood.1",
+          "direction": "southwest",
+          "pose": "carry.wood",
+          "frame": 1,
+          "proposedRect": [
+            783,
+            783,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            804,
+            783,
+            922,
+            940
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southwest.build.0",
+          "direction": "southwest",
+          "pose": "build",
+          "frame": 0,
+          "proposedRect": [
+            940,
+            783,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            955,
+            783,
+            1097,
+            940
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "southwest.build.1",
+          "direction": "southwest",
+          "pose": "build",
+          "frame": 1,
+          "proposedRect": [
+            1097,
+            783,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            1097,
+            783,
+            1244,
+            940
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northeast.rest.0",
+          "direction": "northeast",
+          "pose": "rest",
+          "frame": 0,
+          "proposedRect": [
+            0,
+            940,
+            156,
+            157
+          ],
+          "observedAlphaBounds": [
+            29,
+            959,
+            154,
+            1097
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northeast.rest.1",
+          "direction": "northeast",
+          "pose": "rest",
+          "frame": 1,
+          "proposedRect": [
+            156,
+            940,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            197,
+            962,
+            313,
+            1097
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northeast.gather.0",
+          "direction": "northeast",
+          "pose": "gather",
+          "frame": 0,
+          "proposedRect": [
+            313,
+            940,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            313,
+            940,
+            470,
+            1097
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northeast.gather.1",
+          "direction": "northeast",
+          "pose": "gather",
+          "frame": 1,
+          "proposedRect": [
+            470,
+            940,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            470,
+            940,
+            626,
+            1097
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northeast.carry.wood.0",
+          "direction": "northeast",
+          "pose": "carry.wood",
+          "frame": 0,
+          "proposedRect": [
+            627,
+            940,
+            156,
+            157
+          ],
+          "observedAlphaBounds": [
+            665,
+            940,
+            783,
+            1097
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northeast.carry.wood.1",
+          "direction": "northeast",
+          "pose": "carry.wood",
+          "frame": 1,
+          "proposedRect": [
+            783,
+            940,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            822,
+            940,
+            939,
+            1097
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northeast.build.0",
+          "direction": "northeast",
+          "pose": "build",
+          "frame": 0,
+          "proposedRect": [
+            940,
+            940,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            955,
+            940,
+            1097,
+            1097
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northeast.build.1",
+          "direction": "northeast",
+          "pose": "build",
+          "frame": 1,
+          "proposedRect": [
+            1097,
+            940,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            1097,
+            940,
+            1240,
+            1091
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northwest.rest.0",
+          "direction": "northwest",
+          "pose": "rest",
+          "frame": 0,
+          "proposedRect": [
+            0,
+            1097,
+            156,
+            157
+          ],
+          "observedAlphaBounds": [
+            37,
+            1097,
+            156,
+            1224
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northwest.rest.1",
+          "direction": "northwest",
+          "pose": "rest",
+          "frame": 1,
+          "proposedRect": [
+            156,
+            1097,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            156,
+            1097,
+            313,
+            1224
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northwest.gather.0",
+          "direction": "northwest",
+          "pose": "gather",
+          "frame": 0,
+          "proposedRect": [
+            313,
+            1097,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            313,
+            1097,
+            470,
+            1224
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northwest.gather.1",
+          "direction": "northwest",
+          "pose": "gather",
+          "frame": 1,
+          "proposedRect": [
+            470,
+            1097,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            470,
+            1097,
+            627,
+            1226
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northwest.carry.wood.0",
+          "direction": "northwest",
+          "pose": "carry.wood",
+          "frame": 0,
+          "proposedRect": [
+            627,
+            1097,
+            156,
+            157
+          ],
+          "observedAlphaBounds": [
+            627,
+            1097,
+            777,
+            1229
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northwest.carry.wood.1",
+          "direction": "northwest",
+          "pose": "carry.wood",
+          "frame": 1,
+          "proposedRect": [
+            783,
+            1097,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            807,
+            1097,
+            926,
+            1230
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northwest.build.0",
+          "direction": "northwest",
+          "pose": "build",
+          "frame": 0,
+          "proposedRect": [
+            940,
+            1097,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            955,
+            1097,
+            1087,
+            1230
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "northwest.build.1",
+          "direction": "northwest",
+          "pose": "build",
+          "frame": 1,
+          "proposedRect": [
+            1097,
+            1097,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            1109,
+            1097,
+            1238,
+            1228
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        }
+      ]
+    },
+    {
+      "path": "artifacts/art/world.png",
+      "sha256": "dc89961da7a33f7ad0cbaaeb3779431ff0bfa9fe9bf41d0a87347c48989a8878",
+      "format": "image/png",
+      "width": 1254,
+      "height": 1254,
+      "color": "RGBA",
+      "bitDepth": 8,
+      "grid": [
+        8,
+        8
+      ],
+      "safeUniformExtraction": false,
+      "slots": [
+        {
+          "name": "temperate.tree.mature",
+          "biome": "temperate",
+          "proposedRect": [
+            0,
+            0,
+            156,
+            156
+          ],
+          "observedAlphaBounds": [
+            22,
+            24,
+            156,
+            156
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "temperate.tree.small",
+          "biome": "temperate",
+          "proposedRect": [
+            156,
+            0,
+            157,
+            156
+          ],
+          "observedAlphaBounds": [
+            156,
+            41,
+            313,
+            156
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "temperate.bush.berry",
+          "biome": "temperate",
+          "proposedRect": [
+            313,
+            0,
+            157,
+            156
+          ],
+          "observedAlphaBounds": [
+            313,
+            80,
+            470,
+            156
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "temperate.bush.depleted",
+          "biome": "temperate",
+          "proposedRect": [
+            470,
+            0,
+            157,
+            156
+          ],
+          "observedAlphaBounds": [
+            490,
+            88,
+            609,
+            156
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "temperate.stone.full",
+          "biome": "temperate",
+          "proposedRect": [
+            627,
+            0,
+            156,
+            156
+          ],
+          "observedAlphaBounds": [
+            634,
+            75,
+            783,
+            156
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "temperate.stone.reduced",
+          "biome": "temperate",
+          "proposedRect": [
+            783,
+            0,
+            157,
+            156
+          ],
+          "observedAlphaBounds": [
+            783,
+            104,
+            922,
+            156
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "temperate.wood.fallen",
+          "biome": "temperate",
+          "proposedRect": [
+            940,
+            0,
+            157,
+            156
+          ],
+          "observedAlphaBounds": [
+            949,
+            88,
+            1094,
+            156
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "temperate.detail.ground",
+          "biome": "temperate",
+          "proposedRect": [
+            1097,
+            0,
+            157,
+            156
+          ],
+          "observedAlphaBounds": [
+            1120,
+            90,
+            1227,
+            156
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "temperate.shelter.frame",
+          "biome": "temperate",
+          "proposedRect": [
+            0,
+            156,
+            156,
+            157
+          ],
+          "observedAlphaBounds": [
+            23,
+            156,
+            156,
+            313
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "temperate.shelter.partial",
+          "biome": "temperate",
+          "proposedRect": [
+            156,
+            156,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            156,
+            156,
+            313,
+            313
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "temperate.shelter.complete",
+          "biome": "temperate",
+          "proposedRect": [
+            313,
+            156,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            313,
+            156,
+            470,
+            313
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "temperate.terrain.base",
+          "biome": "temperate",
+          "proposedRect": [
+            470,
+            156,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            486,
+            156,
+            625,
+            313
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "temperate.terrain.transition",
+          "biome": "temperate",
+          "proposedRect": [
+            627,
+            156,
+            156,
+            157
+          ],
+          "observedAlphaBounds": [
+            633,
+            156,
+            783,
+            313
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "temperate.terrain.shore",
+          "biome": "temperate",
+          "proposedRect": [
+            783,
+            156,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            783,
+            156,
+            940,
+            313
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "temperate.water.ripple",
+          "biome": "temperate",
+          "proposedRect": [
+            940,
+            156,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            940,
+            156,
+            1097,
+            313
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "temperate.detail.foliage",
+          "biome": "temperate",
+          "proposedRect": [
+            1097,
+            156,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            1097,
+            156,
+            1232,
+            313
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "arid.tree.mature",
+          "biome": "arid",
+          "proposedRect": [
+            0,
+            313,
+            156,
+            157
+          ],
+          "observedAlphaBounds": [
+            21,
+            313,
+            156,
+            470
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "arid.tree.small",
+          "biome": "arid",
+          "proposedRect": [
+            156,
+            313,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            156,
+            313,
+            313,
+            470
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "arid.bush.berry",
+          "biome": "arid",
+          "proposedRect": [
+            313,
+            313,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            313,
+            313,
+            470,
+            470
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "arid.bush.depleted",
+          "biome": "arid",
+          "proposedRect": [
+            470,
+            313,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            470,
+            313,
+            611,
+            470
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "arid.stone.full",
+          "biome": "arid",
+          "proposedRect": [
+            627,
+            313,
+            156,
+            157
+          ],
+          "observedAlphaBounds": [
+            632,
+            313,
+            783,
+            470
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "arid.stone.reduced",
+          "biome": "arid",
+          "proposedRect": [
+            783,
+            313,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            783,
+            313,
+            918,
+            470
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "arid.wood.fallen",
+          "biome": "arid",
+          "proposedRect": [
+            940,
+            313,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            945,
+            313,
+            1097,
+            470
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "arid.detail.ground",
+          "biome": "arid",
+          "proposedRect": [
+            1097,
+            313,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            1097,
+            313,
+            1229,
+            470
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "arid.shelter.frame",
+          "biome": "arid",
+          "proposedRect": [
+            0,
+            470,
+            156,
+            157
+          ],
+          "observedAlphaBounds": [
+            21,
+            470,
+            156,
+            627
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "arid.shelter.partial",
+          "biome": "arid",
+          "proposedRect": [
+            156,
+            470,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            156,
+            470,
+            313,
+            627
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "arid.shelter.complete",
+          "biome": "arid",
+          "proposedRect": [
+            313,
+            470,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            313,
+            470,
+            470,
+            627
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "arid.terrain.base",
+          "biome": "arid",
+          "proposedRect": [
+            470,
+            470,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            470,
+            470,
+            627,
+            627
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "arid.terrain.transition",
+          "biome": "arid",
+          "proposedRect": [
+            627,
+            470,
+            156,
+            157
+          ],
+          "observedAlphaBounds": [
+            627,
+            470,
+            783,
+            627
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "arid.terrain.shore",
+          "biome": "arid",
+          "proposedRect": [
+            783,
+            470,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            783,
+            470,
+            940,
+            627
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "arid.water.ripple",
+          "biome": "arid",
+          "proposedRect": [
+            940,
+            470,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            940,
+            470,
+            1097,
+            627
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "arid.detail.foliage",
+          "biome": "arid",
+          "proposedRect": [
+            1097,
+            470,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            1097,
+            470,
+            1232,
+            627
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "cold.tree.mature",
+          "biome": "cold",
+          "proposedRect": [
+            0,
+            627,
+            156,
+            156
+          ],
+          "observedAlphaBounds": [
+            23,
+            627,
+            156,
+            783
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "cold.tree.small",
+          "biome": "cold",
+          "proposedRect": [
+            156,
+            627,
+            157,
+            156
+          ],
+          "observedAlphaBounds": [
+            156,
+            627,
+            307,
+            783
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "cold.bush.berry",
+          "biome": "cold",
+          "proposedRect": [
+            313,
+            627,
+            157,
+            156
+          ],
+          "observedAlphaBounds": [
+            337,
+            627,
+            470,
+            783
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "cold.bush.depleted",
+          "biome": "cold",
+          "proposedRect": [
+            470,
+            627,
+            157,
+            156
+          ],
+          "observedAlphaBounds": [
+            470,
+            627,
+            627,
+            783
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "cold.stone.full",
+          "biome": "cold",
+          "proposedRect": [
+            627,
+            627,
+            156,
+            156
+          ],
+          "observedAlphaBounds": [
+            627,
+            627,
+            783,
+            783
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "cold.stone.reduced",
+          "biome": "cold",
+          "proposedRect": [
+            783,
+            627,
+            157,
+            156
+          ],
+          "observedAlphaBounds": [
+            783,
+            627,
+            926,
+            783
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "cold.wood.fallen",
+          "biome": "cold",
+          "proposedRect": [
+            940,
+            627,
+            157,
+            156
+          ],
+          "observedAlphaBounds": [
+            946,
+            627,
+            1097,
+            783
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "cold.detail.ground",
+          "biome": "cold",
+          "proposedRect": [
+            1097,
+            627,
+            157,
+            156
+          ],
+          "observedAlphaBounds": [
+            1097,
+            627,
+            1228,
+            783
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "cold.shelter.frame",
+          "biome": "cold",
+          "proposedRect": [
+            0,
+            783,
+            156,
+            157
+          ],
+          "observedAlphaBounds": [
+            21,
+            783,
+            156,
+            940
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "cold.shelter.partial",
+          "biome": "cold",
+          "proposedRect": [
+            156,
+            783,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            156,
+            783,
+            313,
+            940
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "cold.shelter.complete",
+          "biome": "cold",
+          "proposedRect": [
+            313,
+            783,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            313,
+            783,
+            470,
+            940
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "cold.terrain.base",
+          "biome": "cold",
+          "proposedRect": [
+            470,
+            783,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            470,
+            783,
+            627,
+            940
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "cold.terrain.transition",
+          "biome": "cold",
+          "proposedRect": [
+            627,
+            783,
+            156,
+            157
+          ],
+          "observedAlphaBounds": [
+            627,
+            783,
+            783,
+            940
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "cold.terrain.shore",
+          "biome": "cold",
+          "proposedRect": [
+            783,
+            783,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            783,
+            783,
+            940,
+            940
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "cold.water.ripple",
+          "biome": "cold",
+          "proposedRect": [
+            940,
+            783,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            940,
+            783,
+            1097,
+            940
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "cold.detail.foliage",
+          "biome": "cold",
+          "proposedRect": [
+            1097,
+            783,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            1097,
+            783,
+            1233,
+            940
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "coast.tree.mature",
+          "biome": "coast",
+          "proposedRect": [
+            0,
+            940,
+            156,
+            157
+          ],
+          "observedAlphaBounds": [
+            21,
+            940,
+            156,
+            1095
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "coast.tree.small",
+          "biome": "coast",
+          "proposedRect": [
+            156,
+            940,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            156,
+            940,
+            313,
+            1094
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "coast.bush.berry",
+          "biome": "coast",
+          "proposedRect": [
+            313,
+            940,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            313,
+            940,
+            467,
+            1090
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "coast.bush.depleted",
+          "biome": "coast",
+          "proposedRect": [
+            470,
+            940,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            486,
+            940,
+            610,
+            1095
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "coast.stone.full",
+          "biome": "coast",
+          "proposedRect": [
+            627,
+            940,
+            156,
+            157
+          ],
+          "observedAlphaBounds": [
+            633,
+            940,
+            783,
+            1097
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "coast.stone.reduced",
+          "biome": "coast",
+          "proposedRect": [
+            783,
+            940,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            783,
+            940,
+            934,
+            1094
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "coast.wood.fallen",
+          "biome": "coast",
+          "proposedRect": [
+            940,
+            940,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            947,
+            940,
+            1097,
+            1097
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "coast.detail.ground",
+          "biome": "coast",
+          "proposedRect": [
+            1097,
+            940,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            1097,
+            940,
+            1231,
+            1094
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "coast.shelter.frame",
+          "biome": "coast",
+          "proposedRect": [
+            0,
+            1097,
+            156,
+            157
+          ],
+          "observedAlphaBounds": [
+            20,
+            1106,
+            156,
+            1231
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "coast.shelter.partial",
+          "biome": "coast",
+          "proposedRect": [
+            156,
+            1097,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            156,
+            1106,
+            313,
+            1231
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "coast.shelter.complete",
+          "biome": "coast",
+          "proposedRect": [
+            313,
+            1097,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            313,
+            1101,
+            470,
+            1231
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "coast.terrain.base",
+          "biome": "coast",
+          "proposedRect": [
+            470,
+            1097,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            470,
+            1121,
+            627,
+            1225
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "coast.terrain.transition",
+          "biome": "coast",
+          "proposedRect": [
+            627,
+            1097,
+            156,
+            157
+          ],
+          "observedAlphaBounds": [
+            627,
+            1097,
+            783,
+            1226
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "coast.terrain.shore",
+          "biome": "coast",
+          "proposedRect": [
+            783,
+            1097,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            783,
+            1123,
+            940,
+            1233
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "coast.water.ripple",
+          "biome": "coast",
+          "proposedRect": [
+            940,
+            1097,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            940,
+            1097,
+            1097,
+            1230
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        },
+        {
+          "name": "coast.detail.foliage",
+          "biome": "coast",
+          "proposedRect": [
+            1097,
+            1097,
+            157,
+            157
+          ],
+          "observedAlphaBounds": [
+            1097,
+            1125,
+            1232,
+            1229
+          ],
+          "candidateAnchorNormalized": [
+            0.5,
+            0.84
+          ],
+          "approved": false
+        }
+      ]
+    }
+  ]
+}
