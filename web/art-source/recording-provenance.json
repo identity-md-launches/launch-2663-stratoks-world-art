@@ -1,0 +1,14 @@
+{
+  "source": "https://stratoks.2-29-11-211.sslip.io/api/expanse/frame?x=-10&y=-10&w=80&h=80&creature=602",
+  "capturedAt": "2026-10-29T10:38:07.058797+00:00",
+  "worldId": "world-20260101-0",
+  "tick": 171933,
+  "population": 120,
+  "purpose": "Frozen read-only API capture for a clearly labeled static preview; never replayed as a live connection. Only the returned inspector is included.",
+  "bounds": {
+    "x0": -10,
+    "y0": -10,
+    "w": 80,
+    "h": 80
+  }
+}

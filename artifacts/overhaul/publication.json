@@ -1,0 +1,10 @@
+{
+  "status": "automatic-after-submission",
+  "export": "dist/",
+  "attemptedCommand": "imd site publish dist --name stratoks-world-review-9d45fb3f",
+  "exitCode": 2,
+  "toolResponse": "refused: imd site publishes this contributor's own site, never a job's work. A job's website is hosted by the plane when the job completes: commit the source and the export in dist/ and submit. There is nothing to publish and nothing to ask an operator for.",
+  "publicUrl": null,
+  "note": "The IMD CLI refuses job work on the contributor\u2019s personal site route. Its response states that the plane hosts the job website when the job completes. The current export is ready; no manual public URL is claimed.",
+  "ownerVpsModified": false
+}

@@ -1,0 +1,110 @@
+{
+  "mode": "actual isolated browser engine; no shared world",
+  "results": [
+    {
+      "source": "demo",
+      "tick": 6,
+      "biome": "cold",
+      "viewport": {
+        "x": -28,
+        "y": -109,
+        "w": 55,
+        "h": 56
+      },
+      "kinds": [
+        "stone",
+        "flint",
+        "tree",
+        "deadfall",
+        "lichen"
+      ]
+    },
+    {
+      "source": "demo",
+      "tick": 9,
+      "biome": "arid",
+      "viewport": {
+        "x": 95,
+        "y": -28,
+        "w": 56,
+        "h": 55
+      },
+      "kinds": [
+        "cactus",
+        "stone",
+        "scrub",
+        "flint",
+        "deadfall"
+      ]
+    },
+    {
+      "source": "demo",
+      "tick": 13,
+      "biome": "coast",
+      "viewport": {
+        "x": -104,
+        "y": 81,
+        "w": 55,
+        "h": 55
+      },
+      "kinds": [
+        "driftwood",
+        "scrub",
+        "shellfish",
+        "bush",
+        "stone"
+      ]
+    }
+  ],
+  "computedHudContrast": [
+    {
+      "foreground": "--hud-text",
+      "background": "--hud",
+      "foregroundHex": "#f5efd9",
+      "backgroundHex": "#25362e",
+      "ratio": 11.08
+    },
+    {
+      "foreground": "--hud-muted",
+      "background": "--hud",
+      "foregroundHex": "#bdc8b6",
+      "backgroundHex": "#25362e",
+      "ratio": 7.35
+    },
+    {
+      "foreground": "--hud-muted",
+      "background": "--hud-hover",
+      "foregroundHex": "#bdc8b6",
+      "backgroundHex": "#405347",
+      "ratio": 4.75
+    },
+    {
+      "foreground": "--hud-deep",
+      "background": "--gold",
+      "foregroundHex": "#1d2b25",
+      "backgroundHex": "#e8c36e",
+      "ratio": 8.75
+    },
+    {
+      "foreground": "--gold",
+      "background": "--hud-deep",
+      "foregroundHex": "#e8c36e",
+      "backgroundHex": "#1d2b25",
+      "ratio": 8.75
+    },
+    {
+      "foreground": "--focus",
+      "background": "--hud",
+      "foregroundHex": "#ffe1a0",
+      "backgroundHex": "#25362e",
+      "ratio": 10.04
+    }
+  ],
+  "font": [
+    {
+      "family": "Manrope Variable",
+      "status": "loaded",
+      "weight": "200 800"
+    }
+  ]
+}

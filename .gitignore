@@ -21,3 +21,8 @@ artifacts/*
 !.env.example
 *.key
 *.pem
+
+# Interface evidence and patch: artifacts/overhaul/** has an explicit 4 MiB budget.
+# Runtime art, editable PNG sources and dist together have a separate 4 MiB budget.
+!artifacts/overhaul/
+!artifacts/overhaul/**

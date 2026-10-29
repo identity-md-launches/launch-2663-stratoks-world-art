@@ -1,0 +1,41 @@
+{
+  "typecheck": {
+    "command": "cd web && npm run typecheck",
+    "exitCode": 0
+  },
+  "clientTests": {
+    "command": "cd web && npm test",
+    "exitCode": 0,
+    "passed": 17
+  },
+  "expanseTests": {
+    "command": "cd web && npx tsx --test src/expanse/*.test.ts",
+    "exitCode": 0,
+    "passed": 7
+  },
+  "build": {
+    "command": "cd web && npm run build",
+    "exitCode": 0
+  },
+  "atlas": {
+    "command": "python3 tools/art/validate_renderer.py",
+    "exitCode": 0,
+    "sprites": 134
+  },
+  "browser": {
+    "command": "node web/scripts/overhaul-check.mjs --live",
+    "exitCode": 0
+  },
+  "biomes": {
+    "command": "node web/scripts/biomes-check.mjs",
+    "exitCode": 0
+  },
+  "taste": {
+    "checksPassed": 16,
+    "checksTotal": 16
+  },
+  "serverAndBuildConfigurationIntegrity": {
+    "against": "fc1df0f9e641d05b7e32e1c96cb1b963e61576aa",
+    "changed": false
+  }
+}

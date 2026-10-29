@@ -1,0 +1,1 @@
+PASS: 134 padded sprite rectangles; all sheets, hashes, alpha, anchors and manifest copies valid.

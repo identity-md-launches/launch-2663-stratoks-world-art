@@ -1,98 +1,68 @@
-# Stratoks design system
+# STRATOKS interface system
 
 ## Overview
 
-Stratoks is an observation tool for a persistent world of small learning creatures. The final client keeps the pinned release’s warm paper, forest greens, Manrope typography, mascot and line icons. The Expanse uses an overhead terrain map to make large-world navigation legible; the original isometric settlement remains available at `#settlement`.
+STRATOKS is an observer interface for the existing Expanse simulation. A bright, painted miniature world fills the screen; compact dark moss controls sit over it. The artwork and the HUD have separate jobs: creatures, resources and shelters explain the world, while the HUD identifies the source, time, residents and evidence. The static review opens a **recorded preview**, with an explicit isolated demo and an owner-server connection option.
 
-The working product takes priority over introductory copy. At 390px, the name, **Connect server**, **Explore demo** and terrain map are visible on the first screen. The main visual idea is a quiet field atlas with real evidence beside the landscape. There are no decorative gradients, invented metrics, fake conversations or entrance animations.
-
-Canonical global tokens live in `web/src/styles.css`; Expanse composition and component styles live in `web/src/expanse/expanse.css`. `web/src/main.tsx` loads the base styles before the Expanse extension. Preserve the legacy settlement’s established surfaces outside this integration.
+Canonical implementation: `web/src/expanse/expanse.css`, `App.tsx`, `Map.tsx`, `Inspector.tsx`, `worldRenderer.ts`, and `projection.ts`. The archived settlement retains its existing design and is disabled by the shipped runtime configuration.
 
 ## Colors
 
-These are the implemented CSS custom properties, retained in hex notation:
+Tokens are scoped to `.exp-app`; reuse these roles rather than copying a nearby color.
 
 | Token | Value | Role |
 | --- | --- | --- |
-| `--paper` | `#fafaf1` | Page, panel and button surface |
-| `--surface` | `#f3f4e8` | Quiet strips and grouped evidence |
-| `--soft` | `#e9eddf` | Selected controls, meters and number markers |
-| `--ink` | `#263f31` | Primary text |
-| `--muted` | `#5c6c58` | Secondary text and instructions |
-| `--line` | `#d9dece` | Structural separators and outlines |
-| `--accent` | `#315d40` | Filled primary action |
-| `--accent-hover` | `#244b32` | Primary hover |
-| `--danger` | `#98462e` | Error text and critical need meter |
-| `--danger-bg` | `#f4e5da` | Connection/validation error surface |
-| `--focus` | `#29592e` | Keyboard focus ring |
+| `--hud-deep` | `#1d2b25` | Header, footer, recessed fields |
+| `--hud` | `#25362e` | Floating surfaces and inspector |
+| `--hud-raised` | `#30443a` | Neutral controls |
+| `--hud-hover` | `#405347` | Hover and active neutral controls |
+| `--hud-text` | `#f5efd9` | Primary text |
+| `--hud-muted` | `#bdc8b6` | Secondary text |
+| `--gold` | `#e8c36e` | Primary button fill, selected controls, focus |
+| `--gold-hover` | `#f0d494` | Primary hover |
+| `--hud-line` | `#4c6050` | Structural dividers |
+| `--hud-danger` | `#f3b3a1` | Recorded failures and errors |
+| `--focus` | `#ffe1a0` | DOM control focus outlines |
 
-The text/background token pairs were calculated with WCAG 2 sRGB luminance and checked against their rendered roles: ink/paper 10.89:1, muted/paper 5.35:1, muted/surface 5.06:1, primary text/accent 7.22:1, danger/danger-bg 5.25:1. See `artifacts/phase2b/raw/stratoks-contrast.json`. The taste probe measures resolved solid backgrounds; it does not establish contrast over every canvas pixel or blended background. Focus on maps has a paper inset beneath the green ring so it stays distinct from terrain.
-
-Map artwork is encoded in `web/src/expanse/Map.tsx`, separately from UI status colors. Atlas representatives are temperate `#819b69`, arid `#cfb47b`, cold `#becbd0`, coast `#78a5ae`; gray `#e0e2d5` means unmaterialized. Terrain uses eleven actual engine tile classes, with lakes, sea, shallows and streams distinguished from traversable ground. A legend names categories; color is accompanied by text or geometry. Creature art is gold and selection adds a light ring. Higher hunger/thirst is worse; native need meters use the opposite optimum from health, energy and warmth, with `#b47b47` for intermediate and danger for critical values.
+A connection also has a written label; color alone never distinguishes live, recorded, private demo or offline state. The renderer uses terrain colors indexed by the server's existing tile IDs, locally bundled paint textures, and turquoise water. Fog outside received terrain is blue gray. The art palette does not determine physics. Measured HUD contrast and unmeasured canvas pairs are recorded in `artifacts/overhaul/VALIDATION.md`.
 
 ## Typography
 
-The only text family is **Manrope Variable**, with `Manrope, Arial, sans-serif` fallbacks. `@font-face` loads the local WOFF2 provided by `@fontsource-variable/manrope` and declares the font’s 200–800 range. The interface uses three weights: 400 for prose/data, 600 for controls and subheadings, 800 for the brand and main heading. No additional font is fetched at runtime.
+The existing local Manrope Variable WOFF2 is defined in `web/src/styles.css`; use weights 400, 600 and 800. The world title and resident name use the system stack Georgia / Times New Roman / serif at weight 400. No remote font is required, and no particular installed serif face is assumed.
 
-| Token | Size | Use |
-| --- | --- | --- |
-| `--text-xs` | 12px | Dense evidence, map chrome, captions, secondary data |
-| `--text-sm` | 14px | Short descriptions, panel titles, major buttons |
-| `--text-md` | 16px | Inputs and mobile inspector empty heading |
-| `--text-lg` | 20px | Desktop empty state, phone brand |
-| `--text-xl` | 24px | Desktop brand, creature name, phone main heading |
-| `--text-display` | 32px | Desktop main heading |
-
-Body line-height is 1.5–1.6; the main heading uses 1.2. Display/brand tracking is −0.04em; other content uses natural spacing. Headings use balanced wrapping; prose uses pretty wrapping. Dynamic coordinates, meter values and predictions use tabular numerals where defined. Important IDs, outcomes and observations wrap rather than truncate; the episode list permits long keys to break. Mobile search and URL fields are 16px. The map compass is artwork rather than a seventh text size.
+The six sizes are 12, 14, 16, 20, 24 and 32 CSS pixels. Captions and evidence data use 12; controls and dense inspector prose use 14; form inputs and section headings use 16; the compact brand uses 20; resident names and the narrow world title use 24; the wide world title uses 32. Body line height is 1.5–1.6; short headings use 1.15–1.25. Brand tracking is −0.025em and the large title is −0.02em; body tracking is natural. Counters use tabular numerals. Names, resource keys and evidence wrap instead of being truncated. Inputs stay at 16px on phones.
 
 ## Layout
 
-The page is capped at 1440px. Desktop main padding is 28px; the header shares the page edge. The map and inspector use `minmax(0,1fr) 350px` with a 24px gap. Records and atlas repeat the same column widths below them. Containers allow intrinsic text growth; normal document scrolling reaches the complete interface.
+The application occupies `100dvh`, with `100vh` fallback. Desktop rows are a 68px header, 34px status strip, flexible world and 34px footer. Header/footer rows add the corresponding safe-area inset. Floating controls use 24–28px outer insets, 8–12px local gaps and 16–24px spacing between groups. Controls are usually 40–44px, with 32–36px controls in the compact landscape toolbar.
 
-Spacing is pragmatic and extracted from the implementation: 4–10px within compact control/data rows, 12–16px inside groups, 18–24px between groups, and 28–32px for outer sections. Do not invent another spacing or type system for a new panel.
+The world is the primary content, without a marketing hero. Above 700px the optional inspector takes 352px, increasing to 368px above 1100px. At 1000px and below, chrome becomes more compact. At 700px and below, the header/status/footer are 60/32/30px plus safe areas; the inspector becomes a scrolling bottom sheet occupying 44% of the workspace. The remaining map is a separate viewport, so the sheet does not cover its selected creature. Selection recenters on phones, and following recenters against the actual resized canvas. At widths of 360px and below, the brand and control spacing tighten.
 
-Responsive rules in `expanse.css`:
-
-- At 1100px and below: inspector/atlas columns become 320px, main padding becomes 24px and the map’s secondary heading label is hidden.
-- At 850px and below: inspector moves below the map; its empty state becomes a compact horizontal explanation. The loaded inspector scrolls within a bounded 620px evidence area. The atlas and records can still share a row.
-- At 600px and below: main padding is 16px, main heading is 24px, the map becomes square, records and atlas stack, and the header keeps the brand and server control visible. Settlement remains available in the footer and connection dialog. The long start-strip explanation is hidden, while its action remains visible.
-- At 360px and below: redundant record-tab icons disappear and their padding decreases. This fixes the measured WebKit overflow at 320px without hiding any label or view.
-
-The canvas uses its measured aspect ratio for the requested viewport and minimap outline. Device-pixel ratio is capped at 2. Map controls remain 44px. Atlas navigation has a keyboard equivalent. Touch panning and button zoom are supported; pinch zoom is not implemented.
-
-Rendered reflow was checked at 320, 390, 768 and 1440 in Chromium and WebKit. Native device, browser-native 200% zoom and RTL layout were not tested.
+Short landscape windows below 500px height use a horizontal tool rail and zoom group; the atlas collapses to a toggle. Content panels retain their own scroll area. The application itself does not scroll horizontally. Rendered checks cover 320×844, 390×844, 851×1000, 851×393 and 1440×900. Physical safe-area behavior is not independently device-tested.
 
 ## Elevation & Depth
 
-Panels use a single structural border with no shadow. Within a panel, evidence is grouped by spacing and quiet tonal strips, not stacked cards. The floating map-control rail has a small `0 3px 12px #263f3120` shadow and no enclosing border. Its internal separators are functional. The base `--shadow` remains `0 8px 32px #243e3020` for preserved settlement overlays. Native modal dialogs retain the legacy backdrop and top-level elevation. No decorative depth is added to ordinary content rows.
+HUD panels have solid moss backgrounds and restrained transparent shadows. Divider borders communicate evidence/list structure; ordinary raised HUD surfaces do not combine a border and shadow. Layer order is terrain, sorted world objects, map controls, inspector, then the native modal dialog. Canvas sprites sort by projected ground depth. Sunlight is a restrained observer treatment, not invented simulation weather.
+
+The canvas focus indicator is inset within the clipping boundary and uses a two-color gold/charcoal perimeter. Other controls use the focus token. Decorative layers do not intercept pointers.
 
 ## Shapes
 
-Expanse panels use 12px corners; ordinary buttons and fields use 8px; map captions and evidence strips use 6px; status dots, selection rings and numbered step markers are circular. The retained base `--radius: 16px` belongs to existing settlement surfaces. The mascot, line-icon paths and favicon remain original pinned assets. The map clips only its artwork; labels, error text and evidence remain reachable.
+Buttons and fields use 8px radii, tool groups 10–12px, the scene title a 3px leading corner with 18px outer corners, and the modal 18px. Mobile inspector top corners are 16px. Portraits use circular recessed surfaces. The world itself uses transparent painted silhouettes, not rectangular entity cards.
 
 ## Components
 
-| Source / pattern | Purpose and states |
-| --- | --- |
-| `expanse/App.tsx` | Product shell, connection/demo state, polling lifecycle, roster search, discovery/social views. Explicit preview, connecting, connected and stale states. Server changes clear the old projection; errors retain and label the last frame. |
-| `expanse/Map.tsx` · `WorldMap` | Real viewport rendering, pointer/keyboard pan, wheel/button/key zoom and selection. Decorated geometry never substitutes for simulator movement. Controls are disabled in terrain-only preview. Manual movement stops following. |
-| `expanse/Map.tsx` · `MiniMap` | Materialized chunk representatives, settlement outline and current camera footprint. Pointer navigation plus arrow-key equivalent. No claim that the atlas is an agent’s knowledge. |
-| `expanse/Inspector.tsx` · `CreatureInspector` | Actual need meters, follow/download controls and Plans/Perception/Learning views. Loading, unavailable and empty states are explicit. Mobile resident selection scrolls to the inspector and focuses its heading. |
-| `expanse/Inspector.tsx` · `PlanEvidence` | Numbered selected steps. Prediction and actual outcome share one layout across current/recent plans. Untested priors, failures, pending and unexecuted steps are distinct text states. |
-| `expanse/transport.ts` | HTTPS configuration validation, coherent v1 frame validation, request cancellation/timeouts and isolated worker transport. No world write method. |
-| `Modal.tsx` | Retained native `<dialog>` with focus trapping, Escape/backdrop closure and focus restoration. Shared by connection and help. |
-| `.primary`, `.exp-button`, `.exp-icon`, `.exp-text-button` | One filled action per view; outlined/quiet alternatives; hover, pressed, disabled and visible keyboard focus states. The 44px control target is used for map/header actions. |
-| `icons.tsx` · `Icon`, `Mascot` | Original reusable decorative SVG artwork. Line icons use current color and a consistent 1.7 stroke. Accessible names belong to the containing control. |
+- `WorldMap` in `Map.tsx`: canvas pan, pointer picking, keyboard arrows and +/−, pointer-centered wheel zoom, two-finger pinch, home control, visual loading/error state. `onAspect` reports its real size. The canvas has an accessible description and a complete roster-based selection alternative.
+- `MiniMap` in `Map.tsx`: materialized chunk biomes, living roster, original settlement boundary and an isometric viewport polygon. Click and arrow navigation share the world coordinate transform. The atlas can expand; short landscape layouts start compact.
+- `WorldRenderer` in `worldRenderer.ts`: caches terrain in an offscreen canvas, culls objects, depth-sorts sprites and interpolates only adjacent confirmed positions. Distant changes snap because intermediate paths are unavailable. Idle/walk sequences use deterministic per-ID phase and fur glints; no personality is inferred from their appearance. Animation is limited to 30 visual updates per second and stops under reduced motion or Pause visual motion. Simulation polling continues.
+- `CreatureInspector` in `Inspector.tsx`: actual identity, needs and inventory; Follow; JSON evidence download; native expandable Plans, Perception and Learning panels. Predictions, uncertainty, actual results and missing evidence remain distinct. A capture without that resident's inspector says so explicitly.
+- `.exp-side-panel`: one responsive panel for residents, inspector or records. Close/Escape returns focus to the map; selecting a roster entry focuses its resident heading. It is not a modal.
+- `Modal` in `web/src/Modal.tsx`: native dialog, inert background, Tab containment, Escape and focus return. World settings use a visible URL label, native URL input, inline validation and focused invalid field. Help explains source scopes and controls.
+- `.exp-button.primary`, `.exp-button`, `.exp-icon`, `.exp-text-button`: gold primary, moss secondary, named icon action and compact text action. Hover, focus, pressed, pending and disabled states are explicit. Transitions name only background, color and scale; press scale is 0.96 with motion preference respected.
+- `Portrait` and `drawSprite` in `art.tsx`: reuse the same bundled character sheet in HUD and world. `web/public/art/manifest.json` defines sprite rectangles, dimensions, anchors, appearance gates, provenance and licenses. Editable raster sources live in `web/art-source/`.
 
-Evidence disclosure uses native `details/summary`, meters use native semantics, and lists use real list markup. The record view selectors and inspector selectors are native pressed buttons rather than partially implemented ARIA tabs. New async status copy uses an existing polite region. Periodic simulation ticks are not announced to assistive technology on every update.
+## Do's and Don'ts
 
-Only color/transform properties transition, for 150ms, under `prefers-reduced-motion: no-preference`. Press scale is 0.96. There are no autoplay animations to pause; the private simulation itself has a Pause control. Reduced motion does not stop server state from progressing.
+Start another observer surface with these tokens, button classes and native disclosure/dialog patterns. Keep the bright world visible, use one source scope consistently, and put actions beside the content they affect. Use `projection.ts` for every camera, viewport, minimap or picking calculation; never adjust world coordinates to make art fit.
 
-## Do’s and Don’ts
-
-- Reuse the six text tokens, existing Manrope, current icons and paper/forest color roles for another panel. Start from `.exp-panel-title` plus ordinary spaced content or a native disclosure.
-- Put controls above the data they change. Keep the map and main action on the phone’s first screen; keep evidence and error text readable without ellipsis.
-- Label data origin, observation tick, missing outcomes and bounded history. Keep observer geography separate from an agent’s memory.
-- Use a secondary action when another filled primary is already visible. Use borders for structure and shadows only for floating controls/overlays.
-- Keep demos visibly isolated and temporary. Never fill an empty discovery feed, invent a successful plan, treat a prior as a learned result or imply that viewing changes the world’s physics.
-- Do not add speech, an assigned leader, token/payment flows, arbitrary motion or a second font as decorative polish.
+Only draw resources and shelters supplied by the API. Fire requires an engine fire record; carrying wood requires inspected wood inventory plus the matching action. Keep unavailable construction stages unused. Do not add pretend thoughts, speech, usable roads, resources, shops or control actions. Keep the isolated demo separate from the existing world. Detailed art, validation and remaining limits are documented in `docs/art/INTEGRATION.md` and `artifacts/overhaul/VALIDATION.md`.

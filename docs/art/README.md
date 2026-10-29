@@ -44,3 +44,7 @@ Unmet or unverified requirements:
 Before integrating, review both full-resolution PNGs on light, dark and checkerboard backgrounds. Inspect each silhouette at 100% and 400%, isolate its full bounds, and register the ground anchor. Play each proposed direction's walk sequence and idle sequence, including last-to-first, with nearest and linear filtering. Check world tiles side-by-side for seams. Approve the cutouts and loops only after fringe cleanup, padding and registration have been resolved. This review remains outstanding; the byte validator is not visual approval.
 
 Original generated artwork; no external art was used. Reuse/attribution details are in `DIRECTION.md` and the repository's client/art MIT license.
+
+## Subsequent renderer integration
+
+The interface contribution now extracts, registers and uses these inputs in the functioning world. See [INTEGRATION.md](INTEGRATION.md) for the runtime atlases, editable derivatives, measured bounds, animation gates and remaining limitations. The unmet requirements above describe the original art-only delivery, not the integrated frontend's current status.

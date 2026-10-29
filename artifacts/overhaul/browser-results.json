@@ -1,0 +1,492 @@
+{
+  "date": "2026-10-29T11:52:15.364Z",
+  "export": "dist/",
+  "base": "/preview/",
+  "viewports": [
+    {
+      "browser": "Chromium",
+      "width": 390,
+      "overflow": false,
+      "recorded": true,
+      "search": true,
+      "inspector": true,
+      "follow": true,
+      "keyboardPan": true,
+      "zoom": true,
+      "minimap": true,
+      "focusReturn": true
+    },
+    {
+      "browser": "Chromium",
+      "width": 851,
+      "overflow": false,
+      "recorded": true,
+      "search": true,
+      "inspector": true,
+      "follow": true,
+      "keyboardPan": true,
+      "zoom": true,
+      "minimap": true,
+      "focusReturn": true
+    },
+    {
+      "browser": "Chromium",
+      "width": 1440,
+      "overflow": false,
+      "recorded": true,
+      "search": true,
+      "inspector": true,
+      "follow": true,
+      "keyboardPan": true,
+      "zoom": true,
+      "minimap": true,
+      "focusReturn": true
+    },
+    {
+      "browser": "Chromium",
+      "width": 320,
+      "overflow": false,
+      "recorded": true,
+      "search": true,
+      "inspector": true,
+      "follow": true,
+      "keyboardPan": true,
+      "zoom": true,
+      "minimap": true,
+      "focusReturn": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "responsive primary flow at 320, 390, 851 and 1440",
+      "passed": true,
+      "evidence": [
+        {
+          "browser": "Chromium",
+          "width": 390,
+          "overflow": false,
+          "recorded": true,
+          "search": true,
+          "inspector": true,
+          "follow": true,
+          "keyboardPan": true,
+          "zoom": true,
+          "minimap": true,
+          "focusReturn": true
+        },
+        {
+          "browser": "Chromium",
+          "width": 851,
+          "overflow": false,
+          "recorded": true,
+          "search": true,
+          "inspector": true,
+          "follow": true,
+          "keyboardPan": true,
+          "zoom": true,
+          "minimap": true,
+          "focusReturn": true
+        },
+        {
+          "browser": "Chromium",
+          "width": 1440,
+          "overflow": false,
+          "recorded": true,
+          "search": true,
+          "inspector": true,
+          "follow": true,
+          "keyboardPan": true,
+          "zoom": true,
+          "minimap": true,
+          "focusReturn": true
+        },
+        {
+          "browser": "Chromium",
+          "width": 320,
+          "overflow": false,
+          "recorded": true,
+          "search": true,
+          "inspector": true,
+          "follow": true,
+          "keyboardPan": true,
+          "zoom": true,
+          "minimap": true,
+          "focusReturn": true
+        }
+      ]
+    },
+    {
+      "name": "zero axe violations in recorded mobile view; reduced motion freezes visual loops",
+      "passed": true,
+      "evidence": {
+        "violations": []
+      }
+    },
+    {
+      "name": "short landscape controls fit; retired settlement fails closed",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "name": "isolated engine advances, pauses and resumes; touch pan and pinch work",
+      "passed": true,
+      "evidence": {
+        "first": 2,
+        "second": 6
+      }
+    },
+    {
+      "name": "direct live origin access is reported honestly",
+      "passed": true,
+      "evidence": "stale"
+    },
+    {
+      "name": "canvas picks the correct resident at 12 zoom/chunk combinations",
+      "passed": true,
+      "evidence": [
+        {
+          "point": {
+            "x": 27,
+            "y": 28
+          },
+          "span": 22,
+          "picked": 10000
+        },
+        {
+          "point": {
+            "x": 27,
+            "y": 28
+          },
+          "span": 15.27777777777778,
+          "picked": 10000
+        },
+        {
+          "point": {
+            "x": 27,
+            "y": 28
+          },
+          "span": 31.68,
+          "picked": 10000
+        },
+        {
+          "point": {
+            "x": 28,
+            "y": 27
+          },
+          "span": 31.68,
+          "picked": 10000
+        },
+        {
+          "point": {
+            "x": 28,
+            "y": 27
+          },
+          "span": 22.000000000000004,
+          "picked": 10000
+        },
+        {
+          "point": {
+            "x": 28,
+            "y": 27
+          },
+          "span": 42.695417789757414,
+          "picked": 10000
+        },
+        {
+          "point": {
+            "x": -1,
+            "y": -28
+          },
+          "span": 36.283076923076926,
+          "picked": 10000
+        },
+        {
+          "point": {
+            "x": -1,
+            "y": -28
+          },
+          "span": 25.1965811965812,
+          "picked": 10000
+        },
+        {
+          "point": {
+            "x": -1,
+            "y": -28
+          },
+          "span": 42.695417789757414,
+          "picked": 10000
+        },
+        {
+          "point": {
+            "x": -28,
+            "y": -1
+          },
+          "span": 36.283076923076926,
+          "picked": 10000
+        },
+        {
+          "point": {
+            "x": -28,
+            "y": -1
+          },
+          "span": 25.1965811965812,
+          "picked": 10000
+        },
+        {
+          "point": {
+            "x": -28,
+            "y": -1
+          },
+          "span": 42.695417789757414,
+          "picked": 10000
+        }
+      ]
+    },
+    {
+      "name": "pinch release does not select a resident; a later intentional tap does",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "name": "synthetic performance measured separately from live",
+      "passed": true,
+      "evidence": [
+        {
+          "kind": "synthetic",
+          "population": 24,
+          "viewport": "1440x900",
+          "renderCapHz": 30,
+          "rafGapMs": {
+            "samples": 120,
+            "median": 16.699999999999818,
+            "p95": 16.799999999999727,
+            "max": 33.40000000000009
+          },
+          "drawMs": {
+            "samples": 105,
+            "median": 0.8000000715255737,
+            "p95": 2.5,
+            "max": 148.5
+          },
+          "drawn": 143,
+          "culled": 567,
+          "devicePixelRatio": 1
+        },
+        {
+          "kind": "synthetic",
+          "population": 120,
+          "viewport": "1440x900",
+          "renderCapHz": 30,
+          "rafGapMs": {
+            "samples": 84,
+            "median": 16.699999999999818,
+            "p95": 66.59999999999991,
+            "max": 66.70000000000027
+          },
+          "drawMs": {
+            "samples": 90,
+            "median": 1.2000000476837158,
+            "p95": 7.399999976158142,
+            "max": 129.79999995231628
+          },
+          "drawn": 238,
+          "culled": 568,
+          "devicePixelRatio": 1
+        },
+        {
+          "kind": "synthetic",
+          "population": 250,
+          "viewport": "1440x900",
+          "renderCapHz": 30,
+          "rafGapMs": {
+            "samples": 110,
+            "median": 16.699999999999818,
+            "p95": 33.30000000000018,
+            "max": 50
+          },
+          "drawMs": {
+            "samples": 105,
+            "median": 1.9000000953674316,
+            "p95": 5.899999976158142,
+            "max": 123.39999997615814
+          },
+          "drawn": 368,
+          "culled": 568,
+          "devicePixelRatio": 1
+        },
+        {
+          "kind": "synthetic",
+          "population": 500,
+          "viewport": "1440x900",
+          "renderCapHz": 30,
+          "rafGapMs": {
+            "samples": 41,
+            "median": 50,
+            "p95": 83.29999999999973,
+            "max": 83.30000000000018
+          },
+          "drawMs": {
+            "samples": 75,
+            "median": 3.700000047683716,
+            "p95": 13,
+            "max": 212.30000007152557
+          },
+          "drawn": 618,
+          "culled": 568,
+          "devicePixelRatio": 1
+        }
+      ]
+    },
+    {
+      "name": "WebKit mobile demo, resident selection and follow",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "name": "actual live API movement and reconnect recorded without modifying the server",
+      "passed": true,
+      "evidence": {
+        "transport": "Playwright read-only route proxy; bypasses CORS only in validation",
+        "worldId": "world-20260101-0",
+        "firstTick": 176465,
+        "lastTick": 176477,
+        "population": 152,
+        "movedResidents": 121,
+        "frames": 10,
+        "selected": "Midu\n#608 · gather",
+        "actions": [
+          "selection",
+          "follow",
+          "keyboard pan",
+          "zoom",
+          "minimap",
+          "intentional disconnect",
+          "reconnect"
+        ]
+      }
+    },
+    {
+      "name": "no unexpected browser JavaScript errors or broken local resources",
+      "passed": true,
+      "evidence": true
+    }
+  ],
+  "browserErrors": [],
+  "performance": [
+    {
+      "kind": "synthetic",
+      "population": 24,
+      "viewport": "1440x900",
+      "renderCapHz": 30,
+      "rafGapMs": {
+        "samples": 120,
+        "median": 16.699999999999818,
+        "p95": 16.799999999999727,
+        "max": 33.40000000000009
+      },
+      "drawMs": {
+        "samples": 105,
+        "median": 0.8000000715255737,
+        "p95": 2.5,
+        "max": 148.5
+      },
+      "drawn": 143,
+      "culled": 567,
+      "devicePixelRatio": 1
+    },
+    {
+      "kind": "synthetic",
+      "population": 120,
+      "viewport": "1440x900",
+      "renderCapHz": 30,
+      "rafGapMs": {
+        "samples": 84,
+        "median": 16.699999999999818,
+        "p95": 66.59999999999991,
+        "max": 66.70000000000027
+      },
+      "drawMs": {
+        "samples": 90,
+        "median": 1.2000000476837158,
+        "p95": 7.399999976158142,
+        "max": 129.79999995231628
+      },
+      "drawn": 238,
+      "culled": 568,
+      "devicePixelRatio": 1
+    },
+    {
+      "kind": "synthetic",
+      "population": 250,
+      "viewport": "1440x900",
+      "renderCapHz": 30,
+      "rafGapMs": {
+        "samples": 110,
+        "median": 16.699999999999818,
+        "p95": 33.30000000000018,
+        "max": 50
+      },
+      "drawMs": {
+        "samples": 105,
+        "median": 1.9000000953674316,
+        "p95": 5.899999976158142,
+        "max": 123.39999997615814
+      },
+      "drawn": 368,
+      "culled": 568,
+      "devicePixelRatio": 1
+    },
+    {
+      "kind": "synthetic",
+      "population": 500,
+      "viewport": "1440x900",
+      "renderCapHz": 30,
+      "rafGapMs": {
+        "samples": 41,
+        "median": 50,
+        "p95": 83.29999999999973,
+        "max": 83.30000000000018
+      },
+      "drawMs": {
+        "samples": 75,
+        "median": 3.700000047683716,
+        "p95": 13,
+        "max": 212.30000007152557
+      },
+      "drawn": 618,
+      "culled": 568,
+      "devicePixelRatio": 1
+    }
+  ],
+  "live": {
+    "transport": "Playwright read-only route proxy; bypasses CORS only in validation",
+    "worldId": "world-20260101-0",
+    "firstTick": 176465,
+    "lastTick": 176477,
+    "population": 152,
+    "movedResidents": 121,
+    "frames": 10,
+    "selected": "Midu\n#608 · gather",
+    "actions": [
+      "selection",
+      "follow",
+      "keyboard pan",
+      "zoom",
+      "minimap",
+      "intentional disconnect",
+      "reconnect"
+    ]
+  },
+  "limitations": [],
+  "axe": {
+    "violations": []
+  },
+  "crossOrigin": {
+    "status": "stale",
+    "publicServer": "https://stratoks.2-29-11-211.sslip.io",
+    "expectedConsoleMessages": [
+      "Access to fetch at 'https://stratoks.2-29-11-211.sslip.io/api/expanse/frame?x=-8&y=-8&w=64&h=64' from origin 'http://127.0.0.1:46859' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  }
+}

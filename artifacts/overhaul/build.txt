@@ -1,0 +1,23 @@
+
+> stratoks-client@0.1.0 build
+> vite build
+
+vite v8.3.5 building client environment for production...
+transforming...
+[plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "<repository>/web/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[plugin rolldown:vite-resolve] Module "node:fs" has been externalized for browser compatibility, imported by "<repository>/server/src/config.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[plugin rolldown:vite-resolve] Module "node:fs" has been externalized for browser compatibility, imported by "<repository>/server/src/config.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+✓ 1645 modules transformed.
+rendering chunks...
+computing gzip size...
+../dist/index.html                                         1.19 kB │ gzip:   0.58 kB
+../dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2   24.83 kB
+../dist/assets/learning.worker-Chr4HT56.js                52.13 kB
+../dist/assets/demo.worker-Cg15FJoQ.js                    52.42 kB
+../dist/assets/demo.worker-D7hjyDmu.js                    97.05 kB
+../dist/assets/index-DgqXKrx6.css                         54.67 kB │ gzip:  11.33 kB
+../dist/assets/dist-CG54iGaA.js                          102.72 kB │ gzip:  33.80 kB
+../dist/assets/Legacy-DjIznllY.js                        187.00 kB │ gzip:  57.27 kB
+../dist/assets/index-86wOJ4GX.js                         377.98 kB │ gzip: 106.42 kB
+
+✓ built in 1.03s
